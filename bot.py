@@ -9,7 +9,12 @@ import signal
 import http.server
 from pathlib import Path
 from config import TELEGRAM_BOT_TOKEN, ADMIN_CHAT_ID, DATA_DIR
-from ai_engine import analyze_multiple_images_and_generate_content, save_memory, load_memory
+from ai_engine import (
+    analyze_multiple_images_and_generate_content,
+    generate_content_from_text_prompt,
+    save_memory,
+    load_memory
+)
 
 TELEGRAM_API = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}"
 CHANNEL_FILE = DATA_DIR / "target_channel.txt"
@@ -525,7 +530,8 @@ def handle_callback(callback_query):
 
     target_chat = get_target_channel()
     
-    send_media_group(target_chat, photos_list, initial_caption=f"📸 <b>Album bộ ảnh tư liệu chuẩn gốc ({len(photos_list)} ảnh): {prod_code}</b>")
+    if photos_list:
+        send_media_group(target_chat, photos_list, initial_caption=f"📸 <b>Album bộ ảnh tư liệu chuẩn gốc ({len(photos_list)} ảnh): {prod_code}</b>")
     send_message(target_chat, content_to_publish)
 
     save_memory({
@@ -542,6 +548,64 @@ def handle_callback(callback_query):
 
     answer_callback(query_id, "Đã phát sóng thành công!")
     send_message(ADMIN_CHAT_ID, f"✅ <b>ĐÃ ĐĂNG THÀNH CÔNG BÀI VIẾT + BỘ {len(photos_list)} ẢNH VÀO KÊNH CTV!</b>\nĐã lưu góc: <i>{angle_used}</i> vào Bộ nhớ.")
+
+# --- WORKER: PROCESS TEXT-ONLY PROMPTS ---
+def worker_process_text_prompt(chat_id, text_prompt):
+    send_message(chat_id, f"✍️ <i>Đang soạn bài 2GOOD theo yêu cầu: \"<b>{text_prompt}</b>\"... Vui lòng đợi 5-8 giây!</i>")
+    data = generate_content_from_text_prompt(text_prompt)
+    if not data:
+        send_message(chat_id, "❌ Lỗi khi AI soạn bài. Vui lòng thử lại sau vài giây!")
+        return
+
+    post_id = f"post_{int(time.time())}"
+    with PENDING_LOCK:
+        PENDING_POSTS[post_id] = {
+            "photos_list": [],
+            "data": data,
+            "timestamp": time.time(),
+            "created_at": str(datetime.datetime.now())
+        }
+
+    matrix = data.get("content_matrix", {})
+    me_bim = matrix.get("me_bim_noi_tro", "N/A")
+    eat_clean = matrix.get("eat_clean_inox304", "N/A")
+    dai_ly = matrix.get("dai_ly_dan_da", "N/A")
+
+    preview_text = f"""<b>🌟 ĐÃ SOẠN XONG 01 BÀI THEO YÊU CẦU: \"{text_prompt[:100]}\" — {data.get('product_code', '2GOOD')}!</b>
+
+<b>📌 FACT KỸ THUẬT:</b> {data.get('technical_fact', '')}
+<b>💡 CLAIM THỰC TẾ:</b> {data.get('marketing_claim', '')}
+
+━━━━━━━━━━━━━━━━━━━━━
+👩‍👧 <b>GÓC 1 (MẸ BỈM SỮA & NỘI TRỢ GIA ĐÌNH):</b>
+{me_bim}
+
+━━━━━━━━━━━━━━━━━━━━━
+🥗 <b>GÓC 2 (EAT-CLEAN, HEALTHY & INOX 304 CHUẨN Y TẾ):</b>
+{eat_clean}
+
+━━━━━━━━━━━━━━━━━━━━━
+🛒 <b>GÓC 3 (ĐẠI LÝ / CTV BÁN HÀNG DÂN DÃ, CHẤT PHÁC):</b>
+{dai_ly}
+"""
+
+    inline_keyboard = {
+        "inline_keyboard": [
+            [
+                {"text": "🚀 BẮN TRỌN BỘ 3 GÓC VÀO KÊNH CTV", "callback_data": f"PUB_ALL_{post_id}"}
+            ],
+            [
+                {"text": "👩‍👧 Chỉ đăng Góc 1 (Mẹ bỉm)", "callback_data": f"PUB_MB_{post_id}"},
+                {"text": "🥗 Chỉ đăng Góc 2 (Eat-clean)", "callback_data": f"PUB_EC_{post_id}"}
+            ],
+            [
+                {"text": "🛒 Chỉ đăng Góc 3 (Đại lý dân dã)", "callback_data": f"PUB_DL_{post_id}"},
+                {"text": "❌ Hủy bài này", "callback_data": f"CANCEL_{post_id}"}
+            ]
+        ]
+    }
+
+    send_message(chat_id, preview_text, reply_markup=inline_keyboard)
 
 def run_bot():
     acquire_single_instance_lock()
@@ -586,14 +650,18 @@ def run_bot():
                         
                         elif "message" in update:
                             msg = update["message"]
+                            chat_id = msg["chat"]["id"]
+                            if chat_id != str(ADMIN_CHAT_ID):
+                                send_message(chat_id, "⚠️ Bạn không có quyền Admin.")
+                                continue
+                            
                             if "photo" in msg:
                                 handle_incoming_photo_non_blocking(msg)
                             elif "text" in msg:
                                 text = msg.get("text", "").strip()
-                                chat_id = msg["chat"]["id"]
                                 
                                 if text == "/start":
-                                    send_message(chat_id, "👋 Chào Sếp Thìn! Tôi là <b>Trợ lý AI Content Engine 2GOOD (24/7)</b>.\n\n📸 Sếp chỉ cần <b>chọn 3-6 ảnh gửi 1 lần</b>, tôi sẽ gom trọn bộ để viết <b>01 BÀI TỔNG HỢP VỚI 3 GÓC CHÂN THẬT</b> cho Sếp duyệt 1 chạm!\n\n💡 Gõ <code>/status</code> để kiểm tra hệ thống hoặc <code>/help</code> để xem hướng dẫn.")
+                                    send_message(chat_id, "👋 Chào Sếp Thìn! Tôi là <b>Trợ lý AI Content Engine 2GOOD (24/7)</b>.\n\n📸 Sếp có thể:\n1️⃣ <b>Gửi 3-6 ảnh 1 lần:</b> AI gom soi và viết bài 3 góc.\n2️⃣ <b>Gõ văn bản / ý tưởng bất kỳ:</b> AI sẽ tự động viết bài theo đúng yêu cầu!\n\n💡 Gõ <code>/status</code> để kiểm tra hệ thống hoặc <code>/help</code> để xem hướng dẫn.")
                                 elif text in ["/status", "/ping"]:
                                     st_msg, kb = build_status_message()
                                     send_message(chat_id, st_msg, reply_markup=kb)
@@ -603,6 +671,9 @@ def run_bot():
                                     send_message(chat_id, execute_reset())
                                 elif text == "/help":
                                     send_message(chat_id, build_help_message())
+                                else:
+                                    # Gõ text ý tưởng bất kỳ -> Tự động sinh bài theo yêu cầu
+                                    threading.Thread(target=worker_process_text_prompt, args=[chat_id, text], daemon=True).start()
                         
                         elif "callback_query" in update:
                             handle_callback(update["callback_query"])

@@ -163,3 +163,105 @@ HÃY TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON CHUẨN (KHÔNG THÊM BẤT KỲ CH�
             print(f"Error calling {model_name}: {e}")
             
     return None
+
+def generate_content_from_text_prompt(text_prompt):
+    """
+    Generate 3 authentic content angles from a purely text prompt / custom idea.
+    """
+    memory = load_memory()
+    recent_memory_str = json.dumps(memory[-5:], ensure_ascii=False) if memory else "Chưa có bài nào."
+
+    system_prompt = f"""
+Bạn là Chuyên gia Sáng tạo Nội dung & Bán hàng thực chiến của thương hiệu gia dụng 2GOOD (Nồi chiên hơi nước S200 32L, S100, Nồi nấu chậm Sona i8...).
+
+YÊU CẦU NỘI DUNG TỪ SẾP: "{text_prompt}"
+LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY:
+{recent_memory_str}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 KNOWLEDGE BASE CỐT LÕI VỀ 2GOOD:
+1. CÔNG NGHỆ HƠI NƯỚC STEAM ACTIVE: Kết hợp Chiên + Hấp bù ẩm -> Ngoài giòn rụm, trong mọng nước ngọt tự nhiên, không bị khô xác.
+2. KHOANG LÒ 100% INOX 304 CHUẨN Y TẾ TOÀN PHẦN: Không phủ chống dính Teflon độc hại, cọ rửa chà cước sắt thoải mái không sợ trầy xước.
+3. ĐỐI LƯU 360 ĐỘ: Không cần lật trở thức ăn, giải phóng sức lao động.
+4. TỰ LÀM SẠCH STEAM CLEAN: Hơi nước siêu nhiệt làm mềm dầu mỡ bám dính, lau nhẹ 1 đường là sạch bóng.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✍️ QUY TẮC BÀI ĐĂNG (BẮT BUỘC):
+1. ICON / EMOJI SINH ĐỘNG: Điểm xuyết emoji phù hợp tự nhiên (🍗, 🥦, 👩‍🍳, ✨, ⏰, ❤️, 💯, 🌿, 🛒...).
+2. BỘ HASHTAGS CHUẨN: Ở cuối MỖI bài viết, BẮT BUỘC có 5–7 hashtag liên quan (#2GOOD #NoiChienHoiNuoc2GOOD #2GOOD_S200 #MonNgonMoiNgay #Inox304 #MeBimNoiTro).
+3. VĂN PHONG CHÂN THẬT, DÂN DÃ, CHẤT PHÁC: Tuyệt đối không viết văn mẫu khô khan.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📝 SOẠN 01 BÀI TỔNG HỢP VỚI 3 GÓC TIẾP CẬN BÁM SÁT YÊU CẦU:
+👩‍👧 GÓC 1: MẸ BỈM SỮA & NỘI TRỢ GIA ĐÌNH (Facebook/Zalo tâm sự ấm áp)
+🥗 GÓC 2: EAT-CLEAN, HEALTHY & INOX 304 CHUẨN Y TẾ (Sức khỏe & Lý trí mộc mạc)
+🛒 GÓC 3: ĐẠI LÝ / CTV BÁN HÀNG DÂN DÃ, CHẤT PHÁC (Bán lẻ thực chiến: "Các bác ơi / Các anh chị ơi...")
+
+HÃY TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON CHUẨN:
+{{
+  "product_code": "Mã sản phẩm phù hợp (VD: 2GOOD S200 / S100)",
+  "visual_fact": "Ý tưởng bài viết theo yêu cầu",
+  "technical_fact": "Điểm kỹ thuật nhấn mạnh",
+  "marketing_claim": "Thông điệp chính",
+  "content_matrix": {{
+    "me_bim_noi_tro": "Toàn bộ bài viết Góc 1 (Tiêu đề + Emoji + Thân bài tâm sự + CTA + Hashtags)",
+    "eat_clean_inox304": "Toàn bộ bài viết Góc 2 (Tiêu đề + Emoji + Thân bài Healthy Inox 304 + CTA + Hashtags)",
+    "dai_ly_dan_da": "Toàn bộ bài viết Góc 3 (Tiêu đề + Emoji + Bài bán hàng dân dã, chất phác + CTA + Hashtags)"
+  }}
+}}
+"""
+    payload = {
+        "contents": [{"parts": [{"text": system_prompt}]}],
+        "generationConfig": {
+            "temperature": 0.7,
+            "response_mime_type": "application/json"
+        }
+    }
+
+    for model_name in MODELS:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={GEMINI_API_KEY}"
+        try:
+            response = requests.post(url, json=payload, timeout=60)
+            if response.status_code == 200:
+                result = response.json()
+                raw_text = result["candidates"][0]["content"]["parts"][0]["text"].strip()
+                if raw_text.startswith("```json"):
+                    raw_text = raw_text[7:]
+                if raw_text.startswith("```"):
+                    raw_text = raw_text[3:]
+                if raw_text.endswith("```"):
+                    raw_text = raw_text[:-3]
+                raw_text = raw_text.strip()
+                
+                try:
+                    data = json.loads(raw_text, strict=False)
+                except Exception:
+                    cleaned = re.sub(r'[\x00-\x1f\x7f-\x9f]', lambda m: ' ' if m.group() in '\n\r\t' else '', raw_text)
+                    try:
+                        data = json.loads(cleaned, strict=False)
+                    except Exception:
+                        data = {
+                            "product_code": "2GOOD",
+                            "visual_fact": text_prompt,
+                            "technical_fact": "Khoang Inox 304, công nghệ đối lưu hơi nước 360",
+                            "marketing_claim": "Giòn rụm ngoài mọng nước trong",
+                            "content_matrix": {
+                                "me_bim_noi_tro": raw_text[:1000],
+                                "eat_clean_inox304": raw_text[1000:2000] if len(raw_text) > 1000 else raw_text,
+                                "dai_ly_dan_da": raw_text[2000:3000] if len(raw_text) > 2000 else raw_text
+                            }
+                        }
+                
+                save_kb({
+                    "product_code": data.get("product_code", "2GOOD"),
+                    "visual_fact": text_prompt,
+                    "technical_fact": data.get("technical_fact", ""),
+                    "marketing_claim": data.get("marketing_claim", ""),
+                    "num_photos": 0,
+                    "created_at": str(datetime.datetime.now())
+                })
+                return data
+        except Exception as e:
+            print(f"Error calling {model_name} for text prompt: {e}")
+            
+    return None
