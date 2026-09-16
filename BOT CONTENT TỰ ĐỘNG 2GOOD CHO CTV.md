@@ -72,16 +72,15 @@ botcontenttudong2goods200choctv/
 - **NÊN DÙNG:** Xưng **"Em"** - Gọi **"Mọi người"** HOẶC Xưng **"Em"** - Gọi **"Các bác"**. (Văn minh, lịch sự, gần gũi, bao quát cả nam lẫn nữ, già lẫn trẻ, CTV ai copy đăng cũng tự nhiên).
 - **TUYỆT ĐỐI CẤM:** Không dùng "các chị ơi", "các mẹ ơi", "mấy bà ơi", "hỡi ôi"...
 
-### 🚫 BỘ TỪ KHÓA & MÔ-TÍP BỊ CẤM TIỆT (ĐỂ TRÁNH 1 MÀU):
-- ❌ CẤM các từ: *"khô không khốc"*, *"khô khốc"*, *"khô như củi"*, *"khô như ngói"*, *"con nhai nhè ra"*.
-- ❌ CẤM mô-típ bán hàng rẻ tiền: *"gom hàng"*, *"gom đơn"*, *"gom được lô giá hời"*, *"giá siêu hời"*, *"xả kho"*, *"cắt lỗ"*.
-- ❌ CẤM bài nào cũng lặp lại việc than phiền nồi cũ. Hãy tập trung vào niềm vui nấu nướng, sự thảnh thơi, hương vị ngon và giá trị thực sự.
+### 💡 NGUYÊN TẮC ĐA DẠNG HÓA NỘI DUNG (TRÁNH 1 MÀU):
+- **Không bài nào cũng lặp đi lặp lại cùng một mô-típ:** Cả các chủ đề quen thuộc (như gom hàng giá tốt, khắc phục thịt khô...) lẫn các chủ đề mới (Quiet luxury, quà biếu, bài toán đầu tư 10 năm, feedback khách...) đều được luân phiên linh hoạt, không để bài nào cũng giống bài nào.
+- **Tránh lặp lại:** Không lặp lại cùng một câu chuyện hay tình huống của các bài đã đăng gần nhất.
 
-### 🔄 MA TRẬN 64 PHỐI HỢP SÁNG TẠO (DYNAMIC ROTATION):
-Mỗi lần AI tạo bài, hệ thống sẽ ngẫu nhiên chỉ định 1 trong các hướng khai thác sau cho từng góc để đảm bảo **100% không bao giờ bị 1 màu**:
+### 🔄 MA TRẬN LUÂN PHIÊN HƯỚNG SÁNG TẠO (DYNAMIC ROTATION):
+Mỗi lần AI tạo bài, hệ thống sẽ ngẫu nhiên bốc 1 trong các hướng khai thác sau cho từng góc để đảm bảo **nội dung phong phú và đổi mới mỗi ngày**:
 
 1. **👩‍👧 Góc 1: ĐỜI THƯỜNG / TÂM SỰ BẾP NÚC** (Xưng Em - Mọi người / Các bác)
-   - *Hướng A:* Khoe món ngon & Trình diễn ẩm thực (màu vàng óng ả caramel, da giòn rụm, mọng nước, rủ rê làm thử).
+   - *Hướng A:* Khoe món ngon & Trình diễn ẩm thực (màu vàng óng ả caramel, da giòn rụm, mọng nước, không lo khô không khốc như nồi cũ, rủ rê làm thử).
    - *Hướng B:* Bữa cơm thảnh thơi sau ngày dài (không dầu mỡ bắn, không đứng canh lật trở, 20 phút có cơm ngon, giải phóng sức lao động).
    - *Hướng C:* Mâm cơm đa tầng đãi tiệc / giỗ chạp (dung tích 32L nướng cả con gà 2-3kg hoặc làm 3 món một lúc, đãi bạn bè nhàn tênh).
    - *Hướng D:* Tâm sự & Hỏi han kinh nghiệm nhẹ nhàng ("Các bác / Mọi người cho em hỏi chút...", chia sẻ cách ướp gia vị).
@@ -93,14 +92,15 @@ Mỗi lần AI tạo bài, hệ thống sẽ ngẫu nhiên chỉ định 1 trong
    - *Hướng C:* Thực đơn hấp & Detox giữ trọn 99% vitamin — Rau củ xanh tươi mơn mởn, hải sản ngọt lịm thanh lọc cơ thể.
    - *Hướng D:* Steam Clean cứu tinh khâu dọn dẹp — Hơi nước tự làm mềm dầu mỡ bám dính, lau nhẹ 1 khăn là sạch bóng kin kít.
 
-3. **🛒 Góc 3: ĐẠI LÝ / BÁN HÀNG CHẤT PHÁC, UY TÍN (KHÔNG "GOM HÀNG")** (Xưng Em - Mọi người / Các bác)
-   - *Hướng A:* Khoe feedback khách hàng thật (Social proof: "Sáng nay nhận tin nhắn bác khách gửi ảnh mâm cơm khen nức nở, bảo biết thế mua sớm hơn...").
-   - *Hướng B:* Tư vấn "Tiền nào của nấy" & Bài toán đầu tư (Nồi tráng chống dính dùng vài tháng bong tróc vứt đi; 2GOOD Inox 304 bền 10 năm thay 10 thiết bị, tính ra mỗi ngày chỉ tốn 2-3 nghìn đồng).
-   - *Hướng C:* Mời trải nghiệm thực tế & Bao test 1-1 (Bán hàng bằng sự tự tin, bảo hành chính hãng, mời khách ghé tận nơi ăn thử nướng thử).
-   - *Hướng D:* Gợi ý quà biếu tân gia / Quà tặng sức khỏe cho bố mẹ (Sang trọng với vỏ phay xước, dễ dùng cho người lớn tuổi, chăm sóc sức khỏe lâu dài).
+3. **🛒 Góc 3: ĐẠI LÝ / BÁN HÀNG THỰC CHIẾN, CHẤT PHÁC** (Xưng Em - Mọi người / Các bác)
+   - *Hướng A:* Gom đơn / Lô hàng chính hãng giá hời ("Các bác/mọi người ơi, hôm nay em gom được lô 2GOOD chính hãng giá hời/giá tốt cho mọi người... Bao test 1-1, bác nào lấy ới em ship tận tay nhé!").
+   - *Hướng B:* Khoe feedback khách hàng thật (Social proof: "Sáng nay nhận tin nhắn bác khách gửi ảnh mâm cơm khen nức nở, bảo biết thế mua sớm hơn...").
+   - *Hướng C:* Tư vấn "Tiền nào của nấy" & Bài toán đầu tư (Nồi tráng chống dính dùng vài tháng bong tróc vứt đi; 2GOOD Inox 304 bền 10 năm thay 10 thiết bị, tính ra mỗi ngày chỉ tốn 2-3 nghìn đồng).
+   - *Hướng D:* Mời trải nghiệm thực tế & Bao test 1-1 (Bán hàng bằng sự tự tin, bảo hành chính hãng, mời khách ghé tận nơi ăn thử nướng thử).
+   - *Hướng E:* Gợi ý quà biếu tân gia / Quà tặng sức khỏe cho bố mẹ (Sang trọng với vỏ phay xước, dễ dùng cho người lớn tuổi, chăm sóc sức khỏe lâu dài).
 
 ### 🛡️ MÀNG LỌC SANITIZATION FILTER TỰ ĐỘNG:
-- Trong mã nguồn `ai_engine.py`, một bộ lọc Regex tự động quét toàn bộ văn bản trả về của AI. Nếu có bất kỳ cụm từ cấm nào (như "khô không khốc", "gom hàng", "mấy bà ơi"...), bộ lọc sẽ tự động thay thế ngay lập tức thành ngôn từ chuẩn mực trước khi gửi tới Kênh CTV!
+- Trong mã nguồn `ai_engine.py`, một bộ lọc Regex tự động quét toàn bộ văn bản trả về của AI để chuẩn hóa xưng hô (loại bỏ các từ xưng hô sến như "mấy bà ơi", "các chị ơi", "hỡi ôi") để bài viết luôn giữ được phong thái lịch sự, ấm cúng và bao quát!
 
 ---
 

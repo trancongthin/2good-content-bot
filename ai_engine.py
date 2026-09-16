@@ -67,27 +67,21 @@ ANGLE_3_ARCHETYPES = [
     (
         "GỢI Ý QUÀ BIẾU TÂN GIA / QUÀ TẶNG SỨC KHỎE CHO BỐ MẸ",
         "Gợi ý chiếc máy như một món quà biếu tinh tế, sang trọng và giàu ý nghĩa: Vỏ thép phay xước chuẩn Quiet Luxury, bảng điều khiển trực quan dễ dùng cho cả người lớn tuổi, giúp bố mẹ nấu nướng thảnh thơi và ăn uống an lành."
+    ),
+    (
+        "GOM ĐƠN / LÔ HÀNG CHÍNH HÃNG GIÁ HỜI CHO MỌI NGƯỜI",
+        "Phong cách đại lý bán hàng thực chiến: 'Các bác/mọi người ơi, hôm nay em gom được lô 2GOOD chính hãng giá hời/giá tốt cho mọi người... Bao test 1-1, bác nào lấy ới em ship tận tay nhé!'"
     )
 ]
 
 def clean_content_text(text):
     """
-    Sanitize text to guarantee forbidden repetitive phrases never appear.
+    Sanitize text to guarantee forbidden pronouns never appear.
     """
     if not isinstance(text, str):
         return text
     
     replacements = [
-        (r'(?i)\bkhô không khốc\b', 'khô xơ'),
-        (r'(?i)\bkhô khốc\b', 'thiếu độ mọng'),
-        (r'(?i)\bkhô như củi\b', 'mất vị ngọt tự nhiên'),
-        (r'(?i)\bkhô như ngói\b', 'mất nước'),
-        (r'(?i)\bcon (nhai )?nhè ra\b', 'con kén ăn'),
-        (r'(?i)\bgom hàng\b', 'phục vụ mọi người'),
-        (r'(?i)\bgom đơn\b', 'lên đơn'),
-        (r'(?i)\bgom được lô( hàng)? giá hời\b', 'về đợt hàng chính hãng mới'),
-        (r'(?i)\blô giá hời\b', 'đợt hàng chính hãng'),
-        (r'(?i)\bgiá siêu hời\b', 'mức giá cực kỳ tốt'),
         (r'(?i)\bmấy bà ơi\b', 'mọi người ơi'),
         (r'(?i)\bcác chị ơi\b', 'mọi người ơi'),
         (r'(?i)\bcác mẹ ơi\b', 'các bác ơi'),
@@ -169,10 +163,9 @@ LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY (BẮT BUỘC TRÁNH TRÙNG LẶP NỘI
 6. THẨM MỸ QUIET LUXURY: Vỏ thép nguyên khối phay xước mát lạnh, cửa kính cường lực trong suốt ngắm thức ăn chín xèo xèo phồng rộp.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🚫 CÁC ĐIỀU CẤM KỴ ĐỂ TRÁNH TRÙNG LẶP & 1 MÀU (BẮT BUỘC TUÂN THỦ 100%):
-- ❌ CẤM TUYỆT ĐỐI các từ/cụm từ sau: "khô không khốc", "khô khốc", "khô như củi", "khô như ngói", "con nhè ra", "gom hàng", "gom đơn", "gom được lô", "giá hời", "giá siêu hời", "xả kho", "cắt lỗ".
-- ❌ CẤM bài nào cũng lặp lại mô-típ than thở nồi cũ. Hãy tập trung vào niềm vui nấu nướng, sự thảnh thơi, hương vị ngon và giá trị thực sự.
-- ❌ CẤM lặp lại ý tứ của 5 bài đã đăng gần nhất ở trên!
+💡 NGUYÊN TẮC ĐA DẠNG HÓA NỘI DUNG (TRÁNH 1 MÀU & TRÁNH LẶP Ý):
+- Tuyệt đối KHÔNG bài nào cũng lặp đi lặp lại cùng một mô-típ hoặc cùng một lối mở bài quen thuộc. Bắt buộc bám sát ĐỊNH HƯỚNG SÁNG TẠO riêng biệt được chỉ định cho từng góc dưới đây để bài viết luôn tươi mới, tự nhiên và phong phú.
+- Tránh trùng lặp tình huống và câu chuyện của các bài đã đăng gần nhất ở trên.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ✍️ QUY TẮC XƯNG HÔ CHUẨN:
@@ -312,10 +305,9 @@ LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY (BẮT BUỘC TRÁNH TRÙNG LẶP):
 6. THẨM MỸ QUIET LUXURY: Vỏ thép phay xước, cửa kính cường lực ngắm thức ăn chín xèo xèo.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🚫 CÁC ĐIỀU CẤM KỴ ĐỂ TRÁNH TRÙNG LẶP & 1 MÀU (BẮT BUỘC TUÂN THỦ 100%):
-- ❌ CẤM TUYỆT ĐỐI các từ/cụm từ sau: "khô không khốc", "khô khốc", "khô như củi", "khô như ngói", "con nhè ra", "gom hàng", "gom đơn", "gom được lô", "giá hời", "giá siêu hời", "xả kho", "cắt lỗ".
-- ❌ CẤM bài nào cũng lặp lại mô-típ than thở nồi cũ. Hãy tập trung vào niềm vui nấu nướng, sự thảnh thơi, hương vị ngon và giá trị thực sự.
-- ❌ CẤM lặp lại ý tứ của các bài gần đây!
+💡 NGUYÊN TẮC ĐA DẠNG HÓA NỘI DUNG (TRÁNH 1 MÀU & TRÁNH LẶP Ý):
+- Tuyệt đối KHÔNG bài nào cũng lặp đi lặp lại cùng một mô-típ hoặc cùng một lối mở bài quen thuộc. Bắt buộc bám sát ĐỊNH HƯỚNG SÁNG TẠO riêng biệt được chỉ định cho từng góc dưới đây để bài viết luôn tươi mới, tự nhiên và phong phú.
+- Tránh trùng lặp tình huống và câu chuyện của các bài gần đây.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ✍️ QUY TẮC XƯNG HÔ CHUẨN:
