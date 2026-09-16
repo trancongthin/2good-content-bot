@@ -66,26 +66,41 @@ botcontenttudong2goods200choctv/
 
 ---
 
-## 🧠 4. TƯ DUY NỘI DUNG LÕI (3 GÓC TIẾP CẬN CHUẨN 2GOOD)
+## 🧠 4. TƯ DUY NỘI DUNG LÕI & CƠ CHẾ CHỐNG LẶP ĐA TẦNG (DYNAMIC ARCHETYPES)
 
 ### 📌 QUY TẮC XƯNG HÔ BẮT BUỘC:
-- **NÊN DÙNG:** Xưng **"Em"** - Gọi **"Mọi người"** hoặc Xưng **"Em"** - Gọi **"Các bác"**. (Vừa khiêm tốn, lịch sự, gần gũi, bao quát cả nam lẫn nữ, trẻ lẫn già, CTV ai đọc cũng thấy hợp lý).
-- **TUYỆT ĐỐI CẤM:** Không dùng "các chị ơi", "các mẹ ơi", "mấy bà ơi", "hỡi ôi"... (Dễ bị sến, kịch cỡm, hẹp tệp khách hàng).
+- **NÊN DÙNG:** Xưng **"Em"** - Gọi **"Mọi người"** HOẶC Xưng **"Em"** - Gọi **"Các bác"**. (Văn minh, lịch sự, gần gũi, bao quát cả nam lẫn nữ, già lẫn trẻ, CTV ai copy đăng cũng tự nhiên).
+- **TUYỆT ĐỐI CẤM:** Không dùng "các chị ơi", "các mẹ ơi", "mấy bà ơi", "hỡi ôi"...
 
-Mỗi lần xuất bản, AI sẽ tạo đúng **01 bài tổng hợp với 3 góc nhìn** để CTV/Đại lý chọn lựa hoặc copy trọn bộ:
+### 🚫 BỘ TỪ KHÓA & MÔ-TÍP BỊ CẤM TIỆT (ĐỂ TRÁNH 1 MÀU):
+- ❌ CẤM các từ: *"khô không khốc"*, *"khô khốc"*, *"khô như củi"*, *"khô như ngói"*, *"con nhai nhè ra"*.
+- ❌ CẤM mô-típ bán hàng rẻ tiền: *"gom hàng"*, *"gom đơn"*, *"gom được lô giá hời"*, *"giá siêu hời"*, *"xả kho"*, *"cắt lỗ"*.
+- ❌ CẤM bài nào cũng lặp lại việc than phiền nồi cũ. Hãy tập trung vào niềm vui nấu nướng, sự thảnh thơi, hương vị ngon và giá trị thực sự.
 
-1. **👩‍👧 Góc 1: TÂM SỰ NỘI TRỢ & BỮA CƠM GIA ĐÌNH**
-   - **Xưng hô:** Em với Mọi người / Các bác.
-   - **Mở đầu đa dạng:** Luân phiên giữa: 1) Khoe thành quả món ngon & rủ rê làm thử ("Hôm nay rảnh rảnh làm món này ngon lắm mọi người ạ..."), 2) Kể chuyện thật con ăn khen ngon ("Nói thật với các bác, trước giờ em ngại nướng gà lắm..."), 3) Hỏi han gợi mở ("Mọi người cho em hỏi chút...").
-   - **Trọng tâm:** Con cái ăn thun thút hết sạch đĩa, thịt mềm mọng nước không khô khốc như nồi cũ, khoang Inox 304 bật hơi nước lau nhẹ là sạch. Đầy đủ icon và 5-7 hashtag ở cuối.
+### 🔄 MA TRẬN 64 PHỐI HỢP SÁNG TẠO (DYNAMIC ROTATION):
+Mỗi lần AI tạo bài, hệ thống sẽ ngẫu nhiên chỉ định 1 trong các hướng khai thác sau cho từng góc để đảm bảo **100% không bao giờ bị 1 màu**:
 
-2. **🥗 Góc 2: ĂN UỐNG LÀNH MẠNH, HEALTHY & EAT-CLEAN**
-   - **Xưng hô:** Em với Mọi người / Các bác.
-   - **Trọng tâm:** Mẹo nướng bù hơi nước Steam Active giúp ức gà/cá hồi bên trong mọng nước ngọt lịm không cần giọt dầu mỡ nào; Cảnh báo nỗi lo lớp chống dính Teflon đen bong tróc độc hại ở nồi cũ, đổi sang khoang 100% Inox 304 chuẩn y tế cọ rửa búi sắt thoải mái cực kỳ an tâm cho sức khỏe. Đầy đủ icon và 5-7 hashtag ở cuối.
+1. **👩‍👧 Góc 1: ĐỜI THƯỜNG / TÂM SỰ BẾP NÚC** (Xưng Em - Mọi người / Các bác)
+   - *Hướng A:* Khoe món ngon & Trình diễn ẩm thực (màu vàng óng ả caramel, da giòn rụm, mọng nước, rủ rê làm thử).
+   - *Hướng B:* Bữa cơm thảnh thơi sau ngày dài (không dầu mỡ bắn, không đứng canh lật trở, 20 phút có cơm ngon, giải phóng sức lao động).
+   - *Hướng C:* Mâm cơm đa tầng đãi tiệc / giỗ chạp (dung tích 32L nướng cả con gà 2-3kg hoặc làm 3 món một lúc, đãi bạn bè nhàn tênh).
+   - *Hướng D:* Tâm sự & Hỏi han kinh nghiệm nhẹ nhàng ("Các bác / Mọi người cho em hỏi chút...", chia sẻ cách ướp gia vị).
+   - *Hướng E:* Căn bếp gọn gàng & Thẩm mỹ Quiet Luxury (lò thép phay xước vuông vắn thay thế 10 thiết bị cồng kềnh).
 
-3. **🛒 Góc 3: ĐẠI LÝ / CTV BÁN HÀNG DÂN DÃ, CHẤT PHÁC**
-   - **Giọng văn:** Cực kỳ dân dã, chất phác, xởi lởi, phong cách bán lẻ thực chiến: *"Em chào các bác / Các anh chị em ơi, hôm nay em gom được lô nồi chiên hơi nước 2GOOD chính hãng giá siêu hời... Em bao test bao đổi 1-1 cho các bác yên tâm... Bác nào lấy ới em ship tận tay nhé!"*.
-   - **Lời nhắc video:** Nếu cụm bài có video, luôn có lời nhắc CTV tải clip hơi nước bốc lên / thức ăn nướng xèo xèo về up TikTok, Facebook Reels, Zalo Story để hút khách. Đầy đủ icon và 5-7 hashtag ở cuối.
+2. **🥗 Góc 2: LỐI SỐNG LÀNH MẠNH, SỨC KHỎE & INOX 304** (Xưng Em - Mọi người / Các bác)
+   - *Hướng A:* Nói không với lớp chống dính Teflon đen bong tróc độc hại — Khoang 100% Inox 304 chuẩn y tế cọ rửa búi sắt thoải mái, bền 10 năm, an tâm cho con cái.
+   - *Hướng B:* Eat-clean mọng nước giữ dáng — Ép mỡ thừa xấu ra khay hứng, giữ vị ngọt tự nhiên của thớ thịt mà không ngấy mỡ.
+   - *Hướng C:* Thực đơn hấp & Detox giữ trọn 99% vitamin — Rau củ xanh tươi mơn mởn, hải sản ngọt lịm thanh lọc cơ thể.
+   - *Hướng D:* Steam Clean cứu tinh khâu dọn dẹp — Hơi nước tự làm mềm dầu mỡ bám dính, lau nhẹ 1 khăn là sạch bóng kin kít.
+
+3. **🛒 Góc 3: ĐẠI LÝ / BÁN HÀNG CHẤT PHÁC, UY TÍN (KHÔNG "GOM HÀNG")** (Xưng Em - Mọi người / Các bác)
+   - *Hướng A:* Khoe feedback khách hàng thật (Social proof: "Sáng nay nhận tin nhắn bác khách gửi ảnh mâm cơm khen nức nở, bảo biết thế mua sớm hơn...").
+   - *Hướng B:* Tư vấn "Tiền nào của nấy" & Bài toán đầu tư (Nồi tráng chống dính dùng vài tháng bong tróc vứt đi; 2GOOD Inox 304 bền 10 năm thay 10 thiết bị, tính ra mỗi ngày chỉ tốn 2-3 nghìn đồng).
+   - *Hướng C:* Mời trải nghiệm thực tế & Bao test 1-1 (Bán hàng bằng sự tự tin, bảo hành chính hãng, mời khách ghé tận nơi ăn thử nướng thử).
+   - *Hướng D:* Gợi ý quà biếu tân gia / Quà tặng sức khỏe cho bố mẹ (Sang trọng với vỏ phay xước, dễ dùng cho người lớn tuổi, chăm sóc sức khỏe lâu dài).
+
+### 🛡️ MÀNG LỌC SANITIZATION FILTER TỰ ĐỘNG:
+- Trong mã nguồn `ai_engine.py`, một bộ lọc Regex tự động quét toàn bộ văn bản trả về của AI. Nếu có bất kỳ cụm từ cấm nào (như "khô không khốc", "gom hàng", "mấy bà ơi"...), bộ lọc sẽ tự động thay thế ngay lập tức thành ngôn từ chuẩn mực trước khi gửi tới Kênh CTV!
 
 ---
 
