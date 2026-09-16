@@ -68,22 +68,24 @@ botcontenttudong2goods200choctv/
 
 ## 🧠 4. TƯ DUY NỘI DUNG LÕI (3 GÓC TIẾP CẬN CHUẨN 2GOOD)
 
+### 📌 QUY TẮC XƯNG HÔ BẮT BUỘC:
+- **NÊN DÙNG:** Xưng **"Em"** - Gọi **"Mọi người"** hoặc Xưng **"Em"** - Gọi **"Các bác"**. (Vừa khiêm tốn, lịch sự, gần gũi, bao quát cả nam lẫn nữ, trẻ lẫn già, CTV ai đọc cũng thấy hợp lý).
+- **TUYỆT ĐỐI CẤM:** Không dùng "các chị ơi", "các mẹ ơi", "mấy bà ơi", "hỡi ôi"... (Dễ bị sến, kịch cỡm, hẹp tệp khách hàng).
+
 Mỗi lần xuất bản, AI sẽ tạo đúng **01 bài tổng hợp với 3 góc nhìn** để CTV/Đại lý chọn lựa hoặc copy trọn bộ:
 
-1. **👩‍👧 Góc 1: MẸ BỈM SỮA & NỘI TRỢ GIA ĐÌNH**
-   - **Giọng văn:** Ấm áp, tâm sự chị em, người thật việc thật.
-   - **Trọng tâm:** Bữa cơm đủ món chỉ 15-20 phút, giải phóng sức lao động, vừa bế con vừa nấu nhàn tênh, không khói mỡ bắn bẩn, an toàn cho con nhỏ.
-   - **Hình thức:** Đầy đủ icon sinh động và 5-7 hashtag liên quan ở cuối.
+1. **👩‍👧 Góc 1: TÂM SỰ NỘI TRỢ & BỮA CƠM GIA ĐÌNH**
+   - **Xưng hô:** Em với Mọi người / Các bác.
+   - **Mở đầu đa dạng:** Luân phiên giữa: 1) Khoe thành quả món ngon & rủ rê làm thử ("Hôm nay rảnh rảnh làm món này ngon lắm mọi người ạ..."), 2) Kể chuyện thật con ăn khen ngon ("Nói thật với các bác, trước giờ em ngại nướng gà lắm..."), 3) Hỏi han gợi mở ("Mọi người cho em hỏi chút...").
+   - **Trọng tâm:** Con cái ăn thun thút hết sạch đĩa, thịt mềm mọng nước không khô khốc như nồi cũ, khoang Inox 304 bật hơi nước lau nhẹ là sạch. Đầy đủ icon và 5-7 hashtag ở cuối.
 
-2. **🥗 Góc 2: EAT-CLEAN, HEALTHY & INOX 304 CHUẨN Y TẾ**
-   - **Giọng văn:** Đứng trên góc độ sức khỏe & lý trí, phân tích thuyết phục.
-   - **Trọng tâm:** Nói KHÔNG với lớp chống dính Teflon (PTFE) bong tróc độc hại; Khoang Inox 304 bền vĩnh cửu cọ rửa búi sắt thoải mái; Công nghệ hơi nước Steam Active giữ trọn nước ngọt và dinh dưỡng trong từng thớ thịt, giảm mỡ mà không bị khô cứng như củi.
-   - **Hình thức:** Đầy đủ icon và 5-7 hashtag ở cuối.
+2. **🥗 Góc 2: ĂN UỐNG LÀNH MẠNH, HEALTHY & EAT-CLEAN**
+   - **Xưng hô:** Em với Mọi người / Các bác.
+   - **Trọng tâm:** Mẹo nướng bù hơi nước Steam Active giúp ức gà/cá hồi bên trong mọng nước ngọt lịm không cần giọt dầu mỡ nào; Cảnh báo nỗi lo lớp chống dính Teflon đen bong tróc độc hại ở nồi cũ, đổi sang khoang 100% Inox 304 chuẩn y tế cọ rửa búi sắt thoải mái cực kỳ an tâm cho sức khỏe. Đầy đủ icon và 5-7 hashtag ở cuối.
 
 3. **🛒 Góc 3: ĐẠI LÝ / CTV BÁN HÀNG DÂN DÃ, CHẤT PHÁC**
    - **Giọng văn:** Cực kỳ dân dã, chất phác, xởi lởi, phong cách bán lẻ thực chiến: *"Em chào các bác / Các anh chị em ơi, hôm nay em gom được lô nồi chiên hơi nước 2GOOD chính hãng giá siêu hời... Em bao test bao đổi 1-1 cho các bác yên tâm... Bác nào lấy ới em ship tận tay nhé!"*.
-   - **Lời nhắc video:** Nếu cụm bài có video, luôn có lời nhắc CTV tải clip hơi nước bốc lên / thức ăn nướng xèo xèo về up TikTok, Facebook Reels, Zalo Story để hút khách.
-   - **Hình thức:** Đầy đủ icon và 5-7 hashtag ở cuối.
+   - **Lời nhắc video:** Nếu cụm bài có video, luôn có lời nhắc CTV tải clip hơi nước bốc lên / thức ăn nướng xèo xèo về up TikTok, Facebook Reels, Zalo Story để hút khách. Đầy đủ icon và 5-7 hashtag ở cuối.
 
 ---
 

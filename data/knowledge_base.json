@@ -161,5 +161,37 @@
     "technical_fact": "Lòng nồi và khay vỉ 100% Inox 304 an toàn tuyệt đối ở nhiệt độ cao; Dung tích lớn 20L cho phép nấu đa tầng linh hoạt; Công nghệ chiên kết hợp hấp hơi nước siêu nhiệt (Steam Fry) giúp thực phẩm chín đều, giữ trọn độ ẩm, không bị khô xơ và không truyền lẫn mùi giữa các tầng nấu.",
     "marketing_claim": "Nấu trọn bữa cơm 3 món (Nướng - Hấp - Hầm) chỉ trong 1 lần bấm nút — Tiết kiệm 60% thời gian, nhân đôi dinh dưỡng với công nghệ Chiên Hơi Nước 2GOOD!",
     "created_at": "2026-09-17 02:13:02.981162"
+  },
+  {
+    "product_code": "2GOOD",
+    "visual_fact": "Nồi chiên hơi nước 2GOOD S100 gà nướng",
+    "technical_fact": "Khoang Inox 304, công nghệ đối lưu hơi nước 360",
+    "marketing_claim": "Giòn rụm ngoài mọng nước trong",
+    "num_photos": 0,
+    "created_at": "2026-09-17 04:10:43.117916"
+  },
+  {
+    "product_code": "2GOOD S100",
+    "visual_fact": "Nồi chiên hơi nước 2GOOD S100 gà nướng",
+    "technical_fact": "Công nghệ Steam Active kết hợp khoang lò 100% Inox 304 chuẩn y tế",
+    "marketing_claim": "Ngoài giòn rụm trong mọng nước, không dầu mỡ độc hại, dễ dàng vệ sinh",
+    "num_photos": 0,
+    "created_at": "2026-09-17 04:14:47.869636"
+  },
+  {
+    "product_code": "2GOOD S100",
+    "visual_fact": "Nồi chiên hơi nước 2GOOD S100 sườn nướng mật ong",
+    "technical_fact": "Công nghệ hơi nước Steam Active kết hợp đối lưu 360 độ và khoang lò Inox 304 toàn phần",
+    "marketing_claim": "Nướng sườn mật ong mềm ngọt tự nhiên, không khô xác, an toàn tuyệt đối cho sức khỏe gia đình",
+    "num_photos": 0,
+    "created_at": "2026-09-17 04:17:30.423539"
+  },
+  {
+    "product_code": "2GOOD S100",
+    "visual_fact": "Nồi chiên hơi nước 2GOOD S100 gà nướng nguyên con",
+    "technical_fact": "Công nghệ hơi nước Steam Active kết hợp khoang lò 100% Inox 304 chuẩn y tế",
+    "marketing_claim": "Gà nướng nguyên con ngoài da giòn rụm, trong mọng nước ngọt tự nhiên, không sợ khô xác hay chất độc hại",
+    "num_photos": 0,
+    "created_at": "2026-09-17 04:20:26.152153"
   }
 ]
