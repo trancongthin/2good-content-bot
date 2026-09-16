@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": "cl_1789596147_1",
+    "chat_id": "6143441477",
+    "message_ids": [
+      12345
+    ],
+    "media_types": [
+      "photo"
+    ],
+    "sample_file_ids": [],
+    "custom_note": "Test caption",
+    "has_video": false,
+    "added_at": "2026-09-17 05:02:27",
+    "last_posted_at": null,
+    "post_count": 0
+  }
+]

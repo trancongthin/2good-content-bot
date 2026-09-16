@@ -209,5 +209,21 @@
     "marketing_claim": "Thưởng thức tiệc sườn nướng BBQ nguyên tảng chuẩn vị nhà hàng ngay tại gia, đãi tiệc đông người nhàn tênh nhờ dung tích khủng 32L và chất liệu Inox 304 an tâm tuyệt đối.",
     "num_photos": 0,
     "created_at": "2026-09-17 04:34:30.831120"
+  },
+  {
+    "product_code": "2GOOD S200",
+    "visual_fact": "Món khoai tây nướng muối ớt phô mai giòn rụm",
+    "technical_fact": "Công nghệ phun sương siêu nhiệt Steam Active và gia nhiệt đối lưu 360 độ không cần lật trở",
+    "marketing_claim": "Ngoài giòn xém thơm lừng - Trong bùi béo dẻo mịn, không cần lật trở, chuẩn vị món ngon tại nhà.",
+    "num_photos": 0,
+    "created_at": "2026-09-17 04:41:19.282943"
+  },
+  {
+    "product_code": "2GOOD S200",
+    "visual_fact": "Test caption",
+    "technical_fact": "Công nghệ phun sương Steam Active, Khoang lò 100% Inox 304 chuẩn y tế không Teflon, Tự làm sạch Steam Clean, Đối lưu 360 độ",
+    "marketing_claim": "Giải pháp nấu nướng toàn diện, an toàn sức khỏe và vệ sinh siêu tốc cho mọi gia đình",
+    "num_photos": 0,
+    "created_at": "2026-09-17 05:02:39.483762"
   }
 ]
