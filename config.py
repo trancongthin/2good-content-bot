@@ -24,6 +24,7 @@ INBOX_DIR.mkdir(exist_ok=True)
 
 KB_FILE = DATA_DIR / "knowledge_base.json"
 MEMORY_FILE = DATA_DIR / "content_memory.json"
+VAULT_FILE = DATA_DIR / "media_vault.json"
 
 if not KB_FILE.exists():
     with open(KB_FILE, "w", encoding="utf-8") as f:
@@ -31,6 +32,10 @@ if not KB_FILE.exists():
 
 if not MEMORY_FILE.exists():
     with open(MEMORY_FILE, "w", encoding="utf-8") as f:
+        json.dump([], f, ensure_ascii=False, indent=2)
+
+if not VAULT_FILE.exists():
+    with open(VAULT_FILE, "w", encoding="utf-8") as f:
         json.dump([], f, ensure_ascii=False, indent=2)
 
 print("🚀 2GOOD AI CONTENT ENGINE IS INITIALIZED...")

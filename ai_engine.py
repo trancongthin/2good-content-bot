@@ -36,21 +36,22 @@ def save_kb(entry):
     with open(KB_FILE, "w", encoding="utf-8") as f:
         json.dump(kb, f, ensure_ascii=False, indent=2)
 
-def analyze_multiple_images_and_generate_content(images_bytes_list, custom_note=""):
+def analyze_multiple_images_and_generate_content(images_bytes_list, custom_note="", has_video=False):
     """
-    Multimodal Pipeline for Album of Images:
-    Analyzes ALL images together in 1 single call to generate exactly 1 unified post
+    Multimodal Pipeline for Album of Images / Video Thumbnails:
+    Analyzes ALL media together in 1 single call to generate exactly 1 unified post
     with 3 authentic, engaging angles with emojis, hashtags, and natural personal tone.
     """
     memory = load_memory()
     recent_memory_str = json.dumps(memory[-5:], ensure_ascii=False) if memory else "Chưa có bài nào."
     num_photos = len(images_bytes_list)
     custom_instruction_prompt = f"\n⚠️ LƯU Ý / YÊU CẦU ĐẶC BIỆT TỪ NGƯỜI DÙNG CHO BÀI NÀY: {custom_note}\n(Bắt buộc phải lồng ghép chi tiết yêu cầu này vào nội dung các bài viết)" if custom_note else ""
+    video_prompt = "\n🎬 BỘ MEDIA NÀY CÓ ĐÍNH KÈM VIDEO QUAY THỰC TẾ (hơi nước bốc lên, thức ăn nướng xèo xèo...). Hãy viết thêm lời nhắc khéo CTV tải clip bên trên về up TikTok / Reels / Facebook Story để hút view và chốt đơn nhanh!" if has_video else ""
 
     system_prompt = f"""
 Bạn là Chuyên gia Sáng tạo Nội dung & Bán hàng thực chiến của thương hiệu gia dụng 2GOOD (Nồi chiên hơi nước S200 dung tích 32L, S100, Nồi nấu chậm Sona i8...).
 
-BẠN ĐƯỢC CẤP {num_photos} BỨC ẢNH CHỤP THỰC TẾ CỦA CÙNG 1 BỘ ẢNH (món ăn, mâm cơm, quá trình nấu, khoang nồi, tính năng...).{custom_instruction_prompt}
+BẠN ĐƯỢC CẤP {num_photos} HÌNH ẢNH / TƯ LIỆU THỰC TẾ CỦA CÙNG 1 BỘ TƯ LIỆU.{video_prompt}{custom_instruction_prompt}
 LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY (BẮT BUỘC TRÁNH TRÙNG LẶP NỘI DUNG NÀY):
 {recent_memory_str}
 
