@@ -28,14 +28,14 @@
 | **Mô hình AI** | Google Gemini Flash | Ưu tiên `gemini-flash-latest`, fallback lite |
 | **GitHub Repo** | `https://github.com/trancongthin/2good-content-bot.git` | Branch chính: `main` |
 | **Cloud Hosting** | **Render.com** (Web Service `srv-dalf2lm5vjqs73f5uhug`) | Chạy ngầm 24/7, tự động build khi push git |
-| **Thư mục dự án máy tính**| `/Users/admin/Documents/antigravity/2good_content_engine` | Nơi chứa mã nguồn trên MacBook của Sếp |
+| **Thư mục dự án máy tính**| `/Users/admin/Documents/antigravity/botcontenttudong2goods200choctv` | Nơi chứa mã nguồn trên MacBook của Sếp |
 
 ---
 
 ## 📂 3. BẢN ĐỒ CÁC TỆP TRONG HỆ THỐNG
 
 ```
-2good_content_engine/
+botcontenttudong2goods200choctv/
 ├── config.py
 │   └── Chứa Bot Token, Chat ID, Kênh đích, cấu hình đường dẫn thư mục data.
 │   └── Khóa Gemini API Key được bọc Base64 để tránh bị GitHub Secret Scanning chặn khi push.
