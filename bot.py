@@ -60,7 +60,7 @@ class HealthCheckHandler(http.server.BaseHTTPRequestHandler):
         self.wfile.write(json.dumps(resp, ensure_ascii=False).encode("utf-8"))
 
     def log_message(self, format, *args):
-        return  # Suppress console HTTP spam
+        return
 
 def start_health_server():
     port = int(os.environ.get("PORT", 8080))
@@ -256,12 +256,12 @@ def build_status_message():
 ━━━━━━━━━━━━━━━━━━━━━
 📡 <b>Kênh CTV kết nối:</b> {channel_title}
 🆔 <b>Channel ID:</b> <code>{channel_id}</code>
-🤖 <b>AI Engine:</b> Google Gemini Flash (Multi-modal)
+🤖 <b>AI Engine:</b> Google Gemini Flash (Đã nạp 3 Góc chuẩn 2GOOD)
 📦 <b>Bộ đệm ảnh đang nhận:</b> {buf_count} ảnh
 📝 <b>Bài nháp chờ duyệt:</b> {pending_count} bài
 📚 <b>Tổng bài đã xuất bản:</b> {total_posted} bài
 
-💡 <i>Mẹo: Bot tự động gom ảnh thông minh và tự phục hồi khi mạng gián đoạn.</i>"""
+💡 <i>Mẹo: Bot tự động gom chùm ảnh và tạo 3 góc bài viết chân thật, dân dã.</i>"""
 
     keyboard = {
         "inline_keyboard": [
@@ -314,30 +314,31 @@ def build_help_message():
     return """📖 <b>HƯỚNG DẪN SỬ DỤNG 2GOOD CONTENT ENGINE:</b>
 
 1️⃣ <b>Tạo bài viết tổng hợp từ nhiều ảnh:</b>
-- Chọn <b>3 đến 6 ảnh</b> sản phẩm / tính năng trong máy.
+- Chọn <b>3 đến 6 ảnh</b> sản phẩm / món ăn trong máy.
 - Gửi <b>cùng một lúc</b> vào khung chat này.
-- Bot sẽ tự động nhận diện cả chùm ảnh, gom lại và phân tích 1 lần duy nhất để tạo ra 01 bài tổng hợp 3 góc (TikTok, Mẹ bỉm, Healthy).
+- AI sẽ gom trọn bộ để phân tích 1 lần và viết <b>01 BÀI TỔNG HỢP VỚI 3 GÓC CHÂN THẬT</b>:
+  • 👩‍👧 <b>Góc 1:</b> Mẹ bỉm sữa & Nội trợ gia đình
+  • 🥗 <b>Góc 2:</b> Eat-clean, Healthy & Inox 304 chuẩn y tế
+  • 🛒 <b>Góc 3:</b> Đại lý / CTV bán hàng dân dã, chất phác
 
 2️⃣ <b>Duyệt & Xuất bản:</b>
 - Sau khi AI soạn xong, Sếp bấm nút để đăng:
-  • 🚀 Đăng trọn bộ cả bài + toàn bộ album ảnh vào Kênh CTV.
-  • 📱 Chỉ đăng bài góc TikTok.
-  • ❤️ Chỉ đăng bài góc Mẹ bỉm.
+  • 🚀 Bắn trọn bộ 3 góc + toàn bộ album ảnh vào Kênh CTV.
+  • 👩‍👧 Chỉ đăng Góc 1 (Mẹ bỉm).
+  • 🥗 Chỉ đăng Góc 2 (Eat-clean).
+  • 🛒 Chỉ đăng Góc 3 (Đại lý bán hàng).
   • ❌ Hủy bài.
 
-3️⃣ <b>Các lệnh quản trị (Gõ lệnh bất cứ lúc nào):</b>
-- <code>/status</code> : Kiểm tra bot còn sống không, thời gian chạy, kênh đích.
+3️⃣ <b>Các lệnh quản trị:</b>
+- <code>/status</code> : Kiểm tra bot online, uptime, kênh CTV.
 - <code>/history</code>: Xem 5 bài viết đã đăng gần nhất.
-- <code>/reset</code>  : Hủy buffer ảnh & xóa sạch hàng chờ khi muốn làm lại.
-- <code>/help</code>   : Xem lại hướng dẫn này.
-
-4️⃣ <b>Kết nối Kênh CTV mới:</b>
-- Chỉ cần Add bot vào Kênh/Nhóm mới với quyền <b>Admin</b>, bot sẽ tự nhận diện ID kênh ngay lập tức!"""
+- <code>/reset</code>  : Hủy buffer ảnh & làm sạch hàng chờ.
+- <code>/help</code>   : Xem lại hướng dẫn này."""
 
 # --- WORKER: PROCESS BUFFERED PHOTOS ---
 def worker_process_all_buffered_photos(file_ids):
     count = len(file_ids)
-    send_message(ADMIN_CHAT_ID, f"🔍 <i>Đang gom và soi toàn bộ <b>{count} ảnh</b> để viết <b>01 BÀI TỔNG HỢP DUY NHẤT</b>... Vui lòng đợi 5-8 giây!</i>")
+    send_message(ADMIN_CHAT_ID, f"🔍 <i>Đang gom và soi toàn bộ <b>{count} ảnh</b> để viết <b>01 BÀI TỔNG HỢP (3 GÓC CHÂN THẬT)</b>... Vui lòng đợi 5-8 giây!</i>")
 
     photos_bytes_list = []
     for fid in file_ids:
@@ -364,38 +365,39 @@ def worker_process_all_buffered_photos(file_ids):
         }
 
     matrix = data.get("content_matrix", {})
-    tiktok = matrix.get("tiktok_hook", "N/A")
-    me_bim = matrix.get("me_bim_zalo", "N/A")
-    healthy = matrix.get("healthy_tech", "N/A")
+    me_bim = matrix.get("me_bim_noi_tro", "N/A")
+    eat_clean = matrix.get("eat_clean_inox304", "N/A")
+    dai_ly = matrix.get("dai_ly_dan_da", "N/A")
 
-    preview_text = f"""<b>🌟 ĐÃ SOẠN XONG 01 BÀI TỔNG HỢP CHO BỘ {len(photos_bytes_list)} ẢNH — {data.get('product_code', '2GOOD')}!</b>
+    preview_text = f"""<b>🌟 ĐÃ SOẠN XONG 01 BÀI CHO BỘ {len(photos_bytes_list)} ẢNH — {data.get('product_code', '2GOOD')}!</b>
 
 <b>📌 FACT KỸ THUẬT:</b> {data.get('technical_fact', '')}
-<b>💡 CLAIM TRUYỀN THÔNG:</b> {data.get('marketing_claim', '')}
+<b>💡 CLAIM THỰC TẾ:</b> {data.get('marketing_claim', '')}
 
 ━━━━━━━━━━━━━━━━━━━━━
-🔥 <b>GÓC 1 (TIKTOK / REELS):</b>
-{tiktok}
-
-━━━━━━━━━━━━━━━━━━━━━
-❤️ <b>GÓC 2 (FACEBOOK / ZALO MẸ BỈM):</b>
+👩‍👧 <b>GÓC 1 (MẸ BỈM SỮA & NỘI TRỢ GIA ĐÌNH):</b>
 {me_bim}
 
 ━━━━━━━━━━━━━━━━━━━━━
-🥗 <b>GÓC 3 (EAT-CLEAN & INOX 304 SO SÁNH):</b>
-{healthy}
+🥗 <b>GÓC 2 (EAT-CLEAN, HEALTHY & INOX 304 CHUẨN Y TẾ):</b>
+{eat_clean}
+
+━━━━━━━━━━━━━━━━━━━━━
+🛒 <b>GÓC 3 (ĐẠI LÝ / CTV BÁN HÀNG DÂN DÃ, CHẤT PHÁC):</b>
+{dai_ly}
 """
 
     inline_keyboard = {
         "inline_keyboard": [
             [
-                {"text": f"🚀 BẮN BÀI NÀY + CẢ BỘ {len(photos_bytes_list)} ẢNH VÀO KÊNH CTV", "callback_data": f"PUB_ALL_{post_id}"}
+                {"text": f"🚀 BẮN TRỌN BỘ 3 GÓC + {len(photos_bytes_list)} ẢNH VÀO KÊNH CTV", "callback_data": f"PUB_ALL_{post_id}"}
             ],
             [
-                {"text": "📱 Chỉ đăng Góc 1 (TikTok)", "callback_data": f"PUB_TT_{post_id}"},
-                {"text": "❤️ Chỉ đăng Góc 2 (Mẹ bỉm)", "callback_data": f"PUB_MB_{post_id}"}
+                {"text": "👩‍👧 Chỉ đăng Góc 1 (Mẹ bỉm)", "callback_data": f"PUB_MB_{post_id}"},
+                {"text": "🥗 Chỉ đăng Góc 2 (Eat-clean)", "callback_data": f"PUB_EC_{post_id}"}
             ],
             [
+                {"text": "🛒 Chỉ đăng Góc 3 (Đại lý dân dã)", "callback_data": f"PUB_DL_{post_id}"},
                 {"text": "❌ Hủy bài này", "callback_data": f"CANCEL_{post_id}"}
             ]
         ]
@@ -489,26 +491,30 @@ def handle_callback(callback_query):
     content_to_publish = ""
     angle_used = ""
     if "PUB_ALL" in data:
-        angle_used = "Trọn bộ 3 góc (TikTok, Mẹ bỉm, Healthy)"
-        content_to_publish = f"""📢 <b>GỢI Ý CONTENT HÔM NAY CHO CTV/ĐẠI LÝ — {prod_code}</b>
-
-🔥 <b>GÓC 1: TIKTOK / REELS</b>
-{matrix.get('tiktok_hook', '')}
+        angle_used = "Trọn bộ 3 góc (Mẹ bỉm, Eat-clean, Đại lý dân dã)"
+        content_to_publish = f"""📢 <b>GỢI Ý CONTENT HÔM NAY CHO CTV / ĐẠI LÝ — {prod_code}</b>
 
 ━━━━━━━━━━━━━━━━━━━━━
-❤️ <b>GÓC 2: MẸ BỈM SỮA / TIỆN LỢI</b>
-{matrix.get('me_bim_zalo', '')}
+👩‍👧 <b>GÓC 1: MẸ BỈM SỮA & NỘI TRỢ GIA ĐÌNH</b>
+{matrix.get('me_bim_noi_tro', '')}
 
 ━━━━━━━━━━━━━━━━━━━━━
-🥗 <b>GÓC 3: EAT-CLEAN / INOX 304</b>
-{matrix.get('healthy_tech', '')}
+🥗 <b>GÓC 2: EAT-CLEAN & INOX 304 CHUẨN Y TẾ</b>
+{matrix.get('eat_clean_inox304', '')}
+
+━━━━━━━━━━━━━━━━━━━━━
+🛒 <b>GÓC 3: BÀI BÁN HÀNG DÂN DÃ (ĐẠI LÝ / CTV)</b>
+{matrix.get('dai_ly_dan_da', '')}
 """
-    elif "PUB_TT" in data:
-        angle_used = "Góc 1: TikTok / Reels"
-        content_to_publish = f"📢 <b>CONTENT TIKTOK HÔM NAY — {prod_code}</b>\n\n{matrix.get('tiktok_hook', '')}"
     elif "PUB_MB" in data:
-        angle_used = "Góc 2: Mẹ bỉm sữa / Gia đình"
-        content_to_publish = f"📢 <b>CONTENT GIA ĐÌNH / MẸ BỈM — {prod_code}</b>\n\n{matrix.get('me_bim_zalo', '')}"
+        angle_used = "Góc 1: Mẹ bỉm sữa & Nội trợ gia đình"
+        content_to_publish = f"📢 <b>CONTENT MẸ BỈM & NỘI TRỢ — {prod_code}</b>\n\n{matrix.get('me_bim_noi_tro', '')}"
+    elif "PUB_EC" in data:
+        angle_used = "Góc 2: Eat-clean & Inox 304 chuẩn y tế"
+        content_to_publish = f"📢 <b>CONTENT EAT-CLEAN & INOX 304 — {prod_code}</b>\n\n{matrix.get('eat_clean_inox304', '')}"
+    elif "PUB_DL" in data:
+        angle_used = "Góc 3: Bài bán hàng dân dã, chất phác"
+        content_to_publish = f"📢 <b>CONTENT BÁN HÀNG THỰC CHIẾN — {prod_code}</b>\n\n{matrix.get('dai_ly_dan_da', '')}"
 
     target_chat = get_target_channel()
     
@@ -534,7 +540,6 @@ def run_bot():
     acquire_single_instance_lock()
     print(f"🚀 2GOOD TELEGRAM BOT (24/7 ROBUST ENGINE) IS RUNNING (PID: {os.getpid()})...")
     
-    # Khởi động Web Health Check Server cho Cloud Hosting
     threading.Thread(target=start_health_server, daemon=True).start()
 
     try:
@@ -581,7 +586,7 @@ def run_bot():
                                 chat_id = msg["chat"]["id"]
                                 
                                 if text == "/start":
-                                    send_message(chat_id, "👋 Chào Sếp Thìn! Tôi là <b>Trợ lý AI Content Engine 2GOOD (24/7)</b>.\n\n📸 Sếp chỉ cần <b>chọn 3-6 ảnh gửi 1 lần</b>, tôi sẽ gom trọn bộ để viết <b>ĐÚNG 1 BÀI TỔNG HỢP DUY NHẤT</b> cho Sếp duyệt 1 chạm!\n\n💡 Gõ <code>/status</code> để kiểm tra hệ thống hoặc <code>/help</code> để xem hướng dẫn.")
+                                    send_message(chat_id, "👋 Chào Sếp Thìn! Tôi là <b>Trợ lý AI Content Engine 2GOOD (24/7)</b>.\n\n📸 Sếp chỉ cần <b>chọn 3-6 ảnh gửi 1 lần</b>, tôi sẽ gom trọn bộ để viết <b>01 BÀI TỔNG HỢP VỚI 3 GÓC CHÂN THẬT</b> cho Sếp duyệt 1 chạm!\n\n💡 Gõ <code>/status</code> để kiểm tra hệ thống hoặc <code>/help</code> để xem hướng dẫn.")
                                 elif text in ["/status", "/ping"]:
                                     st_msg, kb = build_status_message()
                                     send_message(chat_id, st_msg, reply_markup=kb)
