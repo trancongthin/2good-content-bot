@@ -94,6 +94,7 @@ def get_channel_info():
 
 # --- BUFFER & PENDING POSTS STATE ---
 BUFFER_FILE_IDS = []
+BUFFER_CAPTIONS = []
 BUFFER_LOCK = threading.Lock()
 DEBOUNCE_TIMER = None
 PENDING_POSTS = {}
@@ -336,9 +337,10 @@ def build_help_message():
 - <code>/help</code>   : Xem lại hướng dẫn này."""
 
 # --- WORKER: PROCESS BUFFERED PHOTOS ---
-def worker_process_all_buffered_photos(file_ids):
+def worker_process_all_buffered_photos(file_ids, custom_note=""):
     count = len(file_ids)
-    send_message(ADMIN_CHAT_ID, f"🔍 <i>Đang gom và soi toàn bộ <b>{count} ảnh</b> để viết <b>01 BÀI TỔNG HỢP (3 GÓC CHÂN THẬT)</b>... Vui lòng đợi 5-8 giây!</i>")
+    note_prompt = f" + yêu cầu: <i>\"{custom_note}\"</i>" if custom_note else ""
+    send_message(ADMIN_CHAT_ID, f"🔍 <i>Đang gom và soi toàn bộ <b>{count} ảnh</b>{note_prompt} để viết <b>01 BÀI TỔNG HỢP (ĐẦY ĐỦ ICON & HASHTAGS)</b>... Vui lòng đợi 5-8 giây!</i>")
 
     photos_bytes_list = []
     for fid in file_ids:
@@ -350,7 +352,7 @@ def worker_process_all_buffered_photos(file_ids):
         send_message(ADMIN_CHAT_ID, "❌ Không tải được ảnh từ Telegram. Vui lòng gửi lại!")
         return
 
-    data = analyze_multiple_images_and_generate_content(photos_bytes_list)
+    data = analyze_multiple_images_and_generate_content(photos_bytes_list, custom_note=custom_note)
     if not data:
         send_message(ADMIN_CHAT_ID, "❌ Lỗi khi AI phân tích bộ ảnh (Mạng hoặc API bận). Vui lòng thử lại sau vài giây!")
         return
@@ -406,14 +408,16 @@ def worker_process_all_buffered_photos(file_ids):
     send_message(ADMIN_CHAT_ID, preview_text, reply_markup=inline_keyboard)
 
 def on_debounce_timeout():
-    global BUFFER_FILE_IDS
+    global BUFFER_FILE_IDS, BUFFER_CAPTIONS
     with BUFFER_LOCK:
         if not BUFFER_FILE_IDS:
             return
         to_process = list(BUFFER_FILE_IDS)
         BUFFER_FILE_IDS = []
+        custom_note = " ".join(dict.fromkeys(BUFFER_CAPTIONS)).strip()
+        BUFFER_CAPTIONS = []
 
-    threading.Thread(target=worker_process_all_buffered_photos, args=[to_process], daemon=True).start()
+    threading.Thread(target=worker_process_all_buffered_photos, args=[to_process, custom_note], daemon=True).start()
 
 def handle_incoming_photo_non_blocking(message):
     global DEBOUNCE_TIMER
@@ -427,9 +431,12 @@ def handle_incoming_photo_non_blocking(message):
         return
     highest_photo = photos[-1]
     file_id = highest_photo["file_id"]
+    caption = message.get("caption", "").strip()
 
     with BUFFER_LOCK:
         BUFFER_FILE_IDS.append(file_id)
+        if caption:
+            BUFFER_CAPTIONS.append(caption)
         if DEBOUNCE_TIMER and DEBOUNCE_TIMER.is_alive():
             DEBOUNCE_TIMER.cancel()
         
