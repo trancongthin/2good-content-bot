@@ -650,7 +650,7 @@ def run_bot():
                         
                         elif "message" in update:
                             msg = update["message"]
-                            chat_id = msg["chat"]["id"]
+                            chat_id = str(msg["chat"]["id"])
                             if chat_id != str(ADMIN_CHAT_ID):
                                 send_message(chat_id, "⚠️ Bạn không có quyền Admin.")
                                 continue
