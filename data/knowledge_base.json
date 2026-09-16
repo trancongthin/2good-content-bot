@@ -193,5 +193,21 @@
     "marketing_claim": "Gà nướng nguyên con ngoài da giòn rụm, trong mọng nước ngọt tự nhiên, không sợ khô xác hay chất độc hại",
     "num_photos": 0,
     "created_at": "2026-09-17 04:20:26.152153"
+  },
+  {
+    "product_code": "2GOOD S200",
+    "visual_fact": "Món gà nướng thảo mộc cho bữa cơm tối",
+    "technical_fact": "Công nghệ phun sương siêu nhiệt Steam Active và khoang lò inox 304 không dính",
+    "marketing_claim": "Bữa tối thảnh thơi, trọn vị ngon ngọt mọng tự nhiên với gà nướng thảo mộc",
+    "num_photos": 0,
+    "created_at": "2026-09-17 04:34:11.137827"
+  },
+  {
+    "product_code": "2GOOD S200",
+    "visual_fact": "Món sườn nướng tảng sốt BBQ cuối tuần",
+    "technical_fact": "Dung tích siêu lớn 32L thiết kế đa tầng nướng cùng lúc, kết hợp công nghệ Steam Active bù ẩm tự động và khoang lò 100% Inox 304 chuẩn y tế toàn phần.",
+    "marketing_claim": "Thưởng thức tiệc sườn nướng BBQ nguyên tảng chuẩn vị nhà hàng ngay tại gia, đãi tiệc đông người nhàn tênh nhờ dung tích khủng 32L và chất liệu Inox 304 an tâm tuyệt đối.",
+    "num_photos": 0,
+    "created_at": "2026-09-17 04:34:30.831120"
   }
 ]
