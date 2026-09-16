@@ -376,7 +376,10 @@ def worker_process_all_buffered_photos(file_ids, custom_note=""):
     eat_clean = matrix.get("eat_clean_inox304", "N/A")
     dai_ly = matrix.get("dai_ly_dan_da", "N/A")
 
-    preview_text = f"""<b>🌟 ĐÃ SOẠN XONG 01 BÀI CHO BỘ {len(photos_bytes_list)} ẢNH — {data.get('product_code', '2GOOD')}!</b>
+    is_recycled = "Kênh CTV" in custom_note or "Ảnh cũ" in custom_note
+    badge_title = f"🔄 <b>ĐÃ TÁI SINH BÀI VIẾT MỚI TỪ BỘ ẢNH CŨ ({len(photos_bytes_list)} ẢNH) — {data.get('product_code', '2GOOD')}!</b>" if is_recycled else f"🌟 <b>ĐÃ SOẠN XONG 01 BÀI CHO BỘ {len(photos_bytes_list)} ẢNH — {data.get('product_code', '2GOOD')}!</b>"
+
+    preview_text = f"""{badge_title}
 
 <b>📌 FACT KỸ THUẬT:</b> {data.get('technical_fact', '')}
 <b>💡 CLAIM THỰC TẾ:</b> {data.get('marketing_claim', '')}
@@ -447,6 +450,12 @@ def handle_incoming_photo_non_blocking(message):
     highest_photo = photos[-1]
     file_id = highest_photo["file_id"]
     caption = message.get("caption", "").strip()
+    is_forwarded = bool(message.get("forward_date") or message.get("forward_origin") or message.get("forward_from_chat"))
+    if is_forwarded:
+        if not caption:
+            caption = "Ảnh cũ chuyển tiếp từ Kênh CTV: Yêu cầu ĐỔI GÓC NHÌN MỚI TOANH, không trùng lặp bài đã đăng"
+        else:
+            caption = f"Ảnh cũ chuyển tiếp từ Kênh CTV - Yêu cầu riêng: {caption}"
 
     with BUFFER_LOCK:
         BUFFER_FILE_IDS.append(file_id)
