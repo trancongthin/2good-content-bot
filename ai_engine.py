@@ -70,18 +70,29 @@ LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY (BẮT BUỘC TRÁNH TRÙNG LẶP NỘI
 3. VĂN PHONG TỰ NHIÊN, CHÂN THẬT: Giọng văn người thật việc thật, mộc mạc, gần gũi, chia sẻ từ trải nghiệm thực tế, tuyệt đối KHÔNG viết văn mẫu khô khan hay quảng cáo lộ liễu.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📝 SOẠN ĐÚNG 1 BÀI TỔNG HỢP VỚI 3 GÓC TIẾP CẬN:
+📝 SOẠN ĐÚNG 1 BÀI TỔNG HỢP VỚI 3 GÓC TIẾP CẬN (TUYỆT ĐỐI CẤM VĂN MẪU QUẢNG CÁO):
 
-👩‍👧 GÓC 1: MẸ BỈM SỮA & NỘI TRỢ GIA ĐÌNH (Facebook / Zalo tâm sự)
-- Giọng văn: Ấm áp, tâm sự chân thành giữa các mẹ bỉm/chị em nội trợ.
-- Trọng tâm: Bữa cơm ngon lành đủ món chỉ 15-20 phút, giải phóng thời gian, vừa bồng con vừa nấu nhàn tênh, không dầu mỡ bắn bẩn, an toàn cho bé và cả nhà. Đầy đủ emoji sinh động và bộ hashtag ở cuối.
+👩‍👧 GÓC 1: TÂM SỰ NỘI TRỢ / MẸ BỈM SỮA (Chị em tâm tình buôn chuyện với nhau, cấm tiệt văn mẫu)
+- Giọng văn: Như hai người phụ nữ thân thiết ngồi dốc lòng tâm sự, xưng hô "Em - Các chị / Các mẹ ơi / Mấy bà ơi". Cực kỳ gần gũi, chân thật, tự nhiên như post Facebook/Zalo chia sẻ đời thường.
+- Tuyệt đối CẤM các tít sáo rỗng: "Nấu ăn nhàn tênh như đi chơi", "Bí quyết cho mẹ hiện đại", "Hôm nay em xin giới thiệu".
+- Trọng tâm kể chuyện:
+  • Nhắc nỗi khổ lúc trước: Dùng nồi cũ nướng miếng thịt hay con gà thì ngoài cháy khét mà bên trong khô cong queo như rơm, con nhai trẹo quai hàm nhè ra; dầu mỡ bắn tứ tung, rửa nồi kỳ cọ sợ tróc chống dính mệt bở hơi tai.
+  • Cảm giác "sang trang" khi dùng nồi chiên hơi nước 2GOOD: Chiều về tống gà/thịt vào bấm nút, thảnh thơi đi tắm rửa bồng con, 20 phút mở ra thơm nức mũi cả xóm. Da giòn rụm mà bên trong xé ra nước ngọt chảy tía ra, thịt mềm lịm con ăn thun thút hết veo cả đĩa.
+  • Khâu dọn dẹp: Bật hơi nước Steam Clean lau nhẹ một đường là sạch bong, khoang Inox 304 không lo trầy xước.
+- Đầy đủ icon emoji điểm xuyết tự nhiên và 5-7 hashtag liên quan ở cuối.
 
-🥗 GÓC 2: EAT-CLEAN, HEALTHY & INOX 304 CHUẨN Y TẾ (Sức khỏe & Lý trí)
-- Giọng văn: Mộc mạc, thực tế, phân tích dễ hiểu.
-- Trọng tâm: Nói KHÔNG với lớp chống dính Teflon bong tróc độc hại; Nồi chiên hơi nước giữ trọn nước ngọt và dinh dưỡng trong từng thớ thịt (ức gà, cá hồi, sườn...), giảm tối đa dầu mỡ xấu mà đồ ăn vẫn mềm mọng, không bị khô nghẹn. Đầy đủ emoji sinh động và bộ hashtag ở cuối.
+🥗 GÓC 2: HỘI CHỊ EM EAT-CLEAN, GIỮ DÁNG & HEALTHY (Tâm tình hội chị em cùng gu ăn uống, cấm giọng giảng giải y khoa)
+- Giọng văn: Giọng một người bạn cùng gu ăn kiêng/Eat-clean/healthy dốc bầu tâm sự với chị em, không viết như luận văn khoa học hay bài báo y tế.
+- Trọng tâm đồng cảm:
+  • Đồng cảm nỗi khổ: Dân Eat-clean ngày nào cũng ức gà, cá hồi, rau củ... Nướng nồi thường thì khô xác như gỗ mục, ăn nghẹn rát cả họng nuốt không trôi, phải chan nước canh liên tục phát ngấy.
+  • Nồi chiên hơi nước này đúng là cứu tinh: Chiên kết hợp phun sương hơi nước giúp ức gà hay cá hồi xém vàng bên ngoài nhưng cắn vào nước ngọt tía ra mềm mọng như ngoài hàng, không cần 1 giọt dầu mỡ nào mà vẫn tống khứ calo xấu cực đỉnh!
+  • Cảnh báo sức khỏe: Nhắc chị em tránh xa mấy cái nồi cũ tráng Teflon đen đen bong tróc độc hại. Nồi này khoang 100% Inox 304 chuẩn y tế sáng bóng, không lớp chống dính nào cả, cọ rửa búi sắt thoải mái, nấu cho con hay cả nhà ăn yên tâm tuyệt đối!
+- Đầy đủ icon emoji và 5-7 hashtag liên quan ở cuối.
 
-🛒 GÓC 3: ĐẠI LÝ / CTV BÁN HÀNG DÂN DÃ, CHẤT PHÁC (Bán lẻ thực chiến)
-- Giọng văn: Cực kỳ dân dã, chất phác, thân mật kiểu người thật việc thật: "Em chào các bác / Các anh chị em ơi, hôm nay em gom được lô nồi chiên hơi nước 2GOOD chính hãng giá siêu hời... Em bán cho các bác giá đẹp, bao test bao đổi 1-1, bác nào lấy ới em ship tận tay nhé!". Đầy đủ emoji sinh động và bộ hashtag ở cuối.
+🛒 GÓC 3: ĐẠI LÝ / CTV BÁN HÀNG DÂN DÃ, CHẤT PHÁC (Bán lẻ thực chiến - Giữ nguyên phong độ cực tốt)
+- Giọng văn: Cực kỳ dân dã, chất phác, xởi lởi: "Em chào các bác / Các anh chị em ơi, hôm nay em gom được lô nồi chiên hơi nước 2GOOD chính hãng giá siêu hời... Em bán giá đẹp, bao test bao đổi 1-1 cho các bác yên tâm, bác nào lấy ới em ship tận tay nhé!".
+- Nếu cụm bài có video: Nhắc khéo CTV tải clip hơi nước bốc lên / thức ăn nướng xèo xèo về up TikTok / Reels để hút khách và chốt đơn nhanh.
+- Đầy đủ icon emoji và 5-7 hashtag ở cuối.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 HÃY TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON CHUẨN (KHÔNG THÊM BẤT KỲ CHỮ NÀO NGOÀI JSON):
@@ -91,8 +102,8 @@ HÃY TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON CHUẨN (KHÔNG THÊM BẤT KỲ CH�
   "technical_fact": "Chi tiết kỹ thuật nổi bật (VD: Khoang Inox 304, Hơi nước Steam Active...)",
   "marketing_claim": "Tuyên bố thực tế (VD: Ngoài giòn rụm trong mọng nước ngọt)",
   "content_matrix": {{
-    "me_bim_noi_tro": "Toàn bộ bài viết Góc 1 (Tiêu đề + Emoji + Thân bài tâm sự + CTA + Hashtags)",
-    "eat_clean_inox304": "Toàn bộ bài viết Góc 2 (Tiêu đề + Emoji + Thân bài Healthy Inox 304 + CTA + Hashtags)",
+    "me_bim_noi_tro": "Toàn bộ bài viết Góc 1 (Tiêu đề + Emoji + Thân bài tâm sự chị em cực kỳ tự nhiên + CTA + Hashtags)",
+    "eat_clean_inox304": "Toàn bộ bài viết Góc 2 (Tiêu đề + Emoji + Thân bài Eat-clean mọng nước Inox 304 + CTA + Hashtags)",
     "dai_ly_dan_da": "Toàn bộ bài viết Góc 3 (Tiêu đề + Emoji + Bài bán hàng dân dã, chất phác + CTA + Hashtags)"
   }}
 }}
@@ -193,10 +204,10 @@ LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY:
 3. VĂN PHONG CHÂN THẬT, DÂN DÃ, CHẤT PHÁC: Tuyệt đối không viết văn mẫu khô khan.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📝 SOẠN 01 BÀI TỔNG HỢP VỚI 3 GÓC TIẾP CẬN BÁM SÁT YÊU CẦU:
-👩‍👧 GÓC 1: MẸ BỈM SỮA & NỘI TRỢ GIA ĐÌNH (Facebook/Zalo tâm sự ấm áp)
-🥗 GÓC 2: EAT-CLEAN, HEALTHY & INOX 304 CHUẨN Y TẾ (Sức khỏe & Lý trí mộc mạc)
-🛒 GÓC 3: ĐẠI LÝ / CTV BÁN HÀNG DÂN DÃ, CHẤT PHÁC (Bán lẻ thực chiến: "Các bác ơi / Các anh chị ơi...")
+📝 SOẠN 01 BÀI TỔNG HỢP VỚI 3 GÓC TIẾP CẬN BÁM SÁT YÊU CẦU (CẤM VĂN MẪU):
+👩‍👧 GÓC 1: TÂM SỰ NỘI TRỢ / MẸ BỈM SỮA (Như hai chị em ngồi dốc lòng buôn chuyện với nhau, xưng hô 'Em - Các chị / Các mẹ ơi / Mấy bà ơi'. Tuyệt đối cấm văn mẫu quảng cáo như 'Nấu ăn nhàn tênh', 'Bí quyết nội trợ'. Kể câu chuyện chân thật: trước nướng nồi cũ thịt khô cong queo con nhai nhè ra, giờ có chiên hơi nước thịt mềm mọng nước con ăn thun thút, dọn rửa nhàn tênh nhờ khoang Inox 304).
+🥗 GÓC 2: HỘI CHỊ EM EAT-CLEAN & HEALTHY (Tâm tình hội chị em cùng gu ăn kiêng/giữ dáng, cấm giọng giảng giải y khoa. Kể nỗi khổ ăn ức gà/cá hồi nồi thường khô xác nghẹn rát họng, giờ có nồi chiên hơi nước ức gà ngoài xém trong mọng nước ngọt lịm không cần giọt dầu nào, khoang Inox 304 không sợ hoá chất chống dính Teflon).
+🛒 GÓC 3: ĐẠI LÝ / CTV BÁN HÀNG DÂN DÃ, CHẤT PHÁC (Bán lẻ thực chiến: "Các bác ơi / Các anh chị ơi, hôm nay em gom được lô chính hãng giá hời... Bao test 1-1, bác nào lấy ới em ship tận tay nhé!").
 
 HÃY TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON CHUẨN:
 {{
@@ -205,8 +216,8 @@ HÃY TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON CHUẨN:
   "technical_fact": "Điểm kỹ thuật nhấn mạnh",
   "marketing_claim": "Thông điệp chính",
   "content_matrix": {{
-    "me_bim_noi_tro": "Toàn bộ bài viết Góc 1 (Tiêu đề + Emoji + Thân bài tâm sự + CTA + Hashtags)",
-    "eat_clean_inox304": "Toàn bộ bài viết Góc 2 (Tiêu đề + Emoji + Thân bài Healthy Inox 304 + CTA + Hashtags)",
+    "me_bim_noi_tro": "Toàn bộ bài viết Góc 1 (Tiêu đề + Emoji + Thân bài tâm sự chị em cực kỳ tự nhiên + CTA + Hashtags)",
+    "eat_clean_inox304": "Toàn bộ bài viết Góc 2 (Tiêu đề + Emoji + Thân bài Eat-clean mọng nước Inox 304 + CTA + Hashtags)",
     "dai_ly_dan_da": "Toàn bộ bài viết Góc 3 (Tiêu đề + Emoji + Bài bán hàng dân dã, chất phác + CTA + Hashtags)"
   }}
 }}
