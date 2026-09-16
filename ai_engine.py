@@ -64,26 +64,30 @@ LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY (BẮT BUỘC TRÁNH TRÙNG LẶP NỘI
 5. TỰ LÀM SẠCH BẰNG HƠI NƯỚC (STEAM CLEAN): Hơi nước làm mềm nhũn dầu mỡ bám dính, chỉ cần dùng khăn lau nhẹ 1 đường là sạch bong.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✍️ QUY TẮC BÀI ĐĂNG (BẮT BUỘC):
-1. ICON / EMOJI SINH ĐỘNG: Điểm xuyết các icon/emoji phù hợp tự nhiên (🍗, 🥩, 🥦, 👩‍🍳, ✨, ⏰, ❤️, 💯, 🌿, 🛒...) để ngắt ý, làm nổi bật điểm nhấn, giúp bài viết trên Facebook/Zalo bắt mắt, cuốn hút và dễ đọc.
-2. BỘ HASHTAGS CHUẨN: Ở cuối MỖI bài viết, BẮT BUỘC có 5–7 hashtag liên quan đến sản phẩm, món ăn, thương hiệu 2GOOD (Ví dụ: #2GOOD #NoiChienHoiNuoc2GOOD #2GOOD_S200 #MonNgonMoiNgay #Inox304 #MeBimNoiTro #EatClean).
-3. VĂN PHONG TỰ NHIÊN, CHÂN THẬT: Giọng văn người thật việc thật, mộc mạc, gần gũi, chia sẻ từ trải nghiệm thực tế, tuyệt đối KHÔNG viết văn mẫu khô khan hay quảng cáo lộ liễu.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✍️ QUY TẮC XƯNG HÔ & VĂN PHONG (BẮT BUỘC TUÂN THỦ 100%):
+1. QUY TẮC XƯNG HÔ CHUẨN:
+   • ĐƯỢC PHÉP DÙNG: Xưng "Em" - Gọi "Mọi người" (VD: "Hôm nay em chia sẻ với mọi người...", "Mọi người cho em hỏi chút...", "Xứng đáng để mọi người làm thử đấy ạ...").
+   • ĐƯỢC PHÉP DÙNG: Xưng "Em" - Gọi "Các bác" (VD: "Em chào các bác...", "Các bác cho em hỏi chút...", "Hôm nay rảnh rảnh làm món này ngon lắm các bác ơi...").
+   • TUYỆT ĐỐI CẤM: KHÔNG DÙNG "các chị ơi", "các mẹ ơi", "mấy bà ơi", "hỡi ôi". Xưng "em - mọi người" hoặc "em - các bác" để cả nam, nữ, già trẻ đọc đều thấy gần gũi, tự nhiên và chân thật!
+2. ICON / EMOJI SINH ĐỘNG: Điểm xuyết emoji phù hợp tự nhiên (🍗, 🥩, 🥦, ✨, ⏰, ❤️, 💯, 🌿, 🛒...).
+3. BỘ HASHTAGS CHUẨN: Ở cuối MỖI bài viết có 5–7 hashtag liên quan (#2GOOD #NoiChienHoiNuoc2GOOD #2GOOD_S200 #MonNgonMoiNgay #Inox304 #GiaDinh #EatClean).
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📝 SOẠN ĐÚNG 1 BÀI TỔNG HỢP VỚI 3 GÓC TIẾP CẬN (TUYỆT ĐỐI KHÔNG DÙNG GIỌNG KỊCH HAY VĂN MẪU):
+📝 SOẠN ĐÚNG 1 BÀI TỔNG HỢP VỚI 3 GÓC TIẾP CẬN:
 
-👩‍👧 GÓC 1: TÂM SỰ NỘI TRỢ / MẸ BỈM SỮA (Đa dạng phong cách: Chia sẻ món ngon, mách nhỏ mẹo bếp núc, hoặc hỏi han nhẹ nhàng)
-- BẮT BUỘC ĐA DẠNG MỞ ĐẦU (KHÔNG ĐƯỢC BÀI NÀO CŨNG ĐẶT CÂU HỎI), linh hoạt chọn 1 trong các kiểu mở bài sau:
-  • KIỂU 1 (CHIA SẺ / RỦ RÊ LÀM THỬ): "Hôm nay rảnh rảnh làm món này cũng ngon đấy các chị ạ, con nhà em ăn tì tì hết sạch đĩa luôn, xứng đáng để mọi người làm thử đấy...", "Chiều nay đổi vị cho cả nhà làm món này ăn cuốn phết các chị ơi..."
-  • KIỂU 2 (TỰ SỰ TRẢI NGHIỆM): "Nói thật chứ trước giờ em lười khoản nướng thịt lắm vì sợ khô khốc, mà từ hôm làm thử bằng em này thấy khác hẳn...", "Lâu lắm mới làm được bữa cơm vừa nhanh vừa ưng ý thế này..."
-  • KIỂU 3 (HỎI HAN TƯƠNG TÁC): "Các chị cho em hỏi chút...", "Không biết nhà các chị các bé có kén ăn thịt nướng giống bé nhà em không..."
-- Nội dung chia sẻ: Kể chuyện thực tế, mộc mạc, con cái ăn thun thút, thịt mềm mọng nước không khô khốc, khoang Inox 304 bật hơi nước lau nhẹ là sạch. Điểm xuyết emoji và 5-7 hashtag ở cuối.
+👩‍👧 GÓC 1: TÂM SỰ NỘI TRỢ / BỮA CƠM GIA ĐÌNH (Xưng 'Em' - Gọi 'Mọi người' hoặc 'Các bác')
+- ĐA DẠNG MỞ ĐẦU (Luân phiên giữa chia sẻ món ngon, kể chuyện thật, hoặc hỏi han):
+  • KIỂU 1 (CHIA SẺ / RỦ RÊ LÀM THỬ): "Hôm nay rảnh rảnh làm món này cũng ngon đấy mọi người ạ, con nhà em ăn tì tì hết sạch đĩa luôn, xứng đáng để mọi người làm thử đấy...", "Hôm nay rảnh rảnh làm món này ngon lắm các bác ơi, con nhà em ăn tì tì hết sạch đĩa luôn..."
+  • KIỂU 2 (TỰ SỰ TRẢI NGHIỆM): "Nói thật chứ trước giờ em lười khoản nướng thịt lắm vì sợ khô khốc, mà từ hôm làm thử bằng em 2GOOD này thấy khác hẳn mọi người ạ..."
+  • KIỂU 3 (HỎI HAN TƯƠNG TÁC): "Mọi người cho em hỏi chút...", "Các bác cho em hỏi chút, không biết nhà các bác các bé có kén ăn thịt nướng giống bé nhà em không..."
+- Nội dung: Kể chuyện thực tế, con cái ăn khen ngon, thịt mềm mọng nước không khô khốc, khoang Inox 304 bật hơi nước lau nhẹ là sạch. Điểm xuyết emoji và 5-7 hashtag ở cuối.
 
-🥗 GÓC 2: CHỊ EM ĂN UỐNG LÀNH MẠNH, HEALTHY (Đa dạng: Chia sẻ thực đơn mọng nước, mách mẹo healthy, hoặc tâm tình hội chị em)
-- BẮT BUỘC ĐA DẠNG MỞ ĐẦU (KHÔNG CHỈ MỖI CÂU HỎI):
-  • KIỂU 1 (CHIA SẺ KINH NGHIỆM THẬT): "Chị em nào thích ăn Eat-clean mà sợ ức gà hay cá hồi bị khô xác thì thử ngay cách này nhé, đảm bảo mềm mọng nước luôn...", "Mách nhỏ cho hội chị em giữ dáng món này ăn ngon mà chẳng cần một giọt dầu mỡ nào..."
-  • KIỂU 2 (TÂM TÌNH ĐỒNG CẢM): "Ăn kiêng healthy mà đồ ăn cứ khô như củi thì đúng là nản thật sự các chị ạ, may mà đợt này em tìm được bí quyết nướng bù hơi nước này..."
-  • KIỂU 3 (HỎI Ý KIẾN): "Chị em cảm thấy vấn đề này như thế nào...", "Có chị nào giống em, ăn uống thì kỹ tính mà sợ nhất mấy cái nồi cũ tráng chống dính Teflon độc hại không..."
+🥗 GÓC 2: ĂN UỐNG LÀNH MẠNH, HEALTHY & EAT-CLEAN (Xưng 'Em' - Gọi 'Mọi người' hoặc 'Các bác')
+- ĐA DẠNG MỞ ĐẦU (Không chỉ mỗi câu hỏi):
+  • KIỂU 1 (CHIA SẺ MẸO HEALTHY): "Mọi người ai thích ăn đồ nướng mà sợ khô xác thì thử ngay cách này nhé, đảm bảo mềm mọng nước luôn...", "Mách nhỏ cho các bác món này ăn ngon mà chẳng cần một giọt dầu mỡ nào..."
+  • KIỂU 2 (TÂM TÌNH ĐỒNG CẢM): "Ăn kiêng healthy mà đồ ăn cứ khô như củi thì đúng là nản thật sự các bác ạ, may mà đợt này em tìm được bí quyết nướng bù hơi nước này..."
+  • KIỂU 3 (HỎI Ý KIẾN): "Mọi người cảm thấy vấn đề này như thế nào...", "Có bác nào giống em, ăn uống thì kỹ tính mà sợ nhất mấy cái nồi cũ tráng chống dính Teflon đen đen độc hại không..."
 - Nội dung: Chia sẻ cách nướng hơi nước thịt ngọt mọng tự nhiên, an tâm khoang Inox 304 chuẩn y tế cọ rửa búi sắt thoải mái không sợ bong tróc hoá chất. Điểm xuyết emoji và 5-7 hashtag ở cuối.
 
 🛒 GÓC 3: ĐẠI LÝ / CTV BÁN HÀNG DÂN DÃ, CHẤT PHÁC (Bán lẻ thực chiến - Giữ nguyên phong độ cực tốt)
@@ -195,16 +199,19 @@ LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY:
 4. TỰ LÀM SẠCH STEAM CLEAN: Hơi nước siêu nhiệt làm mềm dầu mỡ bám dính, lau nhẹ 1 đường là sạch bóng.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✍️ QUY TẮC BÀI ĐĂNG (BẮT BUỘC):
-1. ICON / EMOJI SINH ĐỘNG: Điểm xuyết emoji phù hợp tự nhiên (🍗, 🥦, 👩‍🍳, ✨, ⏰, ❤️, 💯, 🌿, 🛒...).
-2. BỘ HASHTAGS CHUẨN: Ở cuối MỖI bài viết, BẮT BUỘC có 5–7 hashtag liên quan (#2GOOD #NoiChienHoiNuoc2GOOD #2GOOD_S200 #MonNgonMoiNgay #Inox304 #MeBimNoiTro).
-3. VĂN PHONG CHÂN THẬT, DÂN DÃ, CHẤT PHÁC: Tuyệt đối không viết văn mẫu khô khan.
+✍️ QUY TẮC XƯNG HÔ & VĂN PHONG (BẮT BUỘC TUÂN THỦ 100%):
+1. QUY TẮC XƯNG HÔ CHUẨN:
+   • ĐƯỢC PHÉP DÙNG: Xưng "Em" - Gọi "Mọi người" (VD: "Hôm nay em chia sẻ với mọi người...", "Mọi người cho em hỏi chút...", "Xứng đáng để mọi người làm thử đấy ạ...").
+   • ĐƯỢC PHÉP DÙNG: Xưng "Em" - Gọi "Các bác" (VD: "Em chào các bác...", "Các bác cho em hỏi chút...", "Hôm nay rảnh rảnh làm món này ngon lắm các bác ơi...").
+   • TUYỆT ĐỐI CẤM: KHÔNG DÙNG "các chị ơi", "các mẹ ơi", "mấy bà ơi", "hỡi ôi". Xưng "em - mọi người" hoặc "em - các bác" để cả nam, nữ, già trẻ đọc đều thấy gần gũi, tự nhiên và chân thật!
+2. ICON / EMOJI SINH ĐỘNG: Điểm xuyết emoji phù hợp tự nhiên (🍗, 🥩, 🥦, ✨, ⏰, ❤️, 💯, 🌿, 🛒...).
+3. BỘ HASHTAGS CHUẨN: Ở cuối MỖI bài viết có 5–7 hashtag liên quan (#2GOOD #NoiChienHoiNuoc2GOOD #2GOOD_S200 #MonNgonMoiNgay #Inox304 #GiaDinh #EatClean).
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📝 SOẠN 01 BÀI TỔNG HỢP VỚI 3 GÓC TIẾP CẬN BÁM SÁT YÊU CẦU (TUYỆT ĐỐI KHÔNG DÙNG TỪ NGỮ KỊCH CỠM HOẶC VĂN MẪU):
-👩‍👧 GÓC 1: TÂM SỰ NỘI TRỢ / MẸ BỈM SỮA (Đa dạng phong cách, KHÔNG ĐƯỢC BÀI NÀO CŨNG ĐẶT CÂU HỎI. Luân phiên giữa: 1) Chia sẻ rủ rê làm thử: 'Hôm nay rảnh rảnh làm món này cũng ngon đấy các chị ạ, con nhà em ăn tì tì hết sạch đĩa luôn, xứng đáng để mọi người làm thử đấy...', 2) Kể chuyện trải nghiệm thật khi nấu cơm nhanh gọn con khen ngon, hoặc 3) Đặt câu hỏi hỏi han nhẹ nhàng: 'Các chị cho em hỏi chút...').
-🥗 GÓC 2: HỘI CHỊ EM ĂN UỐNG LÀNH MẠNH, HEALTHY (Đa dạng: 1) Mách nhỏ mẹo nướng ức gà/cá hồi mọng nước cho hội giữ dáng, 2) Tâm tình đồng cảm nỗi ngán đồ nướng khô xác, 3) Hỏi ý kiến chị em về chất lượng an toàn Inox 304 không lo Teflon độc hại).
-🛒 GÓC 3: ĐẠI LÝ / CTV BÁN HÀNG DÂN DÃ, CHẤT PHÁC (Bán lẻ thực chiến: "Các bác ơi / Các anh chị ơi, hôm nay em gom được lô chính hãng giá hời... Bao test 1-1, bác nào lấy ới em ship tận tay nhé!").
+📝 SOẠN 01 BÀI TỔNG HỢP VỚI 3 GÓC TIẾP CẬN BÁM SÁT YÊU CẦU:
+👩‍👧 GÓC 1: TÂM SỰ NỘI TRỢ / BỮA CƠM GIA ĐÌNH (Xưng 'Em' - Gọi 'Mọi người' hoặc 'Các bác'. Luân phiên: 1) Chia sẻ món ngon rủ rê làm thử: 'Hôm nay rảnh rảnh làm món này cũng ngon đấy mọi người ạ...', 2) Kể chuyện thật con ăn khen ngon, hoặc 3) Hỏi han nhẹ nhàng: 'Mọi người cho em hỏi chút...').
+🥗 GÓC 2: ĂN UỐNG LÀNH MẠNH, HEALTHY (Xưng 'Em' - Gọi 'Mọi người' hoặc 'Các bác'. Chia sẻ mẹo nướng hơi nước mọng thịt không khô xác, an tâm khoang Inox 304 không sợ Teflon độc hại).
+🛒 GÓC 3: ĐẠI LÝ / CTV BÁN HÀNG DÂN DÃ, CHẤT PHÁC (Bán lẻ thực chiến: "Các bác ơi / Các anh chị em ơi, hôm nay em gom được lô chính hãng giá hời... Bao test 1-1, bác nào lấy ới em ship tận tay nhé!").
 
 HÃY TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON CHUẨN:
 {{
