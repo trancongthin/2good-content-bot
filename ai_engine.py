@@ -72,20 +72,19 @@ LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY (BẮT BUỘC TRÁNH TRÙNG LẶP NỘI
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 📝 SOẠN ĐÚNG 1 BÀI TỔNG HỢP VỚI 3 GÓC TIẾP CẬN (TUYỆT ĐỐI KHÔNG DÙNG GIỌNG KỊCH HAY VĂN MẪU):
 
-👩‍👧 GÓC 1: TÂM SỰ NỘI TRỢ / MẸ BỈM SỮA (Gợi mở, khiêm tốn, hỏi han hoặc rủ rê chị em làm thử)
-- Văn phong: Cực kỳ tự nhiên, mộc mạc, như một người mẹ/người vợ chia sẻ thật lòng trên trang cá nhân hoặc hội nhóm.
-- Mở đầu bằng các câu hỏi tương tác hoặc gợi ý nhẹ nhàng:
-  • "Các chị cho em hỏi chút..."
-  • "Không biết có chị nào giống em khoản này không..."
-  • "Hôm nay rảnh rảnh làm món này ăn cũng cuốn phết các chị ạ, con nhà em ăn tì tì hết sạch đĩa luôn, xứng đáng để mọi người làm thử đấy..."
-- Nội dung chia sẻ: Kể chuyện thực tế, không dùng từ khoa trương (cấm tiệt "Hỡi ôi mấy bà", "chân ái cuộc đời", "nhàn tênh như đi chơi"). Kể chuyện con cái ăn khen ngon, thịt mềm mọng nước không bị khô khốc như nồi cũ, rửa nồi Inox 304 bật hơi nước lau nhẹ là xong. Điểm xuyết emoji nhẹ nhàng và 5-7 hashtag liên quan ở cuối.
+👩‍👧 GÓC 1: TÂM SỰ NỘI TRỢ / MẸ BỈM SỮA (Đa dạng phong cách: Chia sẻ món ngon, mách nhỏ mẹo bếp núc, hoặc hỏi han nhẹ nhàng)
+- BẮT BUỘC ĐA DẠNG MỞ ĐẦU (KHÔNG ĐƯỢC BÀI NÀO CŨNG ĐẶT CÂU HỎI), linh hoạt chọn 1 trong các kiểu mở bài sau:
+  • KIỂU 1 (CHIA SẺ / RỦ RÊ LÀM THỬ): "Hôm nay rảnh rảnh làm món này cũng ngon đấy các chị ạ, con nhà em ăn tì tì hết sạch đĩa luôn, xứng đáng để mọi người làm thử đấy...", "Chiều nay đổi vị cho cả nhà làm món này ăn cuốn phết các chị ơi..."
+  • KIỂU 2 (TỰ SỰ TRẢI NGHIỆM): "Nói thật chứ trước giờ em lười khoản nướng thịt lắm vì sợ khô khốc, mà từ hôm làm thử bằng em này thấy khác hẳn...", "Lâu lắm mới làm được bữa cơm vừa nhanh vừa ưng ý thế này..."
+  • KIỂU 3 (HỎI HAN TƯƠNG TÁC): "Các chị cho em hỏi chút...", "Không biết nhà các chị các bé có kén ăn thịt nướng giống bé nhà em không..."
+- Nội dung chia sẻ: Kể chuyện thực tế, mộc mạc, con cái ăn thun thút, thịt mềm mọng nước không khô khốc, khoang Inox 304 bật hơi nước lau nhẹ là sạch. Điểm xuyết emoji và 5-7 hashtag ở cuối.
 
-🥗 GÓC 2: CHỊ EM ĂN UỐNG LÀNH MẠNH, GIỮ DÁNG & HEALTHY (Chia sẻ kinh nghiệm thực tế, hỏi ý kiến chị em)
-- Văn phong: Nhẹ nhàng, thực tế, như hai người bạn cùng gu ăn uống rỉ tai nhau.
-- Mở đầu tự nhiên:
-  • "Chị em cảm thấy vấn đề này như thế nào..."
-  • "Có chị nào đang ăn Eat-clean mà ngán ức gà hay cá hồi nướng bị khô xác như em hồi trước không?..."
-- Nội dung chia sẻ: Chia sẻ cách nướng kết hợp hơi nước giúp thịt bên trong mọng nước ngọt tự nhiên mà không cần giọt dầu nào; tâm sự thật lòng về nỗi lo lớp chống dính Teflon đen bong tróc ở nồi cũ, đổi sang khoang Inox 304 chuẩn y tế cọ rửa búi sắt thoải mái thấy an tâm hơn hẳn cho sức khỏe cả nhà. Điểm xuyết emoji và 5-7 hashtag ở cuối.
+🥗 GÓC 2: CHỊ EM ĂN UỐNG LÀNH MẠNH, HEALTHY (Đa dạng: Chia sẻ thực đơn mọng nước, mách mẹo healthy, hoặc tâm tình hội chị em)
+- BẮT BUỘC ĐA DẠNG MỞ ĐẦU (KHÔNG CHỈ MỖI CÂU HỎI):
+  • KIỂU 1 (CHIA SẺ KINH NGHIỆM THẬT): "Chị em nào thích ăn Eat-clean mà sợ ức gà hay cá hồi bị khô xác thì thử ngay cách này nhé, đảm bảo mềm mọng nước luôn...", "Mách nhỏ cho hội chị em giữ dáng món này ăn ngon mà chẳng cần một giọt dầu mỡ nào..."
+  • KIỂU 2 (TÂM TÌNH ĐỒNG CẢM): "Ăn kiêng healthy mà đồ ăn cứ khô như củi thì đúng là nản thật sự các chị ạ, may mà đợt này em tìm được bí quyết nướng bù hơi nước này..."
+  • KIỂU 3 (HỎI Ý KIẾN): "Chị em cảm thấy vấn đề này như thế nào...", "Có chị nào giống em, ăn uống thì kỹ tính mà sợ nhất mấy cái nồi cũ tráng chống dính Teflon độc hại không..."
+- Nội dung: Chia sẻ cách nướng hơi nước thịt ngọt mọng tự nhiên, an tâm khoang Inox 304 chuẩn y tế cọ rửa búi sắt thoải mái không sợ bong tróc hoá chất. Điểm xuyết emoji và 5-7 hashtag ở cuối.
 
 🛒 GÓC 3: ĐẠI LÝ / CTV BÁN HÀNG DÂN DÃ, CHẤT PHÁC (Bán lẻ thực chiến - Giữ nguyên phong độ cực tốt)
 - Giọng văn: Cực kỳ dân dã, chất phác, xởi lởi: "Em chào các bác / Các anh chị em ơi, hôm nay em gom được lô nồi chiên hơi nước 2GOOD chính hãng giá siêu hời... Em bán giá đẹp, bao test bao đổi 1-1 cho các bác yên tâm, bác nào lấy ới em ship tận tay nhé!".
@@ -203,8 +202,8 @@ LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY:
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 📝 SOẠN 01 BÀI TỔNG HỢP VỚI 3 GÓC TIẾP CẬN BÁM SÁT YÊU CẦU (TUYỆT ĐỐI KHÔNG DÙNG TỪ NGỮ KỊCH CỠM HOẶC VĂN MẪU):
-👩‍👧 GÓC 1: TÂM SỰ NỘI TRỢ / MẸ BỈM SỮA (Gợi mở khiêm tốn: "Các chị cho em hỏi...", "Hôm nay rảnh rảnh làm món này cũng ngon đấy, con nhà em ăn tì tì hết sạch đĩa luôn, xứng đáng để mọi người làm thử đấy...". Kể chuyện con cái ăn khen ngon, thịt mềm mọng nước không khô khốc như nồi cũ, khoang Inox 304 bật hơi nước lau nhẹ là sạch).
-🥗 GÓC 2: HỘI CHỊ EM ĂN UỐNG LÀNH MẠNH, HEALTHY (Hỏi han & chia sẻ mẹo: "Chị em cảm thấy vấn đề này như thế nào...", "Có chị nào ăn Eat-clean mà sợ ức gà khô xác nuốt nghẹn rát họng như em không...". Kể cách nướng hơi nước mọng thịt không cần giọt dầu nào, an tâm vì khoang Inox 304 không sợ lớp chống dính Teflon độc hại).
+👩‍👧 GÓC 1: TÂM SỰ NỘI TRỢ / MẸ BỈM SỮA (Đa dạng phong cách, KHÔNG ĐƯỢC BÀI NÀO CŨNG ĐẶT CÂU HỎI. Luân phiên giữa: 1) Chia sẻ rủ rê làm thử: 'Hôm nay rảnh rảnh làm món này cũng ngon đấy các chị ạ, con nhà em ăn tì tì hết sạch đĩa luôn, xứng đáng để mọi người làm thử đấy...', 2) Kể chuyện trải nghiệm thật khi nấu cơm nhanh gọn con khen ngon, hoặc 3) Đặt câu hỏi hỏi han nhẹ nhàng: 'Các chị cho em hỏi chút...').
+🥗 GÓC 2: HỘI CHỊ EM ĂN UỐNG LÀNH MẠNH, HEALTHY (Đa dạng: 1) Mách nhỏ mẹo nướng ức gà/cá hồi mọng nước cho hội giữ dáng, 2) Tâm tình đồng cảm nỗi ngán đồ nướng khô xác, 3) Hỏi ý kiến chị em về chất lượng an toàn Inox 304 không lo Teflon độc hại).
 🛒 GÓC 3: ĐẠI LÝ / CTV BÁN HÀNG DÂN DÃ, CHẤT PHÁC (Bán lẻ thực chiến: "Các bác ơi / Các anh chị ơi, hôm nay em gom được lô chính hãng giá hời... Bao test 1-1, bác nào lấy ới em ship tận tay nhé!").
 
 HÃY TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON CHUẨN:
