@@ -70,24 +70,22 @@ LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY (BẮT BUỘC TRÁNH TRÙNG LẶP NỘI
 3. VĂN PHONG TỰ NHIÊN, CHÂN THẬT: Giọng văn người thật việc thật, mộc mạc, gần gũi, chia sẻ từ trải nghiệm thực tế, tuyệt đối KHÔNG viết văn mẫu khô khan hay quảng cáo lộ liễu.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📝 SOẠN ĐÚNG 1 BÀI TỔNG HỢP VỚI 3 GÓC TIẾP CẬN (TUYỆT ĐỐI CẤM VĂN MẪU QUẢNG CÁO):
+📝 SOẠN ĐÚNG 1 BÀI TỔNG HỢP VỚI 3 GÓC TIẾP CẬN (TUYỆT ĐỐI KHÔNG DÙNG GIỌNG KỊCH HAY VĂN MẪU):
 
-👩‍👧 GÓC 1: TÂM SỰ NỘI TRỢ / MẸ BỈM SỮA (Chị em tâm tình buôn chuyện với nhau, cấm tiệt văn mẫu)
-- Giọng văn: Như hai người phụ nữ thân thiết ngồi dốc lòng tâm sự, xưng hô "Em - Các chị / Các mẹ ơi / Mấy bà ơi". Cực kỳ gần gũi, chân thật, tự nhiên như post Facebook/Zalo chia sẻ đời thường.
-- Tuyệt đối CẤM các tít sáo rỗng: "Nấu ăn nhàn tênh như đi chơi", "Bí quyết cho mẹ hiện đại", "Hôm nay em xin giới thiệu".
-- Trọng tâm kể chuyện:
-  • Nhắc nỗi khổ lúc trước: Dùng nồi cũ nướng miếng thịt hay con gà thì ngoài cháy khét mà bên trong khô cong queo như rơm, con nhai trẹo quai hàm nhè ra; dầu mỡ bắn tứ tung, rửa nồi kỳ cọ sợ tróc chống dính mệt bở hơi tai.
-  • Cảm giác "sang trang" khi dùng nồi chiên hơi nước 2GOOD: Chiều về tống gà/thịt vào bấm nút, thảnh thơi đi tắm rửa bồng con, 20 phút mở ra thơm nức mũi cả xóm. Da giòn rụm mà bên trong xé ra nước ngọt chảy tía ra, thịt mềm lịm con ăn thun thút hết veo cả đĩa.
-  • Khâu dọn dẹp: Bật hơi nước Steam Clean lau nhẹ một đường là sạch bong, khoang Inox 304 không lo trầy xước.
-- Đầy đủ icon emoji điểm xuyết tự nhiên và 5-7 hashtag liên quan ở cuối.
+👩‍👧 GÓC 1: TÂM SỰ NỘI TRỢ / MẸ BỈM SỮA (Gợi mở, khiêm tốn, hỏi han hoặc rủ rê chị em làm thử)
+- Văn phong: Cực kỳ tự nhiên, mộc mạc, như một người mẹ/người vợ chia sẻ thật lòng trên trang cá nhân hoặc hội nhóm.
+- Mở đầu bằng các câu hỏi tương tác hoặc gợi ý nhẹ nhàng:
+  • "Các chị cho em hỏi chút..."
+  • "Không biết có chị nào giống em khoản này không..."
+  • "Hôm nay rảnh rảnh làm món này ăn cũng cuốn phết các chị ạ, con nhà em ăn tì tì hết sạch đĩa luôn, xứng đáng để mọi người làm thử đấy..."
+- Nội dung chia sẻ: Kể chuyện thực tế, không dùng từ khoa trương (cấm tiệt "Hỡi ôi mấy bà", "chân ái cuộc đời", "nhàn tênh như đi chơi"). Kể chuyện con cái ăn khen ngon, thịt mềm mọng nước không bị khô khốc như nồi cũ, rửa nồi Inox 304 bật hơi nước lau nhẹ là xong. Điểm xuyết emoji nhẹ nhàng và 5-7 hashtag liên quan ở cuối.
 
-🥗 GÓC 2: HỘI CHỊ EM EAT-CLEAN, GIỮ DÁNG & HEALTHY (Tâm tình hội chị em cùng gu ăn uống, cấm giọng giảng giải y khoa)
-- Giọng văn: Giọng một người bạn cùng gu ăn kiêng/Eat-clean/healthy dốc bầu tâm sự với chị em, không viết như luận văn khoa học hay bài báo y tế.
-- Trọng tâm đồng cảm:
-  • Đồng cảm nỗi khổ: Dân Eat-clean ngày nào cũng ức gà, cá hồi, rau củ... Nướng nồi thường thì khô xác như gỗ mục, ăn nghẹn rát cả họng nuốt không trôi, phải chan nước canh liên tục phát ngấy.
-  • Nồi chiên hơi nước này đúng là cứu tinh: Chiên kết hợp phun sương hơi nước giúp ức gà hay cá hồi xém vàng bên ngoài nhưng cắn vào nước ngọt tía ra mềm mọng như ngoài hàng, không cần 1 giọt dầu mỡ nào mà vẫn tống khứ calo xấu cực đỉnh!
-  • Cảnh báo sức khỏe: Nhắc chị em tránh xa mấy cái nồi cũ tráng Teflon đen đen bong tróc độc hại. Nồi này khoang 100% Inox 304 chuẩn y tế sáng bóng, không lớp chống dính nào cả, cọ rửa búi sắt thoải mái, nấu cho con hay cả nhà ăn yên tâm tuyệt đối!
-- Đầy đủ icon emoji và 5-7 hashtag liên quan ở cuối.
+🥗 GÓC 2: CHỊ EM ĂN UỐNG LÀNH MẠNH, GIỮ DÁNG & HEALTHY (Chia sẻ kinh nghiệm thực tế, hỏi ý kiến chị em)
+- Văn phong: Nhẹ nhàng, thực tế, như hai người bạn cùng gu ăn uống rỉ tai nhau.
+- Mở đầu tự nhiên:
+  • "Chị em cảm thấy vấn đề này như thế nào..."
+  • "Có chị nào đang ăn Eat-clean mà ngán ức gà hay cá hồi nướng bị khô xác như em hồi trước không?..."
+- Nội dung chia sẻ: Chia sẻ cách nướng kết hợp hơi nước giúp thịt bên trong mọng nước ngọt tự nhiên mà không cần giọt dầu nào; tâm sự thật lòng về nỗi lo lớp chống dính Teflon đen bong tróc ở nồi cũ, đổi sang khoang Inox 304 chuẩn y tế cọ rửa búi sắt thoải mái thấy an tâm hơn hẳn cho sức khỏe cả nhà. Điểm xuyết emoji và 5-7 hashtag ở cuối.
 
 🛒 GÓC 3: ĐẠI LÝ / CTV BÁN HÀNG DÂN DÃ, CHẤT PHÁC (Bán lẻ thực chiến - Giữ nguyên phong độ cực tốt)
 - Giọng văn: Cực kỳ dân dã, chất phác, xởi lởi: "Em chào các bác / Các anh chị em ơi, hôm nay em gom được lô nồi chiên hơi nước 2GOOD chính hãng giá siêu hời... Em bán giá đẹp, bao test bao đổi 1-1 cho các bác yên tâm, bác nào lấy ới em ship tận tay nhé!".
@@ -204,9 +202,9 @@ LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY:
 3. VĂN PHONG CHÂN THẬT, DÂN DÃ, CHẤT PHÁC: Tuyệt đối không viết văn mẫu khô khan.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📝 SOẠN 01 BÀI TỔNG HỢP VỚI 3 GÓC TIẾP CẬN BÁM SÁT YÊU CẦU (CẤM VĂN MẪU):
-👩‍👧 GÓC 1: TÂM SỰ NỘI TRỢ / MẸ BỈM SỮA (Như hai chị em ngồi dốc lòng buôn chuyện với nhau, xưng hô 'Em - Các chị / Các mẹ ơi / Mấy bà ơi'. Tuyệt đối cấm văn mẫu quảng cáo như 'Nấu ăn nhàn tênh', 'Bí quyết nội trợ'. Kể câu chuyện chân thật: trước nướng nồi cũ thịt khô cong queo con nhai nhè ra, giờ có chiên hơi nước thịt mềm mọng nước con ăn thun thút, dọn rửa nhàn tênh nhờ khoang Inox 304).
-🥗 GÓC 2: HỘI CHỊ EM EAT-CLEAN & HEALTHY (Tâm tình hội chị em cùng gu ăn kiêng/giữ dáng, cấm giọng giảng giải y khoa. Kể nỗi khổ ăn ức gà/cá hồi nồi thường khô xác nghẹn rát họng, giờ có nồi chiên hơi nước ức gà ngoài xém trong mọng nước ngọt lịm không cần giọt dầu nào, khoang Inox 304 không sợ hoá chất chống dính Teflon).
+📝 SOẠN 01 BÀI TỔNG HỢP VỚI 3 GÓC TIẾP CẬN BÁM SÁT YÊU CẦU (TUYỆT ĐỐI KHÔNG DÙNG TỪ NGỮ KỊCH CỠM HOẶC VĂN MẪU):
+👩‍👧 GÓC 1: TÂM SỰ NỘI TRỢ / MẸ BỈM SỮA (Gợi mở khiêm tốn: "Các chị cho em hỏi...", "Hôm nay rảnh rảnh làm món này cũng ngon đấy, con nhà em ăn tì tì hết sạch đĩa luôn, xứng đáng để mọi người làm thử đấy...". Kể chuyện con cái ăn khen ngon, thịt mềm mọng nước không khô khốc như nồi cũ, khoang Inox 304 bật hơi nước lau nhẹ là sạch).
+🥗 GÓC 2: HỘI CHỊ EM ĂN UỐNG LÀNH MẠNH, HEALTHY (Hỏi han & chia sẻ mẹo: "Chị em cảm thấy vấn đề này như thế nào...", "Có chị nào ăn Eat-clean mà sợ ức gà khô xác nuốt nghẹn rát họng như em không...". Kể cách nướng hơi nước mọng thịt không cần giọt dầu nào, an tâm vì khoang Inox 304 không sợ lớp chống dính Teflon độc hại).
 🛒 GÓC 3: ĐẠI LÝ / CTV BÁN HÀNG DÂN DÃ, CHẤT PHÁC (Bán lẻ thực chiến: "Các bác ơi / Các anh chị ơi, hôm nay em gom được lô chính hãng giá hời... Bao test 1-1, bác nào lấy ới em ship tận tay nhé!").
 
 HÃY TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON CHUẨN:
