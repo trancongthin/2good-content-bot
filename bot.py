@@ -872,8 +872,137 @@ def autopilot_scheduler_loop():
             print(f"Error in scheduler loop: {e}")
             time.sleep(60)
 
-# --- WORKER: PROCESS TEXT-ONLY PROMPTS ---
+# --- VAULT SEARCH HELPER ---
+def find_cluster_in_vault(query_text=""):
+    vault = load_media_vault()
+    if not vault:
+        return None
+
+    q = query_text.lower().strip()
+
+    # 1. Check if user specified a product model or dish keyword
+    keywords = ["s100", "s200", "sona", "i8", "gà", "sườn", "thịt", "bánh", "cá", "heo", "nướng", "hấp"]
+    matched_keyword = None
+    for kw in keywords:
+        if kw in q:
+            matched_keyword = kw
+            break
+
+    if matched_keyword:
+        # Search for clusters matching this keyword in note or id
+        for c in vault:
+            note = c.get("custom_note", "").lower()
+            cid = c.get("id", "").lower()
+            if matched_keyword in note or matched_keyword in cid:
+                return c
+
+    # 2. Check if user asked for vault or media in general
+    wants_vault = any(w in q for w in ["kho", "ảnh", "hình", "video", "clip", "dựa vào", "lấy trong", "bài có"])
+    if wants_vault:
+        # Return next available cluster from autopilot selector
+        cluster, _ = get_next_cluster_for_autopilot()
+        if cluster:
+            return cluster
+        return vault[-1]
+
+    return None
+
+# --- WORKER: PROCESS TEXT PROMPTS (SMART VAULT ATTACHMENT) ---
 def worker_process_text_prompt(chat_id, text_prompt):
+    # Check if text is asking for media from the Vault
+    cluster = find_cluster_in_vault(text_prompt)
+
+    if cluster:
+        media_count = len(cluster.get("message_ids", []))
+        types_str = ", ".join(set(cluster.get("media_types", ["media"])))
+        send_message(
+            chat_id,
+            f"🔍 <i>Đã lấy được cụm tư liệu trong Kho (ID: <code>{cluster['id']}</code> — {media_count} file {types_str})! Đang soi ảnh/clip và soạn bài theo yêu cầu: \"<b>{text_prompt}</b>\"... Vui lòng đợi 5-8 giây!</i>"
+        )
+
+        sample_bytes_list = []
+        for fid in cluster.get("sample_file_ids", []):
+            b = get_file_bytes(fid)
+            if b:
+                sample_bytes_list.append(b)
+
+        has_video = cluster.get("has_video", False)
+        if sample_bytes_list:
+            data = analyze_multiple_images_and_generate_content(
+                sample_bytes_list,
+                custom_note=f"YÊU CẦU TỪ SẾP: {text_prompt}",
+                has_video=has_video
+            )
+        else:
+            data = generate_content_from_text_prompt(text_prompt)
+
+        if not data:
+            send_message(chat_id, "❌ Lỗi khi AI soạn bài. Vui lòng thử lại sau vài giây!")
+            return
+
+        post_id = cluster["id"]
+        with PENDING_LOCK:
+            PENDING_POSTS[post_id] = {
+                "cluster": cluster,
+                "data": data,
+                "timestamp": time.time(),
+                "created_at": str(datetime.datetime.now())
+            }
+
+        matrix = data.get("content_matrix", {})
+        me_bim = matrix.get("me_bim_noi_tro", "N/A")
+        eat_clean = matrix.get("eat_clean_inox304", "N/A")
+        dai_ly = matrix.get("dai_ly_dan_da", "N/A")
+
+        preview_text = f"""🌟 <b>ĐÃ SOẠN XONG BÀI THEO YÊU CẦU (KÈM CỤM KHO {cluster['id']} — {media_count} FILE) — {data.get('product_code', '2GOOD')}!</b>
+
+<b>📌 FACT KỸ THUẬT:</b> {data.get('technical_fact', '')}
+<b>💡 CLAIM THỰC TẾ:</b> {data.get('marketing_claim', '')}
+
+━━━━━━━━━━━━━━━━━━━━━
+👩‍👧 <b>GÓC 1 (MẸ BỈM SỮA & NỘI TRỢ GIA ĐÌNH):</b>
+{me_bim}
+
+━━━━━━━━━━━━━━━━━━━━━
+🥗 <b>GÓC 2 (EAT-CLEAN, HEALTHY & INOX 304 CHUẨN Y TẾ):</b>
+{eat_clean}
+
+━━━━━━━━━━━━━━━━━━━━━
+🛒 <b>GÓC 3 (ĐẠI LÝ / CTV BÁN HÀNG DÂN DÃ, CHẤT PHÁC):</b>
+{dai_ly}
+"""
+
+        inline_keyboard = {
+            "inline_keyboard": [
+                [
+                    {"text": f"🚀 BẮN TRỌN BỘ 3 GÓC + {media_count} ẢNH/CLIP VÀO KÊNH CTV", "callback_data": f"PUB_CLUSTER_ALL_{post_id}"}
+                ],
+                [
+                    {"text": "📦 Đã lưu kho (để sáng mai 8h tự đăng)", "callback_data": f"KEEP_VAULT_{post_id}"}
+                ],
+                [
+                    {"text": "👩‍👧 Chỉ đăng Góc 1", "callback_data": f"PUB_CLUSTER_MB_{post_id}"},
+                    {"text": "🥗 Chỉ đăng Góc 2", "callback_data": f"PUB_CLUSTER_EC_{post_id}"}
+                ],
+                [
+                    {"text": "🛒 Chỉ đăng Góc 3", "callback_data": f"PUB_CLUSTER_DL_{post_id}"},
+                    {"text": "❌ Hủy bài này", "callback_data": f"CANCEL_{post_id}"}
+                ]
+            ]
+        }
+
+        send_message(chat_id, preview_text, reply_markup=inline_keyboard)
+        return
+
+    # If user explicitly asked for vault / media but vault has no matching cluster:
+    wants_vault = any(w in text_prompt.lower() for w in ["kho", "ảnh", "hình", "video", "clip", "dựa vào", "lấy trong"])
+    if wants_vault:
+        send_message(
+            chat_id,
+            "⚠️ <b>KHO MEDIA HIỆN CHƯA CÓ CỤM ẢNH/CLIP PHÙ HỢP!</b>\n\nSếp hãy gửi 1 cụm ảnh/video vào bot trước để nạp kho nhé. Tạm thời AI đang soạn bài text theo đúng yêu cầu bên dưới:"
+        )
+
+    # Standard text-only generation
     send_message(chat_id, f"✍️ <i>Đang soạn bài 2GOOD theo yêu cầu: \"<b>{text_prompt}</b>\"... Vui lòng đợi 5-8 giây!</i>")
     data = generate_content_from_text_prompt(text_prompt)
     if not data:
