@@ -154,11 +154,14 @@ Render sẽ tự động phát hiện và build bản mới lên Cloud trong vò
 
 ---
 
-## 📋 7. CÁC LỆNH QUẢN TRỊ TRÊN TELEGRAM BOT
-- `/kho` : Xem tình trạng kho media, số lượng cụm mới và cụm chờ quay vòng.
-- `/chay_ngay` : Kích hoạt ngay lập tức 1 phiên phát sóng Auto-Pilot vào Kênh CTV.
-- `/status` : Kiểm tra trạng thái máy chủ Cloud online, uptime, kết nối kênh.
-- `/history` : Xem 5 bài viết đã xuất bản gần nhất.
-- `/reset` : Xóa bộ đệm và giải phóng hàng chờ bài nháp.
-- `/help` : Xem hướng dẫn sử dụng nhanh.
-- **Gõ chữ bất kỳ:** Nhắn ý tưởng/văn bản bất kỳ cho bot, AI sẽ tự động viết bài 3 góc theo đúng ý tưởng đó.
+## 👥 8. TÍNH NĂNG TƯƠNG TÁC NHÓM (GROUP COLLABORATION)
+- **Mục đích:** Cho phép nhiều thành viên trong team (nhân viên, CTV, content creator) cùng nạp ảnh/video vào Kho Media và tương tác với Bot tại cùng một Nhóm chung.
+- **Cơ chế hoạt động:**
+  1. **Nạp Media đa thành viên:** Bất kỳ ai trong nhóm gửi ảnh/video, Bot đều tự động gom chùm, ghi nhận tên người gửi (`[TỪ: @username]`), lưu vào Kho Media và gửi bản xem trước 3 góc trực tiếp vào nhóm.
+  2. **Duyệt bài nhóm:** Các nút bấm (🚀 *Bắn ngay*, 📦 *Lưu kho*, 🗑️ *Xóa*) hoạt động cho tất cả thành viên trong nhóm. Khi ai bấm nút, Bot sẽ thông báo rõ: *"[Tên thành viên] đã phát sóng thành công vào Kênh CTV"*.
+  3. **Lệnh trong nhóm:**
+     - `/kho` hoặc `/kho@mr_morning_bot` : Xem tình trạng kho media.
+     - `/chay_ngay` : Kích hoạt phát sóng ngay.
+     - `/viet [ý tưởng]` hoặc tag `@mr_morning_bot [ý tưởng]` : Yêu cầu AI viết bài 3 góc theo chủ đề.
+     - Trò chuyện thông thường giữa các thành viên sẽ không bị bot quấy rầy.
+- **Yêu cầu cài đặt:** Thêm bot `@mr_morning_bot` vào nhóm và cấp quyền **Admin** cho bot (hoặc tắt Privacy Mode trong `@BotFather`).

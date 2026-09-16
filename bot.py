@@ -647,12 +647,12 @@ def worker_process_incoming_cluster(cluster_items):
         has_video=has_video
     )
 
-    media_summary = f"{photos_count} ảnh" if videos_count == 0 else (f"{videos_count} video" if photos_count == 0 else f"{photos_count} ảnh + {videos_count} video")
-    note_prompt = f" + yêu cầu: <i>\"{custom_note}\"</i>" if custom_note else ""
+    senders = [item.get("sender") for item in cluster_items if item.get("sender")]
+    sender_str = f" [TỪ: {senders[0]}]" if senders else ""
 
     send_message(
         chat_id,
-        f"📦 <b>ĐÃ LƯU CỤM ({media_summary}) VÀO KHO MEDIA!</b>\n🆔 Cụm ID: <code>{cluster['id']}</code>\n🔍 <i>Đang soi tư liệu{note_prompt} để soạn trước <b>01 BÀI TỔNG HỢP 3 GÓC</b>... Vui lòng đợi 5-8 giây!</i>"
+        f"📦{sender_str} <b>ĐÃ LƯU CỤM ({media_summary}) VÀO KHO MEDIA!</b>\n🆔 Cụm ID: <code>{cluster['id']}</code>\n🔍 <i>Đang soi tư liệu{note_prompt} để soạn trước <b>01 BÀI TỔNG HỢP 3 GÓC</b>... Vui lòng đợi 5-8 giây!</i>"
     )
 
     # 2. Download sample photos/thumbnails for Gemini AI vision
@@ -738,20 +738,13 @@ def on_debounce_timeout():
 
 # --- ADMIN AUTHENTICATION HELPER ---
 def is_admin(user_or_chat_id, chat_type="private"):
-    global ADMIN_CHAT_ID
-    str_id = str(user_or_chat_id)
-    if chat_type == "private" or str_id == str(ADMIN_CHAT_ID):
-        ADMIN_CHAT_ID = str_id
-        return True
-    return False
+    # Allow all interactions from private chats, groups, and supergroups
+    return True
 
 def handle_incoming_media_non_blocking(message):
     global DEBOUNCE_TIMER
     chat_id = str(message["chat"]["id"])
     chat_type = message.get("chat", {}).get("type", "private")
-    if not is_admin(chat_id, chat_type):
-        send_message(chat_id, "⚠️ Bạn không có quyền Admin.")
-        return
 
     media_type = None
     sample_file_id = None
@@ -768,11 +761,15 @@ def handle_incoming_media_non_blocking(message):
     if not media_type:
         return
 
+    sender_name = message.get("from", {}).get("first_name", "")
+    sender_user = message.get("from", {}).get("username", "")
+    display_sender = f"@{sender_user}" if sender_user else (sender_name or "Thành viên")
+
     caption = message.get("caption", "").strip()
     is_forwarded = bool(message.get("forward_date") or message.get("forward_origin") or message.get("forward_from_chat"))
     if is_forwarded:
         if not caption:
-            caption = "Tư liệu cũ chuyển tiếp: Yêu cầu ĐỔI MỚI GÓC NHÌN HOÀN TOÀN, ngôn từ cuốn hút, không trùng lặp"
+            caption = "Tư liệu chuyển tiếp: Yêu cầu ĐỔI MỚI GÓC NHÌN, ngôn từ tự nhiên, không trùng lặp"
         else:
             caption = f"Tư liệu chuyển tiếp - Ghi chú riêng: {caption}"
 
@@ -781,7 +778,8 @@ def handle_incoming_media_non_blocking(message):
         "chat_id": chat_id,
         "type": media_type,
         "sample_file_id": sample_file_id,
-        "caption": caption
+        "caption": caption,
+        "sender": display_sender
     }
 
     with BUFFER_LOCK:
@@ -1062,39 +1060,41 @@ def worker_process_text_prompt(chat_id, text_prompt):
 # --- CALLBACK ROUTER ---
 def handle_callback(callback_query):
     query_id = callback_query["id"]
-    from_user_id = str(callback_query["from"]["id"])
+    from_user = callback_query.get("from", {})
+    from_user_id = str(from_user.get("id", ""))
+    from_user_name = from_user.get("first_name", "Thành viên")
     data = callback_query["data"]
     
-    if not is_admin(from_user_id):
-        answer_callback(query_id, "Bạn không có quyền!")
-        return
+    msg_obj = callback_query.get("message", {})
+    target_chat_id = str(msg_obj.get("chat", {}).get("id") or ADMIN_CHAT_ID)
 
     if data == "CMD_STATUS":
         text, kb = build_status_message()
         answer_callback(query_id, "Đã cập nhật trạng thái!")
-        send_message(ADMIN_CHAT_ID, text, reply_markup=kb)
+        send_message(target_chat_id, text, reply_markup=kb)
         return
 
     if data == "CMD_KHO":
         text, kb = build_kho_message()
         answer_callback(query_id, "Đã cập nhật kho!")
-        send_message(ADMIN_CHAT_ID, text, reply_markup=kb)
+        send_message(target_chat_id, text, reply_markup=kb)
         return
 
     if data == "CMD_RUN_AUTOPILOT":
         answer_callback(query_id, "Đang khởi chạy Auto-Pilot...")
+        send_message(target_chat_id, f"🚀 <b>[{from_user_name}]</b> đã kích hoạt Auto-Pilot phát sóng ngay!")
         threading.Thread(target=run_daily_autopilot_dispatch, args=[True], daemon=True).start()
         return
 
     if data == "CMD_HISTORY":
         answer_callback(query_id, "Đang tải lịch sử...")
-        send_message(ADMIN_CHAT_ID, build_history_message())
+        send_message(target_chat_id, build_history_message())
         return
 
     if data == "CMD_RESET":
         msg = execute_reset()
         answer_callback(query_id, "Đã reset hệ thống!")
-        send_message(ADMIN_CHAT_ID, msg)
+        send_message(target_chat_id, msg)
         return
 
     if data.startswith("CANCEL_"):
@@ -1103,15 +1103,15 @@ def handle_callback(callback_query):
             if post_id in PENDING_POSTS:
                 del PENDING_POSTS[post_id]
         answer_callback(query_id, "Đã hủy bài viết.")
-        send_message(ADMIN_CHAT_ID, "🗑️ Đã xóa bài nháp khỏi hàng chờ.")
+        send_message(target_chat_id, f"🗑️ <b>[{from_user_name}]</b> đã xóa bài nháp khỏi hàng chờ.")
         return
 
     if data.startswith("KEEP_VAULT_"):
         cluster_id = data.replace("KEEP_VAULT_", "")
         answer_callback(query_id, "Đã lưu kho!")
         send_message(
-            ADMIN_CHAT_ID,
-            f"📦 <b>ĐÃ GIỮ CỤM {cluster_id} TRONG KHO MEDIA!</b>\nCụm này sẽ được lên lịch tự động phát sóng lúc 08:00 AM các buổi sáng tiếp theo."
+            target_chat_id,
+            f"📦 <b>[{from_user_name}] ĐÃ LƯU CỤM {cluster_id} VÀO KHO MEDIA!</b>\nCụm này sẽ được tự động phát sóng lúc 08:00 AM các buổi sáng tiếp theo."
         )
         return
 
@@ -1122,7 +1122,7 @@ def handle_callback(callback_query):
             if cluster_id in PENDING_POSTS:
                 del PENDING_POSTS[cluster_id]
         answer_callback(query_id, "Đã xóa khỏi kho!")
-        send_message(ADMIN_CHAT_ID, f"🗑️ Đã xóa cụm <code>{cluster_id}</code> khỏi Kho Media và hàng chờ.")
+        send_message(target_chat_id, f"🗑️ <b>[{from_user_name}]</b> đã xóa cụm <code>{cluster_id}</code> khỏi Kho Media.")
         return
 
     # Handle PUB_CLUSTER_* actions
@@ -1139,7 +1139,7 @@ def handle_callback(callback_query):
             cluster = get_vault_cluster_by_id(cluster_id)
             if cluster:
                 answer_callback(query_id, "Đang soạn và phát sóng...")
-                send_message(ADMIN_CHAT_ID, f"🚀 <i>Đang phát sóng cụm <code>{cluster_id}</code> vào Kênh CTV...</i>")
+                send_message(target_chat_id, f"🚀 <i>Đang phát sóng cụm <code>{cluster_id}</code> vào Kênh CTV...</i>")
                 threading.Thread(target=publish_cluster_to_channel, args=[cluster, mode], daemon=True).start()
                 return
             else:
@@ -1157,8 +1157,8 @@ def handle_callback(callback_query):
                 del PENDING_POSTS[cluster_id]
 
         send_message(
-            ADMIN_CHAT_ID,
-            f"✅ <b>ĐÃ PHÁT SÓNG THÀNH CÔNG VÀO KÊNH CTV!</b>\n📦 Media: Đã copy sạch {len(cluster['message_ids'])} file\n🎯 Góc đăng: {mode}"
+            target_chat_id,
+            f"✅ <b>[{from_user_name}] ĐÃ PHÁT SÓNG THÀNH CÔNG VÀO KÊNH CTV!</b>\n📦 Media: Đã copy sạch {len(cluster['message_ids'])} file\n🎯 Góc đăng: {mode}"
         )
         return
 
@@ -1225,7 +1225,7 @@ def handle_callback(callback_query):
                 del PENDING_POSTS[post_id]
 
         answer_callback(query_id, "Đã phát sóng thành công!")
-        send_message(ADMIN_CHAT_ID, f"✅ <b>ĐÃ ĐĂNG BÀI VIẾT (TEXT) VÀO KÊNH CTV!</b>")
+        send_message(target_chat_id, f"✅ <b>[{from_user_name}] ĐÃ ĐĂNG BÀI VIẾT (TEXT) VÀO KÊNH CTV!</b>")
         return
 
 # --- MAIN BOT ENGINE & POLLING LOOP ---
@@ -1280,42 +1280,53 @@ def run_bot():
                             chat_id = str(chat.get("id"))
                             chat_type = chat.get("type", "private")
                             
-                            if not is_admin(chat_id, chat_type):
-                                send_message(chat_id, "⚠️ Bạn không có quyền Admin.")
-                                continue
-                            
-                            # Handle incoming photo or video
+                            # Handle incoming photo or video (from private chat or any group)
                             if "photo" in msg or "video" in msg:
                                 handle_incoming_media_non_blocking(msg)
                             elif "text" in msg:
                                 text = msg.get("text", "").strip()
+                                cmd = text.split()[0].lower() if text else ""
+                                if "@" in cmd:
+                                    cmd = cmd.split("@")[0]
                                 
-                                if text == "/start":
-                                    send_message(chat_id, """👋 Chào Sếp Thìn! Tôi là <b>Trợ lý AI Content Engine & Kho Media 2GOOD (24/7)</b>.
+                                if cmd == "/start":
+                                    send_message(chat_id, """👋 Chào mọi người! Tôi là <b>Trợ lý AI Content Engine & Kho Media 2GOOD (24/7)</b>.
 
-📸 <b>Sếp có thể:</b>
-1️⃣ <b>Gửi cụm Ảnh / Video:</b> Bot tự gom, lưu vào <b>Kho Media (/kho)</b> và soạn 3 góc bài viết.
+📸 <b>Mọi người có thể:</b>
+1️⃣ <b>Gửi cụm Ảnh / Video vào nhóm:</b> Bot tự gom, lưu vào <b>Kho Media (/kho)</b> và soạn 3 góc bài viết.
 2️⃣ <b>Hẹn giờ Auto-Pilot 08:00 AM:</b> Mỗi sáng tự động lấy 1 cụm trong kho phát sóng cho CTV.
-3️⃣ <b>Gõ văn bản / ý tưởng bất kỳ:</b> AI sẽ tự động viết bài theo đúng yêu cầu!
+3️⃣ <b>Gõ ý tưởng viết bài:</b> Nhắn tin riêng cho bot hoặc gõ <code>/viet [ý tưởng]</code> trong nhóm!
 
 💡 Gõ <code>/kho</code> để xem kho, <code>/chay_ngay</code> để phát tức thì, hoặc <code>/status</code> để xem báo cáo.""")
-                                elif text in ["/status", "/ping"]:
+                                elif cmd in ["/status", "/ping"]:
                                     st_msg, kb = build_status_message()
                                     send_message(chat_id, st_msg, reply_markup=kb)
-                                elif text == "/kho":
+                                elif cmd == "/kho":
                                     kho_msg, kb = build_kho_message()
                                     send_message(chat_id, kho_msg, reply_markup=kb)
-                                elif text == "/chay_ngay":
+                                elif cmd == "/chay_ngay":
                                     threading.Thread(target=run_daily_autopilot_dispatch, args=[True], daemon=True).start()
-                                elif text == "/history":
+                                elif cmd == "/history":
                                     send_message(chat_id, build_history_message())
-                                elif text == "/reset":
+                                elif cmd == "/reset":
                                     send_message(chat_id, execute_reset())
-                                elif text == "/help":
+                                elif cmd == "/help":
                                     send_message(chat_id, build_help_message())
+                                elif cmd in ["/viet", "/content"]:
+                                    prompt = text[len(text.split()[0]):].strip()
+                                    if prompt:
+                                        threading.Thread(target=worker_process_text_prompt, args=[chat_id, prompt], daemon=True).start()
+                                    else:
+                                        send_message(chat_id, "💡 Hãy gõ kèm ý tưởng, ví dụ: <code>/viet Gà nướng mật ong da giòn</code>")
                                 else:
-                                    # Text idea prompt -> AI generation
-                                    threading.Thread(target=worker_process_text_prompt, args=[chat_id, text], daemon=True).start()
+                                    # If private chat: any text is an idea prompt
+                                    if chat_type == "private":
+                                        threading.Thread(target=worker_process_text_prompt, args=[chat_id, text], daemon=True).start()
+                                    # If group chat: trigger if bot is mentioned or replied to
+                                    elif "@mr_morning_bot" in text or (msg.get("reply_to_message", {}).get("from", {}).get("is_bot")):
+                                        clean_prompt = text.replace("@mr_morning_bot", "").strip()
+                                        if clean_prompt:
+                                            threading.Thread(target=worker_process_text_prompt, args=[chat_id, clean_prompt], daemon=True).start()
                         
                         elif "callback_query" in update:
                             handle_callback(update["callback_query"])
