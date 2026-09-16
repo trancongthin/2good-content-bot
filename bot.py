@@ -620,74 +620,77 @@ def worker_process_incoming_cluster(cluster_items):
     if not cluster_items:
         return
 
-    chat_id = cluster_items[0]["chat_id"]
-    message_ids = [item["message_id"] for item in cluster_items]
-    media_types = [item["type"] for item in cluster_items]
-    has_video = "video" in media_types
-    photos_count = media_types.count("photo")
-    videos_count = media_types.count("video")
+    try:
+        chat_id = cluster_items[0]["chat_id"]
+        message_ids = [item["message_id"] for item in cluster_items]
+        media_types = [item["type"] for item in cluster_items]
+        has_video = "video" in media_types
+        photos_count = media_types.count("photo")
+        videos_count = media_types.count("video")
 
-    # Combine captions
-    captions = [item["caption"] for item in cluster_items if item.get("caption")]
-    custom_note = " ".join(dict.fromkeys(captions)).strip()
+        # Combine captions
+        captions = [item["caption"] for item in cluster_items if item.get("caption")]
+        custom_note = " ".join(dict.fromkeys(captions)).strip()
 
-    # Collect sample file IDs for AI vision
-    sample_file_ids = []
-    for item in cluster_items:
-        if item.get("sample_file_id") and item["sample_file_id"] not in sample_file_ids:
-            sample_file_ids.append(item["sample_file_id"])
+        # Collect sample file IDs for AI vision
+        sample_file_ids = []
+        for item in cluster_items:
+            if item.get("sample_file_id") and item["sample_file_id"] not in sample_file_ids:
+                sample_file_ids.append(item["sample_file_id"])
 
-    # 1. Add to Media Vault
-    cluster = add_cluster_to_vault(
-        chat_id=chat_id,
-        message_ids=message_ids,
-        media_types=media_types,
-        sample_file_ids=sample_file_ids[:4],
-        custom_note=custom_note,
-        has_video=has_video
-    )
+        # 1. Add to Media Vault
+        cluster = add_cluster_to_vault(
+            chat_id=chat_id,
+            message_ids=message_ids,
+            media_types=media_types,
+            sample_file_ids=sample_file_ids[:4],
+            custom_note=custom_note,
+            has_video=has_video
+        )
 
-    senders = [item.get("sender") for item in cluster_items if item.get("sender")]
-    sender_str = f" [TỪ: {senders[0]}]" if senders else ""
+        media_summary = f"{photos_count} ảnh" if videos_count == 0 else (f"{videos_count} video" if photos_count == 0 else f"{photos_count} ảnh + {videos_count} video")
+        note_prompt = f" + yêu cầu: <i>\"{custom_note}\"</i>" if custom_note else ""
+        senders = [item.get("sender") for item in cluster_items if item.get("sender")]
+        sender_str = f" [TỪ: {senders[0]}]" if senders else ""
 
-    send_message(
-        chat_id,
-        f"📦{sender_str} <b>ĐÃ LƯU CỤM ({media_summary}) VÀO KHO MEDIA!</b>\n🆔 Cụm ID: <code>{cluster['id']}</code>\n🔍 <i>Đang soi tư liệu{note_prompt} để soạn trước <b>01 BÀI TỔNG HỢP 3 GÓC</b>... Vui lòng đợi 5-8 giây!</i>"
-    )
+        send_message(
+            chat_id,
+            f"📦{sender_str} <b>ĐÃ LƯU CỤM ({media_summary}) VÀO KHO MEDIA!</b>\n🆔 Cụm ID: <code>{cluster['id']}</code>\n🔍 <i>Đang soi tư liệu{note_prompt} để soạn trước <b>01 BÀI TỔNG HỢP 3 GÓC</b>... Vui lòng đợi 5-8 giây!</i>"
+        )
 
-    # 2. Download sample photos/thumbnails for Gemini AI vision
-    sample_bytes_list = []
-    for fid in sample_file_ids[:4]:
-        b = get_file_bytes(fid)
-        if b:
-            sample_bytes_list.append(b)
+        # 2. Download sample photos/thumbnails for Gemini AI vision
+        sample_bytes_list = []
+        for fid in sample_file_ids[:4]:
+            b = get_file_bytes(fid)
+            if b:
+                sample_bytes_list.append(b)
 
-    # 3. Call AI
-    if sample_bytes_list:
-        ai_data = analyze_multiple_images_and_generate_content(sample_bytes_list, custom_note=custom_note, has_video=has_video)
-    else:
-        prompt = custom_note if custom_note else "Giới thiệu nồi chiên hơi nước 2GOOD S200 dung tích lớn 32L, khoang Inox 304 chuẩn y tế"
-        ai_data = generate_content_from_text_prompt(prompt)
+        # 3. Call AI
+        if sample_bytes_list:
+            ai_data = analyze_multiple_images_and_generate_content(sample_bytes_list, custom_note=custom_note, has_video=has_video)
+        else:
+            prompt = custom_note if custom_note else "Giới thiệu nồi chiên hơi nước 2GOOD S200 dung tích lớn 32L, khoang Inox 304 chuẩn y tế"
+            ai_data = generate_content_from_text_prompt(prompt)
 
-    if not ai_data:
-        send_message(chat_id, f"⚠️ Cụm media đã được lưu vào Kho (ID: <code>{cluster['id']}</code>) nhưng AI gặp lỗi tạm thời khi soạn bản xem trước. Bot sẽ thử lại khi đến giờ Auto-Pilot 08:00 AM.")
-        return
+        if not ai_data:
+            send_message(chat_id, f"⚠️ Cụm media đã được lưu vào Kho (ID: <code>{cluster['id']}</code>) nhưng AI gặp lỗi tạm thời khi soạn bản xem trước. Bot sẽ thử lại khi đến giờ Auto-Pilot 08:00 AM.")
+            return
 
-    # 4. Save to pending posts for admin actions
-    with PENDING_LOCK:
-        PENDING_POSTS[cluster["id"]] = {
-            "cluster": cluster,
-            "data": ai_data,
-            "timestamp": time.time(),
-            "created_at": str(datetime.datetime.now())
-        }
+        # 4. Save to pending posts for admin actions
+        with PENDING_LOCK:
+            PENDING_POSTS[cluster["id"]] = {
+                "cluster": cluster,
+                "data": ai_data,
+                "timestamp": time.time(),
+                "created_at": str(datetime.datetime.now())
+            }
 
-    matrix = ai_data.get("content_matrix", {})
-    me_bim = matrix.get("me_bim_noi_tro", "N/A")
-    eat_clean = matrix.get("eat_clean_inox304", "N/A")
-    dai_ly = matrix.get("dai_ly_dan_da", "N/A")
+        matrix = ai_data.get("content_matrix", {})
+        me_bim = matrix.get("me_bim_noi_tro", "N/A")
+        eat_clean = matrix.get("eat_clean_inox304", "N/A")
+        dai_ly = matrix.get("dai_ly_dan_da", "N/A")
 
-    preview_text = f"""🌟 <b>ĐÃ SOẠN XONG BẢN DUYỆT CỤM {cluster['id']} ({media_summary}) — {ai_data.get('product_code', '2GOOD')}!</b>
+        preview_text = f"""🌟 <b>ĐÃ SOẠN XONG BẢN DUYỆT CỤM {cluster['id']} ({media_summary}) — {ai_data.get('product_code', '2GOOD')}!</b>
 
 <b>📌 FACT KỸ THUẬT:</b> {ai_data.get('technical_fact', '')}
 <b>💡 CLAIM THỰC TẾ:</b> {ai_data.get('marketing_claim', '')}
@@ -705,26 +708,28 @@ def worker_process_incoming_cluster(cluster_items):
 {dai_ly}
 """
 
-    inline_keyboard = {
-        "inline_keyboard": [
-            [
-                {"text": "🚀 BẮN NGAY VÀO KÊNH CTV (COPY SẠCH MEDIA)", "callback_data": f"PUB_CLUSTER_ALL_{cluster['id']}"}
-            ],
-            [
-                {"text": "📦 ĐÃ LƯU KHO (ĐỂ 8H SÁNG TỰ ĐĂNG)", "callback_data": f"KEEP_VAULT_{cluster['id']}"}
-            ],
-            [
-                {"text": "👩‍👧 Chỉ đăng Góc 1", "callback_data": f"PUB_CLUSTER_MB_{cluster['id']}"},
-                {"text": "🥗 Chỉ đăng Góc 2", "callback_data": f"PUB_CLUSTER_EC_{cluster['id']}"}
-            ],
-            [
-                {"text": "🛒 Chỉ đăng Góc 3", "callback_data": f"PUB_CLUSTER_DL_{cluster['id']}"},
-                {"text": "🗑️ Xóa khỏi kho & Hủy", "callback_data": f"DEL_VAULT_{cluster['id']}"}
+        inline_keyboard = {
+            "inline_keyboard": [
+                [
+                    {"text": "🚀 BẮN NGAY VÀO KÊNH CTV (COPY SẠCH MEDIA)", "callback_data": f"PUB_CLUSTER_ALL_{cluster['id']}"}
+                ],
+                [
+                    {"text": "📦 ĐÃ LƯU KHO (ĐỂ 8H SÁNG TỰ ĐĂNG)", "callback_data": f"KEEP_VAULT_{cluster['id']}"}
+                ],
+                [
+                    {"text": "👩‍👧 Chỉ đăng Góc 1", "callback_data": f"PUB_CLUSTER_MB_{cluster['id']}"},
+                    {"text": "🥗 Chỉ đăng Góc 2", "callback_data": f"PUB_CLUSTER_EC_{cluster['id']}"}
+                ],
+                [
+                    {"text": "🛒 Chỉ đăng Góc 3", "callback_data": f"PUB_CLUSTER_DL_{cluster['id']}"},
+                    {"text": "🗑️ Xóa khỏi kho & Hủy", "callback_data": f"DEL_VAULT_{cluster['id']}"}
+                ]
             ]
-        ]
-    }
+        }
 
-    send_message(chat_id, preview_text, reply_markup=inline_keyboard)
+        send_message(chat_id, preview_text, reply_markup=inline_keyboard)
+    except Exception as e:
+        print(f"❌ Error in worker_process_incoming_cluster: {e}")
 
 def on_debounce_timeout():
     global BUFFER_CLUSTER_ITEMS
