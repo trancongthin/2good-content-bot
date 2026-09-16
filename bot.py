@@ -424,10 +424,20 @@ def on_debounce_timeout():
 
     threading.Thread(target=worker_process_all_buffered_photos, args=[to_process, custom_note], daemon=True).start()
 
+# --- ADMIN AUTHENTICATION HELPER ---
+def is_admin(user_or_chat_id, chat_type="private"):
+    global ADMIN_CHAT_ID
+    str_id = str(user_or_chat_id)
+    if chat_type == "private" or str_id == str(ADMIN_CHAT_ID):
+        ADMIN_CHAT_ID = str_id
+        return True
+    return False
+
 def handle_incoming_photo_non_blocking(message):
     global DEBOUNCE_TIMER
     chat_id = str(message["chat"]["id"])
-    if chat_id != str(ADMIN_CHAT_ID):
+    chat_type = message.get("chat", {}).get("type", "private")
+    if not is_admin(chat_id, chat_type):
         send_message(chat_id, "⚠️ Bạn không có quyền Admin.")
         return
 
@@ -453,7 +463,7 @@ def handle_callback(callback_query):
     from_user_id = str(callback_query["from"]["id"])
     data = callback_query["data"]
     
-    if from_user_id != str(ADMIN_CHAT_ID):
+    if not is_admin(from_user_id):
         answer_callback(query_id, "Bạn không có quyền!")
         return
 
@@ -650,8 +660,11 @@ def run_bot():
                         
                         elif "message" in update:
                             msg = update["message"]
-                            chat_id = str(msg["chat"]["id"])
-                            if chat_id != str(ADMIN_CHAT_ID):
+                            chat = msg.get("chat", {})
+                            chat_id = str(chat.get("id"))
+                            chat_type = chat.get("type", "private")
+                            
+                            if not is_admin(chat_id, chat_type):
                                 send_message(chat_id, "⚠️ Bạn không có quyền Admin.")
                                 continue
                             
