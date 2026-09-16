@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+data/*.pid
+data/run.log
+data/supervisor.log
+.DS_Store
