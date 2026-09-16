@@ -1270,9 +1270,10 @@ def run_bot():
                         
                         elif "my_chat_member" in update:
                             chat = update["my_chat_member"]["chat"]
-                            c_id = chat["id"]
-                            c_title = chat.get("title", "Kênh CTV")
-                            set_target_channel(c_id, c_title)
+                            if chat.get("type") == "channel":
+                                c_id = chat["id"]
+                                c_title = chat.get("title", "Kênh CTV")
+                                set_target_channel(c_id, c_title)
                         
                         elif "message" in update:
                             msg = update["message"]
@@ -1295,7 +1296,7 @@ def run_bot():
 📸 <b>Mọi người có thể:</b>
 1️⃣ <b>Gửi cụm Ảnh / Video vào nhóm:</b> Bot tự gom, lưu vào <b>Kho Media (/kho)</b> và soạn 3 góc bài viết.
 2️⃣ <b>Hẹn giờ Auto-Pilot 08:00 AM:</b> Mỗi sáng tự động lấy 1 cụm trong kho phát sóng cho CTV.
-3️⃣ <b>Gõ ý tưởng viết bài:</b> Nhắn tin riêng cho bot hoặc gõ <code>/viet [ý tưởng]</code> trong nhóm!
+3️⃣ <b>Gõ bất kỳ ý tưởng nào:</b> AI sẽ tự động viết bài theo đúng yêu cầu!
 
 💡 Gõ <code>/kho</code> để xem kho, <code>/chay_ngay</code> để phát tức thì, hoặc <code>/status</code> để xem báo cáo.""")
                                 elif cmd in ["/status", "/ping"]:
@@ -1319,14 +1320,8 @@ def run_bot():
                                     else:
                                         send_message(chat_id, "💡 Hãy gõ kèm ý tưởng, ví dụ: <code>/viet Gà nướng mật ong da giòn</code>")
                                 else:
-                                    # If private chat: any text is an idea prompt
-                                    if chat_type == "private":
-                                        threading.Thread(target=worker_process_text_prompt, args=[chat_id, text], daemon=True).start()
-                                    # If group chat: trigger if bot is mentioned or replied to
-                                    elif "@mr_morning_bot" in text or (msg.get("reply_to_message", {}).get("from", {}).get("is_bot")):
-                                        clean_prompt = text.replace("@mr_morning_bot", "").strip()
-                                        if clean_prompt:
-                                            threading.Thread(target=worker_process_text_prompt, args=[chat_id, clean_prompt], daemon=True).start()
+                                    # Any text message in group or private is treated directly as a content idea prompt!
+                                    threading.Thread(target=worker_process_text_prompt, args=[chat_id, text], daemon=True).start()
                         
                         elif "callback_query" in update:
                             handle_callback(update["callback_query"])
