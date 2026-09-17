@@ -48,6 +48,9 @@ def release_single_instance_lock():
     except Exception:
         pass
 
+RECENT_UPDATES = []
+LAST_ERROR = None
+
 # --- HTTP HEALTH CHECK SERVER FOR CLOUD HOSTING (RENDER / RAILWAY / KOYEB) ---
 class HealthCheckHandler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
@@ -64,6 +67,8 @@ class HealthCheckHandler(http.server.BaseHTTPRequestHandler):
             "connected_channel": channel_title,
             "channel_id": channel_id,
             "vault": vault_stats,
+            "recent_updates": RECENT_UPDATES[-10:],
+            "last_error": str(LAST_ERROR) if LAST_ERROR else None,
             "timestamp": str(datetime.datetime.now())
         }
         self.wfile.write(json.dumps(resp, ensure_ascii=False).encode("utf-8"))
@@ -1278,7 +1283,7 @@ def run_bot():
     threading.Thread(target=autopilot_scheduler_loop, daemon=True).start()
 
     try:
-        requests.post(f"{TELEGRAM_API}/deleteWebhook?drop_pending_updates=true", timeout=10)
+        requests.post(f"{TELEGRAM_API}/deleteWebhook?drop_pending_updates=false", timeout=10)
     except Exception:
         pass
     
@@ -1298,6 +1303,21 @@ def run_bot():
                     consecutive_errors = 0
                     for update in res["result"]:
                         offset = update["update_id"] + 1
+                        
+                        summary = {
+                            "time": datetime.datetime.now().strftime("%H:%M:%S"),
+                            "id": update.get("update_id"),
+                        }
+                        if "message" in update:
+                            m = update["message"]
+                            summary["type"] = "message"
+                            summary["chat_id"] = m.get("chat", {}).get("id")
+                            summary["chat_title"] = m.get("chat", {}).get("title")
+                            summary["text"] = m.get("text")
+                            summary["thread_id"] = m.get("message_thread_id")
+                        RECENT_UPDATES.append(summary)
+                        if len(RECENT_UPDATES) > 15:
+                            RECENT_UPDATES.pop(0)
                         
                         if "channel_post" in update:
                             c_post = update["channel_post"]
