@@ -884,7 +884,7 @@ def find_cluster_in_vault(query_text=""):
     q = query_text.lower().strip()
 
     # 1. Check if user specified a product model or dish keyword
-    keywords = ["s100", "s200", "sona", "i8", "gà", "sườn", "thịt", "bánh", "cá", "heo", "nướng", "hấp"]
+    keywords = ["s100", "s200", "sona", "i8", "sữa hạt", "sữa", "gà", "sườn", "thịt", "bánh", "cá", "heo", "nướng", "hấp"]
     matched_keyword = None
     for kw in keywords:
         if kw in q:

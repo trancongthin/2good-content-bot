@@ -173,8 +173,18 @@ LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY (BẮT BUỘC TRÁNH TRÙNG LẶP NỘI
 - Tự làm sạch bằng hơi nước (Steam Clean): Hơi sương siêu nhiệt làm mềm nhũn dầu mỡ bám dính, chỉ cần lau nhẹ 1 đường là sạch bóng.
 - Gia nhiệt đối lưu 360 độ không cần lật trở. Vỏ thép phay xước Quiet Luxury sang trọng.
 
-🔥 DÒNG NỒI NẤU CHẬM 2GOOD SONA i8:
-- Công nghệ nấu cách thủy truyền nhiệt gián tiếp qua hơi nước, thố sứ tự nhiên cao cấp, giữ trọn vi chất dinh dưỡng, nấu cháo, chưng yến, hầm canh phân tầng.
+🔥 DÒNG MÁY LÀM SỮA HẠT 2GOOD SONA i8 (RẢNH TAY 100% - TỰ RÓT - TỰ VỆ SINH & KHỬ TRÙNG):
+- Triết lý & Thiết kế: "Trạm pha chế Coffee Station" vuông vức, cố định trên đảo bếp, hoạt động rảnh tay 100% như máy pha cà phê tự động.
+- Dung tích & Công suất: 1.2 Lít với 4 mức chọn tự động hút nước từ bình sau (300ml - 600ml - 900ml - 1200ml). Công suất Đun nóng 1000W, Xay 800W cực mạnh nhuyễn mịn không cần lọc qua rây.
+- Chất liệu & Lưỡi dao: Khoang nấu gang đúc tráng sứ chống dính cao cấp chống cháy khét đáy; Lưỡi dao thép không gỉ nhập khẩu Đức nhiều tầng cắt; Độ ồn < 70 dBA siêu êm. Bảng điều khiển cảm ứng LED 100% Tiếng Việt (9 chế độ).
+- ĐẶC QUYỀN ĐỘT PHÁ 1 — TỰ ĐỘNG RÓT SỮA: Nấu xong van thông minh tự mở rót sữa nóng thơm phức xuống ca đựng, không cần bê cối nặng nề, nóng rẫy.
+- ĐẶC QUYỀN ĐỘT PHÁ 2 — TỰ RỬA NƯỚC NÓNG & SẤY KHÔ KHỬ KHUẨN: Tự bơm nước sạch, đun sôi, lưỡi dao đánh bay cặn, tự xả nước bẩn xuống khay thải riêng ở đế, tự sấy khô và khử trùng bằng hơi nóng vô trùng.
+- ĐẶC QUYỀN ĐỘT PHÁ 3 — CHỐNG CHUA SỮA KHI HẸN GIỜ: Hạt khô để trong cối, nước ở bình riêng phía sau, đến đúng giờ hẹn máy mới bơm nước vào nấu, giữ trọn vị tươi mới không bị lên men chua như máy thường.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 QUY TẮC ICON / EMOJI:
+- Mỗi bài viết CHỈ ĐIỂM XUYẾT KHOẢNG 3 ICON trong toàn bài (ví dụ 1 ở tiêu đề, 1 ở giữa thân bài, 1 ở CTA/kết bài).
+- Tuyệt đối KHÔNG lạm dụng rải đầy icon gây rối mắt, giữ văn phong trang nhã, chân thật, tự nhiên và chuyên nghiệp.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 💡 NGUYÊN TẮC ĐA DẠNG HÓA NỘI DUNG (TRÁNH 1 MÀU & TRÁNH LẶP Ý):
@@ -189,20 +199,20 @@ LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY (BẮT BUỘC TRÁNH TRÙNG LẶP NỘI
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🎯 ĐỊNH HƯỚNG SÁNG TẠO ĐẶC BIỆT CHO LẦN NÀY (ĐẢM BẢO KHÔNG BỊ 1 MÀU):
 
-👩‍👧 GÓC 1: BỮA CƠM GIA ĐÌNH / ĐỜI THƯỜNG (Xưng 'Em' - Gọi 'Mọi người' hoặc 'Các bác')
+👩‍👧 GÓC 1: BỮA CƠM GIA ĐÌNH / ĐỜI THƯỜNG / CHĂM SÓC CON CÁI (Xưng 'Em' - Gọi 'Mọi người' hoặc 'Các bác')
 👉 Hãy khai thác sâu theo hướng: [{a1_title}]
 Chi tiết định hướng: {a1_desc}
-(Kèm đầy đủ emoji sinh động và 5-7 hashtag ở cuối bài).
+(Điểm xuyết khoảng 3 icon trang nhã và 5-7 hashtag ở cuối bài).
 
-🥗 GÓC 2: ĂN UỐNG LÀNH MẠNH, SỨC KHỎE & CHẤT LIỆU (Xưng 'Em' - Gọi 'Mọi người' hoặc 'Các bác')
+🥗 GÓC 2: ĂN UỐNG LÀNH MẠNH, SỨC KHỎE, EAT-CLEAN & CHẤT LIỆU (Xưng 'Em' - Gọi 'Mọi người' hoặc 'Các bác')
 👉 Hãy khai thác sâu theo hướng: [{a2_title}]
 Chi tiết định hướng: {a2_desc}
-(Kèm đầy đủ emoji và 5-7 hashtag ở cuối bài).
+(Điểm xuyết khoảng 3 icon trang nhã và 5-7 hashtag ở cuối bài).
 
 🛒 GÓC 3: ĐẠI LÝ / CTV BÁN HÀNG DÂN DÃ, CHẤT PHÁC (Xưng 'Em' - Gọi 'Mọi người' hoặc 'Các bác')
 👉 Hãy khai thác sâu theo hướng: [{a3_title}]
 Chi tiết định hướng: {a3_desc}
-(Nếu bài có video: nhắc khéo CTV tải clip về up Reels/TikTok/Zalo để hút khách; Kèm đầy đủ emoji và 5-7 hashtag ở cuối bài).
+(Nếu bài có video: nhắc khéo CTV tải clip về up Reels/TikTok/Zalo; Điểm xuyết khoảng 3 icon trang nhã và 5-7 hashtag ở cuối bài).
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 HÃY TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON CHUẨN (KHÔNG THÊM BẤT KỲ CHỮ NÀO NGOÀI JSON):
@@ -329,8 +339,18 @@ LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY (BẮT BUỘC TRÁNH TRÙNG LẶP):
 - Tự làm sạch bằng hơi nước (Steam Clean): Hơi sương siêu nhiệt làm mềm nhũn dầu mỡ bám dính, chỉ cần lau nhẹ 1 đường là sạch bóng.
 - Gia nhiệt đối lưu 360 độ không cần lật trở. Vỏ thép phay xước Quiet Luxury sang trọng.
 
-🔥 DÒNG NỒI NẤU CHẬM 2GOOD SONA i8:
-- Công nghệ nấu cách thủy truyền nhiệt gián tiếp qua hơi nước, thố sứ tự nhiên cao cấp, giữ trọn vi chất dinh dưỡng, nấu cháo, chưng yến, hầm canh phân tầng.
+🔥 DÒNG MÁY LÀM SỮA HẠT 2GOOD SONA i8 (RẢNH TAY 100% - TỰ RÓT - TỰ VỆ SINH & KHỬ TRÙNG):
+- Triết lý & Thiết kế: "Trạm pha chế Coffee Station" vuông vức, cố định trên đảo bếp, hoạt động rảnh tay 100% như máy pha cà phê tự động.
+- Dung tích & Công suất: 1.2 Lít với 4 mức chọn tự động hút nước từ bình sau (300ml - 600ml - 900ml - 1200ml). Công suất Đun nóng 1000W, Xay 800W cực mạnh nhuyễn mịn không cần lọc qua rây.
+- Chất liệu & Lưỡi dao: Khoang nấu gang đúc tráng sứ chống dính cao cấp chống cháy khét đáy; Lưỡi dao thép không gỉ nhập khẩu Đức nhiều tầng cắt; Độ ồn < 70 dBA siêu êm. Bảng điều khiển cảm ứng LED 100% Tiếng Việt (9 chế độ).
+- ĐẶC QUYỀN ĐỘT PHÁ 1 — TỰ ĐỘNG RÓT SỮA: Nấu xong van thông minh tự mở rót sữa nóng thơm phức xuống ca đựng, không cần bê cối nặng nề, nóng rẫy.
+- ĐẶC QUYỀN ĐỘT PHÁ 2 — TỰ RỬA NƯỚC NÓNG & SẤY KHÔ KHỬ KHUẨN: Tự bơm nước sạch, đun sôi, lưỡi dao đánh bay cặn, tự xả nước bẩn xuống khay thải riêng ở đế, tự sấy khô và khử trùng bằng hơi nóng vô trùng.
+- ĐẶC QUYỀN ĐỘT PHÁ 3 — CHỐNG CHUA SỮA KHI HẸN GIỜ: Hạt khô để trong cối, nước ở bình riêng phía sau, đến đúng giờ hẹn máy mới bơm nước vào nấu, giữ trọn vị tươi mới không bị lên men chua như máy thường.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 QUY TẮC ICON / EMOJI:
+- Mỗi bài viết CHỈ ĐIỂM XUYẾT KHOẢNG 3 ICON trong toàn bài (ví dụ 1 ở tiêu đề, 1 ở giữa thân bài, 1 ở CTA/kết bài).
+- Tuyệt đối KHÔNG lạm dụng rải đầy icon gây rối mắt, giữ văn phong trang nhã, chân thật, tự nhiên và chuyên nghiệp.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 💡 NGUYÊN TẮC ĐA DẠNG HÓA NỘI DUNG (TRÁNH 1 MÀU & TRÁNH LẶP Ý):
@@ -345,20 +365,20 @@ LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY (BẮT BUỘC TRÁNH TRÙNG LẶP):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🎯 ĐỊNH HƯỚNG SÁNG TẠO ĐẶC BIỆT CHO LẦN NÀY (ĐẢM BẢO KHÔNG BỊ 1 MÀU):
 
-👩‍👧 GÓC 1: BỮA CƠM GIA ĐÌNH / ĐỜI THƯỜNG (Xưng 'Em' - Gọi 'Mọi người' hoặc 'Các bác')
+👩‍👧 GÓC 1: BỮA CƠM GIA ĐÌNH / ĐỜI THƯỜNG / CHĂM SÓC GIA ĐÌNH (Xưng 'Em' - Gọi 'Mọi người' hoặc 'Các bác')
 👉 Khai thác theo hướng: [{a1_title}]
 Chi tiết định hướng: {a1_desc}
-(Kèm đầy đủ emoji sinh động và 5-7 hashtag ở cuối bài).
+(Điểm xuyết khoảng 3 icon trang nhã và 5-7 hashtag ở cuối bài).
 
-🥗 GÓC 2: ĂN UỐNG LÀNH MẠNH, SỨC KHỎE & CHẤT LIỆU (Xưng 'Em' - Gọi 'Mọi người' hoặc 'Các bác')
+🥗 GÓC 2: ĂN UỐNG LÀNH MẠNH, SỨC KHỎE, EAT-CLEAN & CHẤT LIỆU (Xưng 'Em' - Gọi 'Mọi người' hoặc 'Các bác')
 👉 Khai thác theo hướng: [{a2_title}]
 Chi tiết định hướng: {a2_desc}
-(Kèm đầy đủ emoji và 5-7 hashtag ở cuối bài).
+(Điểm xuyết khoảng 3 icon trang nhã và 5-7 hashtag ở cuối bài).
 
 🛒 GÓC 3: ĐẠI LÝ / CTV BÁN HÀNG DÂN DÃ, CHẤT PHÁC (Xưng 'Em' - Gọi 'Mọi người' hoặc 'Các bác')
 👉 Khai thác theo hướng: [{a3_title}]
 Chi tiết định hướng: {a3_desc}
-(Kèm đầy đủ emoji và 5-7 hashtag ở cuối bài).
+(Nếu bài có video: nhắc khéo CTV tải clip về up Reels/TikTok/Zalo; Điểm xuyết khoảng 3 icon trang nhã và 5-7 hashtag ở cuối bài).
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 HÃY TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON CHUẨN:

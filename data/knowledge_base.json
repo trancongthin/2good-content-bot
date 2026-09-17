@@ -249,5 +249,45 @@
     "marketing_claim": "Đặc quyền Lồng tự đảo 360 độ trên 2GOOD S100: Rang lạc, chiên khoai vàng giòn từng hạt mà không cần mở lò đứng canh lật dở!",
     "num_photos": 0,
     "created_at": "2026-09-17 10:01:10.000000"
+  },
+  {
+    "product_code": "2GOOD S100",
+    "visual_fact": "Viết bài về 2good s100 chân thật",
+    "technical_fact": "Nồi chiên hơi nước 20L, lồng đảo 360 độ tự động, công nghệ SuperHeat 115°C, 100% Inox 304 chuẩn y tế không Teflon",
+    "marketing_claim": "2GOOD S100 - Đa năng 3 trong 1, tự động đảo đều không cần lật mở, an toàn tuyệt đối cho sức khỏe gia đình",
+    "num_photos": 0,
+    "created_at": "2026-09-17 10:07:45.564904"
+  },
+  {
+    "product_code": "2GOOD S100",
+    "visual_fact": "Viết bài về 2good s100 chân thật",
+    "technical_fact": "Khoang nồi và 8 phụ kiện 100% Inox 304 chuẩn y tế, lồng đảo 360 độ tự động, công nghệ hấp SuperHeat 115°C",
+    "marketing_claim": "Giải pháp nấu nướng thảnh thơi, an toàn tuyệt đối cho sức khỏe với Inox 304 không chống dính Teflon",
+    "num_photos": 0,
+    "created_at": "2026-09-17 10:13:44.489547"
+  },
+  {
+    "product_code": "2GOOD Sona i8",
+    "visual_fact": "Máy làm sữa hạt 2GOOD Sona i8 thiết kế Trạm pha chế Coffee Station, ca sữa hạt đậu nành nóng hổi sánh mịn tự rót thơm phức và khay nước thải tự xả sạch sẽ",
+    "technical_fact": "Dung tích 1.2L (300-600-900-1200ml tự hút nước), Đun 1000W - Xay 800W, Khoang gang đúc tráng sứ cao cấp, Lưỡi dao thép Đức nhiều tầng cắt nhuyễn mịn không cần lọc rây, Độ ồn <70 dBA siêu êm, 9 chế độ cảm ứng tiếng Việt",
+    "marketing_claim": "Máy làm sữa hạt 2GOOD Sona i8 — Trải nghiệm rảnh tay 100%: Tự nấu, tự rót ra ca, tự đun nước sôi rửa cối và sấy khô khử trùng, không lo chua sữa khi hẹn giờ!",
+    "num_photos": 0,
+    "created_at": "2026-09-17 10:20:00.000000"
+  },
+  {
+    "product_code": "2GOOD Sona i8",
+    "visual_fact": "Ly sữa hạt hạnh nhân óng ả không lợn cợn và chu trình tự động rửa nước nóng đun sôi sấy khô khử khuẩn của máy Sona i8",
+    "technical_fact": "Tính năng Self-Cleaning tự bơm nước sạch đun nóng đánh bay cặn bẩn xả khay nước thải; Thiết kế tách rời hạt khô trong cối và nước ở bình riêng chống chua sữa khi hẹn giờ qua đêm",
+    "marketing_claim": "Giải phóng hoàn toàn nỗi sợ cọ rửa cối: Uống sữa hạt tươi thơm ngon mỗi sáng nhàn tênh, máy tự rửa tự sấy vô trùng 100%!",
+    "num_photos": 0,
+    "created_at": "2026-09-17 10:20:05.000000"
+  },
+  {
+    "product_code": "2GOOD Sona i8",
+    "visual_fact": "Giới thiệu máy làm sữa hạt 2GOOD Sona i8 rảnh tay tự rửa",
+    "technical_fact": "Tự động rót sữa, tự rửa nước nóng và sấy khô khử khuẩn, chống chua khi hẹn giờ",
+    "marketing_claim": "Máy làm sữa hạt rảnh tay 100% không cần bê cối nặng hay tự cọ rửa thủ công",
+    "num_photos": 0,
+    "created_at": "2026-09-17 10:21:35.656560"
   }
 ]
