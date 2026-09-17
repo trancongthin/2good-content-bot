@@ -1,0 +1,47 @@
+{
+  "objections": [
+    {
+      "id": "price_high",
+      "trigger_keywords": ["đắt", "giá cao", "mắc", "tiền nhiều", "đắt quá", "bên kia rẻ hơn", "nồi khác có hơn triệu"],
+      "strategy": "Tuyệt đối không tranh luận, không vội giảm giá. Đồng cảm và phân tích sự khác biệt về chất liệu Inox 304, công nghệ chiên hơi nước và độ bền so với nồi rẻ tiền",
+      "key_arguments": [
+        "Nồi chiên truyền thống hơn 1 triệu dùng lớp chống dính hóa học Teflon, sau vài tháng bong tróc ăn vào người rất độc hại. 2GOOD dùng 100% Inox 304 chuẩn y tế dùng bền trọn đời không hỏng",
+        "Nồi thường chỉ chiên khô làm teo tóp thịt, ăn nghẹn họng. 2GOOD là nồi chiên HƠI NƯỚC kết hợp, ngoài giòn trong mọng nước như nhà hàng",
+        "Tính ra mua 1 chiếc nồi chất lượng dùng 5-10 năm rẻ hơn nhiều so với mua nồi rẻ 1-2 năm hỏng hoặc phải vứt đi vì tróc chống dính"
+      ],
+      "sample_reply": "Dạ em rất hiểu tâm lý của mình ạ! Ban đầu nhiều khách bên em cũng đắn đo vì thấy trên thị trường có những nồi chỉ hơn 1 triệu. Nhưng thực tế 2GOOD là dòng 'Chiên Hơi Nước' thế hệ mới khác biệt hoàn toàn ạ:\n1️⃣ Khoang nồi làm 100% Inox 304 y tế, không dùng lớp sơn chống dính Teflon hóa học nên dùng 5-10 năm chà cọ thoải mái không sợ bong tróc hay sinh chất độc hại.\n2️⃣ Có công nghệ phun sương siêu nhiệt giúp thịt nướng ngoài giòn tan mà bên trong mọng nước ngọt thỉu, không bị khô xác như nồi thường.\nĐầu tư 1 lần bảo vệ sức khỏe cả nhà và dùng lâu dài tính ra lại rất tiết kiệm anh/chị ạ!"
+    },
+    {
+      "id": "size_too_big",
+      "trigger_keywords": ["to quá", "cồng kềnh", "chiếm chỗ", "bếp chật", "nồi to", "nhà ít người"],
+      "strategy": "Giải thích dung tích thực tế: mua nồi to không phải ngày nào cũng nấu nhiều mà để khí nóng đối lưu đều giúp thức ăn ngon hơn, và tiện lợi khi có cỗ bàn lễ Tết",
+      "key_arguments": [
+        "Nồi dung tích lớn giúp nhiệt đối lưu thông thoáng, thức ăn chín đều 4 mặt mà không bị xếp chồng chéo gây sống bên trong",
+        "Nồi to thay thế luôn lò nướng, nồi hấp, lò vi sóng nên thực chất lại làm gọn gàng gian bếp hơn",
+        "Gia đình hàng ngày vẫn nấu đĩa nhỏ bình thường, nhưng đến dịp giỗ chạp, lễ Tết nướng nguyên con gà hay cá to không cần chặt khúc"
+      ],
+      "sample_reply": "Dạ em hiểu gian bếp gọn gàng là ưu tiên hàng đầu của các chị em. Nhưng chiếc nồi này có dung tích lớn là một lợi thế cực lớn ạ:\n👉 Nồi khoang rộng thì luồng khí nóng đối lưu mới tuần hoàn đều 360 độ, thức ăn chín vàng ươm các mặt mà không cần mở lò lật trở.\n👉 Bình thường mình nướng mẩu thịt nhỏ vẫn dùng cực kỳ tiết kiệm điện, nhưng đến lúc giỗ Tết hay nhà có khách thì nướng nguyên con gà/con cá 2-3kg cực kỳ tiện lợi, không phải chặt vụn.\n👉 Hơn nữa máy tích hợp cả hấp, nướng, rã đông nên thay thế luôn 3-4 thiết bị lỉnh kỉnh khác trong bếp ạ!"
+    },
+    {
+      "id": "cleaning_fear",
+      "trigger_keywords": ["khó rửa", "ngại rửa", "dầu mỡ", "vệ sinh", "bẩn", "lau chùi"],
+      "strategy": "Nhấn mạnh công nghệ tự làm sạch bằng hơi nước Steam Clean và chất liệu Inox 304 trơ lỳ",
+      "key_arguments": [
+        "Có chế độ tự làm sạch Steam Clean: Hơi nước siêu nhiệt bắn tung mỡ bám cứng đầu, làm mềm trong 10 phút, chỉ cần lấy khăn lau nhẹ là sạch bóng",
+        "Khoang 100% Inox 304 không bám dính như nhựa, dùng cước sắt chà rửa thoải mái nếu muốn mà không sợ xước hỏng"
+      ],
+      "sample_reply": "Dạ chị yên tâm 100% về khâu rửa ráy ạ! Nồi 2GOOD đã giải quyết triệt để nỗi ám ảnh này bằng 2 điểm:\n1️⃣ Có chế độ tự làm sạch 'Steam Clean': Bấm 1 nút, máy tự phun hơi nước siêu nhiệt làm bở tan toàn bộ dầu mỡ bám trong khoang. Chị chỉ cần cầm khăn lau lướt qua một đường là sạch bong.\n2️⃣ Toàn bộ lòng nồi là Inox 304 sáng bóng, không hoen gỉ, các khay nướng cho vào máy rửa bát thoải mái ạ!"
+    },
+    {
+      "id": "sona_i8_noise_and_cleaning",
+      "trigger_keywords": ["máy sữa hạt ồn", "ngại rửa cối", "chua sữa", "khó vệ sinh máy sữa hạt"],
+      "strategy": "Nhấn mạnh 3 tính năng rảnh tay 100% độc quyền của Sona i8: Độ ồn cực êm <70dB, tự rửa sấy khô khử trùng, và cơ chế chống chua sữa khi hẹn giờ",
+      "key_arguments": [
+        "Sona i8 êm hơn hẳn các máy truyền thống nhờ động cơ thế hệ mới và gang đúc cách âm",
+        "Tự động hoàn toàn: Tự hút nước, tự rót sữa, tự đun nước nóng rửa cối và sấy khô khử khuẩn",
+        "Hẹn giờ qua đêm không chua sữa vì nước và hạt để tách biệt, sáng dậy tới giờ mới bơm nước nấu"
+      ],
+      "sample_reply": "Dạ nếu chị đã từng dùng máy sữa hạt cũ sẽ rất sợ tiếng ồn đinh tai và cảnh hì hục cọ rửa lưỡi dao. Nhưng 2GOOD Sona i8 sinh ra để giải phóng 100% khâu đó ạ:\n✨ Máy chạy cực kỳ êm ái (<70dB), không gây giật mình cho trẻ nhỏ hay người già.\n✨ Nấu xong máy tự rót sữa ra cốc, sau đó tự đun nước nóng rửa cối và sấy khô khử khuẩn, chị không cần chạm tay rửa.\n✨ Đặc biệt hẹn giờ qua đêm thoải mái, nước và hạt để riêng đến sáng mới nấu nên đảm bảo sữa tươi mới, không bao giờ bị chua ạ!"
+    }
+  ]
+}

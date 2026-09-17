@@ -1,0 +1,71 @@
+{
+  "S200": {
+    "name": "Nồi chiên hơi nước 2GOOD S200",
+    "product_code": "2GOOD S200",
+    "category": "Nồi chiên hơi nước cao cấp",
+    "capacity": "32 Lít (Dung tích cực đại phân khúc gia đình, chứa trọn 2 con gà nguyên con cùng lúc)",
+    "power": "Chiên 2200W + Hấp siêu nhiệt 1500W",
+    "temperature_range": "40°C - 230°C",
+    "material": "Khoang nồi và phụ kiện 100% Inox 304 cao cấp chuẩn y tế, không dùng sơn chống dính Teflon, không hoen gỉ, cọ rửa búi sắt thoải mái không sợ bong tróc",
+    "key_technologies": [
+      "Công nghệ Phun sương siêu nhiệt Steam Active (3 cấp độ) giúp khoá ẩm 99%, thịt bên trong mọng nước tứa xốt, ngoài giòn rụm",
+      "Quạt đối lưu 360 độ công suất lớn ở lưng lò, chín vàng đều 4 mặt không cần mở lò lật trở thức ăn",
+      "Chế độ tự làm sạch Steam Clean bắn luồng hơi nước làm mềm dầu mỡ đóng cục, lau nhẹ là sạch",
+      "Bình chứa nước tách ngoài 1.2L tháo rời mặt trước, châm nước không cần mở cửa lò làm mất nhiệt",
+      "Cảm biến nhiệt thực tế Real-time hiển thị chính xác nhiệt độ đang có trong khoang lò",
+      "Cửa kính cường lực trong suốt 2 lớp cách nhiệt, quan sát trọn vẹn món ăn chín"
+    ],
+    "accessories": "Khay nướng Inox 304, Vỉ hấp Inox 304, Khay hứng dầu mỡ Inox 304, Găng tay cách nhiệt",
+    "target_customer": "Gia đình 4-8 người, người thích nấu cỗ/tiệc, người sành ăn sợ đồ chiên khô xơ, người quan tâm sức khỏe sợ chất chống dính độc hại",
+    "selling_points_for_ctv": [
+      "Nhấn mạnh khoang 100% Inox 304: An toàn trọn đời, không bao giờ lo ung thư do bong tróc chống dính như các nồi giá rẻ",
+      "Dung tích 32L: Mua 1 lần dùng cả đời, làm cỗ giỗ Tết nướng 2 con gà hoặc 1 con cá to nguyên con không phải chặt khúc",
+      "Chiên hơi nước: Khắc phục triệt để nhược điểm thịt khô xác, nghẹn họng của nồi chiên không dầu truyền thống",
+      "Tự làm sạch Steam Clean: Đập tan nỗi sợ cọ rửa nồi chiên của chị em nội trợ"
+    ]
+  },
+  "S100": {
+    "name": "Nồi chiên hơi nước 2GOOD S100",
+    "product_code": "2GOOD S100",
+    "category": "Nồi chiên hơi nước đa năng có lồng tự đảo",
+    "capacity": "20 Lít (Thiết kế vuông vức, nướng vừa gà nguyên con 2-2.5kg)",
+    "power": "1800W mạnh mẽ",
+    "temperature_range": "40°C - 230°C",
+    "material": "Khoang nồi 100% Inox 304 sáng bóng, không dùng chống dính Teflon hóa học",
+    "key_technologies": [
+      "Lồng tự đảo 360 độ độc quyền: Tự động xoay tròn đảo đều thực phẩm, chuyên trị rang lạc, ngô rang bơ, khoai tây chiên giòn rụm không cần đứng canh",
+      "Công nghệ Hấp siêu nhiệt SuperHeat 115°C: Hấp cực nhanh, giữ trọn 99% vitamin và độ tươi ngọt của rau củ, tôm cua cá",
+      "Dải nhiệt siêu rộng 40°C - 230°C: Tích hợp ủ bột bánh mì (40°C), làm sữa chua (45°C), chưng yến (85°C), sấy hoa quả detox",
+      "Hệ thống làm sạch khoang lò tự động bằng hơi nước siêu nhiệt"
+    ],
+    "accessories": "Bộ 8 phụ kiện Inox 304 đầy đủ nhất: Lồng tự đảo 360 độ, Trục quay gà rôti, Khay lưới, Khay nướng, Tay gắp, Vỉ hấp...",
+    "target_customer": "Gia đình trẻ 3-5 người, người thích làm bánh, thích ăn vặt khoai chiên/rang lạc, muốn một chiếc nồi gọn gàng nhưng đa năng",
+    "selling_points_for_ctv": [
+      "Điểm độc quyền ăn tiền nhất: LỒNG TỰ ĐẢO 360 ĐỘ — Không có chiếc nồi chiên hơi nước nào trong tầm giá có tính năng này",
+      "Bộ 8 phụ kiện Inox 304 tặng kèm đầy đủ không phải mua ngoài",
+      "Đa năng thay thế 8 thiết bị bếp: Lò vi sóng, nồi hấp, lò nướng, máy ủ sữa chua, máy sấy hoa quả..."
+    ]
+  },
+  "Sona_i8": {
+    "name": "Máy làm sữa hạt 2GOOD Sona i8",
+    "product_code": "2GOOD Sona i8",
+    "category": "Máy làm sữa hạt rảnh tay 100% thế hệ mới",
+    "capacity": "1.2 Lít (Tự hút nước từ 300ml - 1200ml tùy chỉnh)",
+    "power": "Đun nấu 1000W + Xay đảo 800W",
+    "noise_level": "Êm ái <70 dBA (Êm hơn 50% so với máy làm sữa hạt truyền thống)",
+    "material": "Cối gang đúc tráng sứ Nano Ceramic cao cấp không bám cặn khét đáy, Lưỡi dao thép Đức sắc bén chống gỉ",
+    "key_technologies": [
+      "Rảnh tay 100% dạng Coffee Station: Tự động bơm nước từ bình ngoài theo đúng lượng sữa cần nấu, người dùng không cần đổ nước bằng tay",
+      "Tự động rót thành phẩm ra cốc thủy tinh sau khi nấu xong",
+      "Tự động làm sạch & Khử khuẩn 3 bước: Rửa nước nóng áp lực cao ➡️ Sấy khô cối ➡️ Khử trùng tia cực tím, chống nấm mốc và mùi hôi",
+      "Cơ chế chống chua sữa khi hẹn giờ qua đêm: Nước và hạt để tách biệt, đúng giờ nấu máy mới tự bơm nước vào nấu, không lo ngâm hạt bị chua hỏng"
+    ],
+    "accessories": "Cốc hứng sữa thủy tinh cao cấp, Bình chứa nước tinh khiết tháo rời, Cọ vệ sinh chuyên dụng",
+    "target_customer": "Mẹ bỉm sữa, dân văn phòng bận rộn, người lớn tuổi ăn thực dưỡng, người sợ tiếng ồn đinh tai của máy sữa hạt cũ và sợ khâu cọ rửa cối",
+    "selling_points_for_ctv": [
+      "Insight đắt giá nhất: ĐÁNH TAN NỖI ÁM ẢNH RỬA CỐI — Máy tự rửa và tự sấy khô sạch bong",
+      "Hẹn giờ sáng dậy có sữa uống mà không sợ chua sữa",
+      "Độ ồn êm ái dưới 70dB không đánh thức con nhỏ hay người già"
+    ]
+  }
+}

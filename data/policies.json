@@ -1,0 +1,19 @@
+{
+  "warranty": {
+    "duration": "Bảo hành chính hãng 12 - 24 tháng (tùy model sản phẩm)",
+    "centers": [
+      "Hà Nội: Trung tâm kỹ thuật & bảo hành chính hãng 2GOOD",
+      "TP. Hồ Chí Minh: Chi nhánh bảo hành chính hãng 2GOOD phía Nam"
+    ],
+    "policy_details": "Bảo hành toàn bộ linh kiện điện tử, động cơ, thanh nhiệt. Hỗ trợ linh kiện thay thế chính hãng trọn đời."
+  },
+  "exchange": {
+    "period": "1 đổi 1 trong vòng 7 ngày đầu tiên",
+    "condition": "Đổi mới ngay lập tức nếu phát sinh lỗi kỹ thuật từ nhà sản xuất. Miễn phí 100% chi phí vận chuyển đổi mới."
+  },
+  "shipping_and_inspection": {
+    "shipping": "Giao hàng tận nơi toàn quốc qua đơn vị vận chuyển uy tín (Viettel Post / GHTK), đóng gói thùng xốp bảo vệ 2 lớp.",
+    "inspection_rule": "KHÁCH HÀNG ĐƯỢC KIỂM TRA HÀNG (ĐỒNG KIỂM) TRƯỚC KHI THANH TOÁN. Cắm điện thử máy, kiểm tra phụ kiện đầy đủ rồi mới gửi tiền cho bưu tá.",
+    "hotline_support": "Có đội ngũ kỹ thuật hướng dẫn sử dụng qua Zalo/Video call 1-1 cho khách hàng mọi lúc."
+  }
+}

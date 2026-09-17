@@ -326,7 +326,7 @@ def split_text_into_chunks(text, max_length=3800):
         
     return chunks
 
-def send_message(chat_id, text, reply_markup=None, parse_mode="HTML"):
+def send_message(chat_id, text, reply_markup=None, parse_mode="HTML", reply_to_message_id=None):
     chunks = split_text_into_chunks(text)
     last_res = None
     
@@ -337,6 +337,8 @@ def send_message(chat_id, text, reply_markup=None, parse_mode="HTML"):
             "text": chunk,
             "parse_mode": parse_mode
         }
+        if reply_to_message_id and i == 0:
+            payload["reply_to_message_id"] = reply_to_message_id
         if markup:
             payload["reply_markup"] = json.dumps(markup)
             
@@ -534,26 +536,32 @@ def execute_reset():
     return f"🧹 <b>ĐÃ RESET HỆ THỐNG THÀNH CÔNG:</b>\n- Đã xóa sạch bộ đệm media.\n- Đã giải phóng {count} bài nháp khỏi bộ nhớ RAM.\n- Kho Media (/kho) vẫn được bảo toàn nguyên vẹn."
 
 def build_help_message():
-    return """📖 <b>HƯỚNG DẪN SỬ DỤNG 2GOOD CONTENT ENGINE (24/7):</b>
+    return """📖 <b>HƯỚNG DẪN SỬ DỤNG 2GOOD CONTENT ENGINE & TRỢ LÝ CTV (24/7):</b>
 
 1️⃣ <b>Gửi cụm Ảnh / Video vào Bot (Tự động nạp Kho):</b>
-- Chọn <b>ảnh hoặc video</b> (hoặc gửi lẫn cả ảnh và video) từ máy hoặc chuyển tiếp từ kênh khác.
+- Chọn <b>ảnh hoặc video</b> (hoặc gửi lẫn cả ảnh và video).
 - Gửi <b>cùng một lúc</b> vào khung chat này.
 - Bot sẽ tự động:
-  • 📦 Lưu trọn vẹn cụm vào <b>Kho Media (/kho)</b> để chuẩn bị phát sóng sáng mai.
-  • 🤖 Đồng thời gọi AI soi tư liệu và soạn sẵn <b>01 BÀI TỔNG HỢP VỚI 3 GÓC CHÂN THẬT</b> (Mẹ bỉm, Eat-clean Inox 304, Đại lý bán hàng).
-  • 🚀 Sếp có thể bấm duyệt đăng ngay hoặc để nguyên trong Kho để hẹn giờ 08:00 AM tự động chạy.
+  • 📦 Lưu trọn vẹn cụm vào <b>Kho Media (/kho)</b> để phát sóng sáng mai.
+  • 🤖 Đồng thời gọi AI soạn sẵn <b>01 BÀI TỔNG HỢP VỚI 3 GÓC CHÂN THẬT</b>.
 
-2️⃣ <b>Chế độ Auto-Pilot 08:00 AM (Bất tử Content):</b>
-- Đúng <b>08:00 AM mỗi sáng</b>, Bot tự động bốc 1 cụm media từ Kho, copy sạch sang Kênh CTV (không có chữ Forwarded) kèm 3 góc bài viết.
-- Khi kho hết bài mới, Bot tự động xoay vòng bài cũ (> 7 ngày) và viết lại nội dung mới toanh!
+2️⃣ <b>Trợ lý Bán Hàng & Xử Lý Từ Chối Cho CTV:</b>
+- <b>Trong nhóm chung:</b> Tag <code>@mr_morning_bot [câu hỏi]</code> hoặc gõ <code>/hoi [câu hỏi]</code>
+  <i>Ví dụ: <code>@mr_morning_bot Khách chê S200 đắt quá</code></i>
+- <b>Trong chat riêng 1-1 với Bot:</b> Gõ thẳng câu hỏi, bot sẽ đưa ra:
+  🎯 Insight tâm lý khách
+  💬 Câu trả lời mẫu lịch thiệp, tự nhiên để copy gửi khách
+  💡 Mẹo thực chiến cho CTV
+- Các lệnh nhanh: <code>/hoi</code>, <code>/sp</code>, <code>/chinhsach</code>, <code>/tuvan</code>
 
-3️⃣ <b>Các lệnh quản trị:</b>
-- <code>/kho</code> : Xem kho ảnh/video, số lượng bài mới & bài chờ quay vòng.
-- <code>/chay_ngay</code> : Kích hoạt tức thì 1 phiên phát sóng Auto-Pilot vào kênh CTV.
-- <code>/status</code> : Báo cáo trạng thái bot, uptime, kết nối kênh.
+3️⃣ <b>Chế độ Auto-Pilot 08:00 AM (Bất tử Content):</b>
+- Đúng <b>08:00 AM mỗi sáng</b>, Bot tự động bốc 1 cụm media từ Kho, phát sóng sang Kênh CTV kèm 3 góc bài viết.
+
+4️⃣ <b>Các lệnh quản trị:</b>
+- <code>/kho</code> : Xem kho ảnh/video.
+- <code>/chay_ngay</code> : Kích hoạt tức thì 1 phiên phát sóng.
+- <code>/status</code> : Báo cáo trạng thái bot, uptime.
 - <code>/history</code>: Xem 5 bài đã đăng gần nhất.
-- <code>/reset</code>  : Làm sạch bộ đệm & hàng chờ nháp.
 - <code>/help</code>   : Xem lại hướng dẫn này."""
 
 # --- PUBLISHING LOGIC TO CHANNEL ---
@@ -1062,6 +1070,20 @@ def worker_process_text_prompt(chat_id, text_prompt):
 
     send_message(chat_id, preview_text, reply_markup=inline_keyboard)
 
+# --- WORKER: PROCESS CTV SALES CONSULTING & OBJECTION HANDLING ---
+def worker_process_ctv_query(chat_id, query_text, reply_to_message_id=None):
+    try:
+        from bot_engine import generate_ctv_advice
+        advice = generate_ctv_advice(query_text)
+        send_message(chat_id, advice, parse_mode="Markdown", reply_to_message_id=reply_to_message_id)
+    except Exception as e:
+        print(f"Error in worker_process_ctv_query: {e}")
+        send_message(
+            chat_id, 
+            "Dạ em đang gặp chút gián đoạn kết nối AI, bác vui lòng thử lại sau ít giây nhé!", 
+            reply_to_message_id=reply_to_message_id
+        )
+
 # --- CALLBACK ROUTER ---
 def handle_callback(callback_query):
     query_id = callback_query["id"]
@@ -1285,6 +1307,7 @@ def run_bot():
                             chat = msg.get("chat", {})
                             chat_id = str(chat.get("id"))
                             chat_type = chat.get("type", "private")
+                            msg_id = msg.get("message_id")
                             
                             # Handle incoming photo or video (from private chat or any group)
                             if "photo" in msg or "video" in msg:
@@ -1296,14 +1319,17 @@ def run_bot():
                                     cmd = cmd.split("@")[0]
                                 
                                 if cmd == "/start":
-                                    send_message(chat_id, """👋 Chào mọi người! Tôi là <b>Trợ lý AI Content Engine & Kho Media 2GOOD (24/7)</b>.
+                                    send_message(chat_id, """👋 Chào bạn! Tôi là <b>Trợ lý AI Bán Hàng & Content 2GOOD (24/7)</b>.
 
-📸 <b>Mọi người có thể:</b>
-1️⃣ <b>Gửi cụm Ảnh / Video vào nhóm:</b> Bot tự gom, lưu vào <b>Kho Media (/kho)</b> và soạn 3 góc bài viết.
-2️⃣ <b>Hẹn giờ Auto-Pilot 08:00 AM:</b> Mỗi sáng tự động lấy 1 cụm trong kho phát sóng cho CTV.
-3️⃣ <b>Gõ bất kỳ ý tưởng nào:</b> AI sẽ tự động viết bài theo đúng yêu cầu!
+💬 <b>Hỏi đáp bán hàng & Xử lý từ chối cho CTV:</b>
+• <b>Trong nhóm:</b> Tag <code>@mr_morning_bot [câu hỏi]</code> hoặc gõ <code>/hoi [câu hỏi]</code>
+• <b>Trong chat 1-1:</b> Cứ gõ thẳng câu hỏi (VD: <i>Khách chê S200 đắt, S100 bảo hành bao lâu, Sona i8 có tự rửa không...</i>)
 
-💡 Gõ <code>/kho</code> để xem kho, <code>/chay_ngay</code> để phát tức thì, hoặc <code>/status</code> để xem báo cáo.""")
+📸 <b>Kho Media & Viết Content:</b>
+• Gửi ảnh/video: Bot tự lưu vào <b>Kho Media (/kho)</b> và soạn 3 góc bài viết.
+• Gõ <code>/viet [ý tưởng]</code>: AI soạn bài bán hàng theo yêu cầu.
+
+💡 Gõ <code>/help</code> để xem hướng dẫn đầy đủ!""")
                                 elif cmd in ["/status", "/ping"]:
                                     st_msg, kb = build_status_message()
                                     send_message(chat_id, st_msg, reply_markup=kb)
@@ -1324,9 +1350,31 @@ def run_bot():
                                         threading.Thread(target=worker_process_text_prompt, args=[chat_id, prompt], daemon=True).start()
                                     else:
                                         send_message(chat_id, "💡 Hãy gõ kèm ý tưởng, ví dụ: <code>/viet Gà nướng mật ong da giòn</code>")
+                                elif cmd in ["/hoi", "/tuvan", "/sp", "/bot", "/chinhsach"]:
+                                    query = text[len(text.split()[0]):].strip()
+                                    if query:
+                                        send_message(chat_id, "⏳ <i>Đang tra cứu dữ liệu sản phẩm & soạn kịch bản tư vấn...</i>", reply_to_message_id=msg_id)
+                                        threading.Thread(target=worker_process_ctv_query, args=[chat_id, query, msg_id], daemon=True).start()
+                                    else:
+                                        send_message(chat_id, "💡 Hãy gõ kèm câu hỏi, ví dụ: <code>/hoi Khách chê S200 đắt</code> hoặc <code>/hoi S100 có lồng đảo không</code>", reply_to_message_id=msg_id)
                                 else:
-                                    # Any text message in group or private is treated directly as a content idea prompt!
-                                    threading.Thread(target=worker_process_text_prompt, args=[chat_id, text], daemon=True).start()
+                                    lower_text = text.lower()
+                                    is_tagged = False
+                                    clean_query = text
+                                    
+                                    if "@mr_morning_bot" in lower_text:
+                                        is_tagged = True
+                                        clean_query = re.sub(r"@mr_morning_bot", "", text, flags=re.IGNORECASE).strip()
+                                    elif "reply_to_message" in msg and msg["reply_to_message"].get("from", {}).get("is_bot"):
+                                        is_tagged = True
+                                        clean_query = text
+                                    elif chat_type == "private":
+                                        is_tagged = True
+                                        clean_query = text
+                                        
+                                    if is_tagged and clean_query:
+                                        send_message(chat_id, "⏳ <i>Đang tra cứu dữ liệu sản phẩm & soạn kịch bản tư vấn...</i>", reply_to_message_id=msg_id)
+                                        threading.Thread(target=worker_process_ctv_query, args=[chat_id, clean_query, msg_id], daemon=True).start()
                         
                         elif "callback_query" in update:
                             handle_callback(update["callback_query"])
