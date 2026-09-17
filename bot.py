@@ -1320,6 +1320,16 @@ def run_bot():
                                 if "@" in cmd:
                                     cmd = cmd.split("@")[0]
                                 
+                                # 1. Content generation requests (no need to type slash /)
+                                lower_text = text.lower()
+                                is_content_request = (
+                                    cmd in ["/viet", "/content", "viết", "viet", "content"] or
+                                    any(k in lower_text for k in ["viết bài", "viết 1 bài", "soạn bài", "làm bài", "tạo bài", "lên bài", "viết giúp"])
+                                )
+                                
+                                # 2. Consulting / Question commands:
+                                is_consulting_command = cmd in ["/hoi", "/tuvan", "/sp", "/bot", "/chinhsach", "/gia", "/baohanh"]
+                                
                                 if cmd == "/start":
                                     send_message(chat_id, """👋 Chào bạn! Tôi là <b>Trợ lý AI Bán Hàng & Content 2GOOD (24/7)</b>.
 
@@ -1329,7 +1339,7 @@ def run_bot():
 
 📸 <b>Kho Media & Viết Content:</b>
 • Gửi ảnh/video: Bot tự lưu vào <b>Kho Media (/kho)</b> và soạn 3 góc bài viết.
-• Gõ <code>/viet [ý tưởng]</code>: AI soạn bài bán hàng theo yêu cầu.
+• Gõ <code>viết 1 bài [ý tưởng]</code> hoặc <code>/viet [ý tưởng]</code>: AI soạn bài bán hàng theo yêu cầu.
 
 💡 Gõ <code>/help</code> để xem hướng dẫn đầy đủ!""")
                                 elif cmd in ["/status", "/ping"]:
@@ -1346,13 +1356,15 @@ def run_bot():
                                     send_message(chat_id, execute_reset())
                                 elif cmd == "/help":
                                     send_message(chat_id, build_help_message())
-                                elif cmd in ["/viet", "/content"]:
-                                    prompt = text[len(text.split()[0]):].strip()
+                                elif is_content_request:
+                                    prompt = text
+                                    if prompt.lower().startswith(("/viet", "/content")):
+                                        prompt = prompt[len(prompt.split()[0]):].strip()
                                     if prompt:
                                         threading.Thread(target=worker_process_text_prompt, args=[chat_id, prompt], daemon=True).start()
                                     else:
-                                        send_message(chat_id, "💡 Hãy gõ kèm ý tưởng, ví dụ: <code>/viet Gà nướng mật ong da giòn</code>")
-                                elif cmd in ["/hoi", "/tuvan", "/sp", "/bot", "/chinhsach"]:
+                                        send_message(chat_id, "💡 Hãy gõ kèm ý tưởng, ví dụ: <code>viết 1 bài Sona i8</code>")
+                                elif is_consulting_command:
                                     query = text[len(text.split()[0]):].strip()
                                     if query:
                                         send_message(chat_id, "⏳ <i>Đang tra cứu dữ liệu sản phẩm & soạn kịch bản tư vấn...</i>", reply_to_message_id=msg_id)
@@ -1360,7 +1372,6 @@ def run_bot():
                                     else:
                                         send_message(chat_id, "💡 Hãy gõ kèm câu hỏi, ví dụ: <code>/hoi Khách chê S200 đắt</code> hoặc <code>/hoi S100 có lồng đảo không</code>", reply_to_message_id=msg_id)
                                 else:
-                                    lower_text = text.lower()
                                     is_tagged = False
                                     clean_query = text
                                     
@@ -1375,8 +1386,16 @@ def run_bot():
                                         clean_query = text
                                         
                                     if is_tagged and clean_query:
-                                        send_message(chat_id, "⏳ <i>Đang tra cứu dữ liệu sản phẩm & soạn kịch bản tư vấn...</i>", reply_to_message_id=msg_id)
-                                        threading.Thread(target=worker_process_ctv_query, args=[chat_id, clean_query, msg_id], daemon=True).start()
+                                        if any(k in clean_query.lower() for k in ["viết", "content", "soạn", "làm bài"]):
+                                            threading.Thread(target=worker_process_text_prompt, args=[chat_id, clean_query], daemon=True).start()
+                                        else:
+                                            send_message(chat_id, "⏳ <i>Đang tra cứu dữ liệu sản phẩm & soạn kịch bản tư vấn...</i>", reply_to_message_id=msg_id)
+                                            threading.Thread(target=worker_process_ctv_query, args=[chat_id, clean_query, msg_id], daemon=True).start()
+                                    else:
+                                        # In production groups (e.g. 'Ném ảnh vào để sản xuất content'), any plain text is a prompt!
+                                        chat_title = chat.get("title", "").lower()
+                                        if any(k in chat_title for k in ["content", "sản xuất", "team"]):
+                                            threading.Thread(target=worker_process_text_prompt, args=[chat_id, text], daemon=True).start()
                         
                         elif "callback_query" in update:
                             handle_callback(update["callback_query"])
