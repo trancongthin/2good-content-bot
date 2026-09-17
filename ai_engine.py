@@ -6,7 +6,7 @@ import re
 import random
 from config import GEMINI_API_KEY, KB_FILE, MEMORY_FILE
 
-MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-flash-latest", "gemini-2.5-flash-lite"]
+MODELS = ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-3.8-flash"]
 
 # Dynamic Archetypes for rich, non-repetitive variety (64 combinations)
 ANGLE_1_ARCHETYPES = [
