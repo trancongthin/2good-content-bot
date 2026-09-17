@@ -154,13 +154,27 @@ LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY (BẮT BUỘC TRÁNH TRÙNG LẶP NỘI
 {recent_memory_str}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🎯 KNOWLEDGE BASE CỐT LÕI & CÁC ĐIỂM ĂN TIỀN VỀ 2GOOD (S200, S100, Sona i8...):
-1. CÔNG NGHỆ PHUN SƯƠNG SIÊU NHIỆT (STEAM ACTIVE): Chiên kết hợp Hấp bù ẩm siêu tốc -> Tạo chuẩn mực vàng: Ngoài giòn xém thơm lừng - Trong giữ trọn nước ngọt mọng tự nhiên, không hao ngót.
-2. KHOANG LÒ 100% INOX 304 CHUẨN Y TẾ TOÀN PHẦN: Triệt tiêu hoàn toàn lớp chống dính Teflon (PTFE) độc hại, không lo bong tróc rỉ sét, cọ rửa bằng búi cước sắt thoải mái không sợ trầy xước, bền bỉ 5-10 năm.
-3. GIA NHIỆT ĐỐI LƯU 360 ĐỘ KHÔNG CẦN LẬT TRỞ: Quạt gió và thanh nhiệt tản đều 4 mặt, giải phóng sức lao động, không cần canh me mở lò lật thức ăn.
-4. DUNG TÍCH LỚN & ĐA NĂNG ALL-IN-ONE: Nướng vừa gà 2-3kg hoặc cả mâm cỗ 3-4 món một lúc; Thay thế 10 thiết bị (lò nướng, lò vi sóng, nồi hấp, máy sấy hoa quả detox, ủ sữa chua, rã đông...).
-5. TỰ LÀM SẠCH BẰNG HƠI NƯỚC (STEAM CLEAN): Hơi sương siêu nhiệt làm mềm nhũn dầu mỡ bám dính, chỉ cần dùng khăn lau nhẹ 1 đường là sạch bóng.
-6. THẨM MỸ QUIET LUXURY: Vỏ thép nguyên khối phay xước mát lạnh, cửa kính cường lực trong suốt ngắm thức ăn chín xèo xèo phồng rộp.
+🎯 KNOWLEDGE BASE CỐT LÕI & ĐIỂM ĂN TIỀN TỪNG MODEL 2GOOD:
+
+🔥 DÒNG NỒI CHIÊN HƠI NƯỚC 2GOOD S100 (20 LÍT - LỒNG ĐẢO 360 ĐỘ TỰ ĐỘNG & SUPERHEAT 115°C):
+- Dung tích: 20 Lít rộng rãi (chuẩn cho gia đình 6-8 người, nướng gà nguyên con hoặc nấu cùng lúc 2-3 món trên các tầng khay).
+- Công suất & Nhiệt độ: 1800W mạnh mẽ, dải nhiệt linh hoạt cực rộng từ 40°C đến 230°C.
+- Chất liệu: Vỏ nhựa ABS cao cấp, cửa kính cách nhiệt 2 lớp chống bỏng an toàn. Lòng nồi và toàn bộ 8 phụ kiện đều làm từ 100% Inox 304 chuẩn y tế, không chống dính Teflon độc hại, cọ rửa búi cước sắt thoải mái.
+- Kích thước & Điều khiển: 420 x 429 x 355 mm, màn hình cảm ứng LED kết hợp núm vặn trực quan.
+- Đa chức năng 3 trong 1: Chiên không dầu + Hấp nhiệt + Chiên hơi nước kết hợp (giòn rụm bên ngoài, mọng ẩm ngọt nước bên trong, không khô xơ).
+- Công nghệ hấp SuperHeat: Hạt sương siêu nhỏ nano (< 100nm) với nhiệt độ hơi nước lên tới 115°C, thẩm thấu cực nhanh, giữ trọn 99% vitamin và vị ngọt tự nhiên của rau củ, thịt cá.
+- ĐẶC QUYỀN ĐỈNH CAO — LỒNG TỰ ĐẢO 360 ĐỘ: Tự động xoay đảo liên tục cho khoai tây chiên, rang lạc (đậu phộng), hạt điều, hạt dẻ chín đều vàng ruộm mọi góc mà không cần mở lò đứng lật dở!
+- Chế độ ủ ấm & Lên men mở rộng: Nhiệt độ thấp ủ bột bánh mì (40°C), làm sữa chua (45°C), chưng yến (85°C) tiện dụng.
+- Full bộ 8 phụ kiện Inox 304 kèm sẵn: Khay chiên/nướng, vỉ chiên/nướng, khay hấp, khay hứng dầu mỡ, lồng đảo 360 độ, dụng cụ nâng gắp, xiên quay rô-ti và ghim thực phẩm.
+
+🔥 DÒNG NỒI CHIÊN HƠI NƯỚC 2GOOD S200 (32 LÍT - DUNG TÍCH CỰC ĐẠI & STEAM CLEAN):
+- Dung tích cực đại: 32 Lít (khoang 100% Inox 304 nguyên khối), nướng vừa cả con gà 2-3kg hoặc mâm cỗ 3-4 món một lúc.
+- Công nghệ phun sương siêu nhiệt Steam Active: Ngoài giòn xém thơm phức, trong giữ trọn nước ngọt mọng tự nhiên.
+- Tự làm sạch bằng hơi nước (Steam Clean): Hơi sương siêu nhiệt làm mềm nhũn dầu mỡ bám dính, chỉ cần lau nhẹ 1 đường là sạch bóng.
+- Gia nhiệt đối lưu 360 độ không cần lật trở. Vỏ thép phay xước Quiet Luxury sang trọng.
+
+🔥 DÒNG NỒI NẤU CHẬM 2GOOD SONA i8:
+- Công nghệ nấu cách thủy truyền nhiệt gián tiếp qua hơi nước, thố sứ tự nhiên cao cấp, giữ trọn vi chất dinh dưỡng, nấu cháo, chưng yến, hầm canh phân tầng.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 💡 NGUYÊN TẮC ĐA DẠNG HÓA NỘI DUNG (TRÁNH 1 MÀU & TRÁNH LẶP Ý):
@@ -296,13 +310,27 @@ LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY (BẮT BUỘC TRÁNH TRÙNG LẶP):
 {recent_memory_str}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🎯 KNOWLEDGE BASE CỐT LÕI VỀ 2GOOD:
-1. CÔNG NGHỆ PHUN SƯƠNG SIÊU NHIỆT (STEAM ACTIVE): Chiên kết hợp Hấp bù ẩm siêu tốc -> Tạo chuẩn mực vàng: Ngoài giòn xém thơm lừng - Trong giữ trọn nước ngọt mọng tự nhiên.
-2. KHOANG LÒ 100% INOX 304 CHUẨN Y TẾ TOÀN PHẦN: Không có lớp chống dính Teflon độc hại, không lo bong tróc, cọ rửa bằng búi cước sắt thoải mái, bền bỉ 5-10 năm.
-3. GIA NHIỆT ĐỐI LƯU 360 ĐỘ KHÔNG CẦN LẬT TRỞ: Thức ăn chín vàng ươm 4 mặt, giải phóng sức lao động.
-4. DUNG TÍCH LỚN & ĐA NĂNG ALL-IN-ONE: Nướng vừa gà 2-3kg hoặc mâm cỗ 3-4 món một lúc; Thay thế 10 thiết bị bếp.
-5. TỰ LÀM SẠCH STEAM CLEAN: Hơi nước siêu nhiệt làm mềm dầu mỡ bám dính, lau nhẹ 1 đường là sạch bóng.
-6. THẨM MỸ QUIET LUXURY: Vỏ thép phay xước, cửa kính cường lực ngắm thức ăn chín xèo xèo.
+🎯 KNOWLEDGE BASE CỐT LÕI & ĐIỂM ĂN TIỀN TỪNG MODEL 2GOOD:
+
+🔥 DÒNG NỒI CHIÊN HƠI NƯỚC 2GOOD S100 (20 LÍT - LỒNG ĐẢO 360 ĐỘ TỰ ĐỘNG & SUPERHEAT 115°C):
+- Dung tích: 20 Lít rộng rãi (chuẩn cho gia đình 6-8 người, nướng gà nguyên con hoặc nấu cùng lúc 2-3 món trên các tầng khay).
+- Công suất & Nhiệt độ: 1800W mạnh mẽ, dải nhiệt linh hoạt cực rộng từ 40°C đến 230°C.
+- Chất liệu: Vỏ nhựa ABS cao cấp, cửa kính cách nhiệt 2 lớp chống bỏng an toàn. Lòng nồi và toàn bộ 8 phụ kiện đều làm từ 100% Inox 304 chuẩn y tế, không chống dính Teflon độc hại, cọ rửa búi cước sắt thoải mái.
+- Kích thước & Điều khiển: 420 x 429 x 355 mm, màn hình cảm ứng LED kết hợp núm vặn trực quan.
+- Đa chức năng 3 trong 1: Chiên không dầu + Hấp nhiệt + Chiên hơi nước kết hợp (giòn rụm bên ngoài, mọng ẩm ngọt nước bên trong, không khô xơ).
+- Công nghệ hấp SuperHeat: Hạt sương siêu nhỏ nano (< 100nm) với nhiệt độ hơi nước lên tới 115°C, thẩm thấu cực nhanh, giữ trọn 99% vitamin và vị ngọt tự nhiên của rau củ, thịt cá.
+- ĐẶC QUYỀN ĐỈNH CAO — LỒNG TỰ ĐẢO 360 ĐỘ: Tự động xoay đảo liên tục cho khoai tây chiên, rang lạc (đậu phộng), hạt điều, hạt dẻ chín đều vàng ruộm mọi góc mà không cần mở lò đứng lật dở!
+- Chế độ ủ ấm & Lên men mở rộng: Nhiệt độ thấp ủ bột bánh mì (40°C), làm sữa chua (45°C), chưng yến (85°C) tiện dụng.
+- Full bộ 8 phụ kiện Inox 304 kèm sẵn: Khay chiên/nướng, vỉ chiên/nướng, khay hấp, khay hứng dầu mỡ, lồng đảo 360 độ, dụng cụ nâng gắp, xiên quay rô-ti và ghim thực phẩm.
+
+🔥 DÒNG NỒI CHIÊN HƠI NƯỚC 2GOOD S200 (32 LÍT - DUNG TÍCH CỰC ĐẠI & STEAM CLEAN):
+- Dung tích cực đại: 32 Lít (khoang 100% Inox 304 nguyên khối), nướng vừa cả con gà 2-3kg hoặc mâm cỗ 3-4 món một lúc.
+- Công nghệ phun sương siêu nhiệt Steam Active: Ngoài giòn xém thơm phức, trong giữ trọn nước ngọt mọng tự nhiên.
+- Tự làm sạch bằng hơi nước (Steam Clean): Hơi sương siêu nhiệt làm mềm nhũn dầu mỡ bám dính, chỉ cần lau nhẹ 1 đường là sạch bóng.
+- Gia nhiệt đối lưu 360 độ không cần lật trở. Vỏ thép phay xước Quiet Luxury sang trọng.
+
+🔥 DÒNG NỒI NẤU CHẬM 2GOOD SONA i8:
+- Công nghệ nấu cách thủy truyền nhiệt gián tiếp qua hơi nước, thố sứ tự nhiên cao cấp, giữ trọn vi chất dinh dưỡng, nấu cháo, chưng yến, hầm canh phân tầng.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 💡 NGUYÊN TẮC ĐA DẠNG HÓA NỘI DUNG (TRÁNH 1 MÀU & TRÁNH LẶP Ý):
