@@ -435,7 +435,7 @@ def build_status_message():
 🟢 <b>Trạng thái:</b> Đang chạy ổn định (Online 24/7)
 ⏱ <b>Uptime:</b> {uptime}
 🕒 <b>Thời gian:</b> {now_str}
-⏰ <b>Hẹn giờ Auto-Pilot:</b> 2 cữ/ngày (Sáng 08:00 AM & Tối 20:00 PM Giờ VN)
+⏰ <b>Hẹn giờ Auto-Pilot:</b> 2 cữ/ngày (Sáng 08:00 AM & Chiều 13:00 PM Giờ VN)
 
 ━━━━━━━━━━━━━━━━━━━━━
 📡 <b>Kênh CTV kết nối:</b> {channel_title}
@@ -497,7 +497,7 @@ def build_kho_message():
             lines.append(f"<b>{i}. ID:</b> <code>{c['id']}</code> ({count_m} file {types_str})")
             lines.append(f"   📌 {status_tag}{note}")
 
-    lines.append("\n💡 <i>Mẹo: Bot tự động bốc 1 cụm lúc 08:00 AM sáng và 20:00 PM tối để viết bài 3 góc phát sóng Kênh CTV. Sếp có thể bấm nút bên dưới để phát sóng ngay lập tức!</i>")
+    lines.append("\n💡 <i>Mẹo: Bot tự động bốc 1 cụm lúc 08:00 AM sáng và 13:00 PM chiều để viết bài 3 góc phát sóng Kênh CTV. Sếp có thể bấm nút bên dưới để phát sóng ngay lập tức!</i>")
     
     keyboard = {
         "inline_keyboard": [
@@ -563,8 +563,8 @@ def build_help_message():
   💡 Mẹo thực chiến cho CTV
 - Các lệnh nhanh: <code>/hoi</code>, <code>/sp</code>, <code>/chinhsach</code>, <code>/tuvan</code>
 
-3️⃣ <b>Chế độ Auto-Pilot (Bất tử Content - Ngày 2 cữ Sáng & Tối):</b>
-- Mỗi ngày 2 lần (<b>08:00 AM sáng</b> & <b>20:00 PM tối</b>), Bot tự động bốc 1 cụm media từ Kho, phát sóng sang Kênh CTV kèm 3 góc bài viết.
+3️⃣ <b>Chế độ Auto-Pilot (Bất tử Content - Ngày 2 cữ Sáng & Chiều):</b>
+- Mỗi ngày 2 lần (<b>08:00 AM sáng</b> & <b>13:00 PM chiều</b>), Bot tự động bốc 1 cụm media từ Kho, phát sóng sang Kênh CTV kèm 3 góc bài viết.
 
 4️⃣ <b>Các lệnh quản trị:</b>
 - <code>/kho</code> : Xem kho ảnh/video.
@@ -690,7 +690,7 @@ def worker_process_incoming_cluster(cluster_items):
             ai_data = generate_content_from_text_prompt(prompt)
 
         if not ai_data:
-            send_message(chat_id, f"⚠️ Cụm media đã được lưu an toàn vào Kho (ID: <code>{cluster['id']}</code>) nhưng AI gặp lỗi tạm thời khi soạn bản xem trước. Bot sẽ tự động lấy ra phát sóng theo lịch Auto-Pilot (08:00 AM & 20:00 PM).")
+            send_message(chat_id, f"⚠️ Cụm media đã được lưu an toàn vào Kho (ID: <code>{cluster['id']}</code>) nhưng AI gặp lỗi tạm thời khi soạn bản xem trước. Bot sẽ tự động lấy ra phát sóng theo lịch Auto-Pilot (08:00 AM & 13:00 PM).")
             return
 
         # 4. Save to pending posts for admin actions
@@ -878,7 +878,7 @@ def run_daily_autopilot_dispatch(manual=False, slot_name=""):
 
 def autopilot_scheduler_loop():
     global LAST_AUTOPILOT_RUN_SLOT
-    print("⏰ Khởi động luồng Auto-Pilot Scheduler (Hẹn giờ 2 cữ: Sáng 08:00 AM & Tối 20:00 PM hàng ngày)...")
+    print("⏰ Khởi động luồng Auto-Pilot Scheduler (Hẹn giờ 2 cữ: Sáng 08:00 AM & Chiều 13:00 PM hàng ngày)...")
     vn_tz = datetime.timezone(datetime.timedelta(hours=7))
     
     while True:
@@ -886,17 +886,17 @@ def autopilot_scheduler_loop():
             now_vn = datetime.datetime.now(vn_tz)
             today_str = now_vn.strftime("%Y-%m-%d")
             
-            # 1. Cữ Sáng: 08:00 AM VN time
+            # 1. Cữ Sáng: 08:00 AM VN time (8h sáng)
             if now_vn.hour == 8 and LAST_AUTOPILOT_RUN_SLOT != f"{today_str}_morning":
                 LAST_AUTOPILOT_RUN_SLOT = f"{today_str}_morning"
                 print(f"⏰ [08:00 AM VN TIME] Bắt đầu phiên Auto-Pilot phát sóng sáng nay...")
-                run_daily_autopilot_dispatch(manual=False, slot_name="SÁNG")
+                run_daily_autopilot_dispatch(manual=False, slot_name="SÁNG (08:00 AM)")
 
-            # 2. Cữ Tối: 20:00 (08:00 PM) VN time
-            elif now_vn.hour == 20 and LAST_AUTOPILOT_RUN_SLOT != f"{today_str}_evening":
-                LAST_AUTOPILOT_RUN_SLOT = f"{today_str}_evening"
-                print(f"⏰ [20:00 PM VN TIME] Bắt đầu phiên Auto-Pilot phát sóng tối nay...")
-                run_daily_autopilot_dispatch(manual=False, slot_name="TỐI")
+            # 2. Cữ Chiều: 13:00 (1h chiều) VN time
+            elif now_vn.hour == 13 and LAST_AUTOPILOT_RUN_SLOT != f"{today_str}_afternoon":
+                LAST_AUTOPILOT_RUN_SLOT = f"{today_str}_afternoon"
+                print(f"⏰ [13:00 PM VN TIME] Bắt đầu phiên Auto-Pilot phát sóng chiều nay...")
+                run_daily_autopilot_dispatch(manual=False, slot_name="CHIỀU (13:00 PM)")
                 
             time.sleep(30)
         except Exception as e:
@@ -1165,7 +1165,7 @@ def handle_callback(callback_query):
         answer_callback(query_id, "Đã lưu kho!")
         send_message(
             target_chat_id,
-            f"📦 <b>[{from_user_name}] ĐÃ LƯU CỤM {cluster_id} VÀO KHO MEDIA!</b>\nCụm này sẽ được tự động phát sóng theo lịch Auto-Pilot (08:00 AM & 20:00 PM hàng ngày)."
+            f"📦 <b>[{from_user_name}] ĐÃ LƯU CỤM {cluster_id} VÀO KHO MEDIA!</b>\nCụm này sẽ được tự động phát sóng theo lịch Auto-Pilot (08:00 AM & 13:00 PM hàng ngày)."
         )
         return
 

@@ -115,8 +115,8 @@ Mỗi lần AI tạo bài, hệ thống sẽ ngẫu nhiên bốc 1 trong các h�
    - 📦 *Đã lưu kho (để sáng mai 8h tự động đăng).*
    - 🗑️ *Xóa khỏi kho & Hủy.*
 
-### B. Quy trình phát sóng 08:00 AM mỗi sáng
-1. Bộ đếm thời gian chạy nền liên tục (giờ VN UTC+7). Đúng 08:00 AM:
+### B. Quy trình phát sóng 2 cữ: 8h sáng (08:00 AM) & 1h chiều (13:00 PM)
+1. Bộ đếm thời gian chạy nền liên tục (giờ VN UTC+7). Đúng 08:00 AM sáng và 13:00 PM chiều:
 2. **Kiểm tra kho:**
    - *Ưu tiên 1:* Tìm cụm media chưa từng đăng (`post_count == 0`).
    - *Ưu tiên 2 (khi hết bài mới):* Tìm cụm media cũ đã đăng cách đây hơn 7 ngày (`cooldown >= 7 days`), kích hoạt chế độ **Tái sinh nội dung mới hoàn toàn**.
