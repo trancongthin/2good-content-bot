@@ -4,9 +4,42 @@ import datetime
 import requests
 import re
 import random
+import time
 from config import GEMINI_API_KEY, KB_FILE, MEMORY_FILE
 
 MODELS = ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-3.8-flash"]
+LAST_MODEL_FETCH_TIME = 0
+
+def get_active_models(force_refresh=False):
+    """
+    Dynamically discover active Gemini models directly from Google API so the system NEVER breaks
+    even if Google deprecates or changes model names in the future.
+    """
+    global MODELS, LAST_MODEL_FETCH_TIME
+    now = time.time()
+    if not force_refresh and (now - LAST_MODEL_FETCH_TIME < 86400) and MODELS:
+        return MODELS
+
+    try:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models?key={GEMINI_API_KEY}"
+        res = requests.get(url, timeout=10).json()
+        active = []
+        for m in res.get("models", []):
+            name = m.get("name", "").replace("models/", "")
+            methods = m.get("supportedGenerationMethods", [])
+            if "generateContent" in methods and "flash" in name:
+                active.append(name)
+
+        if active:
+            preferred = [m for m in ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-3.8-flash"] if m in active]
+            other = [m for m in active if m not in preferred and "image" not in m and "tts" not in m and "preview" not in m]
+            MODELS = (preferred + other)[:6]
+            LAST_MODEL_FETCH_TIME = now
+            print(f"🤖 Đã tự động cập nhật danh sách model Gemini khả dụng: {MODELS}")
+    except Exception as e:
+        print(f"Lỗi khi tự động dò model: {e}")
+
+    return MODELS
 
 # Dynamic Archetypes for rich, non-repetitive variety (64 combinations)
 ANGLE_1_ARCHETYPES = [
@@ -250,58 +283,64 @@ HÃY TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON CHUẨN (KHÔNG THÊM BẤT KỲ CH�
         }
     }
 
-    for model_name in MODELS:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={GEMINI_API_KEY}"
-        try:
-            response = requests.post(url, json=payload, timeout=45)
-            if response.status_code == 200:
-                result = response.json()
-                raw_text = result["candidates"][0]["content"]["parts"][0]["text"].strip()
-                if raw_text.startswith("```json"):
-                    raw_text = raw_text[7:]
-                if raw_text.startswith("```"):
-                    raw_text = raw_text[3:]
-                if raw_text.endswith("```"):
-                    raw_text = raw_text[:-3]
-                raw_text = raw_text.strip()
-                
-                try:
-                    data = json.loads(raw_text, strict=False)
-                except Exception:
-                    cleaned = re.sub(r'[\x00-\x1f\x7f-\x9f]', lambda m: ' ' if m.group() in '\n\r\t' else '', raw_text)
+    models_to_try = list(get_active_models())
+    for attempt in range(2):
+        for model_name in models_to_try:
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={GEMINI_API_KEY}"
+            try:
+                response = requests.post(url, json=payload, timeout=45)
+                if response.status_code == 200:
+                    result = response.json()
+                    raw_text = result["candidates"][0]["content"]["parts"][0]["text"].strip()
+                    if raw_text.startswith("```json"):
+                        raw_text = raw_text[7:]
+                    if raw_text.startswith("```"):
+                        raw_text = raw_text[3:]
+                    if raw_text.endswith("```"):
+                        raw_text = raw_text[:-3]
+                    raw_text = raw_text.strip()
+                    
                     try:
-                        data = json.loads(cleaned, strict=False)
+                        data = json.loads(raw_text, strict=False)
                     except Exception:
-                        data = {
-                            "product_code": "2GOOD S200",
-                            "visual_fact": f"Bộ {num_photos} ảnh món ăn & nồi chiên hơi nước",
-                            "technical_fact": "Khoang Inox 304, công nghệ đối lưu hơi nước 360",
-                            "marketing_claim": "Giòn rụm ngoài mọng nước trong",
-                            "content_matrix": {
-                                "me_bim_noi_tro": raw_text[:1000],
-                                "eat_clean_inox304": raw_text[1000:2000] if len(raw_text) > 1000 else raw_text,
-                                "dai_ly_dan_da": raw_text[2000:3000] if len(raw_text) > 2000 else raw_text
+                        cleaned = re.sub(r'[\x00-\x1f\x7f-\x9f]', lambda m: ' ' if m.group() in '\n\r\t' else '', raw_text)
+                        try:
+                            data = json.loads(cleaned, strict=False)
+                        except Exception:
+                            data = {
+                                "product_code": "2GOOD S200",
+                                "visual_fact": f"Bộ {num_photos} ảnh món ăn & nồi chiên hơi nước",
+                                "technical_fact": "Khoang Inox 304, công nghệ đối lưu hơi nước 360",
+                                "marketing_claim": "Giòn rụm ngoài mọng nước trong",
+                                "content_matrix": {
+                                    "me_bim_noi_tro": raw_text[:1000],
+                                    "eat_clean_inox304": raw_text[1000:2000] if len(raw_text) > 1000 else raw_text,
+                                    "dai_ly_dan_da": raw_text[2000:3000] if len(raw_text) > 2000 else raw_text
+                                }
                             }
-                        }
-                
-                # Sanitize content matrix to eliminate any residual forbidden cliches
-                if "content_matrix" in data:
-                    data["content_matrix"] = sanitize_content_matrix(data["content_matrix"])
+                    
+                    # Sanitize content matrix to eliminate any residual forbidden cliches
+                    if "content_matrix" in data:
+                        data["content_matrix"] = sanitize_content_matrix(data["content_matrix"])
 
-                save_kb({
-                    "product_code": data.get("product_code", "2GOOD"),
-                    "visual_fact": data.get("visual_fact", ""),
-                    "technical_fact": data.get("technical_fact", ""),
-                    "marketing_claim": data.get("marketing_claim", ""),
-                    "num_photos": num_photos,
-                    "created_at": str(datetime.datetime.now())
-                })
-                return data
-            else:
-                print(f"Model {model_name} Error: {response.text}")
-        except Exception as e:
-            print(f"Error calling {model_name}: {e}")
-            
+                    save_kb({
+                        "product_code": data.get("product_code", "2GOOD"),
+                        "visual_fact": data.get("visual_fact", ""),
+                        "technical_fact": data.get("technical_fact", ""),
+                        "marketing_claim": data.get("marketing_claim", ""),
+                        "num_photos": num_photos,
+                        "created_at": str(datetime.datetime.now())
+                    })
+                    return data
+                else:
+                    print(f"Model {model_name} Error: {response.text[:100]}")
+            except Exception as e:
+                print(f"Error calling {model_name}: {e}")
+
+        if attempt == 0:
+            print("⚠️ Tất cả model hiện tại thất bại, đang tự động quét Google API tìm model mới...")
+            models_to_try = get_active_models(force_refresh=True)
+                
     return None
 
 def generate_content_from_text_prompt(text_prompt):
@@ -410,55 +449,61 @@ HÃY TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON CHUẨN:
         }
     }
 
-    for model_name in MODELS:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={GEMINI_API_KEY}"
-        try:
-            response = requests.post(url, json=payload, timeout=45)
-            if response.status_code == 200:
-                result = response.json()
-                raw_text = result["candidates"][0]["content"]["parts"][0]["text"].strip()
-                if raw_text.startswith("```json"):
-                    raw_text = raw_text[7:]
-                if raw_text.startswith("```"):
-                    raw_text = raw_text[3:]
-                if raw_text.endswith("```"):
-                    raw_text = raw_text[:-3]
-                raw_text = raw_text.strip()
-                
-                try:
-                    data = json.loads(raw_text, strict=False)
-                except Exception:
-                    cleaned = re.sub(r'[\x00-\x1f\x7f-\x9f]', lambda m: ' ' if m.group() in '\n\r\t' else '', raw_text)
+    models_to_try = list(get_active_models())
+    for attempt in range(2):
+        for model_name in models_to_try:
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={GEMINI_API_KEY}"
+            try:
+                response = requests.post(url, json=payload, timeout=45)
+                if response.status_code == 200:
+                    result = response.json()
+                    raw_text = result["candidates"][0]["content"]["parts"][0]["text"].strip()
+                    if raw_text.startswith("```json"):
+                        raw_text = raw_text[7:]
+                    if raw_text.startswith("```"):
+                        raw_text = raw_text[3:]
+                    if raw_text.endswith("```"):
+                        raw_text = raw_text[:-3]
+                    raw_text = raw_text.strip()
+                    
                     try:
-                        data = json.loads(cleaned, strict=False)
+                        data = json.loads(raw_text, strict=False)
                     except Exception:
-                        data = {
-                            "product_code": "2GOOD",
-                            "visual_fact": text_prompt,
-                            "technical_fact": "Khoang Inox 304, công nghệ đối lưu hơi nước 360",
-                            "marketing_claim": "Giòn rụm ngoài mọng nước trong",
-                            "content_matrix": {
-                                "me_bim_noi_tro": raw_text[:1000],
-                                "eat_clean_inox304": raw_text[1000:2000] if len(raw_text) > 1000 else raw_text,
-                                "dai_ly_dan_da": raw_text[2000:3000] if len(raw_text) > 2000 else raw_text
+                        cleaned = re.sub(r'[\x00-\x1f\x7f-\x9f]', lambda m: ' ' if m.group() in '\n\r\t' else '', raw_text)
+                        try:
+                            data = json.loads(cleaned, strict=False)
+                        except Exception:
+                            data = {
+                                "product_code": "2GOOD",
+                                "visual_fact": text_prompt,
+                                "technical_fact": "Khoang Inox 304, công nghệ đối lưu hơi nước 360",
+                                "marketing_claim": "Giòn rụm ngoài mọng nước trong",
+                                "content_matrix": {
+                                    "me_bim_noi_tro": raw_text[:1000],
+                                    "eat_clean_inox304": raw_text[1000:2000] if len(raw_text) > 1000 else raw_text,
+                                    "dai_ly_dan_da": raw_text[2000:3000] if len(raw_text) > 2000 else raw_text
+                                }
                             }
-                        }
-                
-                # Sanitize content matrix to eliminate any residual forbidden cliches
-                if "content_matrix" in data:
-                    data["content_matrix"] = sanitize_content_matrix(data["content_matrix"])
+                    
+                    # Sanitize content matrix to eliminate any residual forbidden cliches
+                    if "content_matrix" in data:
+                        data["content_matrix"] = sanitize_content_matrix(data["content_matrix"])
 
-                save_kb({
-                    "product_code": data.get("product_code", "2GOOD"),
-                    "visual_fact": text_prompt,
-                    "technical_fact": data.get("technical_fact", ""),
-                    "marketing_claim": data.get("marketing_claim", ""),
-                    "num_photos": 0,
-                    "created_at": str(datetime.datetime.now())
-                })
-                return data
-        except Exception as e:
-            print(f"Error calling {model_name} for text prompt: {e}")
-            
+                    save_kb({
+                        "product_code": data.get("product_code", "2GOOD"),
+                        "visual_fact": text_prompt,
+                        "technical_fact": data.get("technical_fact", ""),
+                        "marketing_claim": data.get("marketing_claim", ""),
+                        "num_photos": 0,
+                        "created_at": str(datetime.datetime.now())
+                    })
+                    return data
+            except Exception as e:
+                print(f"Error calling {model_name} for text prompt: {e}")
+
+        if attempt == 0:
+            print("⚠️ Tất cả model hiện tại thất bại, đang tự động quét Google API tìm model mới...")
+            models_to_try = get_active_models(force_refresh=True)
+                
     return None
 

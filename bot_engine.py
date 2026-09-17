@@ -3,7 +3,7 @@ import re
 import requests
 from pathlib import Path
 from config import DATA_DIR, GEMINI_API_KEY
-from ai_engine import MODELS
+from ai_engine import get_active_models
 
 PRODUCTS_FILE = DATA_DIR / "products.json"
 SCRIPTS_FILE = DATA_DIR / "scripts.json"
@@ -124,19 +124,24 @@ Hãy viết câu trả lời xuất sắc, chân thành và mang tính thuyết 
         }
     }
 
-    for model_name in MODELS:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={GEMINI_API_KEY}"
-        try:
-            response = requests.post(url, json=payload, timeout=20)
-            if response.status_code == 200:
-                result = response.json()
-                raw_text = result["candidates"][0]["content"]["parts"][0]["text"].strip()
-                return raw_text
-            else:
-                print(f"Model {model_name} HTTP {response.status_code}: {response.text}")
-        except Exception as e:
-            print(f"Model {model_name} failed in bot_engine: {e}")
-            continue
+    models_to_try = list(get_active_models())
+    for attempt in range(2):
+        for model_name in models_to_try:
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={GEMINI_API_KEY}"
+            try:
+                response = requests.post(url, json=payload, timeout=25)
+                if response.status_code == 200:
+                    result = response.json()
+                    raw_text = result["candidates"][0]["content"]["parts"][0]["text"].strip()
+                    return raw_text
+                else:
+                    print(f"Model {model_name} HTTP {response.status_code}: {response.text[:100]}")
+            except Exception as e:
+                print(f"Model {model_name} failed in bot_engine: {e}")
+                continue
+
+        if attempt == 0:
+            models_to_try = get_active_models(force_refresh=True)
             
     # Fallback response if all AI models fail
     return """Dạ em đang gặp chút gián đoạn kết nối mạng AI. Nhưng nguyên tắc quan trọng khi tư vấn:
