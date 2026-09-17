@@ -165,3 +165,35 @@ Render sẽ tự động phát hiện và build bản mới lên Cloud trong vò
      - `/viet [ý tưởng]` hoặc tag `@mr_morning_bot [ý tưởng]` : Yêu cầu AI viết bài 3 góc theo chủ đề.
      - Trò chuyện thông thường giữa các thành viên sẽ không bị bot quấy rầy.
 - **Yêu cầu cài đặt:** Thêm bot `@mr_morning_bot` vào nhóm và cấp quyền **Admin** cho bot (hoặc tắt Privacy Mode trong `@BotFather`).
+
+---
+
+## 🤖 9. TRỢ LÝ BÁN HÀNG & XỬ LÝ TỪ CHỐI CHO CTV (KIẾN TRÚC RAG 0 ĐỒNG)
+
+Hệ thống đã nâng cấp toàn diện từ "Cỗ máy phát nội dung 1 chiều" thành **"Trợ lý bán hàng 2 chiều thông minh"** cho toàn bộ hệ thống CTV 2GOOD:
+
+### 1. Kiến trúc Dữ liệu Sự Thật (Ground Truth JSON)
+- **Không tốn tiền Database:** Toàn bộ thông số, kịch bản được lưu ở dạng file JSON trên Git repo:
+  - [`data/products.json`](file:///Users/admin/Documents/antigravity/botcontenttudong2goods200choctv/data/products.json): Thông số chuẩn của S200 (32L Inox 304), S100 (lồng tự đảo 360), Sona i8 (tự rửa sấy khô).
+  - [`data/scripts.json`](file:///Users/admin/Documents/antigravity/botcontenttudong2goods200choctv/data/scripts.json): Kịch bản xử lý từ chối (Khách chê đắt, chê to, ngại rửa, sợ ồn, so sánh với các nồi 20L...).
+  - [`data/policies.json`](file:///Users/admin/Documents/antigravity/botcontenttudong2goods200choctv/data/policies.json): Chính sách bảo hành 12-24 tháng, lỗi 1 đổi 1 trong 7 ngày, quyền **đồng kiểm cắm điện thử máy trước khi thanh toán**.
+- **Nguyên tắc "Ground Truth":** Gemini chỉ đóng vai trò bộ não ngôn ngữ suy luận và hành văn mềm mại, tuyệt đối không bịa thông số kỹ thuật hay giá bán. Muốn đổi giá hay chính sách, chỉ cần sửa 1 dòng trong file JSON là xong!
+
+### 2. Bộ Não `bot_engine.py` (Phân Loại Ý Định & Phản Hồi 3 Phần)
+- Khi CTV hỏi, `bot_engine` tự động phân loại ý định (Xử lý từ chối / Hỏi thông số / Hỏi bảo hành) ➡️ bốc đúng dữ liệu sự thật ➡️ gọi Gemini Flash Lite sinh ra câu trả lời theo đúng cấu trúc 3 phần:
+  1. 🎯 **Điểm mấu chốt (Insight):** Giải thích tâm lý thật sự của khách hàng.
+  2. 💬 **Câu trả lời mẫu gửi khách:** Lời thoại tự nhiên, lịch thiệp, xưng hô phù hợp để CTV copy gửi luôn.
+  3. 💡 **Mẹo thực chiến cho CTV:** Lưu ý điều nên nhấn mạnh, tránh tranh cãi thô thiển.
+
+### 3. Định Vị Thương Hiệu Cốt Lõi Của 2GOOD S200
+- **Định vị:** Dòng Flagship Cao Cấp Nhất của 2GOOD — Đẳng cấp **Chuyên Nghiệp về Nướng & Chiên Hơi Nước**.
+- **So sánh tinh tế với phân khúc 15-20L (S100, Tapuho 20L, Olivo 20L, Lumias, Kalite...):**
+  - **Khoang lò 32L vs 20L:** Nồi 20L khoang nhỏ dễ bị bí nhiệt khi nướng đồ to hoặc cỗ nhiều khay. S200 dung tích 32L chuẩn lò nướng chuyên nghiệp, luồng nhiệt lốc xoáy tuần hoàn tự do giúp nhiệt phủ đều 100%.
+  - **Về lồng tự đảo:** Lồng đảo chỉ cần cho dòng phân khúc dưới 15-20L (như S100) để rang vặt ít lạc/khoai vụn. Còn S200 là lò nướng chuyên nghiệp cao cấp, quạt đối lưu 360° công suất lớn (2200W) tự chín đều mọi mặt, giữ khoang Inox 304 nguyên khối mênh mông để nướng 2 gà nguyên con, vệ sinh nhàn tênh.
+  - **Công suất cực mạnh:** Chiên 2200W + Hấp 1500W vượt trội hoàn toàn so với mức 1800W của các dòng 20L.
+
+### 4. Cơ Chế Tương Tác Của CTV:
+- **Chat riêng 1-1 với Bot (`@mr_morning_bot`):** CTV hỏi tự do mọi lúc mọi nơi, không cần tag tên hay gõ lệnh.
+- **Trong nhóm Thảo Luận / Bình luận bài viết Kênh:** CTV hỏi câu gì về sản phẩm, giá, chê đắt, bảo hành... KỂ CẢ QUÊN KHÔNG TAG TÊN BOT thì Bot vẫn tự động nhận diện và trả lời đúng vào luồng bình luận đó!
+- **Trong nhóm sản xuất content (`Ném ảnh vào để sản xuất content`):** Gõ tự nhiên hoặc gửi ảnh/video để sinh bài viết 3 góc.
+
