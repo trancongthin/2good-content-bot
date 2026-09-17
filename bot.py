@@ -1374,6 +1374,8 @@ def run_bot():
                                 else:
                                     is_tagged = False
                                     clean_query = text
+                                    chat_title = chat.get("title", "").lower()
+                                    is_discussion_group = any(k in chat_title for k in ["thảo luận", "discussion", "hỏi đáp", "ctv"])
                                     
                                     if "@mr_morning_bot" in lower_text:
                                         is_tagged = True
@@ -1384,6 +1386,12 @@ def run_bot():
                                     elif chat_type == "private":
                                         is_tagged = True
                                         clean_query = text
+                                    elif is_discussion_group:
+                                        from bot_engine import detect_intent
+                                        intent = detect_intent(text)
+                                        if intent in ["OBJECTION", "PRODUCT_INFO", "POLICY"]:
+                                            is_tagged = True
+                                            clean_query = text
                                         
                                     if is_tagged and clean_query:
                                         if any(k in clean_query.lower() for k in ["viết", "content", "soạn", "làm bài"]):
@@ -1393,7 +1401,6 @@ def run_bot():
                                             threading.Thread(target=worker_process_ctv_query, args=[chat_id, clean_query, msg_id], daemon=True).start()
                                     else:
                                         # In production groups (e.g. 'Ném ảnh vào để sản xuất content'), any plain text is a prompt!
-                                        chat_title = chat.get("title", "").lower()
                                         if any(k in chat_title for k in ["content", "sản xuất", "team"]):
                                             threading.Thread(target=worker_process_text_prompt, args=[chat_id, text], daemon=True).start()
                         
