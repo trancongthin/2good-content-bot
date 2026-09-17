@@ -1,5 +1,6 @@
 import os
 import sys
+import re
 import time
 import json
 import requests
@@ -344,8 +345,9 @@ def send_message(chat_id, text, reply_markup=None, parse_mode="HTML", reply_to_m
             
         try:
             res = requests.post(f"{TELEGRAM_API}/sendMessage", json=payload, timeout=20).json()
-            if not res.get("ok") and parse_mode:
-                payload["parse_mode"] = ""
+            if not res.get("ok"):
+                payload.pop("parse_mode", None)
+                payload.pop("reply_to_message_id", None)
                 res = requests.post(f"{TELEGRAM_API}/sendMessage", json=payload, timeout=20).json()
             last_res = res
         except Exception as e:
