@@ -21,11 +21,12 @@ def load_json_file(file_path: Path):
 def detect_intent(query: str):
     q = query.lower()
     
-    # 1. Objection handling
+    # 1. Objection handling & comparisons
     objection_triggers = [
         "chê", "đắt", "mắc", "cao quá", "rẻ hơn", "to quá", "cồng kềnh", 
         "chiếm chỗ", "khó rửa", "ngại rửa", "khó vệ sinh", "dầu mỡ", 
-        "chống dính", "ung thư", "ồn", "tiếng ồn", "chua", "chua sữa", "so sánh"
+        "chống dính", "ung thư", "ồn", "tiếng ồn", "chua", "chua sữa", "so sánh",
+        "lồng đảo", "lồng tự đảo", "quay", "đảo", "tapuho", "olivo", "kalite", "lumias", "20l", "20 lít", "hơn gì"
     ]
     if any(t in q for t in objection_triggers):
         return "OBJECTION"
@@ -100,7 +101,13 @@ CÂU HỎI / TÌNH HUỐNG TỪ CTV:
 
 YÊU CẦU TRẢ LỜI CHO CTV (Định dạng văn bản rõ ràng, chuyên nghiệp, súc tích, dùng ít icon ~3 icon):
 1. Tuyệt đối tuân thủ sự thật trong Ground Truth (về Inox 304, dung tích, công suất, bảo hành, v.v.). Không tự bịa thông số.
-2. Cung cấp câu trả lời theo đúng cấu trúc 3 phần:
+2. NGUYÊN TẮC ĐỊNH VỊ 2GOOD S200 (RẤT QUAN TRỌNG):
+   - S200 luôn được định vị là Dòng Flagship Cao Cấp Nhất của 2GOOD, chuyên nghiệp về nướng và chiên hơi nước (chuẩn lò nướng cao cấp gia đình).
+   - Tinh tế định vị S200 ở đẳng cấp vượt trội hoàn toàn so với các dòng phân khúc dưới và các nồi 15-20L trên thị trường (như S100, Tapuho 20L, Olivo 20L, Lumias, Kalite...):
+     + Không dìm hàng hay chê bai thô thiển đối thủ.
+     + Phân tích sự khác biệt về bản chất: Nồi 20L khoang nhỏ dễ bị bí nhiệt khi nướng đồ to hoặc làm nhiều tầng cỗ, quạt không tỏa đều; còn S200 dung tích cực đại 32L, công suất khủng 2200W + Hấp 1500W, quạt đối lưu lốc xoáy 360° tự chín đều 4 mặt không cần đảo.
+     + Về lồng đảo: Lồng đảo chỉ cần cho dòng phân khúc dưới 15-20L (như S100) để rang vặt ít lạc/khoai; còn S200 là lò nướng chuyên nghiệp cao cấp, quạt đối lưu 360° tự chín đều mọi mặt, giữ khoang Inox 304 nguyên khối mênh mông để nướng 2 gà nguyên con, vệ sinh nhàn tênh.
+3. Cung cấp câu trả lời theo đúng cấu trúc 3 phần:
 
 🎯 **Điểm mấu chốt (Insight):** (1-2 câu ngắn giải thích tâm lý thật sự của khách)
 💬 **Câu trả lời mẫu gửi khách:** (Lời thoại tự nhiên, lịch thiệp, tôn trọng khách, xưng hô 'Dạ em chào anh/chị' hoặc 'Dạ em hiểu...', làm nổi bật giá trị cốt lõi của 2GOOD, để CTV chỉ việc copy gửi luôn)

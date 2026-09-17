@@ -42,6 +42,29 @@
         "Hẹn giờ qua đêm không chua sữa vì nước và hạt để tách biệt, sáng dậy tới giờ mới bơm nước nấu"
       ],
       "sample_reply": "Dạ nếu chị đã từng dùng máy sữa hạt cũ sẽ rất sợ tiếng ồn đinh tai và cảnh hì hục cọ rửa lưỡi dao. Nhưng 2GOOD Sona i8 sinh ra để giải phóng 100% khâu đó ạ:\n✨ Máy chạy cực kỳ êm ái (<70dB), không gây giật mình cho trẻ nhỏ hay người già.\n✨ Nấu xong máy tự rót sữa ra cốc, sau đó tự đun nước nóng rửa cối và sấy khô khử khuẩn, chị không cần chạm tay rửa.\n✨ Đặc biệt hẹn giờ qua đêm thoải mái, nước và hạt để riêng đến sáng mới nấu nên đảm bảo sữa tươi mới, không bao giờ bị chua ạ!"
+    },
+    {
+      "id": "s200_vs_rotating_cage",
+      "trigger_keywords": ["lồng đảo", "lồng tự đảo", "quay", "đảo", "không có lồng đảo", "có lồng đảo không"],
+      "strategy": "Tinh tế định vị S200 là phân khúc Flagship cao cấp chuyên nghiệp về nướng. Phân tích: lồng đảo chỉ dành cho các dòng phân khúc dưới 15-20L (như S100) để rang vặt, còn S200 nướng chuyên nghiệp đối lưu 360 độ tự chín đều không cần đảo, giữ khoang Inox 304 nguyên khối mênh mông để nướng gà/cá nguyên con và vệ sinh nhàn tênh",
+      "key_arguments": [
+        "S200 là dòng Flagship cao cấp nhất của 2GOOD, chuẩn lò nướng chuyên nghiệp gia đình. Quạt đối lưu lốc xoáy 360 độ cực mạnh ở lưng lò tự động phủ nhiệt đều 4 mặt, thức ăn chín vàng giòn rụm mà không cần lồng đảo hay phải lật trở",
+        "Lồng tự đảo chỉ cần thiết ở các dòng phân khúc dưới 15-20L (như S100) để làm các món vặt như rang lạc, khoai tây chiên",
+        "S200 bỏ trục lồng đảo để khoang Inox 304 liền khối rộng mênh mông 32L, nướng vừa 2 con gà hoặc cả tảng thịt/cá lớn mà không bị vướng víu, khâu lau chùi vệ sinh cực kỳ thảnh thơi"
+      ],
+      "sample_reply": "Dạ em chào anh/chị! Nồi chiên hơi nước 2GOOD S200 không dùng lồng đảo ạ. Vì S200 là dòng Flagship cao cấp nhất, chuyên nghiệp về nướng nên sở hữu thiết kế chuẩn lò nướng cao cấp:\n👉 **Nướng chuyên nghiệp không cần đảo:** S200 trang bị quạt đối lưu lốc xoáy 360 độ công suất lớn (2200W). Luồng nhiệt cực mạnh tuần hoàn kín mọi góc lò, giúp thực phẩm chín vàng giòn đều 4 mặt mà không cần dùng lồng đảo hay phải mở lò lật trở.\n👉 **Khoang lò mênh mông nguyên khối:** Lồng tự đảo thường chỉ phù hợp cho các dòng phân khúc dưới 15-20L (như S100) để rang vặt ít lạc hay khoai vụn. Còn S200 dung tích cực đại 32L, thiết kế không vướng trục quay giúp khoang Inox 304 rộng trọn vẹn để nướng nguyên 2 con gà, tảng sườn tảng thịt lớn hoặc cả con cá dài mà không bị nát hay gò bó, lại cực kỳ dễ lau chùi sau khi nấu ạ!"
+    },
+    {
+      "id": "s200_vs_competitors_20L",
+      "trigger_keywords": ["tapuho", "olivo", "kalite", "lumias", "20 lít", "20l", "so với tapuho", "so với olivo", "hơn gì", "khác gì tapuho"],
+      "strategy": "Tuyệt đối không chê bai thô thiển hãng khác, nhưng tinh tế định vị S200 ở đẳng cấp Flagship trên hẳn phân khúc 20L (Tapuho 20L, Olivo 20L, Kalite, Lumias...). Nhấn mạnh sự khác biệt giữa lò nướng chuyên nghiệp 32L với nồi 20L",
+      "key_arguments": [
+        "Các mẫu nồi 20L trên thị trường (Tapuho, Olivo, Kalite, Lumias hay S100) đều thuộc phân khúc dưới, khoang nướng khá chật hẹp nên khi làm đồ lớn hoặc xếp nhiều khay sẽ bị bí nhiệt, quạt không tỏa đều dễ dẫn đến tình trạng góc cháy góc sống",
+        "S200 sở hữu dung tích thực tế 32L cực đại — chuẩn lò nướng chuyên nghiệp, luồng nhiệt đối lưu 360 độ tuần hoàn tự do và khoang rộng nướng 2 con gà hoặc cỗ tiệc nhiều tầng cực kỳ thông thoáng",
+        "Công suất S200 cực khủng (Chiên 2200W + Hấp 1500W), vượt trội hoàn toàn so với mức 1800W của các dòng 20L",
+        "100% Inox 304 chuẩn y tế toàn phần từ khoang lò đến phụ kiện, không dùng chống dính Teflon hóa học"
+      ],
+      "sample_reply": "Dạ em rất hiểu anh/chị đang tìm hiểu kỹ trước khi lựa chọn! Thực tế các dòng nồi 20L trên thị trường như Tapuho 20L, Olivo 20L hay Kalite đều là những sản phẩm tốt trong phân khúc tầm trung. Tuy nhiên, 2GOOD S200 được định vị ở phân khúc cao cấp hơn hẳn (Flagship chuyên nghiệp về nướng) với 3 điểm vượt trội rõ rệt ạ:\n1️⃣ **Đẳng cấp khoang lò 32L so với 20L:** Nồi 20L khoang khá chật, nướng đồ to hoặc làm 2-3 tầng cỗ rất dễ bị bí nhiệt, quạt thổi không đều. S200 dung tích tới 32L chuẩn lò nướng chuyên nghiệp, luồng nhiệt lốc xoáy tuần hoàn cực kỳ thông thoáng, nướng trọn 2 con gà hay cả con cá to mà nhiệt phủ đều 100%.\n2️⃣ **Công suất cực mạnh:** S200 sở hữu công suất nướng lên tới 2200W kết hợp Hấp 1500W (mạnh hơn hẳn mức 1800W thông thường của các dòng 20L), giúp gia nhiệt tức thì, khóa ẩm nhanh hơn và tiết kiệm thời gian đứng bếp.\n3️⃣ **Vật liệu 100% Inox 304 chuẩn y tế:** Khoang lò và toàn bộ khay vỉ đều là Inox 304 cao cấp, nói không với lớp sơn chống dính Teflon dễ bong tróc phôi nhiễm hóa chất độc hại.\nNếu gia đình mình muốn đầu tư một lần dùng lâu dài 5-10 năm chuẩn chuyên nghiệp và ăn ngon như nhà hàng thì S200 là lựa chọn xứng đáng nhất ạ!"
     }
   ]
 }

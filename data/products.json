@@ -2,26 +2,31 @@
   "S200": {
     "name": "Nồi chiên hơi nước 2GOOD S200",
     "product_code": "2GOOD S200",
-    "category": "Nồi chiên hơi nước cao cấp",
-    "capacity": "32 Lít (Dung tích cực đại phân khúc gia đình, chứa trọn 2 con gà nguyên con cùng lúc)",
-    "power": "Chiên 2200W + Hấp siêu nhiệt 1500W",
+    "category": "Flagship Cao Cấp Nhất — Chuyên Nghiệp Về Nướng & Chiên Hơi Nước",
+    "positioning": "Dòng sản phẩm cao cấp đầu bảng (Flagship) của 2GOOD, định vị đẳng cấp chuyên gia ẩm thực, vượt trội hoàn toàn so với các dòng phân khúc dưới và các nồi 20L trên thị trường (như S100, Tapuho 20L, Olivo 20L, Lumias, Kalite...)",
+    "capacity": "32 Lít cực đại (Khoang lò siêu rộng, chứa trọn 2 con gà nguyên con cùng lúc, nướng cá nguyên con hoặc làm cỗ bàn tiệc tùng 3-4 tầng cùng lúc)",
+    "power": "Chiên 2200W cực mạnh + Hấp siêu nhiệt 1500W (Mạnh hơn hẳn phân khúc 20L vốn chỉ 1800W)",
     "temperature_range": "40°C - 230°C",
-    "material": "Khoang nồi và phụ kiện 100% Inox 304 cao cấp chuẩn y tế, không dùng sơn chống dính Teflon, không hoen gỉ, cọ rửa búi sắt thoải mái không sợ bong tróc",
+    "material": "Khoang nồi và toàn bộ phụ kiện 100% Inox 304 cao cấp chuẩn y tế, không dùng sơn chống dính Teflon hóa học, không hoen gỉ, cọ rửa búi sắt thoải mái không sợ bong tróc",
     "key_technologies": [
       "Công nghệ Phun sương siêu nhiệt Steam Active (3 cấp độ) giúp khoá ẩm 99%, thịt bên trong mọng nước tứa xốt, ngoài giòn rụm",
-      "Quạt đối lưu 360 độ công suất lớn ở lưng lò, chín vàng đều 4 mặt không cần mở lò lật trở thức ăn",
+      "Quạt đối lưu lốc xoáy 360 độ công suất lớn ở lưng lò: Nhiệt phủ kín mọi góc chết, thức ăn chín vàng ươm đều 4 mặt mà không cần lật trở hay dùng lồng đảo lách cách",
       "Chế độ tự làm sạch Steam Clean bắn luồng hơi nước làm mềm dầu mỡ đóng cục, lau nhẹ là sạch",
       "Bình chứa nước tách ngoài 1.2L tháo rời mặt trước, châm nước không cần mở cửa lò làm mất nhiệt",
       "Cảm biến nhiệt thực tế Real-time hiển thị chính xác nhiệt độ đang có trong khoang lò",
       "Cửa kính cường lực trong suốt 2 lớp cách nhiệt, quan sát trọn vẹn món ăn chín"
     ],
     "accessories": "Khay nướng Inox 304, Vỉ hấp Inox 304, Khay hứng dầu mỡ Inox 304, Găng tay cách nhiệt",
-    "target_customer": "Gia đình 4-8 người, người thích nấu cỗ/tiệc, người sành ăn sợ đồ chiên khô xơ, người quan tâm sức khỏe sợ chất chống dính độc hại",
+    "target_customer": "Gia đình sành ăn, người thích nấu cỗ/tiệc, người đòi hỏi thiết bị bếp cao cấp chuẩn chuyên nghiệp, người quan tâm sức khỏe tuyệt đối",
+    "comparison_with_lower_tier_20L": {
+      "vs_20L_models": "Các dòng 20L (như Tapuho 20L, Olivo 20L, Kalite, Lumias hay cả đàn em S100) thuộc phân khúc dưới, khoang nhỏ hơn đáng kể nên khi nướng nhiều tầng hoặc nướng đồ lớn dễ bị bí nhiệt, gió đối lưu không thoát được dẫn đến góc cháy góc sống. S200 với dung tích 32L chuẩn lò nướng chuyên nghiệp, luồng nhiệt lốc xoáy tuần hoàn tự do giúp nhiệt phủ đều 100%.",
+      "why_no_rotating_cage": "Lồng tự đảo chỉ cần thiết ở các dòng phân khúc dưới (15-20L như S100) để rang vặt ít lạc hay khoai vụn. Còn S200 là lò nướng hơi nước CHUYÊN NGHIỆP CAO CẤP, sức mạnh nhiệt đối lưu 360° tự làm chín đều toàn bộ mà không cần đảo, giữ khoang Inox 304 rộng mênh mông nguyên khối để nướng tảng thịt lớn, cá to hoặc 2 con gà cùng lúc, không bị vướng trục quay và vệ sinh nhàn tênh."
+    },
     "selling_points_for_ctv": [
-      "Nhấn mạnh khoang 100% Inox 304: An toàn trọn đời, không bao giờ lo ung thư do bong tróc chống dính như các nồi giá rẻ",
-      "Dung tích 32L: Mua 1 lần dùng cả đời, làm cỗ giỗ Tết nướng 2 con gà hoặc 1 con cá to nguyên con không phải chặt khúc",
-      "Chiên hơi nước: Khắc phục triệt để nhược điểm thịt khô xác, nghẹn họng của nồi chiên không dầu truyền thống",
-      "Tự làm sạch Steam Clean: Đập tan nỗi sợ cọ rửa nồi chiên của chị em nội trợ"
+      "Định vị S200 là dòng cao cấp nhất, chuyên nghiệp về nướng, hơn hẳn phân khúc 20L của Tapuho, Olivo, Lumias, Kalite",
+      "Khoang 100% Inox 304 nguyên khối: Đẳng cấp bền bỉ trọn đời, an toàn sức khỏe tuyệt đối không lo ung thư do bong tróc",
+      "Dung tích 32L cực đại: Mua một lần dùng cả đời, làm tiệc giỗ Tết cân trọn 2 con gà hoặc cả con cá dài không phải chặt khúc",
+      "Chiên hơi nước kết hợp: Thịt nướng ngoài giòn tan, trong ứa nước ngọt, không bao giờ bị khô xác như nồi chiên thường"
     ]
   },
   "S100": {
