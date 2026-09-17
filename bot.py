@@ -327,7 +327,7 @@ def split_text_into_chunks(text, max_length=3800):
         
     return chunks
 
-def send_message(chat_id, text, reply_markup=None, parse_mode="HTML", reply_to_message_id=None):
+def send_message(chat_id, text, reply_markup=None, parse_mode="HTML", reply_to_message_id=None, message_thread_id=None):
     chunks = split_text_into_chunks(text)
     last_res = None
     
@@ -338,6 +338,8 @@ def send_message(chat_id, text, reply_markup=None, parse_mode="HTML", reply_to_m
             "text": chunk,
             "parse_mode": parse_mode
         }
+        if message_thread_id:
+            payload["message_thread_id"] = message_thread_id
         if reply_to_message_id and i == 0:
             payload["reply_to_message_id"] = reply_to_message_id
         if markup:
@@ -1073,17 +1075,24 @@ def worker_process_text_prompt(chat_id, text_prompt):
     send_message(chat_id, preview_text, reply_markup=inline_keyboard)
 
 # --- WORKER: PROCESS CTV SALES CONSULTING & OBJECTION HANDLING ---
-def worker_process_ctv_query(chat_id, query_text, reply_to_message_id=None):
+def worker_process_ctv_query(chat_id, query_text, reply_to_message_id=None, message_thread_id=None):
     try:
         from bot_engine import generate_ctv_advice
         advice = generate_ctv_advice(query_text)
-        send_message(chat_id, advice, parse_mode="Markdown", reply_to_message_id=reply_to_message_id)
+        send_message(
+            chat_id, 
+            advice, 
+            parse_mode="Markdown", 
+            reply_to_message_id=reply_to_message_id,
+            message_thread_id=message_thread_id
+        )
     except Exception as e:
         print(f"Error in worker_process_ctv_query: {e}")
         send_message(
             chat_id, 
             "Dạ em đang gặp chút gián đoạn kết nối AI, bác vui lòng thử lại sau ít giây nhé!", 
-            reply_to_message_id=reply_to_message_id
+            reply_to_message_id=reply_to_message_id,
+            message_thread_id=message_thread_id
         )
 
 # --- CALLBACK ROUTER ---
@@ -1310,6 +1319,7 @@ def run_bot():
                             chat_id = str(chat.get("id"))
                             chat_type = chat.get("type", "private")
                             msg_id = msg.get("message_id")
+                            thread_id = msg.get("message_thread_id")
                             
                             # Handle incoming photo or video (from private chat or any group)
                             if "photo" in msg or "video" in msg:
@@ -1341,21 +1351,21 @@ def run_bot():
 • Gửi ảnh/video: Bot tự lưu vào <b>Kho Media (/kho)</b> và soạn 3 góc bài viết.
 • Gõ <code>viết 1 bài [ý tưởng]</code> hoặc <code>/viet [ý tưởng]</code>: AI soạn bài bán hàng theo yêu cầu.
 
-💡 Gõ <code>/help</code> để xem hướng dẫn đầy đủ!""")
+💡 Gõ <code>/help</code> để xem hướng dẫn đầy đủ!""", message_thread_id=thread_id)
                                 elif cmd in ["/status", "/ping"]:
                                     st_msg, kb = build_status_message()
-                                    send_message(chat_id, st_msg, reply_markup=kb)
+                                    send_message(chat_id, st_msg, reply_markup=kb, message_thread_id=thread_id)
                                 elif cmd == "/kho":
                                     kho_msg, kb = build_kho_message()
-                                    send_message(chat_id, kho_msg, reply_markup=kb)
+                                    send_message(chat_id, kho_msg, reply_markup=kb, message_thread_id=thread_id)
                                 elif cmd == "/chay_ngay":
                                     threading.Thread(target=run_daily_autopilot_dispatch, args=[True], daemon=True).start()
                                 elif cmd == "/history":
-                                    send_message(chat_id, build_history_message())
+                                    send_message(chat_id, build_history_message(), message_thread_id=thread_id)
                                 elif cmd == "/reset":
-                                    send_message(chat_id, execute_reset())
+                                    send_message(chat_id, execute_reset(), message_thread_id=thread_id)
                                 elif cmd == "/help":
-                                    send_message(chat_id, build_help_message())
+                                    send_message(chat_id, build_help_message(), message_thread_id=thread_id)
                                 elif is_content_request:
                                     prompt = text
                                     if prompt.lower().startswith(("/viet", "/content")):
@@ -1363,19 +1373,19 @@ def run_bot():
                                     if prompt:
                                         threading.Thread(target=worker_process_text_prompt, args=[chat_id, prompt], daemon=True).start()
                                     else:
-                                        send_message(chat_id, "💡 Hãy gõ kèm ý tưởng, ví dụ: <code>viết 1 bài Sona i8</code>")
+                                        send_message(chat_id, "💡 Hãy gõ kèm ý tưởng, ví dụ: <code>viết 1 bài Sona i8</code>", message_thread_id=thread_id)
                                 elif is_consulting_command:
                                     query = text[len(text.split()[0]):].strip()
                                     if query:
-                                        send_message(chat_id, "⏳ <i>Đang tra cứu dữ liệu sản phẩm & soạn kịch bản tư vấn...</i>", reply_to_message_id=msg_id)
-                                        threading.Thread(target=worker_process_ctv_query, args=[chat_id, query, msg_id], daemon=True).start()
+                                        send_message(chat_id, "⏳ <i>Đang tra cứu dữ liệu sản phẩm & soạn kịch bản tư vấn...</i>", reply_to_message_id=msg_id, message_thread_id=thread_id)
+                                        threading.Thread(target=worker_process_ctv_query, args=[chat_id, query, msg_id, thread_id], daemon=True).start()
                                     else:
-                                        send_message(chat_id, "💡 Hãy gõ kèm câu hỏi, ví dụ: <code>/hoi Khách chê S200 đắt</code> hoặc <code>/hoi S100 có lồng đảo không</code>", reply_to_message_id=msg_id)
+                                        send_message(chat_id, "💡 Hãy gõ kèm câu hỏi, ví dụ: <code>/hoi Khách chê S200 đắt</code> hoặc <code>/hoi S100 có lồng đảo không</code>", reply_to_message_id=msg_id, message_thread_id=thread_id)
                                 else:
                                     is_tagged = False
                                     clean_query = text
                                     chat_title = chat.get("title", "").lower()
-                                    is_discussion_group = any(k in chat_title for k in ["thảo luận", "discussion", "hỏi đáp", "ctv"])
+                                    is_discussion_group = any(k in chat_title for k in ["thảo luận", "discussion", "hỏi đáp", "ctv"]) or thread_id is not None
                                     
                                     if "@mr_morning_bot" in lower_text:
                                         is_tagged = True
@@ -1397,8 +1407,8 @@ def run_bot():
                                         if any(k in clean_query.lower() for k in ["viết", "content", "soạn", "làm bài"]):
                                             threading.Thread(target=worker_process_text_prompt, args=[chat_id, clean_query], daemon=True).start()
                                         else:
-                                            send_message(chat_id, "⏳ <i>Đang tra cứu dữ liệu sản phẩm & soạn kịch bản tư vấn...</i>", reply_to_message_id=msg_id)
-                                            threading.Thread(target=worker_process_ctv_query, args=[chat_id, clean_query, msg_id], daemon=True).start()
+                                            send_message(chat_id, "⏳ <i>Đang tra cứu dữ liệu sản phẩm & soạn kịch bản tư vấn...</i>", reply_to_message_id=msg_id, message_thread_id=thread_id)
+                                            threading.Thread(target=worker_process_ctv_query, args=[chat_id, clean_query, msg_id, thread_id], daemon=True).start()
                                     else:
                                         # In production groups (e.g. 'Ném ảnh vào để sản xuất content'), any plain text is a prompt!
                                         if any(k in chat_title for k in ["content", "sản xuất", "team"]):
