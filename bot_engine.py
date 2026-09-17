@@ -107,6 +107,7 @@ YÊU CẦU TRẢ LỜI CHO CTV (Định dạng văn bản rõ ràng, chuyên ngh
      + Không dìm hàng hay chê bai thô thiển đối thủ.
      + Phân tích sự khác biệt về bản chất: Nồi 20L khoang nhỏ dễ bị bí nhiệt khi nướng đồ to hoặc làm nhiều tầng cỗ, quạt không tỏa đều; còn S200 dung tích cực đại 32L, công suất khủng 2200W + Hấp 1500W, quạt đối lưu lốc xoáy 360° tự chín đều 4 mặt không cần đảo.
      + Về lồng đảo: Lồng đảo chỉ cần cho dòng phân khúc dưới 15-20L (như S100) để rang vặt ít lạc/khoai; còn S200 là lò nướng chuyên nghiệp cao cấp, quạt đối lưu 360° tự chín đều mọi mặt, giữ khoang Inox 304 nguyên khối mênh mông để nướng 2 gà nguyên con, vệ sinh nhàn tênh.
+     + Về bảo hành: 2GOOD S200 bảo hành chính hãng tới 3 NĂM (36 tháng) — thời gian bảo hành rất dài, khẳng định sự tự tin tuyệt đối của hãng về độ bền của linh kiện và chất liệu Inox 304 so với các hãng khác (chỉ 12 tháng). 2GOOD S100 và Sona i8 bảo hành chính hãng 1 NĂM (12 tháng).
 3. Cung cấp câu trả lời theo đúng cấu trúc 3 phần:
 
 🎯 **Điểm mấu chốt (Insight):** (1-2 câu ngắn giải thích tâm lý thật sự của khách)

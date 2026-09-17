@@ -1,6 +1,11 @@
 {
   "warranty": {
-    "duration": "Bảo hành chính hãng 12 - 24 tháng (tùy model sản phẩm)",
+    "by_product": {
+      "2GOOD S200 (Flagship 32L)": "Bảo hành chính hãng 3 NĂM (36 tháng) — Thời gian bảo hành cực dài, thể hiện sự tự tin tuyệt đối của hãng về độ bền và chất lượng linh kiện vượt trội của dòng Flagship cao cấp",
+      "2GOOD S100 (20L có lồng đảo)": "Bảo hành chính hãng 1 NĂM (12 tháng)",
+      "2GOOD Sona i8 (Máy làm sữa hạt)": "Bảo hành chính hãng 1 NĂM (12 tháng)"
+    },
+    "duration_summary": "2GOOD S200 bảo hành chính hãng 3 NĂM (36 tháng) cực dài và tự tin về độ bền; 2GOOD S100 bảo hành 1 NĂM (12 tháng); 2GOOD Sona i8 bảo hành 1 NĂM (12 tháng)",
     "centers": [
       "Hà Nội: Trung tâm kỹ thuật & bảo hành chính hãng 2GOOD",
       "TP. Hồ Chí Minh: Chi nhánh bảo hành chính hãng 2GOOD phía Nam"

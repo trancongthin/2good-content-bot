@@ -58,11 +58,11 @@ ANGLE_3_ARCHETYPES = [
     ),
     (
         "TƯ VẤN 'TIỀN NÀO CỦA NẤY' & ĐỘ BỀN 5-10 NĂM",
-        "Phân tích góc nhìn đầu tư tiêu dùng thông minh: Nhiều bác đắn đo giá thành, nhưng chiếc nồi chống dính 1-2 triệu dùng vài tháng tróc sơn phải vứt đi. Chiếc 2GOOD S200 khoang Inox 304 nguyên khối 32L thay thế 10 thiết bị bếp, dùng 5-10 năm vẫn sáng bóng, tính ra mỗi ngày chỉ tốn 2-3 ngàn đồng mà bảo vệ sức khỏe cả đời."
+        "Phân tích góc nhìn đầu tư tiêu dùng thông minh: Nhiều bác đắn đo giá thành, nhưng chiếc nồi chống dính 1-2 triệu dùng vài tháng tróc sơn phải vứt đi. Chiếc 2GOOD S200 khoang Inox 304 nguyên khối 32L bảo hành chính hãng tới 3 năm (36 tháng) khẳng định độ bền bỉ tự tin tuyệt đối, thay thế 10 thiết bị bếp, dùng 5-10 năm vẫn sáng bóng, tính ra mỗi ngày chỉ tốn 2-3 ngàn đồng mà bảo vệ sức khỏe cả đời."
     ),
     (
         "MỜI TRẢI NGHIỆM THỰC TẾ & BAO TEST 1 ĐỔI 1",
-        "Thể hiện sự tự tin của người bán bằng uy tín thật: Hàng chính hãng bảo hành đầy đủ, bao test 1-1 nếu có lỗi. Mời các bác/mọi người ở gần cứ ghé qua tận nơi xem máy, nướng thử ăn thử, ưng ý thì rinh về."
+        "Thể hiện sự tự tin của người bán bằng uy tín thật: Hàng chính hãng bảo hành đầy đủ (S200 bảo hành tới 3 năm, S100 và Sona i8 bảo hành 1 năm), bao test 1-1 nếu có lỗi trong 7 ngày đầu. Mời các bác/mọi người ở gần cứ ghé qua tận nơi xem máy, nướng thử ăn thử, ưng ý thì rinh về."
     ),
     (
         "GỢI Ý QUÀ BIẾU TÂN GIA / QUÀ TẶNG SỨC KHỎE CHO BỐ MẸ",
@@ -156,7 +156,8 @@ LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY (BẮT BUỘC TRÁNH TRÙNG LẶP NỘI
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🎯 KNOWLEDGE BASE CỐT LÕI & ĐIỂM ĂN TIỀN TỪNG MODEL 2GOOD:
 
-🔥 DÒNG NỒI CHIÊN HƠI NƯỚC 2GOOD S100 (20 LÍT - LỒNG ĐẢO 360 ĐỘ TỰ ĐỘNG & SUPERHEAT 115°C):
+🔥 DÒNG NỒI CHIÊN HƠI NƯỚC 2GOOD S100 (20 LÍT - LỒNG ĐẢO 360 ĐỘ TỰ ĐỘNG & SUPERHEAT 115°C - BẢO HÀNH 1 NĂM):
+- Bảo hành: Bảo hành chính hãng 1 NĂM (12 tháng).
 - Dung tích: 20 Lít rộng rãi (chuẩn cho gia đình 6-8 người, nướng gà nguyên con hoặc nấu cùng lúc 2-3 món trên các tầng khay).
 - Công suất & Nhiệt độ: 1800W mạnh mẽ, dải nhiệt linh hoạt cực rộng từ 40°C đến 230°C.
 - Chất liệu: Vỏ nhựa ABS cao cấp, cửa kính cách nhiệt 2 lớp chống bỏng an toàn. Lòng nồi và toàn bộ 8 phụ kiện đều làm từ 100% Inox 304 chuẩn y tế, không chống dính Teflon độc hại, cọ rửa búi cước sắt thoải mái.
@@ -167,13 +168,16 @@ LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY (BẮT BUỘC TRÁNH TRÙNG LẶP NỘI
 - Chế độ ủ ấm & Lên men mở rộng: Nhiệt độ thấp ủ bột bánh mì (40°C), làm sữa chua (45°C), chưng yến (85°C) tiện dụng.
 - Full bộ 8 phụ kiện Inox 304 kèm sẵn: Khay chiên/nướng, vỉ chiên/nướng, khay hấp, khay hứng dầu mỡ, lồng đảo 360 độ, dụng cụ nâng gắp, xiên quay rô-ti và ghim thực phẩm.
 
-🔥 DÒNG NỒI CHIÊN HƠI NƯỚC 2GOOD S200 (32 LÍT - DUNG TÍCH CỰC ĐẠI & STEAM CLEAN):
-- Dung tích cực đại: 32 Lít (khoang 100% Inox 304 nguyên khối), nướng vừa cả con gà 2-3kg hoặc mâm cỗ 3-4 món một lúc.
+🔥 DÒNG NỒI CHIÊN HƠI NƯỚC 2GOOD S200 (FLAGSHIP CAO CẤP 32 LÍT - CHUYÊN NGHIỆP VỀ NƯỚNG - BẢO HÀNH 3 NĂM):
+- ĐỊNH VỊ: Dòng Flagship cao cấp nhất của 2GOOD, chuyên nghiệp về nướng và chiên hơi nước, vượt trội hoàn toàn so với các dòng 20L trên thị trường (như S100, Tapuho 20L, Olivo 20L, Lumias, Kalite...).
+- BẢO HÀNH CHÍNH HÃNG 3 NĂM (36 tháng): Thời gian bảo hành cực dài, thể hiện sự tự tin tuyệt đối của hãng về độ bền của sản phẩm Inox 304 nguyên khối và linh kiện vượt trội.
+- Dung tích cực đại: 32 Lít (khoang 100% Inox 304 nguyên khối), nướng vừa trọn vẹn 2 con gà hoặc mâm cỗ 3-4 món một lúc.
+- Công suất cực mạnh: Chiên 2200W + Hấp 1500W. Quạt đối lưu lốc xoáy 360 độ ở lưng lò tự làm chín đều 4 mặt không cần đảo hay lật trở, giữ khoang lò nguyên khối rộng rãi để nướng tảng thịt/cá lớn.
 - Công nghệ phun sương siêu nhiệt Steam Active: Ngoài giòn xém thơm phức, trong giữ trọn nước ngọt mọng tự nhiên.
-- Tự làm sạch bằng hơi nước (Steam Clean): Hơi sương siêu nhiệt làm mềm nhũn dầu mỡ bám dính, chỉ cần lau nhẹ 1 đường là sạch bóng.
-- Gia nhiệt đối lưu 360 độ không cần lật trở. Vỏ thép phay xước Quiet Luxury sang trọng.
+- Tự làm sạch bằng hơi nước (Steam Clean): Hơi sương siêu nhiệt làm mềm nhũn dầu mỡ bám dính, chỉ cần lau nhẹ 1 đường là sạch bóng. Vỏ thép phay xước Quiet Luxury sang trọng.
 
-🔥 DÒNG MÁY LÀM SỮA HẠT 2GOOD SONA i8 (RẢNH TAY 100% - TỰ RÓT - TỰ VỆ SINH & KHỬ TRÙNG):
+🔥 DÒNG MÁY LÀM SỮA HẠT 2GOOD SONA i8 (RẢNH TAY 100% - TỰ RÓT - TỰ VỆ SINH & KHỬ TRÙNG - BẢO HÀNH 1 NĂM):
+- Bảo hành: Bảo hành chính hãng 1 NĂM (12 tháng).
 - Triết lý & Thiết kế: "Trạm pha chế Coffee Station" vuông vức, cố định trên đảo bếp, hoạt động rảnh tay 100% như máy pha cà phê tự động.
 - Dung tích & Công suất: 1.2 Lít với 4 mức chọn tự động hút nước từ bình sau (300ml - 600ml - 900ml - 1200ml). Công suất Đun nóng 1000W, Xay 800W cực mạnh nhuyễn mịn không cần lọc qua rây.
 - Chất liệu & Lưỡi dao: Khoang nấu gang đúc tráng sứ chống dính cao cấp chống cháy khét đáy; Lưỡi dao thép không gỉ nhập khẩu Đức nhiều tầng cắt; Độ ồn < 70 dBA siêu êm. Bảng điều khiển cảm ứng LED 100% Tiếng Việt (9 chế độ).
@@ -322,7 +326,8 @@ LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY (BẮT BUỘC TRÁNH TRÙNG LẶP):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🎯 KNOWLEDGE BASE CỐT LÕI & ĐIỂM ĂN TIỀN TỪNG MODEL 2GOOD:
 
-🔥 DÒNG NỒI CHIÊN HƠI NƯỚC 2GOOD S100 (20 LÍT - LỒNG ĐẢO 360 ĐỘ TỰ ĐỘNG & SUPERHEAT 115°C):
+🔥 DÒNG NỒI CHIÊN HƠI NƯỚC 2GOOD S100 (20 LÍT - LỒNG ĐẢO 360 ĐỘ TỰ ĐỘNG & SUPERHEAT 115°C - BẢO HÀNH 1 NĂM):
+- Bảo hành: Bảo hành chính hãng 1 NĂM (12 tháng).
 - Dung tích: 20 Lít rộng rãi (chuẩn cho gia đình 6-8 người, nướng gà nguyên con hoặc nấu cùng lúc 2-3 món trên các tầng khay).
 - Công suất & Nhiệt độ: 1800W mạnh mẽ, dải nhiệt linh hoạt cực rộng từ 40°C đến 230°C.
 - Chất liệu: Vỏ nhựa ABS cao cấp, cửa kính cách nhiệt 2 lớp chống bỏng an toàn. Lòng nồi và toàn bộ 8 phụ kiện đều làm từ 100% Inox 304 chuẩn y tế, không chống dính Teflon độc hại, cọ rửa búi cước sắt thoải mái.
@@ -333,13 +338,16 @@ LỊCH SỬ BÀI ĐÃ ĐĂNG GẦN ĐÂY (BẮT BUỘC TRÁNH TRÙNG LẶP):
 - Chế độ ủ ấm & Lên men mở rộng: Nhiệt độ thấp ủ bột bánh mì (40°C), làm sữa chua (45°C), chưng yến (85°C) tiện dụng.
 - Full bộ 8 phụ kiện Inox 304 kèm sẵn: Khay chiên/nướng, vỉ chiên/nướng, khay hấp, khay hứng dầu mỡ, lồng đảo 360 độ, dụng cụ nâng gắp, xiên quay rô-ti và ghim thực phẩm.
 
-🔥 DÒNG NỒI CHIÊN HƠI NƯỚC 2GOOD S200 (32 LÍT - DUNG TÍCH CỰC ĐẠI & STEAM CLEAN):
-- Dung tích cực đại: 32 Lít (khoang 100% Inox 304 nguyên khối), nướng vừa cả con gà 2-3kg hoặc mâm cỗ 3-4 món một lúc.
+🔥 DÒNG NỒI CHIÊN HƠI NƯỚC 2GOOD S200 (FLAGSHIP CAO CẤP 32 LÍT - CHUYÊN NGHIỆP VỀ NƯỚNG - BẢO HÀNH 3 NĂM):
+- ĐỊNH VỊ: Dòng Flagship cao cấp nhất của 2GOOD, chuyên nghiệp về nướng và chiên hơi nước, vượt trội hoàn toàn so với các dòng 20L trên thị trường (như S100, Tapuho 20L, Olivo 20L, Lumias, Kalite...).
+- BẢO HÀNH CHÍNH HÃNG 3 NĂM (36 tháng): Thời gian bảo hành cực dài, thể hiện sự tự tin tuyệt đối của hãng về độ bền của sản phẩm Inox 304 nguyên khối và linh kiện vượt trội.
+- Dung tích cực đại: 32 Lít (khoang 100% Inox 304 nguyên khối), nướng vừa trọn vẹn 2 con gà hoặc mâm cỗ 3-4 món một lúc.
+- Công suất cực mạnh: Chiên 2200W + Hấp 1500W. Quạt đối lưu lốc xoáy 360 độ ở lưng lò tự làm chín đều 4 mặt không cần đảo hay lật trở, giữ khoang lò nguyên khối rộng rãi để nướng tảng thịt/cá lớn.
 - Công nghệ phun sương siêu nhiệt Steam Active: Ngoài giòn xém thơm phức, trong giữ trọn nước ngọt mọng tự nhiên.
-- Tự làm sạch bằng hơi nước (Steam Clean): Hơi sương siêu nhiệt làm mềm nhũn dầu mỡ bám dính, chỉ cần lau nhẹ 1 đường là sạch bóng.
-- Gia nhiệt đối lưu 360 độ không cần lật trở. Vỏ thép phay xước Quiet Luxury sang trọng.
+- Tự làm sạch bằng hơi nước (Steam Clean): Hơi sương siêu nhiệt làm mềm nhũn dầu mỡ bám dính, chỉ cần lau nhẹ 1 đường là sạch bóng. Vỏ thép phay xước Quiet Luxury sang trọng.
 
-🔥 DÒNG MÁY LÀM SỮA HẠT 2GOOD SONA i8 (RẢNH TAY 100% - TỰ RÓT - TỰ VỆ SINH & KHỬ TRÙNG):
+🔥 DÒNG MÁY LÀM SỮA HẠT 2GOOD SONA i8 (RẢNH TAY 100% - TỰ RÓT - TỰ VỆ SINH & KHỬ TRÙNG - BẢO HÀNH 1 NĂM):
+- Bảo hành: Bảo hành chính hãng 1 NĂM (12 tháng).
 - Triết lý & Thiết kế: "Trạm pha chế Coffee Station" vuông vức, cố định trên đảo bếp, hoạt động rảnh tay 100% như máy pha cà phê tự động.
 - Dung tích & Công suất: 1.2 Lít với 4 mức chọn tự động hút nước từ bình sau (300ml - 600ml - 900ml - 1200ml). Công suất Đun nóng 1000W, Xay 800W cực mạnh nhuyễn mịn không cần lọc qua rây.
 - Chất liệu & Lưỡi dao: Khoang nấu gang đúc tráng sứ chống dính cao cấp chống cháy khét đáy; Lưỡi dao thép không gỉ nhập khẩu Đức nhiều tầng cắt; Độ ồn < 70 dBA siêu êm. Bảng điều khiển cảm ứng LED 100% Tiếng Việt (9 chế độ).

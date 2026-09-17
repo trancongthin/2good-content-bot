@@ -4,6 +4,7 @@
     "product_code": "2GOOD S200",
     "category": "Flagship Cao Cấp Nhất — Chuyên Nghiệp Về Nướng & Chiên Hơi Nước",
     "positioning": "Dòng sản phẩm cao cấp đầu bảng (Flagship) của 2GOOD, định vị đẳng cấp chuyên gia ẩm thực, vượt trội hoàn toàn so với các dòng phân khúc dưới và các nồi 20L trên thị trường (như S100, Tapuho 20L, Olivo 20L, Lumias, Kalite...)",
+    "warranty": "Bảo hành chính hãng 3 NĂM (36 tháng) — Thời gian bảo hành cực dài, thể hiện sự tự tin tuyệt đối về độ bền của sản phẩm Inox 304 nguyên khối và linh kiện vượt trội của dòng Flagship",
     "capacity": "32 Lít cực đại (Khoang lò siêu rộng, chứa trọn 2 con gà nguyên con cùng lúc, nướng cá nguyên con hoặc làm cỗ bàn tiệc tùng 3-4 tầng cùng lúc)",
     "power": "Chiên 2200W cực mạnh + Hấp siêu nhiệt 1500W (Mạnh hơn hẳn phân khúc 20L vốn chỉ 1800W)",
     "temperature_range": "40°C - 230°C",
@@ -23,6 +24,7 @@
       "why_no_rotating_cage": "Lồng tự đảo chỉ cần thiết ở các dòng phân khúc dưới (15-20L như S100) để rang vặt ít lạc hay khoai vụn. Còn S200 là lò nướng hơi nước CHUYÊN NGHIỆP CAO CẤP, sức mạnh nhiệt đối lưu 360° tự làm chín đều toàn bộ mà không cần đảo, giữ khoang Inox 304 rộng mênh mông nguyên khối để nướng tảng thịt lớn, cá to hoặc 2 con gà cùng lúc, không bị vướng trục quay và vệ sinh nhàn tênh."
     },
     "selling_points_for_ctv": [
+      "Bảo hành chính hãng tới 3 NĂM (36 tháng): Điểm tựa niềm tin lớn nhất cho khách hàng, khẳng định độ bền vượt trội so với các hãng khác (vốn chỉ bảo hành 12-24 tháng)",
       "Định vị S200 là dòng cao cấp nhất, chuyên nghiệp về nướng, hơn hẳn phân khúc 20L của Tapuho, Olivo, Lumias, Kalite",
       "Khoang 100% Inox 304 nguyên khối: Đẳng cấp bền bỉ trọn đời, an toàn sức khỏe tuyệt đối không lo ung thư do bong tróc",
       "Dung tích 32L cực đại: Mua một lần dùng cả đời, làm tiệc giỗ Tết cân trọn 2 con gà hoặc cả con cá dài không phải chặt khúc",
@@ -33,6 +35,7 @@
     "name": "Nồi chiên hơi nước 2GOOD S100",
     "product_code": "2GOOD S100",
     "category": "Nồi chiên hơi nước đa năng có lồng tự đảo",
+    "warranty": "Bảo hành chính hãng 1 NĂM (12 tháng)",
     "capacity": "20 Lít (Thiết kế vuông vức, nướng vừa gà nguyên con 2-2.5kg)",
     "power": "1800W mạnh mẽ",
     "temperature_range": "40°C - 230°C",
@@ -46,6 +49,7 @@
     "accessories": "Bộ 8 phụ kiện Inox 304 đầy đủ nhất: Lồng tự đảo 360 độ, Trục quay gà rôti, Khay lưới, Khay nướng, Tay gắp, Vỉ hấp...",
     "target_customer": "Gia đình trẻ 3-5 người, người thích làm bánh, thích ăn vặt khoai chiên/rang lạc, muốn một chiếc nồi gọn gàng nhưng đa năng",
     "selling_points_for_ctv": [
+      "Bảo hành chính hãng 1 năm (12 tháng)",
       "Điểm độc quyền ăn tiền nhất: LỒNG TỰ ĐẢO 360 ĐỘ — Không có chiếc nồi chiên hơi nước nào trong tầm giá có tính năng này",
       "Bộ 8 phụ kiện Inox 304 tặng kèm đầy đủ không phải mua ngoài",
       "Đa năng thay thế 8 thiết bị bếp: Lò vi sóng, nồi hấp, lò nướng, máy ủ sữa chua, máy sấy hoa quả..."
@@ -55,6 +59,7 @@
     "name": "Máy làm sữa hạt 2GOOD Sona i8",
     "product_code": "2GOOD Sona i8",
     "category": "Máy làm sữa hạt rảnh tay 100% thế hệ mới",
+    "warranty": "Bảo hành chính hãng 1 NĂM (12 tháng)",
     "capacity": "1.2 Lít (Tự hút nước từ 300ml - 1200ml tùy chỉnh)",
     "power": "Đun nấu 1000W + Xay đảo 800W",
     "noise_level": "Êm ái <70 dBA (Êm hơn 50% so với máy làm sữa hạt truyền thống)",
@@ -68,6 +73,7 @@
     "accessories": "Cốc hứng sữa thủy tinh cao cấp, Bình chứa nước tinh khiết tháo rời, Cọ vệ sinh chuyên dụng",
     "target_customer": "Mẹ bỉm sữa, dân văn phòng bận rộn, người lớn tuổi ăn thực dưỡng, người sợ tiếng ồn đinh tai của máy sữa hạt cũ và sợ khâu cọ rửa cối",
     "selling_points_for_ctv": [
+      "Bảo hành chính hãng 1 năm (12 tháng)",
       "Insight đắt giá nhất: ĐÁNH TAN NỖI ÁM ẢNH RỬA CỐI — Máy tự rửa và tự sấy khô sạch bong",
       "Hẹn giờ sáng dậy có sữa uống mà không sợ chua sữa",
       "Độ ồn êm ái dưới 70dB không đánh thức con nhỏ hay người già"
