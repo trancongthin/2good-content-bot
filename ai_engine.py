@@ -6,7 +6,7 @@ import re
 import random
 from config import GEMINI_API_KEY, KB_FILE, MEMORY_FILE
 
-MODELS = ["gemini-flash-lite-latest", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-flash-latest"]
+MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-flash-latest", "gemini-2.5-flash-lite"]
 
 # Dynamic Archetypes for rich, non-repetitive variety (64 combinations)
 ANGLE_1_ARCHETYPES = [
@@ -253,7 +253,7 @@ HÃY TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON CHUẨN (KHÔNG THÊM BẤT KỲ CH�
     for model_name in MODELS:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={GEMINI_API_KEY}"
         try:
-            response = requests.post(url, json=payload, timeout=25)
+            response = requests.post(url, json=payload, timeout=45)
             if response.status_code == 200:
                 result = response.json()
                 raw_text = result["candidates"][0]["content"]["parts"][0]["text"].strip()
@@ -413,7 +413,7 @@ HÃY TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON CHUẨN:
     for model_name in MODELS:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={GEMINI_API_KEY}"
         try:
-            response = requests.post(url, json=payload, timeout=25)
+            response = requests.post(url, json=payload, timeout=45)
             if response.status_code == 200:
                 result = response.json()
                 raw_text = result["candidates"][0]["content"]["parts"][0]["text"].strip()
