@@ -148,6 +148,11 @@ def save_memory(entry):
     memory.append(entry)
     with open(MEMORY_FILE, "w", encoding="utf-8") as f:
         json.dump(memory, f, ensure_ascii=False, indent=2)
+    try:
+        import storage_sync
+        storage_sync.trigger_debounced_sync()
+    except Exception:
+        pass
 
 def load_kb():
     try:
@@ -161,6 +166,11 @@ def save_kb(entry):
     kb.append(entry)
     with open(KB_FILE, "w", encoding="utf-8") as f:
         json.dump(kb, f, ensure_ascii=False, indent=2)
+    try:
+        import storage_sync
+        storage_sync.trigger_debounced_sync()
+    except Exception:
+        pass
 
 def analyze_multiple_images_and_generate_content(images_bytes_list, custom_note="", has_video=False):
     """

@@ -124,6 +124,11 @@ def save_media_vault(vault):
         try:
             with open(VAULT_FILE, "w", encoding="utf-8") as f:
                 json.dump(vault, f, ensure_ascii=False, indent=2)
+            try:
+                import storage_sync
+                storage_sync.trigger_debounced_sync()
+            except Exception:
+                pass
         except Exception as e:
             print(f"Error saving vault: {e}")
 
@@ -570,6 +575,8 @@ def build_help_message():
 4️⃣ <b>Các lệnh quản trị:</b>
 - <code>/kho</code> : Xem kho ảnh/video.
 - <code>/chay_ngay</code> : Kích hoạt tức thì 1 phiên phát sóng.
+- <code>/saoluu</code> : Sao lưu toàn bộ kho & lịch sử lên Telegram Cloud.
+- <code>/khoiphuc</code> : Khôi phục dữ liệu từ bản sao lưu Telegram Cloud.
 - <code>/status</code> : Báo cáo trạng thái bot, uptime.
 - <code>/history</code>: Xem 5 bài đã đăng gần nhất.
 - <code>/help</code>   : Xem lại hướng dẫn này."""
@@ -1379,6 +1386,16 @@ def run_bot():
     acquire_single_instance_lock()
     print(f"🚀 2GOOD TELEGRAM BOT (24/7 ROBUST ENGINE & MEDIA VAULT) IS RUNNING (PID: {os.getpid()})...")
     
+    # 0. Automatically restore database from Telegram Cloud Backup (Pinned message)
+    try:
+        from storage_sync import restore_vault_from_telegram
+        print("🔄 Đang kiểm tra và khôi phục dữ liệu từ Telegram Cloud Backup...")
+        restored, v_count, m_count = restore_vault_from_telegram()
+        if restored:
+            print(f"🎉 Khôi phục hoàn tất: {v_count} cụm media & {m_count} bài viết sẵn sàng hoạt động!")
+    except Exception as e:
+        print(f"⚠️ Không thể khôi phục từ Telegram: {e}")
+
     # 1. Start HTTP Health check for Cloud Hosting
     threading.Thread(target=start_health_server, daemon=True).start()
 
@@ -1489,6 +1506,29 @@ def run_bot():
                                     send_message(chat_id, execute_reset(), message_thread_id=thread_id)
                                 elif cmd == "/help":
                                     send_message(chat_id, build_help_message(), message_thread_id=thread_id)
+                                elif cmd in ["/saoluu", "/backup"]:
+                                    from storage_sync import sync_vault_to_telegram
+                                    send_message(chat_id, "⏳ <i>Đang nén dữ liệu và gửi bản sao lưu lên Telegram Cloud...</i>", message_thread_id=thread_id)
+                                    ok, msg = sync_vault_to_telegram(silent=False)
+                                    send_message(chat_id, f"✅ {msg}" if ok else f"❌ {msg}", message_thread_id=thread_id)
+                                elif cmd in ["/khoiphuc", "/restore"]:
+                                    from storage_sync import restore_vault_from_telegram
+                                    send_message(chat_id, "⏳ <i>Đang tải và khôi phục dữ liệu từ bản sao lưu Telegram Cloud...</i>", message_thread_id=thread_id)
+                                    ok, v_c, m_c = restore_vault_from_telegram()
+                                    if ok:
+                                        send_message(chat_id, f"🎉 Khôi phục thành công <b>{v_c} cụm media</b> và <b>{m_c} bài viết</b> từ Telegram Cloud!", message_thread_id=thread_id)
+                                    else:
+                                        send_message(chat_id, "⚠️ Không tìm thấy bản sao lưu hợp lệ được ghim trên Telegram.", message_thread_id=thread_id)
+                                elif cmd == "/set_backup_channel":
+                                    from storage_sync import set_backup_chat_id, get_backup_chat_id
+                                    parts = text.split()
+                                    if len(parts) > 1:
+                                        new_id = parts[1].strip()
+                                        set_backup_chat_id(new_id)
+                                        send_message(chat_id, f"✅ Đã đặt kênh sao lưu vĩnh cửu thành: <code>{new_id}</code>", message_thread_id=thread_id)
+                                    else:
+                                        curr = get_backup_chat_id()
+                                        send_message(chat_id, f"ℹ️ Kênh sao lưu hiện tại: <code>{curr}</code>\nCú pháp: <code>/set_backup_channel &lt;channel_id&gt;</code>", message_thread_id=thread_id)
                                 elif is_content_request:
                                     prompt = text
                                     if prompt.lower().startswith(("/viet", "/content")):
