@@ -79,6 +79,51 @@
         "Quyền đồng kiểm: Cắm điện thử máy, kiểm tra phụ kiện trước khi thanh toán"
       ],
       "sample_reply": "Dạ em gửi anh/chị thông tin bảo hành chính hãng của 2GOOD ạ:\n🛡️ **Nồi chiên hơi nước 2GOOD S200:** Được bảo hành chính hãng lên tới **3 NĂM (36 tháng)** — thời hạn bảo hành cực kỳ dài, khẳng định sự tự tin tuyệt đối của hãng về độ bền vượt trội của khoang Inox 304 và linh kiện dòng Flagship cao cấp.\n🛡️ **Nồi chiên hơi nước 2GOOD S100:** Bảo hành chính hãng **1 NĂM (12 tháng)**.\n🛡️ **Máy làm sữa hạt 2GOOD Sona i8:** Bảo hành chính hãng **1 NĂM (12 tháng)**.\n✨ Toàn bộ sản phẩm đều có chính sách 1 đổi 1 trong 7 ngày đầu nếu có lỗi kỹ thuật, và khi nhận hàng anh/chị được cắm điện kiểm tra máy đầy đủ trước khi thanh toán cho bưu tá nên mình hoàn toàn yên tâm ạ!"
+    },
+    {
+      "id": "price_inquiry_s100_s200",
+      "trigger_keywords": ["giá bao nhiêu", "nhiêu tiền", "giá s100", "giá s200", "giá cả", "bao nhiêu tiền", "báo giá", "giá bn", "giá bn vậy"],
+      "strategy": "Báo giá niêm yết chính xác của cả 2 dòng sản phẩm S100 và S200, đồng thời phân tích vắn tắt sự khác biệt về phân khúc và quyền lợi bảo hành để khách dễ dàng lựa chọn theo nhu cầu ngân sách",
+      "key_arguments": [
+        "2GOOD S100: Giá niêm yết chính hãng là 5.290.000 VNĐ (5tr290k) — Dung tích 20L, bảo hành 1 năm (12 tháng), độc quyền lồng tự đảo 360 độ và 2 nguồn nhiệt",
+        "2GOOD S200: Giá niêm yết chính hãng là 8.900.000 VNĐ (8tr900k) — Dòng Flagship cao cấp nhất, dung tích 32L cực đại, công suất nướng 2200W + hấp 1500W, bảo hành chính hãng độc quyền tới 3 NĂM (36 tháng)",
+        "Cả 2 dòng đều tặng kèm trọn bộ phụ kiện Inox 304 chuẩn y tế, bao test 1 đổi 1 trong 7 ngày đầu và miễn phí vận chuyển tận nhà"
+      ],
+      "sample_reply": "Dạ em gửi anh/chị báo giá niêm yết chính hãng của 2 dòng Nồi chiên hơi nước 2GOOD ạ:\n\n1️⃣ **2GOOD S100 (Dòng Đa Năng 20L): Giá 5.290.000 VNĐ**\n👉 Dung tích 20L rộng rãi, thiết kế 2 nguồn nhiệt (mâm hấp thủy nhiệt + quạt mayso trên). Điểm độc quyền ăn tiền nhất là có **Lồng tự đảo 360 độ** chuyên rang lạc, ngô, khoai giòn tan không cần canh lật. Tặng kèm bộ 8 phụ kiện Inox 304 đầy đủ, bảo hành chính hãng 1 năm (12 tháng).\n\n2️⃣ **2GOOD S200 (Flagship Chuyên Nghiệp 32L): Giá 8.900.000 VNĐ**\n👉 Dòng cao cấp đầu bảng của 2GOOD, hơn hẳn thị trường với dung tích khổng lồ **32L** chuẩn lò nướng cao cấp, công suất cực khủng 2200W nướng + 1500W hấp siêu nhiệt Steam Active. Khoang rộng nướng cùng lúc 2 con gà hoặc cả con cá dài không phải chặt khúc. Đặc biệt được hãng bảo hành chính hãng độc quyền lên tới **3 NĂM (36 tháng)**!\n\n✨ Cả 2 dòng đều cam kết 100% Inox 304 chuẩn y tế, được đồng kiểm cắm điện thử máy trước khi thanh toán và lỗi 1 đổi 1 trong 7 ngày đầu ạ!"
+    },
+    {
+      "id": "battle_16L_vs_20L",
+      "trigger_keywords": ["nên mua 16l hay 20l", "16l hay 20l", "nồi 16l", "tapuho 16l", "olivo 16l", "elmich 15l", "kalite 15l", "kalite 18l"],
+      "strategy": "Chỉ ra nghịch lý thị trường: các nồi 15-16L bị đẩy giá 5-6 triệu ngang ngửa thậm chí đắt hơn nồi 20L S100 (5.290.000đ). Phân tích kỹ thuật: nồi 16L chỉ có 1 nguồn nhiệt hấp (phụ thuộc quạt lưng), khoang bé bí nhiệt, trong khi 2GOOD S100 giá 5tr290k có dung tích 20L rộng rãi, 2 nguồn nhiệt mâm thủy nhiệt và có lồng đảo độc quyền.",
+      "key_arguments": [
+        "Giá nồi 16L trên thị trường hiện nay (Tapuho, Olivo, Elmich...) từ 5tr2 đến hơn 6tr, ngang ngửa thậm chí đắt hơn nồi 20L S100 (5tr290k)",
+        "Nồi 16L khoang chật hẹp, khó nướng nguyên con gà lớn, và hầu hết chỉ có 1 nguồn nhiệt hấp (không có mâm thủy nhiệt đáy)",
+        "2GOOD S100 cùng tầm giá 5.290.000đ nhưng người dùng sở hữu khoang 20L rộng rãi, 2 nguồn nhiệt hấp mọng nước và có lồng tự đảo 360 độ độc quyền"
+      ],
+      "sample_reply": "Dạ nếu đang phân vân giữa 16L và 20L thì lời khuyên chân thành là anh/chị nên chốt luôn nồi **20L** nhé ạ! Vì thực tế thị trường hiện nay:\n👉 **Nghịch lý giá cả:** Các mẫu nồi 15L - 16L (như Tapuho 16L, Olivo 16L, Elmich...) hiện có giá từ 5tr2 đến 6tr - tức là ngang ngửa thậm chí đắt hơn cả chiếc **2GOOD S100 20L (giá 5.290.000đ)**.\n👉 **Công nghệ gia nhiệt:** Đa số nồi 16L chỉ có 1 nguồn nhiệt hấp (chỉ thổi hơi qua quạt lưng, không có mâm thủy nhiệt đáy), khoang lại nhỏ nên nướng đồ to rất dễ bị bí nhiệt. Trong khi S100 trang bị hẳn **2 nguồn nhiệt** (có mâm hấp thủy nhiệt đáy giúp giữ mọng nước ngọt thỉu) và độc quyền **Lồng tự đảo 360 độ**.\nCùng một số tiền bỏ ra, mua nồi 20L S100 vừa rộng rãi nướng gà vịt thoải mái, vừa đầy đủ công nghệ hiện đại nhất mà không lo bị chật chội sau này ạ!"
+    },
+    {
+      "id": "battle_s200_superiority",
+      "trigger_keywords": ["s200 hơn gì", "tại sao s200 đắt", "so sánh s200", "s200 có gì đặc biệt", "s200 so với", "s200 với tapuho 20l", "s200 với olivo 20l", "flagship s200"],
+      "strategy": "Khẳng định vị thế độc tôn của S200 (Flagship 32L) — sản phẩm chưa từng có đối thủ tương đương trên thị trường Việt Nam. Nhấn mạnh 4 trụ cột vượt trội: Dung tích 32L thực tế, Công suất 2200W+1500W, 100% Inox 304 chuẩn y tế, và ĐỘC QUYỀN bảo hành 3 NĂM (36 tháng).",
+      "key_arguments": [
+        "Dung tích 32L chuẩn lò nướng chuyên nghiệp: Gấp rưỡi - gấp đôi các nồi 16L-20L trên thị trường, nướng cùng lúc 2 con gà hoặc cỗ tiệc 3-4 tầng không bị bí nhiệt",
+        "Công nghệ hấp phun sương siêu nhiệt Steam Active + Chiên đối lưu 360 độ công suất 2200W: Thực phẩm ngoài giòn tan, trong tứa nước ngọt như bếp nhà hàng 5 sao",
+        "Trục quay Roti chịu tải nướng gà/vịt lớn 2-3kg nguyên con (các nồi 16-20L khác chỉ nướng được gà dưới 1kg hoặc không có trục roti)",
+        "Bảo hành chính hãng 3 NĂM (36 tháng) — Duy nhất tại Việt Nam! Tất cả các hãng đối thủ chỉ bảo hành 12 - 24 tháng"
+      ],
+      "sample_reply": "Dạ em xin chia sẻ thật lòng: 2GOOD S200 hiện tại là dòng **Flagship đầu bảng** và gần như **không có đối thủ tương đương trên thị trường** ở phân khúc lò chiên hơi nước gia đình cao cấp ạ!\n\nNếu các dòng nồi phổ biến như Tapuho 20L, Olivo 20L, Elmich (giá 6-7 triệu) chỉ dừng lại ở phân khúc nồi 20L thông thường, thì S200 (8.900.000đ) vượt trội hoàn toàn:\n1️⃣ **Dung tích cực đại 32L:** Gấp rưỡi các nồi 20L trên thị trường. Khoang lò mênh mông chuẩn lò nướng chuyên nghiệp, nướng trọn 2 con gà lớn cùng lúc hoặc làm cỗ tiệc 3-4 tầng cực kỳ thông thoáng, nhiệt lốc xoáy tuần hoàn không bao giờ lo bí nhiệt hay cháy góc.\n2️⃣ **Sức mạnh gia nhiệt:** Công suất nướng 2200W kết hợp hấp siêu nhiệt 1500W Steam Active (mạnh hơn hẳn mức 1600W-1800W của các nồi khác), khóa ẩm tức thì trong 3 giây.\n3️⃣ **Trục quay Roti tải lớn:** Quay được gà vịt nguyên con 2-3kg vàng ươm (các nồi khác khoang nhỏ chỉ quay được dưới 1kg).\n4️⃣ **ĐỘC QUYỀN BẢO HÀNH 3 NĂM (36 THÁNG):** Đây là lời khẳng định đanh thép nhất về chất lượng linh kiện và độ bền Inox 304 nguyên khối của hãng. Trong khi toàn bộ các hãng khác trên thị trường chỉ dám bảo hành 1 năm, 2GOOD tự tin bảo hành tới 3 năm để gia đình mình hoàn toàn yên tâm đầu tư dùng cả chục năm không phải nghĩ ngợi ạ!"
+    },
+    {
+      "id": "battle_menu_functions_truth",
+      "trigger_keywords": ["bao nhiêu chức năng", "mấy chức năng", "nhiều chức năng", "40 chức năng", "70 chức năng", "128 chức năng", "sao ít chức năng thế"],
+      "strategy": "Chia sẻ góc nhìn chuyên gia thực tế: Các hãng quảng cáo 40, 70 hay 128 chức năng thực chất chỉ là lưu sẵn nhiệt độ và thời gian (ví dụ bấm nút 'khoai tây' thì máy tự chỉnh 180 độ 15 phút). Nấu thực tế miếng thịt dày mỏng khác nhau không ai dùng menu cài sẵn. Giá trị cốt lõi nằm ở phần cứng: khoang Inox 304, công suất mạnh, 2 nguồn nhiệt và độ bền ít lỗi vặt.",
+      "key_arguments": [
+        "Menu cài sẵn 40-128 chức năng thực chất chỉ là phím tắt lưu sẵn thời gian và nhiệt độ, không có giá trị phân định chất lượng nồi",
+        "Nấu ăn thực tế: Miếng thịt dày mỏng, con gà to nhỏ khác nhau nên người nấu luôn tự điều chỉnh thời gian theo khẩu vị",
+        "Bản chất cốt lõi của mọi nồi chiên hơi nước chỉ có 3 cơ chế: Chiên nướng - Hấp - Chiên hơi nước. Nồi tốt là nồi có phần cứng bền bỉ, Inox 304 chuẩn y tế, 2 nguồn nhiệt giữ ẩm và không lỗi vặt"
+      ],
+      "sample_reply": "Dạ em xin chia sẻ một góc nhìn thực tế từ kinh nghiệm nấu nướng của hàng nghìn khách hàng ạ:\nNhiều hãng quảng cáo nồi có 40, 70 hay thậm chí 128 chức năng cài sẵn, nhưng **thực chất đó chỉ là những phím bấm được set sẵn thời gian và nhiệt độ** (ví dụ set sẵn 180°C - 15 phút) chứ không phải là nồi có 128 công nghệ khác nhau đâu ạ!\n\nKhi nấu thực tế, con gà 2kg sẽ khác con gà 1.5kg, miếng sườn dày sẽ khác miếng sườn mỏng, nên chị em nội trợ đều tự điều chỉnh nhiệt độ và thời gian theo khẩu vị thực tế chứ hầu như không ai dùng menu cài sẵn.\n👉 Bản chất cốt lõi của một chiếc nồi chiên hấp đỉnh cao chỉ nằm ở **3 cơ chế:** Chiên nướng - Hấp - Chiên kết hợp hơi nước.\n👉 Quan trọng nhất là **chất lượng phần cứng:** Khoang 100% Inox 304 chuẩn y tế, công suất gia nhiệt mạnh mẽ, luồng nhiệt đối lưu đều và máy bền bỉ, ít lỗi vặt dùng 5-10 năm. Đó chính là lý do vì sao 2GOOD luôn là lựa chọn an toàn và đáng tiền nhất của các gia đình sành bếp ạ!"
     }
   ]
 }

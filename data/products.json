@@ -2,6 +2,7 @@
   "S200": {
     "name": "Nồi chiên hơi nước 2GOOD S200",
     "product_code": "2GOOD S200",
+    "price": "8.900.000 VNĐ (8tr900k)",
     "category": "Flagship Cao Cấp Nhất — Chuyên Nghiệp Về Nướng & Chiên Hơi Nước",
     "positioning": "Dòng sản phẩm cao cấp đầu bảng (Flagship) của 2GOOD, định vị đẳng cấp chuyên gia ẩm thực, vượt trội hoàn toàn so với các dòng phân khúc dưới và các nồi 20L trên thị trường (như S100, Tapuho 20L, Olivo 20L, Lumias, Kalite...)",
     "warranty": "Bảo hành chính hãng 3 NĂM (36 tháng) — Thời gian bảo hành cực dài, thể hiện sự tự tin tuyệt đối về độ bền của sản phẩm Inox 304 nguyên khối và linh kiện vượt trội của dòng Flagship",
@@ -19,11 +20,13 @@
     ],
     "accessories": "Khay nướng Inox 304, Vỉ hấp Inox 304, Khay hứng dầu mỡ Inox 304, Găng tay cách nhiệt",
     "target_customer": "Gia đình sành ăn, người thích nấu cỗ/tiệc, người đòi hỏi thiết bị bếp cao cấp chuẩn chuyên nghiệp, người quan tâm sức khỏe tuyệt đối",
-    "comparison_with_lower_tier_20L": {
+    "market_battle_vs_competitors": {
+      "vs_market_flagships": "Thị trường hiện nay các hãng lớn nhất chỉ có dòng 20L hoặc cá biệt 26L (Tapuho TMC 20L giá ~6-7tr, Olivo SF20 giá ~6-7tr, Elmich 15L giá ~5-6tr, Panasonic 20L giá ~9-14tr). S200 vượt trội hoàn toàn với dung tích 32L thực tế, công suất nướng 2200W + hấp 1500W, khoang 100% Inox 304 nguyên khối và độc quyền bảo hành 3 năm (36 tháng) — trong khi tất cả đối thủ chỉ dám bảo hành 1-2 năm.",
       "vs_20L_models": "Các dòng 20L (như Tapuho 20L, Olivo 20L, Kalite, Lumias hay cả đàn em S100) thuộc phân khúc dưới, khoang nhỏ hơn đáng kể nên khi nướng nhiều tầng hoặc nướng đồ lớn dễ bị bí nhiệt, gió đối lưu không thoát được dẫn đến góc cháy góc sống. S200 với dung tích 32L chuẩn lò nướng chuyên nghiệp, luồng nhiệt lốc xoáy tuần hoàn tự do giúp nhiệt phủ đều 100%.",
       "why_no_rotating_cage": "Lồng tự đảo chỉ cần thiết ở các dòng phân khúc dưới (15-20L như S100) để rang vặt ít lạc hay khoai vụn. Còn S200 là lò nướng hơi nước CHUYÊN NGHIỆP CAO CẤP, sức mạnh nhiệt đối lưu 360° tự làm chín đều toàn bộ mà không cần đảo, giữ khoang Inox 304 rộng mênh mông nguyên khối để nướng tảng thịt lớn, cá to hoặc 2 con gà cùng lúc, không bị vướng trục quay và vệ sinh nhàn tênh."
     },
     "selling_points_for_ctv": [
+      "Giá niêm yết chính hãng: 8.900.000 VNĐ (8tr900k) — Xứng đáng đẳng cấp Flagship không có đối thủ",
       "Bảo hành chính hãng tới 3 NĂM (36 tháng): Điểm tựa niềm tin lớn nhất cho khách hàng, khẳng định độ bền vượt trội so với các hãng khác (vốn chỉ bảo hành 12-24 tháng)",
       "Định vị S200 là dòng cao cấp nhất, chuyên nghiệp về nướng, hơn hẳn phân khúc 20L của Tapuho, Olivo, Lumias, Kalite",
       "Khoang 100% Inox 304 nguyên khối: Đẳng cấp bền bỉ trọn đời, an toàn sức khỏe tuyệt đối không lo ung thư do bong tróc",
@@ -34,6 +37,7 @@
   "S100": {
     "name": "Nồi chiên hơi nước 2GOOD S100",
     "product_code": "2GOOD S100",
+    "price": "5.290.000 VNĐ (5tr290k)",
     "category": "Nồi chiên hơi nước đa năng có lồng tự đảo",
     "warranty": "Bảo hành chính hãng 1 NĂM (12 tháng)",
     "capacity": "20 Lít (Thiết kế vuông vức, nướng vừa gà nguyên con 2-2.5kg)",
@@ -43,14 +47,21 @@
     "key_technologies": [
       "Lồng tự đảo 360 độ độc quyền: Tự động xoay tròn đảo đều thực phẩm, chuyên trị rang lạc, ngô rang bơ, khoai tây chiên giòn rụm không cần đứng canh",
       "Công nghệ Hấp siêu nhiệt SuperHeat 115°C: Hấp cực nhanh, giữ trọn 99% vitamin và độ tươi ngọt của rau củ, tôm cua cá",
+      "2 Nguồn nhiệt (Mâm hấp thủy nhiệt đáy + Thanh mayso nhiệt trên kết hợp quạt đối lưu): Thức ăn chín mọng nước, không bị khô như các nồi 1 nguồn nhiệt",
       "Dải nhiệt siêu rộng 40°C - 230°C: Tích hợp ủ bột bánh mì (40°C), làm sữa chua (45°C), chưng yến (85°C), sấy hoa quả detox",
       "Hệ thống làm sạch khoang lò tự động bằng hơi nước siêu nhiệt"
     ],
     "accessories": "Bộ 8 phụ kiện Inox 304 đầy đủ nhất: Lồng tự đảo 360 độ, Trục quay gà rôti, Khay lưới, Khay nướng, Tay gắp, Vỉ hấp...",
     "target_customer": "Gia đình trẻ 3-5 người, người thích làm bánh, thích ăn vặt khoai chiên/rang lạc, muốn một chiếc nồi gọn gàng nhưng đa năng",
+    "market_battle_vs_competitors": {
+      "vs_16L_competitors": "Trên thị trường các dòng nồi 15L - 16L (như Tapuho TSF16, Olivo SF16, Elmich 15L, Kalite 15L) có giá từ 5.190.000đ đến hơn 6.000.000đ — ngang ngửa thậm chí đắt hơn S100 (5.290.000đ). Nhưng S100 cho dung tích hẳn 20L (nướng nguyên con gà 2-2.5kg), 2 nguồn nhiệt mâm thủy nhiệt (trong khi các nồi 16L chỉ có 1 nguồn nhiệt hấp, gia nhiệt chỉ phụ thuộc vào quạt lưng). Khách mua 16L tầm giá đó là bị hớ, chốt S100 20L là lựa chọn tối ưu nhất!",
+      "vs_menus": "Các hãng quảng cáo 40-70 chức năng cài sẵn thực chất chỉ là thời gian và nhiệt độ được lưu trước. Bản chất nấu ăn chỉ có 3 cơ chế: Chiên nướng, Hấp và Chiên hơi nước. Nấu thực tế phải chỉnh theo khẩu vị và độ dày thực phẩm chứ không ai dùng menu cài sẵn. 2GOOD S100 tập trung vào phần cứng mạnh mẽ, bền bỉ và ít lỗi vặt."
+    },
     "selling_points_for_ctv": [
+      "Giá niêm yết chính hãng: 5.290.000 VNĐ (5tr290k) — Cực kỳ cạnh tranh trong phân khúc 20L",
       "Bảo hành chính hãng 1 năm (12 tháng)",
       "Điểm độc quyền ăn tiền nhất: LỒNG TỰ ĐẢO 360 ĐỘ — Không có chiếc nồi chiên hơi nước nào trong tầm giá có tính năng này",
+      "Dung tích 20L vượt trội so với các nồi 15L-16L cùng tầm giá trên thị trường",
       "Bộ 8 phụ kiện Inox 304 tặng kèm đầy đủ không phải mua ngoài",
       "Đa năng thay thế 8 thiết bị bếp: Lò vi sóng, nồi hấp, lò nướng, máy ủ sữa chua, máy sấy hoa quả..."
     ]

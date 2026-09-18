@@ -21,12 +21,13 @@ def load_json_file(file_path: Path):
 def detect_intent(query: str):
     q = query.lower()
     
-    # 1. Objection handling & comparisons
+    # 1. Objection handling, pricing & comparisons
     objection_triggers = [
         "chê", "đắt", "mắc", "cao quá", "rẻ hơn", "to quá", "cồng kềnh", 
         "chiếm chỗ", "khó rửa", "ngại rửa", "khó vệ sinh", "dầu mỡ", 
         "chống dính", "ung thư", "ồn", "tiếng ồn", "chua", "chua sữa", "so sánh",
-        "lồng đảo", "lồng tự đảo", "quay", "đảo", "tapuho", "olivo", "kalite", "lumias", "20l", "20 lít", "hơn gì"
+        "lồng đảo", "lồng tự đảo", "quay", "đảo", "tapuho", "olivo", "kalite", "lumias", "20l", "20 lít", "hơn gì",
+        "giá", "nhiêu tiền", "bao nhiêu tiền", "giá cả", "báo giá", "giá bn", "16l", "15l", "elmich", "panasonic", "kuchen", "chức năng", "menu", "đối thủ"
     ]
     if any(t in q for t in objection_triggers):
         return "OBJECTION"
@@ -74,8 +75,8 @@ def get_ground_truth_context(query: str, intent: str) -> str:
             p_data = products[p_key]
             context_blocks.append(f"--- THÔNG TIN SẢN PHẨM: {p_data.get('name')} ---\n" + json.dumps(p_data, ensure_ascii=False, indent=2))
             
-    if intent in ["OBJECTION", "GENERAL"]:
-        context_blocks.append("--- KỊCH BẢN XỬ LÝ TỪ CHỐI CHUẨN ---\n" + json.dumps(scripts.get("objections", []), ensure_ascii=False, indent=2))
+    # Always provide objections & battle scripts for comprehensive advice
+    context_blocks.append("--- KỊCH BẢN XỬ LÝ TỪ CHỐI, BÁO GIÁ & SO SÁNH THỊ TRƯỜNG CHUẨN ---\n" + json.dumps(scripts.get("objections", []), ensure_ascii=False, indent=2))
         
     if intent in ["POLICY", "GENERAL"]:
         context_blocks.append("--- CHÍNH SÁCH BẢO HÀNH & HẬU MÃI 2GOOD ---\n" + json.dumps(policies, ensure_ascii=False, indent=2))
@@ -100,19 +101,20 @@ CÂU HỎI / TÌNH HUỐNG TỪ CTV:
 "{query}"
 
 YÊU CẦU TRẢ LỜI CHO CTV (Định dạng văn bản rõ ràng, chuyên nghiệp, súc tích, dùng ít icon ~3 icon):
-1. Tuyệt đối tuân thủ sự thật trong Ground Truth (về Inox 304, dung tích, công suất, bảo hành, v.v.). Không tự bịa thông số.
-2. NGUYÊN TẮC ĐỊNH VỊ 2GOOD S200 (RẤT QUAN TRỌNG):
-   - S200 luôn được định vị là Dòng Flagship Cao Cấp Nhất của 2GOOD, chuyên nghiệp về nướng và chiên hơi nước (chuẩn lò nướng cao cấp gia đình).
-   - Tinh tế định vị S200 ở đẳng cấp vượt trội hoàn toàn so với các dòng phân khúc dưới và các nồi 15-20L trên thị trường (như S100, Tapuho 20L, Olivo 20L, Lumias, Kalite...):
-     + Không dìm hàng hay chê bai thô thiển đối thủ.
-     + Phân tích sự khác biệt về bản chất: Nồi 20L khoang nhỏ dễ bị bí nhiệt khi nướng đồ to hoặc làm nhiều tầng cỗ, quạt không tỏa đều; còn S200 dung tích cực đại 32L, công suất khủng 2200W + Hấp 1500W, quạt đối lưu lốc xoáy 360° tự chín đều 4 mặt không cần đảo.
-     + Về lồng đảo: Lồng đảo chỉ cần cho dòng phân khúc dưới 15-20L (như S100) để rang vặt ít lạc/khoai; còn S200 là lò nướng chuyên nghiệp cao cấp, quạt đối lưu 360° tự chín đều mọi mặt, giữ khoang Inox 304 nguyên khối mênh mông để nướng 2 gà nguyên con, vệ sinh nhàn tênh.
-     + Về bảo hành: 2GOOD S200 bảo hành chính hãng tới 3 NĂM (36 tháng) — thời gian bảo hành rất dài, khẳng định sự tự tin tuyệt đối của hãng về độ bền của linh kiện và chất liệu Inox 304 so với các hãng khác (chỉ 12 tháng). 2GOOD S100 và Sona i8 bảo hành chính hãng 1 NĂM (12 tháng).
+1. BÁO GIÁ VÀ BẢO HÀNH CHÍNH XÁC:
+   - 2GOOD S200 (Flagship 32L): 8.900.000 VNĐ (8tr900k) — Bảo hành chính hãng 3 NĂM (36 tháng).
+   - 2GOOD S100 (Đa năng 20L có lồng đảo): 5.290.000 VNĐ (5tr290k) — Bảo hành chính hãng 1 NĂM (12 tháng).
+   - 2GOOD Sona i8 (Máy làm sữa hạt tự rửa): Bảo hành chính hãng 1 NĂM (12 tháng).
+2. TƯ DUY SO SÁNH THỊ TRƯỜNG (BATTLE MINDSET TỪ BẢN KHẢO SÁT 2026):
+   - Phân khúc 16L vs 20L: Các nồi 15-16L trên thị trường (Elmich, Tapuho 16L, Olivo 16L) giá từ 5tr2 - 6tr (ngang ngửa S100 20L 5tr290k), nhưng khoang chật bí nhiệt và chỉ 1 nguồn nhiệt. Khách chọn 2GOOD S100 được dung tích 20L nướng gà nguyên con 2.5kg, 2 nguồn nhiệt mâm thủy nhiệt và lồng đảo độc quyền.
+   - S200 là Flagship ĐỘC TÔN: Dung tích 32L cực đại (các nồi khác chỉ 16-20L), công suất 2200W nướng + 1500W hấp, khoang 100% Inox 304 nguyên khối nướng 2 gà cùng lúc hoặc cá to, trục quay Roti tải lớn 2-3kg. ĐẶC BIỆT: Bảo hành 3 năm (36 tháng) duy nhất trên thị trường!
+   - Chức năng / Menu cài sẵn: 40, 70 hay 128 chức năng thực chất chỉ là phím tắt lưu sẵn thời gian/nhiệt độ. Nấu thực tế thịt dày mỏng khác nhau không ai dùng menu cài sẵn mà tự chỉnh. Cốt lõi chỉ có 3 cơ chế: Chiên - Hấp - Chiên hơi nước.
+   - Khen/chê chân thật: Thừa nhận ngoại hình 2GOOD thiết kế cơ bản, không màu mè sặc sỡ như các mẫu mới ra, nhưng bù lại là sự lựa chọn an toàn nhất, bền bỉ nhất, ít lỗi vặt và giá trị thực dụng cao nhất.
 3. Cung cấp câu trả lời theo đúng cấu trúc 3 phần:
 
 🎯 **Điểm mấu chốt (Insight):** (1-2 câu ngắn giải thích tâm lý thật sự của khách)
 💬 **Câu trả lời mẫu gửi khách:** (Lời thoại tự nhiên, lịch thiệp, tôn trọng khách, xưng hô 'Dạ em chào anh/chị' hoặc 'Dạ em hiểu...', làm nổi bật giá trị cốt lõi của 2GOOD, để CTV chỉ việc copy gửi luôn)
-💡 **Mẹo thực chiến cho CTV:** (1-2 lưu ý ngắn: nên nhấn mạnh điểm nào, tránh tranh luận hay dìm đối thủ thô thiển)
+💡 **Mẹo thực chiến cho CTV:** (1-2 lưu ý ngắn: nên nhấn mạnh điểm nào, hướng khách sang dòng phù hợp ngân sách)
 
 Hãy viết câu trả lời xuất sắc, chân thành và mang tính thuyết phục cao!"""
 
@@ -120,7 +122,7 @@ Hãy viết câu trả lời xuất sắc, chân thành và mang tính thuyết 
         "contents": [{"parts": [{"text": system_prompt}]}],
         "generationConfig": {
             "temperature": 0.7,
-            "maxOutputTokens": 1000
+            "maxOutputTokens": 2048
         }
     }
 
