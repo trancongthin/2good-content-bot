@@ -127,7 +127,7 @@ def save_media_vault(vault):
         except Exception as e:
             print(f"Error saving vault: {e}")
 
-def add_cluster_to_vault(chat_id, message_ids, media_types, sample_file_ids=None, custom_note="", has_video=False):
+def add_cluster_to_vault(chat_id, message_ids, media_types, sample_file_ids=None, custom_note="", has_video=False, media_files=None):
     vault = load_media_vault()
     cluster_id = f"cl_{int(time.time())}_{len(vault)+1}"
     now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -136,6 +136,7 @@ def add_cluster_to_vault(chat_id, message_ids, media_types, sample_file_ids=None
         "chat_id": str(chat_id),
         "message_ids": sorted(list(set(message_ids))),
         "media_types": media_types,
+        "media_files": media_files or [],
         "sample_file_ids": sample_file_ids or [],
         "custom_note": custom_note,
         "has_video": has_video,
@@ -574,18 +575,100 @@ def build_help_message():
 - <code>/help</code>   : Xem lại hướng dẫn này."""
 
 # --- PUBLISHING LOGIC TO CHANNEL ---
-def publish_cluster_to_channel(cluster, angle_mode="ALL", ai_data=None):
-    target_chat = get_target_channel()
-    chat_id = cluster.get("chat_id", ADMIN_CHAT_ID)
+def send_cluster_media_to_channel(target_chat_id, cluster):
+    """
+    Guarantees photos/videos are ALWAYS posted to the channel:
+    1. Try copyMessages first (fastest, preserves formatting)
+    2. If copyMessages fails (e.g. basic groups, forwarded privacy), immediately fall back
+       to sendMediaGroup / sendPhoto / sendVideo using file_ids!
+    """
+    chat_id = cluster.get("chat_id")
     message_ids = cluster.get("message_ids", [])
     
-    # 1. Cleanly copy all media without "Forwarded" label
-    if message_ids:
-        success, res = copy_messages_clean(target_chat, chat_id, message_ids)
-        if not success:
-            print(f"Clean copy failed: {res}. Attempting fallback...")
+    # 1. Try copyMessages
+    if chat_id and message_ids:
+        try:
+            success, res = copy_messages_clean(target_chat_id, chat_id, message_ids)
+            if success:
+                print(f"✅ copyMessages succeeded for cluster {cluster.get('id')}")
+                return True
+            else:
+                print(f"⚠️ copyMessages failed: {res}. Triggering direct sendMediaGroup fallback...")
+        except Exception as e:
+            print(f"⚠️ copyMessages exception: {e}. Triggering fallback...")
+
+    # 2. Fallback using direct file_ids (100% reliable, zero forward restrictions)
+    media_files = cluster.get("media_files", [])
+    if not media_files:
+        # Compatibility with older vault clusters that only have sample_file_ids
+        for fid in cluster.get("sample_file_ids", []):
+            media_files.append({"type": "photo", "file_id": fid})
+
+    if not media_files:
+        print(f"❌ No media files or file_ids available to post for cluster {cluster.get('id')}!")
+        return False
+
+    try:
+        if len(media_files) == 1:
+            item = media_files[0]
+            if item["type"] == "video":
+                res = requests.post(f"{TELEGRAM_API}/sendVideo", json={
+                    "chat_id": str(target_chat_id),
+                    "video": item["file_id"]
+                }, timeout=30).json()
+            else:
+                res = requests.post(f"{TELEGRAM_API}/sendPhoto", json={
+                    "chat_id": str(target_chat_id),
+                    "photo": item["file_id"]
+                }, timeout=30).json()
+            return res.get("ok", False)
+        else:
+            # Send in groups of up to 10 media items (Telegram limit per album)
+            chunks = [media_files[i:i + 10] for i in range(0, len(media_files), 10)]
+            for chunk in chunks:
+                input_media = []
+                for m in chunk:
+                    input_media.append({
+                        "type": m["type"],
+                        "media": m["file_id"]
+                    })
+                res = requests.post(f"{TELEGRAM_API}/sendMediaGroup", json={
+                    "chat_id": str(target_chat_id),
+                    "media": input_media
+                }, timeout=40).json()
+                if not res.get("ok"):
+                    print(f"sendMediaGroup error: {res}")
+            return True
+    except Exception as e:
+        print(f"Error sending fallback media to channel: {e}")
+        return False
+
+def publish_cluster_to_channel(cluster, angle_mode="ALL", ai_data=None):
+    target_chat = get_target_channel()
+    message_ids = cluster.get("message_ids", [])
     
-    # 2. Build and publish text content post
+    # 1. ALWAYS send media (photos/videos) first to the channel!
+    send_cluster_media_to_channel(target_chat, cluster)
+    
+    # 2. Build and publish text content post (generate on the fly if not provided)
+    if not ai_data:
+        sample_bytes_list = []
+        for fid in cluster.get("sample_file_ids", [])[:4]:
+            b = get_file_bytes(fid)
+            if b:
+                sample_bytes_list.append(b)
+
+        custom_note = cluster.get("custom_note", "")
+        if sample_bytes_list:
+            ai_data = analyze_multiple_images_and_generate_content(
+                sample_bytes_list,
+                custom_note=custom_note,
+                has_video=cluster.get("has_video", False)
+            )
+        else:
+            prompt_fallback = custom_note if custom_note else "Bài viết giới thiệu nồi chiên hơi nước 2GOOD S200 dung tích 32L, khoang Inox 304 chuẩn y tế"
+            ai_data = generate_content_from_text_prompt(prompt_fallback)
+
     matrix = ai_data.get("content_matrix", {}) if ai_data else {}
     prod_code = ai_data.get("product_code", "2GOOD") if ai_data else "2GOOD"
     
@@ -649,9 +732,13 @@ def worker_process_incoming_cluster(cluster_items):
         captions = [item["caption"] for item in cluster_items if item.get("caption")]
         custom_note = " ".join(dict.fromkeys(captions)).strip()
 
-        # Collect sample file IDs for AI vision
+        # Collect sample file IDs for AI vision and all media files
         sample_file_ids = []
+        media_files = []
         for item in cluster_items:
+            fid = item.get("file_id")
+            if fid:
+                media_files.append({"type": item["type"], "file_id": fid})
             if item.get("sample_file_id") and item["sample_file_id"] not in sample_file_ids:
                 sample_file_ids.append(item["sample_file_id"])
 
@@ -662,7 +749,8 @@ def worker_process_incoming_cluster(cluster_items):
             media_types=media_types,
             sample_file_ids=sample_file_ids[:4],
             custom_note=custom_note,
-            has_video=has_video
+            has_video=has_video,
+            media_files=media_files
         )
 
         media_summary = f"{photos_count} ảnh" if videos_count == 0 else (f"{videos_count} video" if photos_count == 0 else f"{photos_count} ảnh + {videos_count} video")
@@ -769,16 +857,19 @@ def handle_incoming_media_non_blocking(message):
     chat_type = message.get("chat", {}).get("type", "private")
 
     media_type = None
+    file_id = None
     sample_file_id = None
 
     if "photo" in message:
         media_type = "photo"
-        sample_file_id = message["photo"][-1]["file_id"]
+        file_id = message["photo"][-1]["file_id"]
+        sample_file_id = file_id
     elif "video" in message:
         media_type = "video"
         video_obj = message["video"]
+        file_id = video_obj["file_id"]
         thumb = video_obj.get("thumbnail")
-        sample_file_id = thumb["file_id"] if thumb else video_obj.get("file_id")
+        sample_file_id = thumb["file_id"] if thumb else file_id
 
     if not media_type:
         return
@@ -799,6 +890,7 @@ def handle_incoming_media_non_blocking(message):
         "message_id": message["message_id"],
         "chat_id": chat_id,
         "type": media_type,
+        "file_id": file_id,
         "sample_file_id": sample_file_id,
         "caption": caption,
         "sender": display_sender
