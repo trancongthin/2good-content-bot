@@ -1581,6 +1581,16 @@ def run_bot():
                             handle_callback(update["callback_query"])
                 else:
                     consecutive_errors += 1
+                    err_desc = res.get("description", "").lower()
+                    if res.get("error_code") == 409 or "webhook" in err_desc:
+                        print(f"⚠️ Phát hiện Webhook xung đột: {res.get('description')}. Đang tự động xóa Webhook để khôi phục Polling...")
+                        try:
+                            requests.post(f"{TELEGRAM_API}/deleteWebhook?drop_pending_updates=false", timeout=10)
+                            consecutive_errors = 0
+                            time.sleep(1)
+                            continue
+                        except Exception as del_err:
+                            print(f"Lỗi khi xóa webhook xung đột: {del_err}")
                     time.sleep(min(consecutive_errors * 2, 15))
                     
                 time.sleep(0.3)
