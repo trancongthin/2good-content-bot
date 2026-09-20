@@ -31,7 +31,7 @@ def get_active_models(force_refresh=False):
                 active.append(name)
 
         if active:
-            preferred = [m for m in ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-3.8-flash"] if m in active]
+            preferred = [m for m in ["gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-3.8-flash", "gemini-3.6-flash", "gemini-flash-latest"] if m in active]
             other = [m for m in active if m not in preferred and "image" not in m and "tts" not in m and "preview" not in m]
             MODELS = (preferred + other)[:6]
             LAST_MODEL_FETCH_TIME = now

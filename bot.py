@@ -882,6 +882,10 @@ def worker_process_incoming_cluster(cluster_items):
         send_message(chat_id, preview_text, reply_markup=inline_keyboard)
     except Exception as e:
         print(f"❌ Error in worker_process_incoming_cluster: {e}")
+        try:
+            send_message(chat_id, f"⚠️ Có lỗi khi AI soạn bài: {e}")
+        except Exception:
+            pass
 
 def on_debounce_timeout():
     global BUFFER_CLUSTER_ITEMS
