@@ -20,6 +20,7 @@ from ai_engine import (
 TELEGRAM_API = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}"
 CHANNEL_FILE = DATA_DIR / "target_channel.txt"
 PID_FILE = DATA_DIR / "bot.pid"
+AUTOPILOT_SLOT_FILE = DATA_DIR / "last_autopilot_slot.txt"
 BOT_START_TIME = time.time()
 LAST_AUTOPILOT_RUN_SLOT = None
 
@@ -747,12 +748,13 @@ def publish_cluster_to_channel(cluster, angle_mode="ALL", ai_data=None, notify_c
 
         if notify_chat_id:
             sender_str = f"<b>[{user_name}]</b> " if user_name else ""
+            channel_title, _ = get_channel_info()
             send_message(
                 notify_chat_id,
-                f"✅ {sender_str}<b>ĐÃ PHÁT SÓNG THÀNH CÔNG VÀO KHO CONTENT!</b>\n"
+                f"✅ {sender_str}<b>ĐÃ PHÁT SÓNG THÀNH CÔNG VÀO KÊNH CTV!</b>\n"
                 f"📦 <b>Media:</b> Đã copy/chuyển {media_count} file ảnh/clip\n"
                 f"🎯 <b>Góc đăng:</b> {angle_used}\n"
-                f"📍 <b>Kênh nhận:</b> KHO CONTENT & TÀI NGUYÊN 2GOOD"
+                f"📍 <b>Kênh nhận:</b> {channel_title}"
             )
         return True
     except Exception as e:
@@ -768,6 +770,12 @@ def worker_process_incoming_cluster(cluster_items):
 
     try:
         chat_id = cluster_items[0]["chat_id"]
+        # notify_chat_id: nơi gửi preview + nút bấm.
+        # Luôn gửi về ADMIN_CHAT_ID để đảm bảo admin nhìn thấy và bấm nút.
+        # Nếu ảnh đến từ private chat của admin thì chat_id đã là ADMIN_CHAT_ID.
+        notify_chat_id = ADMIN_CHAT_ID
+        source_is_admin_chat = (str(chat_id) == str(ADMIN_CHAT_ID))
+
         message_ids = [item["message_id"] for item in cluster_items]
         media_types = [item["type"] for item in cluster_items]
         has_video = "video" in media_types
@@ -804,10 +812,15 @@ def worker_process_incoming_cluster(cluster_items):
         senders = [item.get("sender") for item in cluster_items if item.get("sender")]
         sender_str = f" [TỪ: {senders[0]}]" if senders else ""
 
-        send_message(
-            chat_id,
-            f"📦{sender_str} <b>ĐÃ LƯU CỤM ({media_summary}) VÀO KHO MEDIA!</b>\n🆔 Cụm ID: <code>{cluster['id']}</code>\n🔍 <i>Đang soi tư liệu{note_prompt} để soạn trước <b>01 BÀI TỔNG HỢP 3 GÓC</b>... Vui lòng đợi 5-8 giây!</i>"
-        )
+        ack_text = f"📦{sender_str} <b>ĐÃ LƯU CỤM ({media_summary}) VÀO KHO MEDIA!</b>\n🆔 Cụm ID: <code>{cluster['id']}</code>\n🔍 <i>Đang soi tư liệu{note_prompt} để soạn trước <b>01 BÀI TỔNG HỢP 3 GÓC</b>... Vui lòng đợi 5-8 giây!</i>"
+
+        # Gửi xác nhận về admin. Nếu ảnh đến từ nhóm khác thì báo thêm về nhóm đó (best-effort)
+        send_message(notify_chat_id, ack_text)
+        if not source_is_admin_chat:
+            try:
+                send_message(chat_id, f"📦{sender_str} <b>ĐÃ NHẬN CỤM ({media_summary}) VÀO KHO!</b> Bot đang soạn bài viết AI...")
+            except Exception:
+                pass
 
         # 2. Download sample photos/thumbnails for Gemini AI vision
         sample_bytes_list = []
@@ -824,7 +837,7 @@ def worker_process_incoming_cluster(cluster_items):
             ai_data = generate_content_from_text_prompt(prompt)
 
         if not ai_data:
-            send_message(chat_id, f"⚠️ Cụm media đã được lưu an toàn vào Kho (ID: <code>{cluster['id']}</code>) nhưng AI gặp lỗi tạm thời khi soạn bản xem trước. Bot sẽ tự động lấy ra phát sóng theo lịch Auto-Pilot (08:00 AM & 13:00 PM).")
+            send_message(notify_chat_id, f"⚠️ Cụm media đã được lưu an toàn vào Kho (ID: <code>{cluster['id']}</code>) nhưng AI gặp lỗi tạm thời khi soạn bản xem trước. Bot sẽ tự động lấy ra phát sóng theo lịch Auto-Pilot (08:00 AM & 13:00 PM).")
             return
 
         # 4. Save to pending posts for admin actions
@@ -879,11 +892,12 @@ def worker_process_incoming_cluster(cluster_items):
             ]
         }
 
-        send_message(chat_id, preview_text, reply_markup=inline_keyboard)
+        # Luôn gửi preview + nút bấm về ADMIN_CHAT_ID (guaranteed delivery)
+        send_message(notify_chat_id, preview_text, reply_markup=inline_keyboard)
     except Exception as e:
         print(f"❌ Error in worker_process_incoming_cluster: {e}")
         try:
-            send_message(chat_id, f"⚠️ Có lỗi khi AI soạn bài: {e}")
+            send_message(ADMIN_CHAT_ID, f"⚠️ Có lỗi khi AI soạn bài: {e}")
         except Exception:
             pass
 
@@ -1023,6 +1037,14 @@ def autopilot_scheduler_loop():
     global LAST_AUTOPILOT_RUN_SLOT
     print("⏰ Khởi động luồng Auto-Pilot Scheduler (Hẹn giờ 2 cữ: Sáng 08:00 AM & Chiều 13:00 PM hàng ngày)...")
     vn_tz = datetime.timezone(datetime.timedelta(hours=7))
+
+    # Khôi phục slot đã chạy trước đó (chống chạy 2 lần khi restart)
+    if AUTOPILOT_SLOT_FILE.exists():
+        try:
+            LAST_AUTOPILOT_RUN_SLOT = AUTOPILOT_SLOT_FILE.read_text().strip()
+            print(f"📂 Khôi phục trạng thái Auto-Pilot: slot cuối = {LAST_AUTOPILOT_RUN_SLOT}")
+        except Exception:
+            pass
     
     while True:
         try:
@@ -1032,12 +1054,20 @@ def autopilot_scheduler_loop():
             # 1. Cữ Sáng: 08:00 AM VN time (8h sáng)
             if now_vn.hour == 8 and LAST_AUTOPILOT_RUN_SLOT != f"{today_str}_morning":
                 LAST_AUTOPILOT_RUN_SLOT = f"{today_str}_morning"
+                try:
+                    AUTOPILOT_SLOT_FILE.write_text(LAST_AUTOPILOT_RUN_SLOT)
+                except Exception:
+                    pass
                 print(f"⏰ [08:00 AM VN TIME] Bắt đầu phiên Auto-Pilot phát sóng sáng nay...")
                 run_daily_autopilot_dispatch(manual=False, slot_name="SÁNG (08:00 AM)")
 
             # 2. Cữ Chiều: 13:00 (1h chiều) VN time
             elif now_vn.hour == 13 and LAST_AUTOPILOT_RUN_SLOT != f"{today_str}_afternoon":
                 LAST_AUTOPILOT_RUN_SLOT = f"{today_str}_afternoon"
+                try:
+                    AUTOPILOT_SLOT_FILE.write_text(LAST_AUTOPILOT_RUN_SLOT)
+                except Exception:
+                    pass
                 print(f"⏰ [13:00 PM VN TIME] Bắt đầu phiên Auto-Pilot phát sóng chiều nay...")
                 run_daily_autopilot_dispatch(manual=False, slot_name="CHIỀU (13:00 PM)")
                 

@@ -311,5 +311,29 @@
     "technical_fact": "Giá niêm yết chính hãng: 5.290.000 VNĐ (5tr290k). Dung tích 20L rộng rãi (ngon hơn và rẻ hơn các nồi 15L-16L trên thị trường vốn có giá 5tr2-6tr). 2 Nguồn nhiệt (mâm hấp thủy nhiệt đáy + quạt mayso trên). Lồng tự đảo 360 độ độc quyền rảnh tay. Bộ 8 phụ kiện Inox 304 đầy đủ. Bảo hành chính hãng 1 NĂM (12 tháng).",
     "marketing_claim": "2GOOD S100 — Nồi chiên hơi nước 20L đa năng 5.290.000đ: 2 Nguồn nhiệt giữ ẩm, Lồng tự đảo 360 độ độc quyền, đè bẹp các dòng 16L cùng tầm giá!",
     "created_at": "2026-09-20 00:26:00"
+  },
+  {
+    "product_code": "2GOOD S200",
+    "visual_fact": "Nồi chiên hơi nước 2GOOD S200 đang nướng mẻ bánh Trung Thu 6 chiếc vàng ươm, nét hoa văn sắc nét, vỏ bánh chín đều không bị nứt mặt.",
+    "technical_fact": "Dung tích 32L với khoang lò 100% Inox 304 nguyên khối, tích hợp công nghệ phun sương siêu nhiệt Steam Active giúp bù ẩm chống nứt vỏ bánh và quạt đối lưu 360 độ chín vàng đồng đều.",
+    "marketing_claim": "Tự nướng bánh Trung Thu chuẩn tiệm tại nhà, vỏ bánh vàng óng sắc nét không lo khô vỡ nhờ công nghệ chiên hơi nước Flagship 2GOOD S200.",
+    "num_photos": 4,
+    "created_at": "2026-09-20 16:45:31.137916"
+  },
+  {
+    "product_code": "2GOOD S200",
+    "visual_fact": "Nồi chiên hơi nước 2GOOD S200 dung tích 32L đang nướng một con gà nguyên con béo mập, vàng óng, xếp cùng rau củ ngũ sắc (súp lơ xanh, cà rốt, ngô ngọt, khoai tây) tươi ngon trên khay Inox 304 sáng bóng trong khoang lò rộng rãi.",
+    "technical_fact": "Dung tích cực đại 32L với khoang 100% Inox 304 nguyên khối, công nghệ phun sương siêu nhiệt Steam Active giúp giữ ẩm thịt, quạt đối lưu lốc xoáy 360 độ tự làm chín đều không cần lật trở thực phẩm, bảo hành chính hãng 3 năm.",
+    "marketing_claim": "Gà nướng nguyên con ngoài giòn rụm thơm phức, trong mọng nước ngọt ngào nhờ công nghệ chiên hơi nước Steam Active kết hợp rau củ hấp chín tới giữ trọn 99% vitamin.",
+    "num_photos": 4,
+    "created_at": "2026-09-20 17:13:07.382470"
+  },
+  {
+    "product_code": "2GOOD S200",
+    "visual_fact": "Gà nướng nguyên con vàng óng cùng rau củ quả ngũ sắc (khoai tây, bông cải xanh, ngô ngọt, cà rốt) bày biện đẹp mắt trong khoang lò Inox 304 của nồi chiên hơi nước 2GOOD S200 và đĩa bày bên ngoài bốc khói nghi ngút.",
+    "technical_fact": "Khoang lò 100% Inox 304 nguyên khối dung tích 32L, công nghệ chiên hơi nước Steam Active kết hợp nhiệt đối lưu quạt gió lốc xoáy.",
+    "marketing_claim": "Ngoài da giòn rụm vàng óng, trong thịt ngọt mọng nước không lo khô xác nhờ hơi nước siêu nhiệt.",
+    "num_photos": 4,
+    "created_at": "2026-09-20 17:15:43.139083"
   }
 ]
