@@ -259,6 +259,26 @@ BUFFER_LOCK = threading.Lock()
 DEBOUNCE_TIMER = None
 PENDING_POSTS = {}
 PENDING_LOCK = threading.Lock()
+PENDING_POSTS_FILE = DATA_DIR / "pending_posts.json"
+
+def save_pending_posts():
+    try:
+        with open(PENDING_POSTS_FILE, "w", encoding="utf-8") as f:
+            json.dump(PENDING_POSTS, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print(f"⚠️ Error saving pending posts: {e}")
+
+def load_pending_posts():
+    global PENDING_POSTS
+    if PENDING_POSTS_FILE.exists():
+        try:
+            with open(PENDING_POSTS_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if isinstance(data, dict):
+                    PENDING_POSTS = data
+                    print(f"📂 Đã tải {len(PENDING_POSTS)} bài nháp chờ duyệt từ bộ nhớ đĩa.")
+        except Exception as e:
+            print(f"⚠️ Error loading pending posts: {e}")
 
 def cleanup_expired_pending_posts(max_age_seconds=7200):
     now = time.time()
@@ -270,6 +290,7 @@ def cleanup_expired_pending_posts(max_age_seconds=7200):
         for k in expired_keys:
             del PENDING_POSTS[k]
         if expired_keys:
+            save_pending_posts()
             print(f"🧹 Đã tự động dọn {len(expired_keys)} bài nháp hết hạn khỏi bộ nhớ.")
 
 # --- TELEGRAM MESSAGING & CLEAN COPY UTILITIES ---
@@ -547,6 +568,7 @@ def execute_reset():
     with PENDING_LOCK:
         count = len(PENDING_POSTS)
         PENDING_POSTS.clear()
+        save_pending_posts()
         
     return f"🧹 <b>ĐÃ RESET HỆ THỐNG THÀNH CÔNG:</b>\n- Đã xóa sạch bộ đệm media.\n- Đã giải phóng {count} bài nháp khỏi bộ nhớ RAM.\n- Kho Media (/kho) vẫn được bảo toàn nguyên vẹn."
 
@@ -650,38 +672,39 @@ def send_cluster_media_to_channel(target_chat_id, cluster):
         print(f"Error sending fallback media to channel: {e}")
         return False
 
-def publish_cluster_to_channel(cluster, angle_mode="ALL", ai_data=None):
-    target_chat = get_target_channel()
-    message_ids = cluster.get("message_ids", [])
-    
-    # 1. ALWAYS send media (photos/videos) first to the channel!
-    send_cluster_media_to_channel(target_chat, cluster)
-    
-    # 2. Build and publish text content post (generate on the fly if not provided)
-    if not ai_data:
-        sample_bytes_list = []
-        for fid in cluster.get("sample_file_ids", [])[:4]:
-            b = get_file_bytes(fid)
-            if b:
-                sample_bytes_list.append(b)
+def publish_cluster_to_channel(cluster, angle_mode="ALL", ai_data=None, notify_chat_id=None, user_name=""):
+    try:
+        target_chat = get_target_channel()
+        message_ids = cluster.get("message_ids", [])
+        
+        # 1. ALWAYS send media (photos/videos) first to the channel!
+        send_cluster_media_to_channel(target_chat, cluster)
+        
+        # 2. Build and publish text content post (generate on the fly if not provided)
+        if not ai_data:
+            sample_bytes_list = []
+            for fid in cluster.get("sample_file_ids", [])[:4]:
+                b = get_file_bytes(fid)
+                if b:
+                    sample_bytes_list.append(b)
 
-        custom_note = cluster.get("custom_note", "")
-        if sample_bytes_list:
-            ai_data = analyze_multiple_images_and_generate_content(
-                sample_bytes_list,
-                custom_note=custom_note,
-                has_video=cluster.get("has_video", False)
-            )
-        else:
-            prompt_fallback = custom_note if custom_note else "Bài viết giới thiệu nồi chiên hơi nước 2GOOD S200 dung tích 32L, khoang Inox 304 chuẩn y tế"
-            ai_data = generate_content_from_text_prompt(prompt_fallback)
+            custom_note = cluster.get("custom_note", "")
+            if sample_bytes_list:
+                ai_data = analyze_multiple_images_and_generate_content(
+                    sample_bytes_list,
+                    custom_note=custom_note,
+                    has_video=cluster.get("has_video", False)
+                )
+            else:
+                prompt_fallback = custom_note if custom_note else "Bài viết giới thiệu nồi chiên hơi nước 2GOOD S200 dung tích 32L, khoang Inox 304 chuẩn y tế"
+                ai_data = generate_content_from_text_prompt(prompt_fallback)
 
-    matrix = ai_data.get("content_matrix", {}) if ai_data else {}
-    prod_code = ai_data.get("product_code", "2GOOD") if ai_data else "2GOOD"
-    
-    if angle_mode == "ALL":
-        angle_used = "Trọn bộ 3 góc (Mẹ bỉm, Eat-clean, Đại lý dân dã)"
-        content = f"""📢 <b>GỢI Ý CONTENT HÔM NAY CHO CTV / ĐẠI LÝ — {prod_code}</b>
+        matrix = ai_data.get("content_matrix", {}) if ai_data else {}
+        prod_code = ai_data.get("product_code", "2GOOD") if ai_data else "2GOOD"
+        
+        if angle_mode == "ALL":
+            angle_used = "Trọn bộ 3 góc (Mẹ bỉm, Eat-clean, Đại lý dân dã)"
+            content = f"""📢 <b>GỢI Ý CONTENT HÔM NAY CHO CTV / ĐẠI LÝ — {prod_code}</b>
 
 ━━━━━━━━━━━━━━━━━━━━━
 👩‍👧 <b>GÓC 1: MẸ BỈM SỮA & NỘI TRỢ GIA ĐÌNH</b>
@@ -695,32 +718,48 @@ def publish_cluster_to_channel(cluster, angle_mode="ALL", ai_data=None):
 🛒 <b>GÓC 3: BÀI BÁN HÀNG DÂN DÃ (ĐẠI LÝ / CTV)</b>
 {matrix.get('dai_ly_dan_da', '')}
 """
-    elif angle_mode == "MB":
-        angle_used = "Góc 1: Mẹ bỉm sữa & Nội trợ gia đình"
-        content = f"📢 <b>CONTENT MẸ BỈM & NỘI TRỢ — {prod_code}</b>\n\n{matrix.get('me_bim_noi_tro', '')}"
-    elif angle_mode == "EC":
-        angle_used = "Góc 2: Eat-clean & Inox 304 chuẩn y tế"
-        content = f"📢 <b>CONTENT EAT-CLEAN & INOX 304 — {prod_code}</b>\n\n{matrix.get('eat_clean_inox304', '')}"
-    elif angle_mode == "DL":
-        angle_used = "Góc 3: Bài bán hàng dân dã, chất phác"
-        content = f"📢 <b>CONTENT BÁN HÀNG THỰC CHIẾN — {prod_code}</b>\n\n{matrix.get('dai_ly_dan_da', '')}"
-    else:
-        angle_used = "Trọn bộ 3 góc"
-        content = f"📢 <b>CONTENT 2GOOD CHO CTV</b>\n\n{matrix.get('dai_ly_dan_da', '')}"
+        elif angle_mode == "MB":
+            angle_used = "Góc 1: Mẹ bỉm sữa & Nội trợ gia đình"
+            content = f"📢 <b>CONTENT MẸ BỈM & NỘI TRỢ — {prod_code}</b>\n\n{matrix.get('me_bim_noi_tro', '')}"
+        elif angle_mode == "EC":
+            angle_used = "Góc 2: Eat-clean & Inox 304 chuẩn y tế"
+            content = f"📢 <b>CONTENT EAT-CLEAN & INOX 304 — {prod_code}</b>\n\n{matrix.get('eat_clean_inox304', '')}"
+        elif angle_mode == "DL":
+            angle_used = "Góc 3: Bài bán hàng dân dã, chất phác"
+            content = f"📢 <b>CONTENT BÁN HÀNG THỰC CHIẾN — {prod_code}</b>\n\n{matrix.get('dai_ly_dan_da', '')}"
+        else:
+            angle_used = "Trọn bộ 3 góc"
+            content = f"📢 <b>CONTENT 2GOOD CHO CTV</b>\n\n{matrix.get('dai_ly_dan_da', '')}"
 
-    send_message(target_chat, content)
-    
-    # 3. Update Vault & Memory
-    mark_cluster_posted(cluster["id"])
-    save_memory({
-        "product_code": prod_code,
-        "angle_used": angle_used,
-        "num_media": len(message_ids),
-        "has_video": cluster.get("has_video", False),
-        "date_posted": str(datetime.date.today()),
-        "summary": content[:250]
-    })
-    return True
+        send_message(target_chat, content)
+        
+        # 3. Update Vault & Memory
+        mark_cluster_posted(cluster["id"])
+        media_count = len(cluster.get("media_files", [])) or len(message_ids)
+        save_memory({
+            "product_code": prod_code,
+            "angle_used": angle_used,
+            "num_media": media_count,
+            "has_video": cluster.get("has_video", False),
+            "date_posted": str(datetime.date.today()),
+            "summary": content[:250]
+        })
+
+        if notify_chat_id:
+            sender_str = f"<b>[{user_name}]</b> " if user_name else ""
+            send_message(
+                notify_chat_id,
+                f"✅ {sender_str}<b>ĐÃ PHÁT SÓNG THÀNH CÔNG VÀO KHO CONTENT!</b>\n"
+                f"📦 <b>Media:</b> Đã copy/chuyển {media_count} file ảnh/clip\n"
+                f"🎯 <b>Góc đăng:</b> {angle_used}\n"
+                f"📍 <b>Kênh nhận:</b> KHO CONTENT & TÀI NGUYÊN 2GOOD"
+            )
+        return True
+    except Exception as e:
+        print(f"❌ Error in publish_cluster_to_channel: {e}")
+        if notify_chat_id:
+            send_message(notify_chat_id, f"❌ <b>LỖI KHI ĐĂNG VÀO KÊNH:</b> {e}")
+        return False
 
 # --- WORKER: INCOMING MEDIA CLUSTER INGESTION ---
 def worker_process_incoming_cluster(cluster_items):
@@ -796,6 +835,7 @@ def worker_process_incoming_cluster(cluster_items):
                 "timestamp": time.time(),
                 "created_at": str(datetime.datetime.now())
             }
+            save_pending_posts()
 
         matrix = ai_data.get("content_matrix", {})
         me_bim = matrix.get("me_bim_noi_tro", "N/A")
@@ -1078,6 +1118,7 @@ def worker_process_text_prompt(chat_id, text_prompt):
                 "timestamp": time.time(),
                 "created_at": str(datetime.datetime.now())
             }
+            save_pending_posts()
 
         matrix = data.get("content_matrix", {})
         me_bim = matrix.get("me_bim_noi_tro", "N/A")
@@ -1147,6 +1188,7 @@ def worker_process_text_prompt(chat_id, text_prompt):
             "timestamp": time.time(),
             "created_at": str(datetime.datetime.now())
         }
+        save_pending_posts()
 
     matrix = data.get("content_matrix", {})
     me_bim = matrix.get("me_bim_noi_tro", "N/A")
@@ -1255,6 +1297,7 @@ def handle_callback(callback_query):
         with PENDING_LOCK:
             if post_id in PENDING_POSTS:
                 del PENDING_POSTS[post_id]
+                save_pending_posts()
         answer_callback(query_id, "Đã hủy bài viết.")
         send_message(target_chat_id, f"🗑️ <b>[{from_user_name}]</b> đã xóa bài nháp khỏi hàng chờ.")
         return
@@ -1274,6 +1317,7 @@ def handle_callback(callback_query):
         with PENDING_LOCK:
             if cluster_id in PENDING_POSTS:
                 del PENDING_POSTS[cluster_id]
+                save_pending_posts()
         answer_callback(query_id, "Đã xóa khỏi kho!")
         send_message(target_chat_id, f"🗑️ <b>[{from_user_name}]</b> đã xóa cụm <code>{cluster_id}</code> khỏi Kho Media.")
         return
@@ -1288,31 +1332,35 @@ def handle_callback(callback_query):
         with PENDING_LOCK:
             target_post = PENDING_POSTS.get(cluster_id)
 
+        answer_callback(query_id, "Đang phát sóng vào Kho Content...")
+        send_message(target_chat_id, f"🚀 <i>Đang phát sóng cụm <code>{cluster_id}</code> vào Kho Content & Tài Nguyên 2GOOD...</i>")
+
         if not target_post:
             cluster = get_vault_cluster_by_id(cluster_id)
             if cluster:
-                answer_callback(query_id, "Đang soạn và phát sóng...")
-                send_message(target_chat_id, f"🚀 <i>Đang phát sóng cụm <code>{cluster_id}</code> vào Kênh CTV...</i>")
-                threading.Thread(target=publish_cluster_to_channel, args=[cluster, mode], daemon=True).start()
+                threading.Thread(
+                    target=publish_cluster_to_channel,
+                    args=[cluster, mode, None, target_chat_id, from_user_name],
+                    daemon=True
+                ).start()
                 return
             else:
-                answer_callback(query_id, "Bài viết đã hết hạn hoặc không tìm thấy cụm.")
+                send_message(target_chat_id, f"⚠️ Cụm bài viết <code>{cluster_id}</code> không tìm thấy trong kho.")
                 return
 
-        answer_callback(query_id, "Đang phát sóng vào kênh...")
         cluster = target_post["cluster"]
         ai_data = target_post["data"]
-        
-        publish_cluster_to_channel(cluster, angle_mode=mode, ai_data=ai_data)
         
         with PENDING_LOCK:
             if cluster_id in PENDING_POSTS:
                 del PENDING_POSTS[cluster_id]
+                save_pending_posts()
 
-        send_message(
-            target_chat_id,
-            f"✅ <b>[{from_user_name}] ĐÃ PHÁT SÓNG THÀNH CÔNG VÀO KÊNH CTV!</b>\n📦 Media: Đã copy sạch {len(cluster['message_ids'])} file\n🎯 Góc đăng: {mode}"
-        )
+        threading.Thread(
+            target=publish_cluster_to_channel,
+            args=[cluster, mode, ai_data, target_chat_id, from_user_name],
+            daemon=True
+        ).start()
         return
 
     # Handle PUB_TEXT_* actions
@@ -1327,7 +1375,11 @@ def handle_callback(callback_query):
 
         if not target_post:
             answer_callback(query_id, "Bài viết đã hết hạn.")
+            send_message(target_chat_id, "⚠️ Bài nháp text đã hết hạn. Sếp hãy gõ lại yêu cầu để AI soạn bài mới nhé!")
             return
+
+        answer_callback(query_id, "Đang phát sóng vào Kho Content...")
+        send_message(target_chat_id, f"🚀 <i>Đang phát sóng bài viết vào Kho Content & Tài Nguyên 2GOOD...</i>")
 
         ai_data = target_post["data"]
         matrix = ai_data.get("content_matrix", {})
@@ -1376,9 +1428,15 @@ def handle_callback(callback_query):
         with PENDING_LOCK:
             if post_id in PENDING_POSTS:
                 del PENDING_POSTS[post_id]
+                save_pending_posts()
 
-        answer_callback(query_id, "Đã phát sóng thành công!")
-        send_message(target_chat_id, f"✅ <b>[{from_user_name}] ĐÃ ĐĂNG BÀI VIẾT (TEXT) VÀO KÊNH CTV!</b>")
+        send_message(
+            target_chat_id,
+            f"✅ <b>[{from_user_name}] ĐÃ PHÁT SÓNG THÀNH CÔNG VÀO KHO CONTENT!</b>\n"
+            f"📝 <b>Định dạng:</b> Bài viết text (0 media)\n"
+            f"🎯 <b>Góc đăng:</b> {angle_used}\n"
+            f"📍 <b>Kênh nhận:</b> KHO CONTENT & TÀI NGUYÊN 2GOOD"
+        )
         return
 
 # --- MAIN BOT ENGINE & POLLING LOOP ---
@@ -1396,6 +1454,8 @@ def run_bot():
     except Exception as e:
         print(f"⚠️ Không thể khôi phục từ Telegram: {e}")
 
+    load_pending_posts()
+
     # 1. Start HTTP Health check for Cloud Hosting
     threading.Thread(target=start_health_server, daemon=True).start()
 
@@ -1410,6 +1470,7 @@ def run_bot():
     offset = 0
     consecutive_errors = 0
     last_cleanup_time = time.time()
+    allowed_update_types = ["message", "edited_message", "channel_post", "edited_channel_post", "callback_query", "my_chat_member"]
     
     try:
         while True:
@@ -1418,7 +1479,15 @@ def run_bot():
                 last_cleanup_time = time.time()
 
             try:
-                res = requests.get(f"{TELEGRAM_API}/getUpdates?offset={offset}&timeout=30", timeout=40).json()
+                res = requests.post(
+                    f"{TELEGRAM_API}/getUpdates",
+                    json={
+                        "offset": offset,
+                        "timeout": 30,
+                        "allowed_updates": allowed_update_types
+                    },
+                    timeout=40
+                ).json()
                 if res.get("ok"):
                     consecutive_errors = 0
                     for update in res["result"]:
@@ -1435,6 +1504,12 @@ def run_bot():
                             summary["chat_title"] = m.get("chat", {}).get("title")
                             summary["text"] = m.get("text")
                             summary["thread_id"] = m.get("message_thread_id")
+                        elif "callback_query" in update:
+                            cq = update["callback_query"]
+                            summary["type"] = "callback_query"
+                            summary["data"] = cq.get("data")
+                            summary["from"] = cq.get("from", {}).get("first_name")
+                            summary["chat_id"] = cq.get("message", {}).get("chat", {}).get("id")
                         RECENT_UPDATES.append(summary)
                         if len(RECENT_UPDATES) > 15:
                             RECENT_UPDATES.pop(0)
