@@ -1691,15 +1691,33 @@ def run_bot():
                 else:
                     consecutive_errors += 1
                     err_desc = res.get("description", "").lower()
-                    if res.get("error_code") == 409 or "webhook" in err_desc:
-                        print(f"⚠️ Phát hiện Webhook xung đột: {res.get('description')}. Đang tự động xóa Webhook để khôi phục Polling...")
+                    if res.get("error_code") == 409:
+                        if "terminated by other getupdates" in err_desc:
+                            # Có 2 instance bot cùng poll — đây là rolling deploy của Render.
+                            # Tăng dần thời gian chờ để nhường cho instance mới (hoặc cũ) dừng lại.
+                            backoff = min(consecutive_errors * 5, 30)
+                            print(f"⚠️ [409] Xung đột 2 instance bot đang chạy song song. Chờ {backoff}s để Render hoàn tất rolling deploy...")
+                            time.sleep(backoff)
+                            continue
+                        else:
+                            # Webhook conflict — xóa webhook rồi retry
+                            print(f"⚠️ [409] Phát hiện Webhook xung đột: {res.get('description')}. Đang tự động xóa Webhook...")
+                            try:
+                                requests.post(f"{TELEGRAM_API}/deleteWebhook?drop_pending_updates=false", timeout=10)
+                                consecutive_errors = 0
+                                time.sleep(2)
+                                continue
+                            except Exception as del_err:
+                                print(f"Lỗi khi xóa webhook xung đột: {del_err}")
+                    elif "webhook" in err_desc:
+                        print(f"⚠️ Phát hiện Webhook trong response: {res.get('description')}. Đang tự động xóa Webhook...")
                         try:
                             requests.post(f"{TELEGRAM_API}/deleteWebhook?drop_pending_updates=false", timeout=10)
                             consecutive_errors = 0
-                            time.sleep(1)
+                            time.sleep(2)
                             continue
                         except Exception as del_err:
-                            print(f"Lỗi khi xóa webhook xung đột: {del_err}")
+                            print(f"Lỗi khi xóa webhook: {del_err}")
                     time.sleep(min(consecutive_errors * 2, 15))
                     
                 time.sleep(0.3)
