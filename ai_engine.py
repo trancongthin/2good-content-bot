@@ -298,7 +298,7 @@ HÃY TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON CHUẨN (KHÔNG THÊM BẤT KỲ CH�
         for model_name in models_to_try:
             url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={GEMINI_API_KEY}"
             try:
-                response = requests.post(url, json=payload, timeout=45)
+                response = requests.post(url, json=payload, timeout=25)
                 if response.status_code == 200:
                     result = response.json()
                     raw_text = result["candidates"][0]["content"]["parts"][0]["text"].strip()
@@ -464,7 +464,7 @@ HÃY TRẢ VỀ ĐÚNG ĐỊNH DẠNG JSON CHUẨN:
         for model_name in models_to_try:
             url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={GEMINI_API_KEY}"
             try:
-                response = requests.post(url, json=payload, timeout=45)
+                response = requests.post(url, json=payload, timeout=25)
                 if response.status_code == 200:
                     result = response.json()
                     raw_text = result["candidates"][0]["content"]["parts"][0]["text"].strip()

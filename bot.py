@@ -814,30 +814,36 @@ def worker_process_incoming_cluster(cluster_items):
 
         ack_text = f"📦{sender_str} <b>ĐÃ LƯU CỤM ({media_summary}) VÀO KHO MEDIA!</b>\n🆔 Cụm ID: <code>{cluster['id']}</code>\n🔍 <i>Đang soi tư liệu{note_prompt} để soạn trước <b>01 BÀI TỔNG HỢP 3 GÓC</b>... Vui lòng đợi 5-8 giây!</i>"
 
-        # Gửi xác nhận về admin. Nếu ảnh đến từ nhóm khác thì báo thêm về nhóm đó (best-effort)
-        send_message(notify_chat_id, ack_text)
+        # 1. Gửi thông báo tiếp nhận NGAY vào nhóm nơi ném ảnh
+        send_message(chat_id, ack_text)
         if not source_is_admin_chat:
             try:
-                send_message(chat_id, f"📦{sender_str} <b>ĐÃ NHẬN CỤM ({media_summary}) VÀO KHO!</b> Bot đang soạn bài viết AI...")
+                send_message(ADMIN_CHAT_ID, f"📥 <b>[TỪ NHÓM {chat_id}]</b> {ack_text}")
             except Exception:
                 pass
 
-        # 2. Download sample photos/thumbnails for Gemini AI vision
+        # 2. Download sample photos/thumbnails for Gemini AI vision (tối đa 3 ảnh để xử lý siêu tốc)
         sample_bytes_list = []
-        for fid in sample_file_ids[:4]:
+        for fid in sample_file_ids[:3]:
             b = get_file_bytes(fid)
             if b:
                 sample_bytes_list.append(b)
 
         # 3. Call AI
+        ai_data = None
         if sample_bytes_list:
             ai_data = analyze_multiple_images_and_generate_content(sample_bytes_list, custom_note=custom_note, has_video=has_video)
-        else:
+        
+        # Nếu AI vision không có kết quả hoặc không tải được ảnh mẫu -> Tự động fallback sang text prompt
+        if not ai_data:
             prompt = custom_note if custom_note else "Giới thiệu nồi chiên hơi nước 2GOOD S200 dung tích lớn 32L, khoang Inox 304 chuẩn y tế"
             ai_data = generate_content_from_text_prompt(prompt)
 
         if not ai_data:
-            send_message(notify_chat_id, f"⚠️ Cụm media đã được lưu an toàn vào Kho (ID: <code>{cluster['id']}</code>) nhưng AI gặp lỗi tạm thời khi soạn bản xem trước. Bot sẽ tự động lấy ra phát sóng theo lịch Auto-Pilot (08:00 AM & 13:00 PM).")
+            err_msg = f"⚠️ Cụm media đã được lưu an toàn vào Kho (ID: <code>{cluster['id']}</code>) nhưng AI gặp lỗi tạm thời khi soạn bản xem trước. Bot sẽ tự động lấy ra phát sóng theo lịch Auto-Pilot (08:00 AM & 13:00 PM)."
+            send_message(chat_id, err_msg)
+            if not source_is_admin_chat:
+                send_message(ADMIN_CHAT_ID, err_msg)
             return
 
         # 4. Save to pending posts for admin actions
@@ -892,14 +898,26 @@ def worker_process_incoming_cluster(cluster_items):
             ]
         }
 
-        # Luôn gửi preview + nút bấm về ADMIN_CHAT_ID (guaranteed delivery)
-        send_message(notify_chat_id, preview_text, reply_markup=inline_keyboard)
+        # GỬI BẢN DUYỆT + NÚT BẤM VÀO CHÍNH NHÓM NƠI NÉM ẢNH ĐỂ MỌI NGƯỜI CÓ CONTENT NGAY TẠI CHỖ!
+        send_message(chat_id, preview_text, reply_markup=inline_keyboard)
+
+        # NẾU ẢNH TỪ NHÓM, GỬI THÊM 1 BẢN CHO SẾP Ở CHAT RIÊNG ĐỂ DỄ DÀNG QUẢN LÝ
+        if not source_is_admin_chat:
+            try:
+                send_message(ADMIN_CHAT_ID, f"🔔 <i>Bản xem trước từ nhóm ({chat_id}):</i>\n\n" + preview_text, reply_markup=inline_keyboard)
+            except Exception:
+                pass
     except Exception as e:
         print(f"❌ Error in worker_process_incoming_cluster: {e}")
         try:
-            send_message(ADMIN_CHAT_ID, f"⚠️ Có lỗi khi AI soạn bài: {e}")
+            send_message(chat_id, f"⚠️ Có lỗi khi AI soạn bài: {e}")
         except Exception:
             pass
+        if not source_is_admin_chat:
+            try:
+                send_message(ADMIN_CHAT_ID, f"⚠️ Có lỗi khi AI soạn bài (từ nhóm {chat_id}): {e}")
+            except Exception:
+                pass
 
 def on_debounce_timeout():
     global BUFFER_CLUSTER_ITEMS
