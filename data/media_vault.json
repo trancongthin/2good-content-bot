@@ -12,6 +12,868 @@
     "custom_note": "Test caption",
     "has_video": false,
     "added_at": "2026-09-17 05:02:27",
+    "last_posted_at": "2026-09-20 06:00:36",
+    "post_count": 2
+  },
+  {
+    "id": "cl_1789889871_2",
+    "chat_id": "-5402179106",
+    "message_ids": [
+      845,
+      846,
+      847
+    ],
+    "media_types": [
+      "photo",
+      "photo",
+      "photo"
+    ],
+    "media_files": [
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDTWqvi2-A0Y76TDo5m2SHiOw3-D7gAAK2E2sbblOAVYsLA3a_zt1KAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDTmqvi2_fFKI36y1ve7taa2ZODDh9AAK3E2sbblOAVRzFrOkvXvIEAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDT2qvi2-aHxeNo_4FNAxDlrRP118FAAK4E2sbblOAVURxOGScOgQbAQADAgADdwADPQQ"
+      }
+    ],
+    "sample_file_ids": [
+      "AgACAgUAAxkBAAIDTWqvi2-A0Y76TDo5m2SHiOw3-D7gAAK2E2sbblOAVYsLA3a_zt1KAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDTmqvi2_fFKI36y1ve7taa2ZODDh9AAK3E2sbblOAVRzFrOkvXvIEAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDT2qvi2-aHxeNo_4FNAxDlrRP118FAAK4E2sbblOAVURxOGScOgQbAQADAgADdwADPQQ"
+    ],
+    "custom_note": "Nồi chiên hơi nước 2GOOD S200 - làm thịt quay nổ bì tại nhà, bì giòn rụm, không cần canh bếp. Mẫu tham khảo: bài review kiểu KOC (ảnh máy trên bếp + cận món + mâm cơm).",
+    "has_video": false,
+    "added_at": "2026-09-20 07:37:51",
+    "last_posted_at": "2026-09-21 01:00:53",
+    "post_count": 1
+  },
+  {
+    "id": "cl_1789892337_3",
+    "chat_id": "-5402179106",
+    "message_ids": [
+      870,
+      871,
+      872
+    ],
+    "media_types": [
+      "photo",
+      "photo",
+      "photo"
+    ],
+    "media_files": [
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDZmqvlu3A6JdY2DgYY8NfKTUj7DqUAALOE2sbblOAVRDC087UgwVMAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDZ2qvlu2QcsVdySncUeetO_PVQFsBAALPE2sbblOAVYGE5EMkfF52AQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDaGqvlu1qoryi0K_KClO6ynRWKP7qAALQE2sbblOAVeDI_X3aF1sFAQADAgADdwADPQQ"
+      }
+    ],
+    "sample_file_ids": [
+      "AgACAgUAAxkBAAIDZmqvlu3A6JdY2DgYY8NfKTUj7DqUAALOE2sbblOAVRDC087UgwVMAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDZ2qvlu2QcsVdySncUeetO_PVQFsBAALPE2sbblOAVYGE5EMkfF52AQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDaGqvlu1qoryi0K_KClO6ynRWKP7qAALQE2sbblOAVeDI_X3aF1sFAQADAgADdwADPQQ"
+    ],
+    "custom_note": "Nồi chiên hơi nước 2GOOD S200 - thịt quay nổ bì làm tại nhà, bì giòn rụm, không cần canh bếp. (Ảnh minh họa thương hiệu)",
+    "has_video": false,
+    "added_at": "2026-09-20 08:18:57",
+    "last_posted_at": "2026-09-20 08:24:19",
+    "post_count": 1
+  },
+  {
+    "id": "cl_1789894209_4",
+    "chat_id": "-5402179106",
+    "message_ids": [
+      883,
+      884,
+      885
+    ],
+    "media_types": [
+      "photo",
+      "photo",
+      "photo"
+    ],
+    "media_files": [
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDc2qvnj0d2al0YE5x09FuwvuJF7-YAAJ0EWsb8Dp5VbDUiDIX_8-DAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDdGqvnj2CIOrK1vlUyObHxDwG7il_AAJ1EWsb8Dp5VSl6zPQ_E7tXAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDdWqvnj0Eh-qpITKbwiaLDb0BvPrUAAJzEWsb8Dp5VSJ0ZykTsyWRAQADAgADdwADPQQ"
+      }
+    ],
+    "sample_file_ids": [
+      "AgACAgUAAxkBAAIDc2qvnj0d2al0YE5x09FuwvuJF7-YAAJ0EWsb8Dp5VbDUiDIX_8-DAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDdGqvnj2CIOrK1vlUyObHxDwG7il_AAJ1EWsb8Dp5VSl6zPQ_E7tXAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDdWqvnj0Eh-qpITKbwiaLDb0BvPrUAAJzEWsb8Dp5VSJ0ZykTsyWRAQADAgADdwADPQQ"
+    ],
+    "custom_note": "Nồi chiên hơi nước 2GOOD S200 - tự nướng bánh Trung Thu tại nhà. (Ảnh minh họa thương hiệu)",
+    "has_video": false,
+    "added_at": "2026-09-20 08:50:09",
+    "last_posted_at": null,
+    "post_count": 0
+  },
+  {
+    "id": "cl_1789894546_5",
+    "chat_id": "-5402179106",
+    "message_ids": [
+      893,
+      894,
+      895,
+      896,
+      897
+    ],
+    "media_types": [
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo"
+    ],
+    "media_files": [
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDfWqvn44B-sadQqi_FHVT-ly-N-vFAAJ3EWsb8Dp5VfqBVsGoeztlAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDfmqvn458dGXvuD80ViLX-rrr0CHnAAJ2EWsb8Dp5VTUV4kq36yRmAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDdGqvnj2CIOrK1vlUyObHxDwG7il_AAJ1EWsb8Dp5VSl6zPQ_E7tXAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDdWqvnj0Eh-qpITKbwiaLDb0BvPrUAAJzEWsb8Dp5VSJ0ZykTsyWRAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDgWqvn472T7lnRtJootr9thE0zhm1AAJ4EWsb8Dp5VcQB9C5M7RNxAQADAgADdwADPQQ"
+      }
+    ],
+    "sample_file_ids": [
+      "AgACAgUAAxkBAAIDfWqvn44B-sadQqi_FHVT-ly-N-vFAAJ3EWsb8Dp5VfqBVsGoeztlAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDfmqvn458dGXvuD80ViLX-rrr0CHnAAJ2EWsb8Dp5VTUV4kq36yRmAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDdGqvnj2CIOrK1vlUyObHxDwG7il_AAJ1EWsb8Dp5VSl6zPQ_E7tXAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDdWqvnj0Eh-qpITKbwiaLDb0BvPrUAAJzEWsb8Dp5VSJ0ZykTsyWRAQADAgADdwADPQQ"
+    ],
+    "custom_note": "Nồi chiên hơi nước 2GOOD S200 - tự nướng bánh Trung Thu tại nhà. (Ảnh minh họa thương hiệu)",
+    "has_video": false,
+    "added_at": "2026-09-20 08:55:46",
+    "last_posted_at": "2026-09-20 08:57:18",
+    "post_count": 1
+  },
+  {
+    "id": "cl_1789894643_6",
+    "chat_id": "-1004362147414",
+    "message_ids": [
+      162,
+      163,
+      164,
+      165,
+      166
+    ],
+    "media_types": [
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo"
+    ],
+    "media_files": [
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDfWqvn44B-sadQqi_FHVT-ly-N-vFAAJ3EWsb8Dp5VfqBVsGoeztlAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDfmqvn458dGXvuD80ViLX-rrr0CHnAAJ2EWsb8Dp5VTUV4kq36yRmAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDdGqvnj2CIOrK1vlUyObHxDwG7il_AAJ1EWsb8Dp5VSl6zPQ_E7tXAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDdWqvnj0Eh-qpITKbwiaLDb0BvPrUAAJzEWsb8Dp5VSJ0ZykTsyWRAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDgWqvn472T7lnRtJootr9thE0zhm1AAJ4EWsb8Dp5VcQB9C5M7RNxAQADAgADdwADPQQ"
+      }
+    ],
+    "sample_file_ids": [
+      "AgACAgUAAxkBAAIDfWqvn44B-sadQqi_FHVT-ly-N-vFAAJ3EWsb8Dp5VfqBVsGoeztlAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDfmqvn458dGXvuD80ViLX-rrr0CHnAAJ2EWsb8Dp5VTUV4kq36yRmAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDdGqvnj2CIOrK1vlUyObHxDwG7il_AAJ1EWsb8Dp5VSl6zPQ_E7tXAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDdWqvnj0Eh-qpITKbwiaLDb0BvPrUAAJzEWsb8Dp5VSJ0ZykTsyWRAQADAgADdwADPQQ"
+    ],
+    "custom_note": "Tư liệu chuyển tiếp: Yêu cầu ĐỔI MỚI GÓC NHÌN, ngôn từ tự nhiên, không trùng lặp Tư liệu chuyển tiếp - Ghi chú riêng: Nồi chiên hơi nước 2GOOD S200 - tự nướng bánh Trung Thu tại nhà. (Ảnh minh họa thương hiệu)",
+    "has_video": false,
+    "added_at": "2026-09-20 08:57:23",
+    "last_posted_at": null,
+    "post_count": 0
+  },
+  {
+    "id": "cl_1789896540_7",
+    "chat_id": "-5402179106",
+    "message_ids": [
+      917,
+      918,
+      919
+    ],
+    "media_types": [
+      "photo",
+      "photo",
+      "photo"
+    ],
+    "media_files": [
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIBfGqrCO2VrcMs0gXESxAkGuyEAAJyAAJ-GWsb91VZVYsfcBdcXjuMAQADAgADeQADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIBe2qrCO2Ibn-eR4m1Dt7bdrGeuxSiAAJ9GWsb91VZVf541OAe_TcDAQADAgADeQADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIBfWqrCO0c_2CArtKsNJi9NqyVBJ-wAAJ_GWsb91VZVcx3W2kdeHCMAQADAgADeQADPQQ"
+      }
+    ],
+    "sample_file_ids": [
+      "AgACAgUAAxkBAAIBfGqrCO2VrcMs0gXESxAkGuyEAAJyAAJ-GWsb91VZVYsfcBdcXjuMAQADAgADeQADPQQ",
+      "AgACAgUAAxkBAAIBe2qrCO2Ibn-eR4m1Dt7bdrGeuxSiAAJ9GWsb91VZVf541OAe_TcDAQADAgADeQADPQQ",
+      "AgACAgUAAxkBAAIBfWqrCO0c_2CArtKsNJi9NqyVBJ-wAAJ_GWsb91VZVcx3W2kdeHCMAQADAgADeQADPQQ"
+    ],
+    "custom_note": "Tư liệu chuyển tiếp - Ghi chú riêng: Mới tậu nồi chiên hơi nước 2good s200. Hợp tông màu bếp nhà mình ghê Tư liệu chuyển tiếp: Yêu cầu ĐỔI MỚI GÓC NHÌN, ngôn từ tự nhiên, không trùng lặp",
+    "has_video": false,
+    "added_at": "2026-09-20 09:29:00",
+    "last_posted_at": null,
+    "post_count": 0
+  },
+  {
+    "id": "cl_1789896794_8",
+    "chat_id": "6143441477",
+    "message_ids": [
+      931,
+      932,
+      933,
+      934,
+      935
+    ],
+    "media_types": [
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo"
+    ],
+    "media_files": [
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDfWqvn44B-sadQqi_FHVT-ly-N-vFAAJ3EWsb8Dp5VfqBVsGoeztlAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDfmqvn458dGXvuD80ViLX-rrr0CHnAAJ2EWsb8Dp5VTUV4kq36yRmAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDdGqvnj2CIOrK1vlUyObHxDwG7il_AAJ1EWsb8Dp5VSl6zPQ_E7tXAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDdWqvnj0Eh-qpITKbwiaLDb0BvPrUAAJzEWsb8Dp5VSJ0ZykTsyWRAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDgWqvn472T7lnRtJootr9thE0zhm1AAJ4EWsb8Dp5VcQB9C5M7RNxAQADAgADdwADPQQ"
+      }
+    ],
+    "sample_file_ids": [
+      "AgACAgUAAxkBAAIDfWqvn44B-sadQqi_FHVT-ly-N-vFAAJ3EWsb8Dp5VfqBVsGoeztlAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDfmqvn458dGXvuD80ViLX-rrr0CHnAAJ2EWsb8Dp5VTUV4kq36yRmAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDdGqvnj2CIOrK1vlUyObHxDwG7il_AAJ1EWsb8Dp5VSl6zPQ_E7tXAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDdWqvnj0Eh-qpITKbwiaLDb0BvPrUAAJzEWsb8Dp5VSJ0ZykTsyWRAQADAgADdwADPQQ"
+    ],
+    "custom_note": "Tư liệu chuyển tiếp: Yêu cầu ĐỔI MỚI GÓC NHÌN, ngôn từ tự nhiên, không trùng lặp Tư liệu chuyển tiếp - Ghi chú riêng: Nồi chiên hơi nước 2GOOD S200 - tự nướng bánh Trung Thu tại nhà. (Ảnh minh họa thương hiệu)",
+    "has_video": false,
+    "added_at": "2026-09-20 09:33:14",
+    "last_posted_at": null,
+    "post_count": 0
+  },
+  {
+    "id": "cl_1789897532_9",
+    "chat_id": "-5402179106",
+    "message_ids": [
+      944,
+      945,
+      946
+    ],
+    "media_types": [
+      "photo",
+      "photo",
+      "photo"
+    ],
+    "media_files": [
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDZmqvlu3A6JdY2DgYY8NfKTUj7DqUAALOE2sbblOAVRDC087UgwVMAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDZ2qvlu2QcsVdySncUeetO_PVQFsBAALPE2sbblOAVYGE5EMkfF52AQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDaGqvlu1qoryi0K_KClO6ynRWKP7qAALQE2sbblOAVeDI_X3aF1sFAQADAgADdwADPQQ"
+      }
+    ],
+    "sample_file_ids": [
+      "AgACAgUAAxkBAAIDZmqvlu3A6JdY2DgYY8NfKTUj7DqUAALOE2sbblOAVRDC087UgwVMAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDZ2qvlu2QcsVdySncUeetO_PVQFsBAALPE2sbblOAVYGE5EMkfF52AQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDaGqvlu1qoryi0K_KClO6ynRWKP7qAALQE2sbblOAVeDI_X3aF1sFAQADAgADdwADPQQ"
+    ],
+    "custom_note": "Tư liệu chuyển tiếp - Ghi chú riêng: Nồi chiên hơi nước 2GOOD S200 - thịt quay nổ bì làm tại nhà, bì giòn rụm, không cần canh bếp. (Ảnh minh họa thương hiệu) Tư liệu chuyển tiếp: Yêu cầu ĐỔI MỚI GÓC NHÌN, ngôn từ tự nhiên, không trùng lặp",
+    "has_video": false,
+    "added_at": "2026-09-20 09:45:32",
+    "last_posted_at": null,
+    "post_count": 0
+  },
+  {
+    "id": "cl_1789898543_10",
+    "chat_id": "-5402179106",
+    "message_ids": [
+      954,
+      955,
+      956,
+      957,
+      958
+    ],
+    "media_types": [
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo"
+    ],
+    "media_files": [
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDumqvrytGRGuH_oKuGAovEEBBCj19AAIRE2sb03uAVYi4etE6Ac19AQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDu2qvrytRU_47opQ_OAWaoFryIcfJAAIUE2sb03uAVcrT0ynoiVMtAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDvGqvryt9e6JuQa1VDtmNZflLhIjjAAIQE2sb03uAVT-HC_5y_hZaAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDvWqvryvk0Jj2r6Glr1UphofVbYq7AAITE2sb03uAVSrIK8RoxvMtAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDvmqvrysTBQJ8Qjorfs2J_Ltan7w3AAISE2sb03uAVev0SSYc9C7DAQADAgADdwADPQQ"
+      }
+    ],
+    "sample_file_ids": [
+      "AgACAgUAAxkBAAIDumqvrytGRGuH_oKuGAovEEBBCj19AAIRE2sb03uAVYi4etE6Ac19AQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDu2qvrytRU_47opQ_OAWaoFryIcfJAAIUE2sb03uAVcrT0ynoiVMtAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDvGqvryt9e6JuQa1VDtmNZflLhIjjAAIQE2sb03uAVT-HC_5y_hZaAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDvWqvryvk0Jj2r6Glr1UphofVbYq7AAITE2sb03uAVSrIK8RoxvMtAQADAgADdwADPQQ"
+    ],
+    "custom_note": "Tư liệu chuyển tiếp: Yêu cầu ĐỔI MỚI GÓC NHÌN, ngôn từ tự nhiên, không trùng lặp Tư liệu chuyển tiếp - Ghi chú riêng: Nồi chiên hơi nước 2GOOD S200 - gà nướng nguyên con và rau củ. (Ảnh minh họa thương hiệu)",
+    "has_video": false,
+    "added_at": "2026-09-20 10:02:23",
+    "last_posted_at": "2026-09-20 10:25:24",
+    "post_count": 2
+  },
+  {
+    "id": "cl_1789899365_11",
+    "chat_id": "-1004362147414",
+    "message_ids": [
+      173,
+      174,
+      175,
+      176,
+      177
+    ],
+    "media_types": [
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo"
+    ],
+    "media_files": [
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDumqvrytGRGuH_oKuGAovEEBBCj19AAIRE2sb03uAVYi4etE6Ac19AQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDu2qvrytRU_47opQ_OAWaoFryIcfJAAIUE2sb03uAVcrT0ynoiVMtAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDvGqvryt9e6JuQa1VDtmNZflLhIjjAAIQE2sb03uAVT-HC_5y_hZaAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDvWqvryvk0Jj2r6Glr1UphofVbYq7AAITE2sb03uAVSrIK8RoxvMtAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDvmqvrysTBQJ8Qjorfs2J_Ltan7w3AAISE2sb03uAVev0SSYc9C7DAQADAgADdwADPQQ"
+      }
+    ],
+    "sample_file_ids": [
+      "AgACAgUAAxkBAAIDumqvrytGRGuH_oKuGAovEEBBCj19AAIRE2sb03uAVYi4etE6Ac19AQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDu2qvrytRU_47opQ_OAWaoFryIcfJAAIUE2sb03uAVcrT0ynoiVMtAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDvGqvryt9e6JuQa1VDtmNZflLhIjjAAIQE2sb03uAVT-HC_5y_hZaAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDvWqvryvk0Jj2r6Glr1UphofVbYq7AAITE2sb03uAVSrIK8RoxvMtAQADAgADdwADPQQ"
+    ],
+    "custom_note": "Tư liệu chuyển tiếp: Yêu cầu ĐỔI MỚI GÓC NHÌN, ngôn từ tự nhiên, không trùng lặp Tư liệu chuyển tiếp - Ghi chú riêng: Nồi chiên hơi nước 2GOOD S200 - gà nướng nguyên con và rau củ. (Ảnh minh họa thương hiệu)",
+    "has_video": false,
+    "added_at": "2026-09-20 10:16:05",
+    "last_posted_at": null,
+    "post_count": 0
+  },
+  {
+    "id": "cl_1789899444_12",
+    "chat_id": "-1004362147414",
+    "message_ids": [
+      179,
+      180,
+      181,
+      182,
+      183
+    ],
+    "media_types": [
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo"
+    ],
+    "media_files": [
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDumqvrytGRGuH_oKuGAovEEBBCj19AAIRE2sb03uAVYi4etE6Ac19AQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDu2qvrytRU_47opQ_OAWaoFryIcfJAAIUE2sb03uAVcrT0ynoiVMtAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDvGqvryt9e6JuQa1VDtmNZflLhIjjAAIQE2sb03uAVT-HC_5y_hZaAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDvWqvryvk0Jj2r6Glr1UphofVbYq7AAITE2sb03uAVSrIK8RoxvMtAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDvmqvrysTBQJ8Qjorfs2J_Ltan7w3AAISE2sb03uAVev0SSYc9C7DAQADAgADdwADPQQ"
+      }
+    ],
+    "sample_file_ids": [
+      "AgACAgUAAxkBAAIDumqvrytGRGuH_oKuGAovEEBBCj19AAIRE2sb03uAVYi4etE6Ac19AQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDu2qvrytRU_47opQ_OAWaoFryIcfJAAIUE2sb03uAVcrT0ynoiVMtAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDvGqvryt9e6JuQa1VDtmNZflLhIjjAAIQE2sb03uAVT-HC_5y_hZaAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDvWqvryvk0Jj2r6Glr1UphofVbYq7AAITE2sb03uAVSrIK8RoxvMtAQADAgADdwADPQQ"
+    ],
+    "custom_note": "Tư liệu chuyển tiếp: Yêu cầu ĐỔI MỚI GÓC NHÌN, ngôn từ tự nhiên, không trùng lặp Tư liệu chuyển tiếp - Ghi chú riêng: Nồi chiên hơi nước 2GOOD S200 - gà nướng nguyên con và rau củ. (Ảnh minh họa thương hiệu)",
+    "has_video": false,
+    "added_at": "2026-09-20 10:17:24",
+    "last_posted_at": null,
+    "post_count": 0
+  },
+  {
+    "id": "cl_1789899740_13",
+    "chat_id": "-1004362147414",
+    "message_ids": [
+      186,
+      187,
+      188,
+      189,
+      190
+    ],
+    "media_types": [
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo"
+    ],
+    "media_files": [
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDumqvrytGRGuH_oKuGAovEEBBCj19AAIRE2sb03uAVYi4etE6Ac19AQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDu2qvrytRU_47opQ_OAWaoFryIcfJAAIUE2sb03uAVcrT0ynoiVMtAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDvGqvryt9e6JuQa1VDtmNZflLhIjjAAIQE2sb03uAVT-HC_5y_hZaAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDvWqvryvk0Jj2r6Glr1UphofVbYq7AAITE2sb03uAVSrIK8RoxvMtAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDvmqvrysTBQJ8Qjorfs2J_Ltan7w3AAISE2sb03uAVev0SSYc9C7DAQADAgADdwADPQQ"
+      }
+    ],
+    "sample_file_ids": [
+      "AgACAgUAAxkBAAIDumqvrytGRGuH_oKuGAovEEBBCj19AAIRE2sb03uAVYi4etE6Ac19AQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDu2qvrytRU_47opQ_OAWaoFryIcfJAAIUE2sb03uAVcrT0ynoiVMtAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDvGqvryt9e6JuQa1VDtmNZflLhIjjAAIQE2sb03uAVT-HC_5y_hZaAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDvWqvryvk0Jj2r6Glr1UphofVbYq7AAITE2sb03uAVSrIK8RoxvMtAQADAgADdwADPQQ"
+    ],
+    "custom_note": "Tư liệu chuyển tiếp: Yêu cầu ĐỔI MỚI GÓC NHÌN, ngôn từ tự nhiên, không trùng lặp Tư liệu chuyển tiếp - Ghi chú riêng: Nồi chiên hơi nước 2GOOD S200 - gà nướng nguyên con và rau củ. (Ảnh minh họa thương hiệu)",
+    "has_video": false,
+    "added_at": "2026-09-20 10:22:20",
+    "last_posted_at": null,
+    "post_count": 0
+  },
+  {
+    "id": "cl_1789899837_14",
+    "chat_id": "-1004362147414",
+    "message_ids": [
+      195,
+      196,
+      197,
+      198,
+      199
+    ],
+    "media_types": [
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo"
+    ],
+    "media_files": [
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDumqvrytGRGuH_oKuGAovEEBBCj19AAIRE2sb03uAVYi4etE6Ac19AQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDu2qvrytRU_47opQ_OAWaoFryIcfJAAIUE2sb03uAVcrT0ynoiVMtAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDvGqvryt9e6JuQa1VDtmNZflLhIjjAAIQE2sb03uAVT-HC_5y_hZaAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDvWqvryvk0Jj2r6Glr1UphofVbYq7AAITE2sb03uAVSrIK8RoxvMtAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIDvmqvrysTBQJ8Qjorfs2J_Ltan7w3AAISE2sb03uAVev0SSYc9C7DAQADAgADdwADPQQ"
+      }
+    ],
+    "sample_file_ids": [
+      "AgACAgUAAxkBAAIDumqvrytGRGuH_oKuGAovEEBBCj19AAIRE2sb03uAVYi4etE6Ac19AQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDu2qvrytRU_47opQ_OAWaoFryIcfJAAIUE2sb03uAVcrT0ynoiVMtAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDvGqvryt9e6JuQa1VDtmNZflLhIjjAAIQE2sb03uAVT-HC_5y_hZaAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIDvWqvryvk0Jj2r6Glr1UphofVbYq7AAITE2sb03uAVSrIK8RoxvMtAQADAgADdwADPQQ"
+    ],
+    "custom_note": "Tư liệu chuyển tiếp: Yêu cầu ĐỔI MỚI GÓC NHÌN, ngôn từ tự nhiên, không trùng lặp Tư liệu chuyển tiếp - Ghi chú riêng: Nồi chiên hơi nước 2GOOD S200 - gà nướng nguyên con và rau củ. (Ảnh minh họa thương hiệu)",
+    "has_video": false,
+    "added_at": "2026-09-20 10:23:57",
+    "last_posted_at": null,
+    "post_count": 0
+  },
+  {
+    "id": "cl_1789900264_15",
+    "chat_id": "-5402179106",
+    "message_ids": [
+      997,
+      998,
+      999,
+      1000,
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "media_types": [
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo"
+    ],
+    "media_files": [
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAID5WqvteVC0cP1aNF4QOf4HxYKC0oRAAJJE2sb03uAVZYOSmks8045AQADAgADeQADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAID5mqvteV6UqnrF-t3Ghi9RTj6vRg7AAJKE2sb03uAVYHHHfNRbUqvAQADAgADeQADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAID52qvteVnO-EZgqWOn7GEjJ6aI3LvAAJLE2sb03uAVVRIR7PCbb8sAQADAgADeQADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAID6GqvteUi1cjNiy_Kw6Js_BLehC-rAAJME2sb03uAVcgHzPVGz_BdAQADAgADeQADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAID6WqvteWpFyhg9EXjaDIbRYV6pQ_yAAJNE2sb03uAVaB10-vERi-bAQADAgADeQADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAID6mqvteUG7pHxx4lApgIQ_sBt8vTjAAJOE2sb03uAVRp7TPoW6MQdAQADAgADeQADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAID62qvteXP7Ayl__fhcpOxcdS_kNHvAAJPE2sb03uAVRK2CmVeHZppAQADAgADeQADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAID7GqvteXeqn1EmTLqaTxmK-_4tK3bAAJQE2sb03uAVY3sNb5XoMePAQADAgADeQADPQQ"
+      }
+    ],
+    "sample_file_ids": [
+      "AgACAgUAAxkBAAID5WqvteVC0cP1aNF4QOf4HxYKC0oRAAJJE2sb03uAVZYOSmks8045AQADAgADeQADPQQ",
+      "AgACAgUAAxkBAAID5mqvteV6UqnrF-t3Ghi9RTj6vRg7AAJKE2sb03uAVYHHHfNRbUqvAQADAgADeQADPQQ",
+      "AgACAgUAAxkBAAID52qvteVnO-EZgqWOn7GEjJ6aI3LvAAJLE2sb03uAVVRIR7PCbb8sAQADAgADeQADPQQ",
+      "AgACAgUAAxkBAAID6GqvteUi1cjNiy_Kw6Js_BLehC-rAAJME2sb03uAVcgHzPVGz_BdAQADAgADeQADPQQ"
+    ],
+    "custom_note": "Tư liệu chuyển tiếp - Ghi chú riêng: Nồi chiên hơi nước 2GOOD S200 - tôm hấp tỏi ớt. (Ảnh minh họa thương hiệu) Tư liệu chuyển tiếp: Yêu cầu ĐỔI MỚI GÓC NHÌN, ngôn từ tự nhiên, không trùng lặp",
+    "has_video": false,
+    "added_at": "2026-09-20 10:31:04",
+    "last_posted_at": null,
+    "post_count": 0
+  },
+  {
+    "id": "cl_1789900801_16",
+    "chat_id": "-5402179106",
+    "message_ids": [
+      1012,
+      1013,
+      1014,
+      1015,
+      1016,
+      1017,
+      1018,
+      1019
+    ],
+    "media_types": [
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo"
+    ],
+    "media_files": [
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAID5WqvteVC0cP1aNF4QOf4HxYKC0oRAAJJE2sb03uAVZYOSmks8045AQADAgADeQADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAID5mqvteV6UqnrF-t3Ghi9RTj6vRg7AAJKE2sb03uAVYHHHfNRbUqvAQADAgADeQADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAID52qvteVnO-EZgqWOn7GEjJ6aI3LvAAJLE2sb03uAVVRIR7PCbb8sAQADAgADeQADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAID6GqvteUi1cjNiy_Kw6Js_BLehC-rAAJME2sb03uAVcgHzPVGz_BdAQADAgADeQADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAID6WqvteWpFyhg9EXjaDIbRYV6pQ_yAAJNE2sb03uAVaB10-vERi-bAQADAgADeQADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAID6mqvteUG7pHxx4lApgIQ_sBt8vTjAAJOE2sb03uAVRp7TPoW6MQdAQADAgADeQADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAID62qvteXP7Ayl__fhcpOxcdS_kNHvAAJPE2sb03uAVRK2CmVeHZppAQADAgADeQADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAID7GqvteXeqn1EmTLqaTxmK-_4tK3bAAJQE2sb03uAVY3sNb5XoMePAQADAgADeQADPQQ"
+      }
+    ],
+    "sample_file_ids": [
+      "AgACAgUAAxkBAAID5WqvteVC0cP1aNF4QOf4HxYKC0oRAAJJE2sb03uAVZYOSmks8045AQADAgADeQADPQQ",
+      "AgACAgUAAxkBAAID5mqvteV6UqnrF-t3Ghi9RTj6vRg7AAJKE2sb03uAVYHHHfNRbUqvAQADAgADeQADPQQ",
+      "AgACAgUAAxkBAAID52qvteVnO-EZgqWOn7GEjJ6aI3LvAAJLE2sb03uAVVRIR7PCbb8sAQADAgADeQADPQQ",
+      "AgACAgUAAxkBAAID6GqvteUi1cjNiy_Kw6Js_BLehC-rAAJME2sb03uAVcgHzPVGz_BdAQADAgADeQADPQQ"
+    ],
+    "custom_note": "Tư liệu chuyển tiếp - Ghi chú riêng: Nồi chiên hơi nước 2GOOD S200 - tôm hấp tỏi ớt. (Ảnh minh họa thương hiệu) Tư liệu chuyển tiếp: Yêu cầu ĐỔI MỚI GÓC NHÌN, ngôn từ tự nhiên, không trùng lặp",
+    "has_video": false,
+    "added_at": "2026-09-20 10:40:01",
+    "last_posted_at": null,
+    "post_count": 0
+  },
+  {
+    "id": "cl_1789923621_17",
+    "chat_id": "-5402179106",
+    "message_ids": [
+      1166,
+      1167,
+      1168,
+      1169,
+      1170,
+      1171,
+      1172
+    ],
+    "media_types": [
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo"
+    ],
+    "media_files": [
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIEK2qwCE4THV-HhZQfGaSvH-d_AfmXAAL5E2sb03uAVfY7WzhrjE5xAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIELGqwCE66JEgU30vsWSn6UIRMRpw9AAL7E2sb03uAVfJnLNstisxNAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIELWqwCE7fJvGPUDwsC5fSTDB8oH1tAAL9E2sb03uAVaUPav3JpbGcAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIELmqwCE7FE60wF4CQlQaJPtqaEVynAAL8E2sb03uAVYpX62t8doB4AQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIEL2qwCE5H_RtjWVKZQtNSMPqC7gxMAAL-E2sb03uAVXtbWqpoPoeOAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIEMGqwCE61bQbxwFL10m4xirX13J33AAL6E2sb03uAVTdQQNbZ0WorAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIEMWqwCE6C39ThQRn-mp_WgkD-ucmYAAL_E2sb03uAVZQmlw7mk9ojAQADAgADdwADPQQ"
+      }
+    ],
+    "sample_file_ids": [
+      "AgACAgUAAxkBAAIEK2qwCE4THV-HhZQfGaSvH-d_AfmXAAL5E2sb03uAVfY7WzhrjE5xAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIELGqwCE66JEgU30vsWSn6UIRMRpw9AAL7E2sb03uAVfJnLNstisxNAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIELWqwCE7fJvGPUDwsC5fSTDB8oH1tAAL9E2sb03uAVaUPav3JpbGcAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIELmqwCE7FE60wF4CQlQaJPtqaEVynAAL8E2sb03uAVYpX62t8doB4AQADAgADdwADPQQ"
+    ],
+    "custom_note": "Tư liệu chuyển tiếp - Ghi chú riêng: Nồi chiên hơi nước 2GOOD S200 - bánh flan caramel hấp tại nhà. (Ảnh minh họa thương hiệu) Tư liệu chuyển tiếp: Yêu cầu ĐỔI MỚI GÓC NHÌN, ngôn từ tự nhiên, không trùng lặp",
+    "has_video": false,
+    "added_at": "2026-09-20 17:00:21",
+    "last_posted_at": "2026-09-20 17:02:39",
+    "post_count": 1
+  },
+  {
+    "id": "cl_1789923765_18",
+    "chat_id": "-1004362147414",
+    "message_ids": [
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220
+    ],
+    "media_types": [
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo",
+      "photo"
+    ],
+    "media_files": [
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIEK2qwCE4THV-HhZQfGaSvH-d_AfmXAAL5E2sb03uAVfY7WzhrjE5xAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIELGqwCE66JEgU30vsWSn6UIRMRpw9AAL7E2sb03uAVfJnLNstisxNAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIELWqwCE7fJvGPUDwsC5fSTDB8oH1tAAL9E2sb03uAVaUPav3JpbGcAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIELmqwCE7FE60wF4CQlQaJPtqaEVynAAL8E2sb03uAVYpX62t8doB4AQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIEL2qwCE5H_RtjWVKZQtNSMPqC7gxMAAL-E2sb03uAVXtbWqpoPoeOAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIEMGqwCE61bQbxwFL10m4xirX13J33AAL6E2sb03uAVTdQQNbZ0WorAQADAgADdwADPQQ"
+      },
+      {
+        "type": "photo",
+        "file_id": "AgACAgUAAxkBAAIEMWqwCE6C39ThQRn-mp_WgkD-ucmYAAL_E2sb03uAVZQmlw7mk9ojAQADAgADdwADPQQ"
+      }
+    ],
+    "sample_file_ids": [
+      "AgACAgUAAxkBAAIEK2qwCE4THV-HhZQfGaSvH-d_AfmXAAL5E2sb03uAVfY7WzhrjE5xAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIELGqwCE66JEgU30vsWSn6UIRMRpw9AAL7E2sb03uAVfJnLNstisxNAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIELWqwCE7fJvGPUDwsC5fSTDB8oH1tAAL9E2sb03uAVaUPav3JpbGcAQADAgADdwADPQQ",
+      "AgACAgUAAxkBAAIELmqwCE7FE60wF4CQlQaJPtqaEVynAAL8E2sb03uAVYpX62t8doB4AQADAgADdwADPQQ"
+    ],
+    "custom_note": "Tư liệu chuyển tiếp - Ghi chú riêng: Nồi chiên hơi nước 2GOOD S200 - bánh flan caramel hấp tại nhà. (Ảnh minh họa thương hiệu) Tư liệu chuyển tiếp: Yêu cầu ĐỔI MỚI GÓC NHÌN, ngôn từ tự nhiên, không trùng lặp",
+    "has_video": false,
+    "added_at": "2026-09-20 17:02:45",
     "last_posted_at": null,
     "post_count": 0
   }

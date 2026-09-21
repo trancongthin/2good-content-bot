@@ -74,6 +74,23 @@ class HealthCheckHandler(http.server.BaseHTTPRequestHandler):
         }
         self.wfile.write(json.dumps(resp, ensure_ascii=False).encode("utf-8"))
 
+    def do_POST(self):
+        try:
+            content_length = int(self.headers.get("Content-Length", 0))
+            post_data = self.rfile.read(content_length)
+            
+            # Respond 200 OK immediately so Telegram receives ACK in 5ms
+            self.send_response(200)
+            self.send_header("Content-type", "application/json")
+            self.end_headers()
+            self.wfile.write(b'{"ok":true}')
+            
+            if post_data:
+                update = json.loads(post_data.decode("utf-8"))
+                threading.Thread(target=process_single_update, args=[update], daemon=True).start()
+        except Exception as e:
+            print(f"Error in do_POST webhook: {e}")
+
     def log_message(self, format, *args):
         return
 
@@ -1492,6 +1509,174 @@ def handle_callback(callback_query):
         return
 
 # --- MAIN BOT ENGINE & POLLING LOOP ---
+# --- DISPATCHER: PROCESS SINGLE UPDATE (WEBHOOK & POLLING UNIFIED) ---
+def process_single_update(update):
+    try:
+        summary = {
+            "time": datetime.datetime.now().strftime("%H:%M:%S"),
+            "id": update.get("update_id"),
+        }
+        if "message" in update:
+            m = update["message"]
+            summary["type"] = "message"
+            summary["chat_id"] = m.get("chat", {}).get("id")
+            summary["chat_title"] = m.get("chat", {}).get("title")
+            summary["text"] = m.get("text")
+            summary["thread_id"] = m.get("message_thread_id")
+        elif "callback_query" in update:
+            cq = update["callback_query"]
+            summary["type"] = "callback_query"
+            summary["data"] = cq.get("data")
+            summary["from"] = cq.get("from", {}).get("first_name")
+            summary["chat_id"] = cq.get("message", {}).get("chat", {}).get("id")
+        RECENT_UPDATES.append(summary)
+        if len(RECENT_UPDATES) > 15:
+            RECENT_UPDATES.pop(0)
+
+        if "channel_post" in update:
+            c_post = update["channel_post"]
+            chat = c_post["chat"]
+            c_id = chat["id"]
+            c_title = chat.get("title", "Kênh CTV")
+            set_target_channel(c_id, c_title)
+        
+        elif "my_chat_member" in update:
+            chat = update["my_chat_member"]["chat"]
+            if chat.get("type") == "channel":
+                c_id = chat["id"]
+                c_title = chat.get("title", "Kênh CTV")
+                set_target_channel(c_id, c_title)
+        
+        elif "message" in update:
+            msg = update["message"]
+            chat = msg.get("chat", {})
+            chat_id = str(chat.get("id"))
+            chat_type = chat.get("type", "private")
+            msg_id = msg.get("message_id")
+            thread_id = msg.get("message_thread_id")
+            
+            # Handle incoming photo or video (from private chat or any group)
+            if "photo" in msg or "video" in msg:
+                handle_incoming_media_non_blocking(msg)
+            elif "text" in msg:
+                text = msg.get("text", "").strip()
+                cmd = text.split()[0].lower() if text else ""
+                if "@" in cmd:
+                    cmd = cmd.split("@")[0]
+                
+                # 1. Content generation requests (no need to type slash /)
+                lower_text = text.lower()
+                is_content_request = (
+                    cmd in ["/viet", "/content", "viết", "viet", "content"] or
+                    any(k in lower_text for k in ["viết bài", "viết 1 bài", "soạn bài", "làm bài", "tạo bài", "lên bài", "viết giúp"])
+                )
+                
+                # 2. Consulting / Question commands:
+                is_consulting_command = cmd in ["/hoi", "/tuvan", "/sp", "/bot", "/chinhsach", "/gia", "/baohanh"]
+                
+                if cmd == "/start":
+                    send_message(chat_id, """👋 Chào bạn! Tôi là <b>Trợ lý AI Bán Hàng & Content 2GOOD (24/7)</b>.
+
+💬 <b>Hỏi đáp bán hàng & Xử lý từ chối cho CTV:</b>
+• <b>Trong nhóm:</b> Tag <code>@mr_morning_bot [câu hỏi]</code> hoặc gõ <code>/hoi [câu hỏi]</code>
+• <b>Trong chat 1-1:</b> Cứ gõ thẳng câu hỏi (VD: <i>Khách chê S200 đắt, S100 bảo hành bao lâu, Sona i8 có tự rửa không...</i>)
+
+📸 <b>Kho Media & Viết Content:</b>
+• Gửi ảnh/video: Bot tự lưu vào <b>Kho Media (/kho)</b> và soạn 3 góc bài viết.
+• Gõ <code>viết 1 bài [ý tưởng]</code> hoặc <code>/viet [ý tưởng]</code>: AI soạn bài bán hàng theo yêu cầu.
+
+💡 Gõ <code>/help</code> để xem hướng dẫn đầy đủ!""", message_thread_id=thread_id)
+                elif cmd in ["/status", "/ping"]:
+                    st_msg, kb = build_status_message()
+                    send_message(chat_id, st_msg, reply_markup=kb, message_thread_id=thread_id)
+                elif cmd == "/kho":
+                    kho_msg, kb = build_kho_message()
+                    send_message(chat_id, kho_msg, reply_markup=kb, message_thread_id=thread_id)
+                elif cmd == "/chay_ngay":
+                    threading.Thread(target=run_daily_autopilot_dispatch, args=[True], daemon=True).start()
+                elif cmd == "/history":
+                    send_message(chat_id, build_history_message(), message_thread_id=thread_id)
+                elif cmd == "/reset":
+                    send_message(chat_id, execute_reset(), message_thread_id=thread_id)
+                elif cmd == "/help":
+                    send_message(chat_id, build_help_message(), message_thread_id=thread_id)
+                elif cmd in ["/saoluu", "/backup"]:
+                    from storage_sync import sync_vault_to_telegram
+                    send_message(chat_id, "⏳ <i>Đang nén dữ liệu và gửi bản sao lưu lên Telegram Cloud...</i>", message_thread_id=thread_id)
+                    ok, msg = sync_vault_to_telegram(silent=False)
+                    send_message(chat_id, f"✅ {msg}" if ok else f"❌ {msg}", message_thread_id=thread_id)
+                elif cmd in ["/khoiphuc", "/restore"]:
+                    from storage_sync import restore_vault_from_telegram
+                    send_message(chat_id, "⏳ <i>Đang tải và khôi phục dữ liệu từ bản sao lưu Telegram Cloud...</i>", message_thread_id=thread_id)
+                    ok, v_c, m_c = restore_vault_from_telegram()
+                    if ok:
+                        send_message(chat_id, f"🎉 Khôi phục thành công <b>{v_c} cụm media</b> và <b>{m_c} bài viết</b> từ Telegram Cloud!", message_thread_id=thread_id)
+                    else:
+                        send_message(chat_id, "⚠️ Không tìm thấy bản sao lưu hợp lệ được ghim trên Telegram.", message_thread_id=thread_id)
+                elif cmd == "/set_backup_channel":
+                    from storage_sync import set_backup_chat_id, get_backup_chat_id
+                    parts = text.split()
+                    if len(parts) > 1:
+                        new_id = parts[1].strip()
+                        set_backup_chat_id(new_id)
+                        send_message(chat_id, f"✅ Đã đặt kênh sao lưu vĩnh cửu thành: <code>{new_id}</code>", message_thread_id=thread_id)
+                    else:
+                        curr = get_backup_chat_id()
+                        send_message(chat_id, f"ℹ️ Kênh sao lưu hiện tại: <code>{curr}</code>\nCú pháp: <code>/set_backup_channel &lt;channel_id&gt;</code>", message_thread_id=thread_id)
+                elif is_content_request:
+                    prompt = text
+                    if prompt.lower().startswith(("/viet", "/content")):
+                        prompt = prompt[len(prompt.split()[0]):].strip()
+                    if prompt:
+                        threading.Thread(target=worker_process_text_prompt, args=[chat_id, prompt], daemon=True).start()
+                    else:
+                        send_message(chat_id, "💡 Hãy gõ kèm ý tưởng, ví dụ: <code>viết 1 bài Sona i8</code>", message_thread_id=thread_id)
+                elif is_consulting_command:
+                    query = text[len(text.split()[0]):].strip()
+                    if query:
+                        send_message(chat_id, "⏳ <i>Đang tra cứu dữ liệu sản phẩm & soạn kịch bản tư vấn...</i>", reply_to_message_id=msg_id, message_thread_id=thread_id)
+                        threading.Thread(target=worker_process_ctv_query, args=[chat_id, query, msg_id, thread_id], daemon=True).start()
+                    else:
+                        send_message(chat_id, "💡 Hãy gõ kèm câu hỏi, ví dụ: <code>/hoi Khách chê S200 đắt</code> hoặc <code>/hoi S100 có lồng đảo không</code>", reply_to_message_id=msg_id, message_thread_id=thread_id)
+                else:
+                    is_tagged = False
+                    clean_query = text
+                    chat_title = chat.get("title", "").lower()
+                    is_discussion_group = any(k in chat_title for k in ["thảo luận", "discussion", "hỏi đáp", "ctv"]) or thread_id is not None
+                    
+                    if "@mr_morning_bot" in lower_text:
+                        is_tagged = True
+                        clean_query = re.sub(r"@mr_morning_bot", "", text, flags=re.IGNORECASE).strip()
+                    elif "reply_to_message" in msg and msg["reply_to_message"].get("from", {}).get("is_bot"):
+                        is_tagged = True
+                        clean_query = text
+                    elif chat_type == "private":
+                        is_tagged = True
+                        clean_query = text
+                    elif is_discussion_group:
+                        from bot_engine import detect_intent
+                        intent = detect_intent(text)
+                        if intent in ["OBJECTION", "PRODUCT_INFO", "POLICY"]:
+                            is_tagged = True
+                            clean_query = text
+                        
+                    if is_tagged and clean_query:
+                        if any(k in clean_query.lower() for k in ["viết", "content", "soạn", "làm bài"]):
+                            threading.Thread(target=worker_process_text_prompt, args=[chat_id, clean_query], daemon=True).start()
+                        else:
+                            send_message(chat_id, "⏳ <i>Đang tra cứu dữ liệu sản phẩm & soạn kịch bản tư vấn...</i>", reply_to_message_id=msg_id, message_thread_id=thread_id)
+                            threading.Thread(target=worker_process_ctv_query, args=[chat_id, clean_query, msg_id, thread_id], daemon=True).start()
+                    else:
+                        # In production groups (e.g. 'Ném ảnh vào để sản xuất content'), any plain text is a prompt!
+                        if any(k in chat_title for k in ["content", "sản xuất", "team"]):
+                            threading.Thread(target=worker_process_text_prompt, args=[chat_id, text], daemon=True).start()
+        
+        elif "callback_query" in update:
+            handle_callback(update["callback_query"])
+    except Exception as e:
+        print(f"❌ Error in process_single_update: {e}")
+
+# --- MAIN BOT ENGINE & POLLING LOOP ---
 def run_bot():
     acquire_single_instance_lock()
     print(f"🚀 2GOOD TELEGRAM BOT (24/7 ROBUST ENGINE & MEDIA VAULT) IS RUNNING (PID: {os.getpid()})...")
@@ -1508,247 +1693,93 @@ def run_bot():
 
     load_pending_posts()
 
-    # 1. Start HTTP Health check for Cloud Hosting
+    # 1. Start HTTP Health check & Webhook Server on PORT
     threading.Thread(target=start_health_server, daemon=True).start()
 
     # 2. Start 08:00 AM Auto-Pilot Scheduler
     threading.Thread(target=autopilot_scheduler_loop, daemon=True).start()
 
-    try:
-        requests.post(f"{TELEGRAM_API}/deleteWebhook?drop_pending_updates=false", timeout=10)
-    except Exception:
-        pass
-    
-    offset = 0
-    consecutive_errors = 0
-    last_cleanup_time = time.time()
     allowed_update_types = ["message", "edited_message", "channel_post", "edited_channel_post", "callback_query", "my_chat_member"]
-    
-    try:
+    last_cleanup_time = time.time()
+
+    # 3. Detect Mode: Cloud Webhook vs Local Polling
+    is_cloud = bool(os.environ.get("PORT") or os.environ.get("RENDER"))
+    webhook_base = os.environ.get("WEBHOOK_DOMAIN", "https://twogood-content-bot.onrender.com")
+
+    if is_cloud and not os.environ.get("FORCE_POLLING"):
+        webhook_url = f"{webhook_base}/webhook"
+        print(f"🌐 [CLOUD WEBHOOK MODE] Đang thiết lập Webhook: {webhook_url}...")
+        try:
+            res = requests.post(
+                f"{TELEGRAM_API}/setWebhook",
+                json={
+                    "url": webhook_url,
+                    "allowed_updates": allowed_update_types,
+                    "drop_pending_updates": False
+                },
+                timeout=15
+            ).json()
+            print(f"📡 Kết quả setWebhook: {res}")
+        except Exception as e:
+            print(f"⚠️ Lỗi khi setWebhook: {e}")
+
+        print("✅ Bot đang vận hành ở chế độ WEBHOOK 24/7 (Không treo socket, Không 409 conflict, Phản hồi tức thì)!")
         while True:
+            time.sleep(60)
             if time.time() - last_cleanup_time > 900:
                 cleanup_expired_pending_posts()
                 last_cleanup_time = time.time()
+    else:
+        # Polling mode (Local development)
+        try:
+            requests.post(f"{TELEGRAM_API}/deleteWebhook?drop_pending_updates=false", timeout=10)
+        except Exception:
+            pass
+        
+        offset = 0
+        consecutive_errors = 0
+        print("🔄 [POLLING MODE] Đang chạy Polling...")
+        try:
+            while True:
+                if time.time() - last_cleanup_time > 900:
+                    cleanup_expired_pending_posts()
+                    last_cleanup_time = time.time()
 
-            try:
-                res = requests.post(
-                    f"{TELEGRAM_API}/getUpdates",
-                    json={
-                        "offset": offset,
-                        "timeout": 30,
-                        "allowed_updates": allowed_update_types
-                    },
-                    timeout=40
-                ).json()
-                if res.get("ok"):
-                    consecutive_errors = 0
-                    for update in res["result"]:
-                        offset = update["update_id"] + 1
-                        
-                        summary = {
-                            "time": datetime.datetime.now().strftime("%H:%M:%S"),
-                            "id": update.get("update_id"),
-                        }
-                        if "message" in update:
-                            m = update["message"]
-                            summary["type"] = "message"
-                            summary["chat_id"] = m.get("chat", {}).get("id")
-                            summary["chat_title"] = m.get("chat", {}).get("title")
-                            summary["text"] = m.get("text")
-                            summary["thread_id"] = m.get("message_thread_id")
-                        elif "callback_query" in update:
-                            cq = update["callback_query"]
-                            summary["type"] = "callback_query"
-                            summary["data"] = cq.get("data")
-                            summary["from"] = cq.get("from", {}).get("first_name")
-                            summary["chat_id"] = cq.get("message", {}).get("chat", {}).get("id")
-                        RECENT_UPDATES.append(summary)
-                        if len(RECENT_UPDATES) > 15:
-                            RECENT_UPDATES.pop(0)
-                        
-                        if "channel_post" in update:
-                            c_post = update["channel_post"]
-                            chat = c_post["chat"]
-                            c_id = chat["id"]
-                            c_title = chat.get("title", "Kênh CTV")
-                            set_target_channel(c_id, c_title)
-                        
-                        elif "my_chat_member" in update:
-                            chat = update["my_chat_member"]["chat"]
-                            if chat.get("type") == "channel":
-                                c_id = chat["id"]
-                                c_title = chat.get("title", "Kênh CTV")
-                                set_target_channel(c_id, c_title)
-                        
-                        elif "message" in update:
-                            msg = update["message"]
-                            chat = msg.get("chat", {})
-                            chat_id = str(chat.get("id"))
-                            chat_type = chat.get("type", "private")
-                            msg_id = msg.get("message_id")
-                            thread_id = msg.get("message_thread_id")
-                            
-                            # Handle incoming photo or video (from private chat or any group)
-                            if "photo" in msg or "video" in msg:
-                                handle_incoming_media_non_blocking(msg)
-                            elif "text" in msg:
-                                text = msg.get("text", "").strip()
-                                cmd = text.split()[0].lower() if text else ""
-                                if "@" in cmd:
-                                    cmd = cmd.split("@")[0]
-                                
-                                # 1. Content generation requests (no need to type slash /)
-                                lower_text = text.lower()
-                                is_content_request = (
-                                    cmd in ["/viet", "/content", "viết", "viet", "content"] or
-                                    any(k in lower_text for k in ["viết bài", "viết 1 bài", "soạn bài", "làm bài", "tạo bài", "lên bài", "viết giúp"])
-                                )
-                                
-                                # 2. Consulting / Question commands:
-                                is_consulting_command = cmd in ["/hoi", "/tuvan", "/sp", "/bot", "/chinhsach", "/gia", "/baohanh"]
-                                
-                                if cmd == "/start":
-                                    send_message(chat_id, """👋 Chào bạn! Tôi là <b>Trợ lý AI Bán Hàng & Content 2GOOD (24/7)</b>.
-
-💬 <b>Hỏi đáp bán hàng & Xử lý từ chối cho CTV:</b>
-• <b>Trong nhóm:</b> Tag <code>@mr_morning_bot [câu hỏi]</code> hoặc gõ <code>/hoi [câu hỏi]</code>
-• <b>Trong chat 1-1:</b> Cứ gõ thẳng câu hỏi (VD: <i>Khách chê S200 đắt, S100 bảo hành bao lâu, Sona i8 có tự rửa không...</i>)
-
-📸 <b>Kho Media & Viết Content:</b>
-• Gửi ảnh/video: Bot tự lưu vào <b>Kho Media (/kho)</b> và soạn 3 góc bài viết.
-• Gõ <code>viết 1 bài [ý tưởng]</code> hoặc <code>/viet [ý tưởng]</code>: AI soạn bài bán hàng theo yêu cầu.
-
-💡 Gõ <code>/help</code> để xem hướng dẫn đầy đủ!""", message_thread_id=thread_id)
-                                elif cmd in ["/status", "/ping"]:
-                                    st_msg, kb = build_status_message()
-                                    send_message(chat_id, st_msg, reply_markup=kb, message_thread_id=thread_id)
-                                elif cmd == "/kho":
-                                    kho_msg, kb = build_kho_message()
-                                    send_message(chat_id, kho_msg, reply_markup=kb, message_thread_id=thread_id)
-                                elif cmd == "/chay_ngay":
-                                    threading.Thread(target=run_daily_autopilot_dispatch, args=[True], daemon=True).start()
-                                elif cmd == "/history":
-                                    send_message(chat_id, build_history_message(), message_thread_id=thread_id)
-                                elif cmd == "/reset":
-                                    send_message(chat_id, execute_reset(), message_thread_id=thread_id)
-                                elif cmd == "/help":
-                                    send_message(chat_id, build_help_message(), message_thread_id=thread_id)
-                                elif cmd in ["/saoluu", "/backup"]:
-                                    from storage_sync import sync_vault_to_telegram
-                                    send_message(chat_id, "⏳ <i>Đang nén dữ liệu và gửi bản sao lưu lên Telegram Cloud...</i>", message_thread_id=thread_id)
-                                    ok, msg = sync_vault_to_telegram(silent=False)
-                                    send_message(chat_id, f"✅ {msg}" if ok else f"❌ {msg}", message_thread_id=thread_id)
-                                elif cmd in ["/khoiphuc", "/restore"]:
-                                    from storage_sync import restore_vault_from_telegram
-                                    send_message(chat_id, "⏳ <i>Đang tải và khôi phục dữ liệu từ bản sao lưu Telegram Cloud...</i>", message_thread_id=thread_id)
-                                    ok, v_c, m_c = restore_vault_from_telegram()
-                                    if ok:
-                                        send_message(chat_id, f"🎉 Khôi phục thành công <b>{v_c} cụm media</b> và <b>{m_c} bài viết</b> từ Telegram Cloud!", message_thread_id=thread_id)
-                                    else:
-                                        send_message(chat_id, "⚠️ Không tìm thấy bản sao lưu hợp lệ được ghim trên Telegram.", message_thread_id=thread_id)
-                                elif cmd == "/set_backup_channel":
-                                    from storage_sync import set_backup_chat_id, get_backup_chat_id
-                                    parts = text.split()
-                                    if len(parts) > 1:
-                                        new_id = parts[1].strip()
-                                        set_backup_chat_id(new_id)
-                                        send_message(chat_id, f"✅ Đã đặt kênh sao lưu vĩnh cửu thành: <code>{new_id}</code>", message_thread_id=thread_id)
-                                    else:
-                                        curr = get_backup_chat_id()
-                                        send_message(chat_id, f"ℹ️ Kênh sao lưu hiện tại: <code>{curr}</code>\nCú pháp: <code>/set_backup_channel &lt;channel_id&gt;</code>", message_thread_id=thread_id)
-                                elif is_content_request:
-                                    prompt = text
-                                    if prompt.lower().startswith(("/viet", "/content")):
-                                        prompt = prompt[len(prompt.split()[0]):].strip()
-                                    if prompt:
-                                        threading.Thread(target=worker_process_text_prompt, args=[chat_id, prompt], daemon=True).start()
-                                    else:
-                                        send_message(chat_id, "💡 Hãy gõ kèm ý tưởng, ví dụ: <code>viết 1 bài Sona i8</code>", message_thread_id=thread_id)
-                                elif is_consulting_command:
-                                    query = text[len(text.split()[0]):].strip()
-                                    if query:
-                                        send_message(chat_id, "⏳ <i>Đang tra cứu dữ liệu sản phẩm & soạn kịch bản tư vấn...</i>", reply_to_message_id=msg_id, message_thread_id=thread_id)
-                                        threading.Thread(target=worker_process_ctv_query, args=[chat_id, query, msg_id, thread_id], daemon=True).start()
-                                    else:
-                                        send_message(chat_id, "💡 Hãy gõ kèm câu hỏi, ví dụ: <code>/hoi Khách chê S200 đắt</code> hoặc <code>/hoi S100 có lồng đảo không</code>", reply_to_message_id=msg_id, message_thread_id=thread_id)
-                                else:
-                                    is_tagged = False
-                                    clean_query = text
-                                    chat_title = chat.get("title", "").lower()
-                                    is_discussion_group = any(k in chat_title for k in ["thảo luận", "discussion", "hỏi đáp", "ctv"]) or thread_id is not None
-                                    
-                                    if "@mr_morning_bot" in lower_text:
-                                        is_tagged = True
-                                        clean_query = re.sub(r"@mr_morning_bot", "", text, flags=re.IGNORECASE).strip()
-                                    elif "reply_to_message" in msg and msg["reply_to_message"].get("from", {}).get("is_bot"):
-                                        is_tagged = True
-                                        clean_query = text
-                                    elif chat_type == "private":
-                                        is_tagged = True
-                                        clean_query = text
-                                    elif is_discussion_group:
-                                        from bot_engine import detect_intent
-                                        intent = detect_intent(text)
-                                        if intent in ["OBJECTION", "PRODUCT_INFO", "POLICY"]:
-                                            is_tagged = True
-                                            clean_query = text
-                                        
-                                    if is_tagged and clean_query:
-                                        if any(k in clean_query.lower() for k in ["viết", "content", "soạn", "làm bài"]):
-                                            threading.Thread(target=worker_process_text_prompt, args=[chat_id, clean_query], daemon=True).start()
-                                        else:
-                                            send_message(chat_id, "⏳ <i>Đang tra cứu dữ liệu sản phẩm & soạn kịch bản tư vấn...</i>", reply_to_message_id=msg_id, message_thread_id=thread_id)
-                                            threading.Thread(target=worker_process_ctv_query, args=[chat_id, clean_query, msg_id, thread_id], daemon=True).start()
-                                    else:
-                                        # In production groups (e.g. 'Ném ảnh vào để sản xuất content'), any plain text is a prompt!
-                                        if any(k in chat_title for k in ["content", "sản xuất", "team"]):
-                                            threading.Thread(target=worker_process_text_prompt, args=[chat_id, text], daemon=True).start()
-                        
-                        elif "callback_query" in update:
-                            handle_callback(update["callback_query"])
-                else:
-                    consecutive_errors += 1
-                    err_desc = res.get("description", "").lower()
-                    if res.get("error_code") == 409:
-                        if "terminated by other getupdates" in err_desc:
-                            # Có 2 instance bot cùng poll — đây là rolling deploy của Render.
-                            # Tăng dần thời gian chờ để nhường cho instance mới (hoặc cũ) dừng lại.
+                try:
+                    res = requests.post(
+                        f"{TELEGRAM_API}/getUpdates",
+                        json={
+                            "offset": offset,
+                            "timeout": 30,
+                            "allowed_updates": allowed_update_types
+                        },
+                        timeout=(10, 40)
+                    ).json()
+                    if res.get("ok"):
+                        consecutive_errors = 0
+                        for update in res["result"]:
+                            offset = update["update_id"] + 1
+                            process_single_update(update)
+                    else:
+                        consecutive_errors += 1
+                        err_desc = res.get("description", "").lower()
+                        if res.get("error_code") == 409:
                             backoff = min(consecutive_errors * 5, 30)
-                            print(f"⚠️ [409] Xung đột 2 instance bot đang chạy song song. Chờ {backoff}s để Render hoàn tất rolling deploy...")
+                            print(f"⚠️ [409] Xung đột polling với instance khác. Chờ {backoff}s...")
                             time.sleep(backoff)
                             continue
-                        else:
-                            # Webhook conflict — xóa webhook rồi retry
-                            print(f"⚠️ [409] Phát hiện Webhook xung đột: {res.get('description')}. Đang tự động xóa Webhook...")
-                            try:
-                                requests.post(f"{TELEGRAM_API}/deleteWebhook?drop_pending_updates=false", timeout=10)
-                                consecutive_errors = 0
-                                time.sleep(2)
-                                continue
-                            except Exception as del_err:
-                                print(f"Lỗi khi xóa webhook xung đột: {del_err}")
-                    elif "webhook" in err_desc:
-                        print(f"⚠️ Phát hiện Webhook trong response: {res.get('description')}. Đang tự động xóa Webhook...")
-                        try:
-                            requests.post(f"{TELEGRAM_API}/deleteWebhook?drop_pending_updates=false", timeout=10)
-                            consecutive_errors = 0
-                            time.sleep(2)
-                            continue
-                        except Exception as del_err:
-                            print(f"Lỗi khi xóa webhook: {del_err}")
-                    time.sleep(min(consecutive_errors * 2, 15))
-                    
-                time.sleep(0.3)
-            except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as net_err:
-                consecutive_errors += 1
-                backoff = min(consecutive_errors * 2, 20)
-                print(f"Network glitch ({net_err}). Retrying in {backoff}s...")
-                time.sleep(backoff)
-            except Exception as e:
-                print(f"Error in polling loop: {e}")
-                time.sleep(2)
-    finally:
-        release_single_instance_lock()
+                        time.sleep(min(consecutive_errors * 2, 15))
+                    time.sleep(0.3)
+                except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as net_err:
+                    consecutive_errors += 1
+                    backoff = min(consecutive_errors * 2, 20)
+                    print(f"Network glitch ({net_err}). Retrying in {backoff}s...")
+                    time.sleep(backoff)
+                except Exception as e:
+                    print(f"Error in polling loop: {e}")
+                    time.sleep(2)
+        finally:
+            release_single_instance_lock()
 
 if __name__ == "__main__":
     run_bot()
