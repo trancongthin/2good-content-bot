@@ -925,6 +925,8 @@ def worker_process_incoming_cluster(cluster_items):
             except Exception:
                 pass
     except Exception as e:
+        global LAST_ERROR
+        LAST_ERROR = f"worker_cluster: {e}"
         print(f"❌ Error in worker_process_incoming_cluster: {e}")
         try:
             send_message(chat_id, f"⚠️ Có lỗi khi AI soạn bài: {e}")
@@ -970,6 +972,17 @@ def handle_incoming_media_non_blocking(message):
         file_id = video_obj["file_id"]
         thumb = video_obj.get("thumbnail")
         sample_file_id = thumb["file_id"] if thumb else file_id
+    elif "document" in message:
+        doc = message["document"]
+        mime = doc.get("mime_type", "").lower()
+        fname = doc.get("file_name", "").lower()
+        is_video = mime.startswith("video/") or fname.endswith((".mp4", ".mov", ".avi", ".mkv"))
+        is_image = mime.startswith("image/") or fname.endswith((".jpg", ".jpeg", ".png", ".webp", ".heic", ".bmp"))
+        if is_video or is_image:
+            media_type = "video" if is_video else "photo"
+            file_id = doc["file_id"]
+            thumb = doc.get("thumbnail")
+            sample_file_id = thumb["file_id"] if thumb else file_id
 
     if not media_type:
         return
@@ -1522,6 +1535,8 @@ def process_single_update(update):
             summary["chat_id"] = m.get("chat", {}).get("id")
             summary["chat_title"] = m.get("chat", {}).get("title")
             summary["text"] = m.get("text")
+            summary["caption"] = m.get("caption")
+            summary["keys"] = [k for k in m.keys() if k not in ["chat", "from", "date"]]
             summary["thread_id"] = m.get("message_thread_id")
         elif "callback_query" in update:
             cq = update["callback_query"]
@@ -1555,9 +1570,20 @@ def process_single_update(update):
             msg_id = msg.get("message_id")
             thread_id = msg.get("message_thread_id")
             
-            # Handle incoming photo or video (from private chat or any group)
-            if "photo" in msg or "video" in msg:
+            # Handle incoming photo, video, or document (image/video file)
+            is_doc_media = False
+            if "document" in msg:
+                doc = msg["document"]
+                mime = doc.get("mime_type", "").lower()
+                fname = doc.get("file_name", "").lower()
+                if mime.startswith("image/") or mime.startswith("video/") or any(fname.endswith(ext) for ext in [".jpg", ".jpeg", ".png", ".webp", ".heic", ".bmp", ".mp4", ".mov", ".avi", ".mkv"]):
+                    is_doc_media = True
+
+            if "photo" in msg or "video" in msg or is_doc_media:
                 handle_incoming_media_non_blocking(msg)
+            elif "document" in msg:
+                doc_name = msg["document"].get("file_name", "tài liệu")
+                send_message(chat_id, f"📄 Bot đã nhận file <b>{doc_name}</b>. Để AI phân tích và lên bài content 3 góc, sếp hãy gửi ảnh hoặc video nhé!", message_thread_id=thread_id)
             elif "text" in msg:
                 text = msg.get("text", "").strip()
                 cmd = text.split()[0].lower() if text else ""
@@ -1674,6 +1700,8 @@ def process_single_update(update):
         elif "callback_query" in update:
             handle_callback(update["callback_query"])
     except Exception as e:
+        global LAST_ERROR
+        LAST_ERROR = f"process_update: {e}"
         print(f"❌ Error in process_single_update: {e}")
 
 # --- MAIN BOT ENGINE & POLLING LOOP ---
