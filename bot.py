@@ -1754,6 +1754,32 @@ def run_bot():
         print("✅ Bot đang vận hành ở chế độ WEBHOOK 24/7 (Không treo socket, Không 409 conflict, Phản hồi tức thì)!")
         while True:
             time.sleep(60)
+
+            # --- WEBHOOK GUARD: TỰ ĐỘNG BẢO VỆ VÀ KHÔI PHỤC NẾU BỊ NỀN TẢNG NGOÀI CƯỚP WEBHOOK ---
+            try:
+                wb_info = requests.get(f"{TELEGRAM_API}/getWebhookInfo", timeout=10).json()
+                current_url = wb_info.get("result", {}).get("url", "")
+                if current_url != webhook_url:
+                    print(f"⚠️ CẢNH BÁO: Webhook bị đổi sang '{current_url}'. Đang tự động khôi phục về {webhook_url}...")
+                    reclaim_res = requests.post(
+                        f"{TELEGRAM_API}/setWebhook",
+                        json={
+                            "url": webhook_url,
+                            "allowed_updates": allowed_update_types,
+                            "drop_pending_updates": False
+                        },
+                        timeout=15
+                    ).json()
+                    print(f"🛡️ Kết quả khôi phục Webhook: {reclaim_res}")
+                    send_message(
+                        ADMIN_CHAT_ID,
+                        f"🛡️ <b>[BẢO VỆ BOT 24/7 - WEBHOOK GUARD]</b>\n"
+                        f"Phát hiện Webhook của bot bị bên ngoài đổi sang: <code>{current_url}</code>.\n\n"
+                        f"✅ <b>Hệ thống đã tự động chiếm lại quyền và khôi phục về Cloud Render!</b> Bot tiếp tục nhận ảnh bình thường."
+                    )
+            except Exception as e:
+                print(f"Lỗi kiểm tra Webhook Guard: {e}")
+
             if time.time() - last_cleanup_time > 900:
                 cleanup_expired_pending_posts()
                 last_cleanup_time = time.time()
